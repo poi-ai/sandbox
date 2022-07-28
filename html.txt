@@ -1,14 +1,14 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html id="html" lang="ja" xml:lang="ja" xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<title>ã‚‚ã¿ã˜ã‚¹ãƒ†ãƒ¼ã‚¯ã‚¹ï½œ2019å¹´10æœˆ12æ—¥ | ç«¶é¦¬ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ - netkeiba.com</title>
+<title>‚à‚Ý‚¶ƒXƒe[ƒNƒXb2019”N10ŒŽ12“ú | ‹£”nƒf[ƒ^ƒx[ƒX - netkeiba.com</title>
 <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"/>
 <meta content="ja" http-equiv="content-language"/>
 <meta content="text/html; charset=utf-8" http-equiv="content-type"/>
 <meta content="text/javascript" http-equiv="content-script-type"/>
 <meta content="text/css" http-equiv="content-style-type"/>
-<meta content="ç«¶é¦¬ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹ã§ã™ã€‚ç«¶èµ°é¦¬ã€é¨Žæ‰‹ã€ãƒ¬ãƒ¼ã‚¹ã€èª¿æ•™å¸«ã€é¦¬ä¸»ã€‚" name="description"/>
-<meta content="ç«¶é¦¬æƒ…å ±,ç«¶èµ°é¦¬,é¨Žæ‰‹,ãƒ¬ãƒ¼ã‚¹,èª¿æ•™å¸«,æ¤œç´¢,ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹,JRA,netkeiba.com" name="keywords"/>
+<meta content="‹£”nƒf[ƒ^ƒx[ƒX‚Å‚·B‹£‘–”nA‹RŽèAƒŒ[ƒXA’²‹³ŽtA”nŽåB" name="description"/>
+<meta content="‹£”nî•ñ,‹£‘–”n,‹RŽè,ƒŒ[ƒX,’²‹³Žt,ŒŸõ,ƒf[ƒ^ƒx[ƒX,JRA,netkeiba.com" name="keywords"/>
 <link href="https://cdn.netkeiba.com/img.db/common/css/reset.css?20160421" media="all" rel="stylesheet" type="text/css"/>
 <link href="https://cdn.netkeiba.com/img.db/common/css/common.css?2020" media="all" rel="stylesheet" type="text/css"/>
 <link href="https://cdn.netkeiba.com/img.db/common/css/db_detail.css?20210701" media="all" rel="stylesheet" type="text/css"/>
@@ -73,7 +73,7 @@ var _bbs_action_api_url     = 'https://bbs.netkeiba.com/';
 <body class="db" id="db_race_detail">
 <div id="page">
 <link href="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/css/pc_header.css" media="screen" rel="stylesheet" type="text/css"/>
-<p class="sp_nk_btn disp_none"><a href="http://www.netkeiba.com/?pid=go_sp" title="ã‚¹ãƒžãƒ¼ãƒˆãƒ•ã‚©ãƒ³ç‰ˆã¸"><img alt="ã‚¹ãƒžãƒ¼ãƒˆãƒ•ã‚©ãƒ³ç‰ˆã¸" class="imgover" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/sp_nk_link_02.png"/></a></p>
+<p class="sp_nk_btn disp_none"><a href="http://www.netkeiba.com/?pid=go_sp" title="ƒXƒ}[ƒgƒtƒHƒ“”Å‚Ö"><img alt="ƒXƒ}[ƒgƒtƒHƒ“”Å‚Ö" class="imgover" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/sp_nk_link_02.png"/></a></p>
 <header class="Header_Area fc">
 <div class="Header_Inner fc">
 <h1>
@@ -86,7 +86,7 @@ var _bbs_action_api_url     = 'https://bbs.netkeiba.com/';
 <input name="pid" type="hidden" value="search"/>
 <input name="type" type="hidden" value="db"/>
 <div class="InputTxt_Form_Box">
-<input class="Txt_Form" id="keywords" name="word" placeholder="é¦¬åã§æ¤œç´¢" type="text" value=""/>
+<input class="Txt_Form" id="keywords" name="word" placeholder="”n–¼‚ÅŒŸõ" type="text" value=""/>
 </div><!-- / .InputTxt_Form -->
 <div class="Submit_Btn_Box">
 <svg class="IconInput01" height="41.05" viewbox="0 0 41.05 41.05" width="41.05" xmlns="http://www.w3.org/2000/svg">
@@ -97,45 +97,45 @@ var _bbs_action_api_url     = 'https://bbs.netkeiba.com/';
 </g>
 </g>
 </svg>
-<input class="Submit_Btn" name="submit" type="submit" value="æ¤œ ç´¢"/>
+<input class="Submit_Btn" name="submit" type="submit" value="ŒŸ õ"/>
 </div><!-- / .Submit_Btn_Box -->
 </form>
 </div><!-- / .DB_Search_Input -->
 <ul class="UserMyMenu fc">
 <li>
 <a href="https://regist.netkeiba.com/?pid=premium&amp;rf=header">
-<span>ãƒ—ãƒ¬ãƒŸã‚¢ãƒ ã‚µãƒ¼ãƒ“ã‚¹</span>
+<span>ƒvƒŒƒ~ƒAƒ€ƒT[ƒrƒX</span>
 </a>
 </li>
 <li>
 <a class="Icon_Header Icon_MyfavHorse" href="https://race.netkeiba.com/bookmark/bookmark.html?rf=navi">
-<span>ãŠæ°—ã«å…¥ã‚Šé¦¬</span>
+<span>‚¨‹C‚É“ü‚è”n</span>
 </a>
 </li>
 <li>
 <a class="Icon_Header Icon_Login" href="https://regist.netkeiba.com/account/?pid=login">
-<span>ãƒ­ã‚°ã‚¤ãƒ³/ä¼šå“¡ç™»éŒ²</span>
+<span>ƒƒOƒCƒ“/‰ïˆõ“o˜^</span>
 </a>
 </li>
 <li class="disp_none header_stage_area no_login_show">
 <a href="https://regist.netkeiba.com/?pid=stage_login&amp;action=login&amp;return_url=https://regist.netkeiba.com/">
-<span>(s)ãƒ­ã‚°ã‚¤ãƒ³</span>
+<span>(s)ƒƒOƒCƒ“</span>
 </a>
 </li>
 <li class="disp_none header_stage_area no_login_show">
 <a href="https://regist.netkeiba.com/?pid=user_add_form&amp;payment=nk_user&amp;goods_cd=310409&amp;opt=init">
-<span>(s)ç„¡æ–™ä¼šå“¡ç™»éŒ²</span>
+<span>(s)–³—¿‰ïˆõ“o˜^</span>
 </a>
 </li><li class="disp_none header_stage_area login_show">
 <a href="https://regist.netkeiba.com/?pid=stage_login&amp;action=logout&amp;return_url=https://regist.netkeiba.com/">
-<span>(s)ãƒ­ã‚°ã‚¢ã‚¦ãƒˆ</span>
+<span>(s)ƒƒOƒAƒEƒg</span>
 </a>
 </li>
 </ul>
 <div class="SiteToggleBtn01 Keirin">
 <a href="https://keirin.netkeiba.com/?rf=nk_pc_header">
 <span class="LiveRace">LIVE</span>
-<img alt="" class="KeirinLogoMark01" height="16" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/icon_keirin01.png" width="21"/>ç«¶è¼ª
+<img alt="" class="KeirinLogoMark01" height="16" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/icon_keirin01.png" width="21"/>‹£—Ö
 </a>
 </div><!-- /.SiteToggleBtn01 -->
 </div><!-- /.Header_Inner -->
@@ -143,47 +143,47 @@ var _bbs_action_api_url     = 'https://bbs.netkeiba.com/';
 <nav class="ContentNavi01">
 <ul class="fc">
 <li class="Top">
-<a href="https://www.netkeiba.com/?rf=navi" id="navi_link_top" title="ãƒˆãƒƒãƒ—">ãƒˆãƒƒãƒ—</a>
+<a href="https://www.netkeiba.com/?rf=navi" id="navi_link_top" title="ƒgƒbƒv">ƒgƒbƒv</a>
 </li>
 <li class="News">
-<a href="https://news.netkeiba.com/?rf=navi" id="navi_link_news" title="ãƒ‹ãƒ¥ãƒ¼ã‚¹">ãƒ‹ãƒ¥ãƒ¼ã‚¹</a>
+<a href="https://news.netkeiba.com/?rf=navi" id="navi_link_news" title="ƒjƒ…[ƒX">ƒjƒ…[ƒX</a>
 </li>
 <li class="Race">
-<a href="https://race.netkeiba.com/top/?rf=navi" id="navi_link_race" title="ãƒ¬ãƒ¼ã‚¹">ãƒ¬ãƒ¼ã‚¹</a>
+<a href="https://race.netkeiba.com/top/?rf=navi" id="navi_link_race" title="ƒŒ[ƒX">ƒŒ[ƒX</a>
 </li>
 <li class="Yoso">
-<a href="https://yoso.netkeiba.com/?access=init&amp;rf=navi" id="navi_link_yoso" title="äºˆæƒ³">äºˆæƒ³</a>
+<a href="https://yoso.netkeiba.com/?access=init&amp;rf=navi" id="navi_link_yoso" title="—\‘z">—\‘z</a>
 </li>
 <li class="Column">
-<a href="https://news.netkeiba.com/?pid=column_top&amp;rf=navi" id="navi_link_column" title="ã‚³ãƒ©ãƒ ">ã‚³ãƒ©ãƒ </a>
+<a href="https://news.netkeiba.com/?pid=column_top&amp;rf=navi" id="navi_link_column" title="ƒRƒ‰ƒ€">ƒRƒ‰ƒ€</a>
 </li>
 <li class="Tv">
 <a href="https://tv.netkeiba.com/?rf=navi" id="navi_link_tv" title="netkeibaTV">netkeibaTV</a>
 </li>
 <li class="Local">
-<a href="https://nar.netkeiba.com/top/?rf=navi" id="navi_link_nar" title="åœ°æ–¹ç«¶é¦¬">åœ°æ–¹ç«¶é¦¬</a>
+<a href="https://nar.netkeiba.com/top/?rf=navi" id="navi_link_nar" title="’n•û‹£”n">’n•û‹£”n</a>
 </li>
 <li class="Db">
-<a href="https://db.netkeiba.com/?rf=navi" id="navi_link_db" title="ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹">ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹</a>
+<a href="https://db.netkeiba.com/?rf=navi" id="navi_link_db" title="ƒf[ƒ^ƒx[ƒX">ƒf[ƒ^ƒx[ƒX</a>
 </li>
 <li class="Paper">
-<a href="https://yoso.netkeiba.com/senmonshi/?rf=navi" id="navi_link_senmonshi" title="ç«¶é¦¬æ–°èž">ç«¶é¦¬æ–°èž</a>
+<a href="https://yoso.netkeiba.com/senmonshi/?rf=navi" id="navi_link_senmonshi" title="‹£”nV•·">‹£”nV•·</a>
 </li>
 <li class="YosoCS">
-<a href="https://orepro.netkeiba.com/?rf=navi" id="navi_link_orepro" title="ä¿ºãƒ—ãƒ­">ä¿ºãƒ—ãƒ­</a>
+<a href="https://orepro.netkeiba.com/?rf=navi" id="navi_link_orepro" title="‰´ƒvƒ">‰´ƒvƒ</a>
 </li>
 <li class="Owner">
-<a href="https://owner.netkeiba.com/?rf=navi" id="navi_link_owner" title="ä¸€å£é¦¬ä¸»">ä¸€å£é¦¬ä¸»</a>
+<a href="https://owner.netkeiba.com/?rf=navi" id="navi_link_owner" title="ˆêŒû”nŽå">ˆêŒû”nŽå</a>
 </li>
 <li class="Pog">
 <a href="https://pog.netkeiba.com/?rf=navi" id="navi_link_pog" title="POG">POG</a>
 </li>
 <li class="Matome">
-<a href="https://dir.netkeiba.com/keibamatome/index.html?rf=navi" id="navi_link_keibamatome" title="ã¾ã¨ã‚">ã¾ã¨ã‚</a>
+<a href="https://dir.netkeiba.com/keibamatome/index.html?rf=navi" id="navi_link_keibamatome" title="‚Ü‚Æ‚ß">‚Ü‚Æ‚ß</a>
 </li>
 </ul>
 </nav><!-- /.ContentNavi01 -->
-<!-- åºƒå‘Šé…ä¿¡ç”¨ -->
+<!-- L”zM—p -->
 <script async="" src="https://cpt.geniee.jp/hb/v1/211239/47/wrapper.min.js" type="text/javascript"></script>
 <script async="" src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script>
@@ -198,7 +198,7 @@ googletag.pubads().disableInitialLoad();
 googletag.enableServices();
 });
 </script>
-<!-- /åºƒå‘Šé…ä¿¡ç”¨ -->
+<!-- /L”zM—p -->
 <script type="text/javascript">
 $(document).ready(function() {
 show_user();
@@ -217,13 +217,13 @@ if(! is_stage) {
 $('.header_stage_area').remove();
 }
 if(is_user){
-//ãƒ­ã‚°ã‚¤ãƒ³ä¸­
+//ƒƒOƒCƒ“’†
 $('.login_show').show();
 if(is_alert) {
 $('.Alert_New').show();
 }
 } else {
-//æœªãƒ­ã‚°ã‚¤ãƒ³
+//–¢ƒƒOƒCƒ“
 $('.no_login_show').show();
 $('.login_show').remove();
 }
@@ -231,13 +231,13 @@ $('.login_show').remove();
 </script>
 <div class="genre_menu fc">
 <ul>
-<li><a href="/" title="ç«¶é¦¬ãƒ‡ãƒ¼ã‚¿TOP">ç«¶é¦¬ãƒ‡ãƒ¼ã‚¿TOP</a></li>
-<li><a href="/?pid=horse_top" title="ç«¶èµ°é¦¬">ç«¶èµ°é¦¬</a></li>
-<li><a href="/?pid=jockey_top" title="é¨Žæ‰‹">é¨Žæ‰‹</a></li>
-<li><a href="/?pid=trainer_top" title="èª¿æ•™å¸«">èª¿æ•™å¸«</a></li>
-<li><a href="/?pid=owner_top" title="é¦¬ä¸»">é¦¬ä¸»</a></li>
-<li><a href="/?pid=breeder_top" title="ç”Ÿç”£è€…">ç”Ÿç”£è€…</a></li>
-<li class="active"><a href="/?pid=race_top" title="ãƒ¬ãƒ¼ã‚¹">ãƒ¬ãƒ¼ã‚¹</a></li>
+<li><a href="/" title="‹£”nƒf[ƒ^TOP">‹£”nƒf[ƒ^TOP</a></li>
+<li><a href="/?pid=horse_top" title="‹£‘–”n">‹£‘–”n</a></li>
+<li><a href="/?pid=jockey_top" title="‹RŽè">‹RŽè</a></li>
+<li><a href="/?pid=trainer_top" title="’²‹³Žt">’²‹³Žt</a></li>
+<li><a href="/?pid=owner_top" title="”nŽå">”nŽå</a></li>
+<li><a href="/?pid=breeder_top" title="¶ŽYŽÒ">¶ŽYŽÒ</a></li>
+<li class="active"><a href="/?pid=race_top" title="ƒŒ[ƒX">ƒŒ[ƒX</a></li>
 </ul>
 </div><!-- /.genre_menu -->
 <div class="fc" id="contents">
@@ -246,16 +246,16 @@ $('.login_show').remove();
 <div class="race_head">
 <div class="race_head_inner">
 <ul class="race_place fc">
-<!-- li><a href="/race/list/20191012/" class="active">äº¬éƒ½</a></li -->
-<li><a class="active" href="/race/201908040309/">äº¬éƒ½</a></li>
-<li class="result_link"><a href="/race/list/20191012/">2019å¹´10æœˆ12æ—¥ã®ãƒ¬ãƒ¼ã‚¹çµæžœ</a></li>
+<!-- li><a href="/race/list/20191012/" class="active">‹ž“s</a></li -->
+<li><a class="active" href="/race/201908040309/">‹ž“s</a></li>
+<li class="result_link"><a href="/race/list/20191012/">2019”N10ŒŽ12“ú‚ÌƒŒ[ƒXŒ‹‰Ê</a></li>
 </ul>
 <div class="race_num fc">
 <ul class="fc">
 <li><a href="/race/201908040301/" title="R">1R</a></li><li><a href="/race/201908040302/" title="R">2R</a></li><li><a href="/race/201908040303/" title="R">3R</a></li><li><a href="/race/201908040304/" title="R">4R</a></li><li><a href="/race/201908040305/" title="R">5R</a></li><li><a href="/race/201908040306/" title="R">6R</a></li><li><a href="/race/201908040307/" title="R">7R</a></li><li><a href="/race/201908040308/" title="R">8R</a></li><li><a class="active" href="/race/201908040309/" title="R">9R</a></li><li><a href="/race/201908040310/" title="R">10R</a></li><li><a href="/race/201908040311/" title="R">11R</a></li><li><a href="/race/201908040312/" title="R">12R</a></li>
 </ul>
-<p><a href="/race/sum/08/20191012/">ä¸€è¦§</a></p>
-<p><a href="/race/pay/08/20191012/" title="ã®æ‰•æˆ»ä¸€è¦§">æ‰•æˆ»ã—</a></p>
+<p><a href="/race/sum/08/20191012/">ˆê——</a></p>
+<p><a href="/race/pay/08/20191012/" title="‚Ì•¥–ßˆê——">•¥–ß‚µ</a></p>
 </div><!-- /.race_num_ber -->
 <diary_snap>
 <div class="mainrace_data fc">
@@ -265,21 +265,21 @@ $('.login_show').remove();
 9 R
 </dt>
 <dd>
-<h1>ã‚‚ã¿ã˜ã‚¹ãƒ†ãƒ¼ã‚¯ã‚¹ <!--img src="style/netkeiba.ja/image/race_grade_g2_01.png" alt=""--></h1>
+<h1>‚à‚Ý‚¶ƒXƒe[ƒNƒX <!--img src="style/netkeiba.ja/image/race_grade_g2_01.png" alt=""--></h1>
 <p>
 <diary_snap_cut>
-<span>èŠå³ å¤–1400mÂ /Â å¤©å€™ : é›¨Â /Â èŠ : ä¸è‰¯Â /Â ç™ºèµ° : 14:25</span><br/>
+<span>ŽÅ‰E ŠO1400m?/?“VŒó : ‰J?/?ŽÅ : •s—Ç?/?”­‘– : 14:25</span><br/>
 <diary_snap_cut>
-<a href="/?pid=race_list&amp;word=%A4%E2%A4%DF%A4%B8%A5%B9%A5%C6%A1%BC%A5%AF%A5%B9&amp;front=1">éŽåŽ»ã®ã‚‚ã¿ã˜ã‚¹ãƒ†ãƒ¼ã‚¯ã‚¹</a>
+<a href="/?pid=race_list&amp;word=%A4%E2%A4%DF%A4%B8%A5%B9%A5%C6%A1%BC%A5%AF%A5%B9&amp;front=1">‰ß‹Ž‚Ì‚à‚Ý‚¶ƒXƒe[ƒNƒX</a>
 </diary_snap_cut>
 </diary_snap_cut></p>
 </dd>
 </dl>
-<p class="smalltxt">2019å¹´10æœˆ12æ—¥ 4å›žäº¬éƒ½3æ—¥ç›® 2æ­³ã‚ªãƒ¼ãƒ—ãƒ³Â Â (å›½éš›)(ç‰¹æŒ‡)(åˆ¥å®š)</p>
+<p class="smalltxt">2019”N10ŒŽ12“ú 4‰ñ‹ž“s3“ú–Ú 2ÎƒI[ƒvƒ“??(‘Û)(“ÁŽw)(•Ê’è)</p>
 <diary_snap_cut>
 <ul class="btn_link_list fc">
 <li class="race_btn_MOVIE end">
-<a href="/race/movie/201908040309"><img alt="ãƒ¬ãƒ¼ã‚¹æ˜ åƒ" class="imgover" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/race_btn_movie_on.png"/></a>
+<a href="/race/movie/201908040309"><img alt="ƒŒ[ƒX‰f‘œ" class="imgover" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/race_btn_movie_on.png"/></a>
 </li>
 </ul>
 </diary_snap_cut>
@@ -313,43 +313,43 @@ $('#db_race_detail').addClass('classic');
 </div><!-- / #contents -->
 <div class="race_deta_menu">
 <ul class="main_menu fc">
-<li class="race_navi_result"><a class="active" href="https://db.netkeiba.com/race/201908040309/">çµæžœ/æ‰•æˆ»</a></li>
-<li class="race_navi_bbs"><a href="https://db.netkeiba.com//?pid=race_board&amp;thread=race&amp;id=201908040309">æŽ²ç¤ºæ¿</a></li>
+<li class="race_navi_result"><a class="active" href="https://db.netkeiba.com/race/201908040309/">Œ‹‰Ê/•¥–ß</a></li>
+<li class="race_navi_bbs"><a href="https://db.netkeiba.com//?pid=race_board&amp;thread=race&amp;id=201908040309">ŒfŽ¦”Â</a></li>
 </ul>
 </div><!-- /.race_deta_menu -->
 <div class="race_result fc">
 <div id="contents_liquid">
 <!-- a href="/?pid=info&mode=premium" -->
-<!-- æ˜ åƒãƒ»èª¿æ•™ã‚¿ã‚¤ãƒ ãªã©<img src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="14" height="11" border="0" />ãƒžãƒ¼ã‚¯ã®äºˆæƒ³ã«å½¹ç«‹ã¤ãƒ‡ãƒ¼ã‚¿ã‚’è¦‹ã‚‹ã«ã¯ï¼Ÿ -->
+<!-- ‰f‘œE’²‹³ƒ^ƒCƒ€‚È‚Ç<img src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="14" height="11" border="0" />ƒ}[ƒN‚Ì—\‘z‚É–ð—§‚Âƒf[ƒ^‚ðŒ©‚é‚É‚ÍH -->
 <!-- </a> -->
-<table cellpadding="0" cellspacing="1" class="race_table_01 nk_tb_common" summary="ãƒ¬ãƒ¼ã‚¹çµæžœ">
+<table cellpadding="0" cellspacing="1" class="race_table_01 nk_tb_common" summary="ƒŒ[ƒXŒ‹‰Ê">
 <tr class="txt_c">
-<th nowrap="nowrap">ç€<br/>é †</th>
-<th nowrap="nowrap">æž <br/>ç•ª</th>
-<th nowrap="nowrap">é¦¬<br/>ç•ª</th>
-<th nowrap="nowrap">é¦¬å</th>
-<th nowrap="nowrap">æ€§é½¢</th>
-<th nowrap="nowrap">æ–¤é‡</th>
-<th nowrap="nowrap">é¨Žæ‰‹</th>
-<th nowrap="nowrap">ã‚¿ã‚¤ãƒ </th>
-<th nowrap="nowrap">ç€å·®</th>
+<th nowrap="nowrap">’…<br/>‡</th>
+<th nowrap="nowrap">˜g<br/>”Ô</th>
+<th nowrap="nowrap">”n<br/>”Ô</th>
+<th nowrap="nowrap">”n–¼</th>
+<th nowrap="nowrap">«—î</th>
+<th nowrap="nowrap">‹Ò—Ê</th>
+<th nowrap="nowrap">‹RŽè</th>
+<th nowrap="nowrap">ƒ^ƒCƒ€</th>
+<th nowrap="nowrap">’…·</th>
 <diary_snap_cut>
-<th nowrap="nowrap">ï¾€ï½²ï¾‘<br/>æŒ‡æ•°<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
-<th nowrap="nowrap">é€šéŽ</th>
-<th nowrap="nowrap">ä¸Šã‚Š</th>
+<th nowrap="nowrap">À²Ñ<br/>Žw”<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
+<th nowrap="nowrap">’Ê‰ß</th>
+<th nowrap="nowrap">ã‚è</th>
 </diary_snap_cut>
-<th nowrap="nowrap">å˜å‹</th>
-<th nowrap="nowrap">äºº<br/>æ°—</th>
-<th nowrap="nowrap">é¦¬ä½“é‡</th>
+<th nowrap="nowrap">’PŸ</th>
+<th nowrap="nowrap">l<br/>‹C</th>
+<th nowrap="nowrap">”n‘Ìd</th>
 <diary_snap_cut>
-<th nowrap="nowrap">èª¿æ•™<br/>ï¾€ï½²ï¾‘<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
-<th nowrap="nowrap">åŽ©èˆŽ<br/>ï½ºï¾’ï¾ï¾„<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
-<th nowrap="nowrap">å‚™è€ƒ<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
+<th nowrap="nowrap">’²‹³<br/>À²Ñ<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
+<th nowrap="nowrap">‰XŽÉ<br/>ºÒÝÄ<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
+<th nowrap="nowrap">”õl<br/><img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
 </diary_snap_cut>
-<th nowrap="nowrap">èª¿æ•™å¸«</th>
+<th nowrap="nowrap">’²‹³Žt</th>
 <diary_snap_cut>
-<th nowrap="nowrap">é¦¬ä¸»</th>
-<th nowrap="nowrap">è³žé‡‘<br/>(ä¸‡å††)</th>
+<th nowrap="nowrap">”nŽå</th>
+<th nowrap="nowrap">Ü‹à<br/>(–œ‰~)</th>
 </diary_snap_cut>
 </tr>
 <tr>
@@ -357,12 +357,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w8ml" nowrap="nowrap"><span>8</span></td>
 <td class="txt_r" nowrap="nowrap">10</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017105072/" id="umalink_201908040309" title="ãƒ©ã‚¦ãƒ€ã‚·ã‚ªãƒ³">ãƒ©ã‚¦ãƒ€ã‚·ã‚ªãƒ³</a>
+<a href="/horse/2017105072/" id="umalink_201908040309" title="ƒ‰ƒEƒ_ƒVƒIƒ“">ƒ‰ƒEƒ_ƒVƒIƒ“</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/05339/" title="ãƒ«ãƒ¡ãƒ¼ãƒ«">ãƒ«ãƒ¡ãƒ¼ãƒ«</a>
+<a href="/jockey/result/recent/05339/" title="ƒ‹ƒ[ƒ‹">ƒ‹ƒ[ƒ‹</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:24.1</td>
 <td class="txt_c" nowrap="nowrap"></td>
@@ -392,12 +392,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/01151/" title="æ–‰è—¤å´‡å²">æ–‰è—¤å´‡å²</a>
+[¼]
+<a href="/trainer/result/recent/01151/" title="Ä“¡’Žj">Ä“¡’Žj</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w8ml" nowrap="nowrap">
-<a href="/owner/result/recent/506800/" title="ã‚·ãƒ«ã‚¯ãƒ¬ãƒ¼ã‚·ãƒ³ã‚°">ã‚·ãƒ«ã‚¯ãƒ¬ãƒ¼ã‚·ãƒ³ã‚°</a>
+<a href="/owner/result/recent/506800/" title="ƒVƒ‹ƒNƒŒ[ƒVƒ“ƒO">ƒVƒ‹ƒNƒŒ[ƒVƒ“ƒO</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1,623.8</td>
 </diary_snap_cut>
@@ -406,12 +406,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w2ml" nowrap="nowrap"><span>2</span></td>
 <td class="txt_r" nowrap="nowrap">2</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017110144/" id="umalink_201908040309" title="ãƒ­ãƒ¼ã‚¿ã‚¹ãƒ©ãƒ³ãƒ‰">ãƒ­ãƒ¼ã‚¿ã‚¹ãƒ©ãƒ³ãƒ‰</a>
+<a href="/horse/2017110144/" id="umalink_201908040309" title="ƒ[ƒ^ƒXƒ‰ƒ“ƒh">ƒ[ƒ^ƒXƒ‰ƒ“ƒh</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰2</td>
+<td class="txt_c" nowrap="nowrap">–Ä2</td>
 <td class="txt_c" nowrap="nowrap">54</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01014/" title="ç¦æ°¸ç¥ä¸€">ç¦æ°¸ç¥ä¸€</a>
+<a href="/jockey/result/recent/01014/" title="•Ÿ‰i—Sˆê">•Ÿ‰i—Sˆê</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:24.3</td>
 <td class="txt_c" nowrap="nowrap">1.1/2</td>
@@ -438,12 +438,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/01053/" title="è§’å±…å‹å½¦">è§’å±…å‹å½¦</a>
+[¼]
+<a href="/trainer/result/recent/01053/" title="Šp‹Ÿ•F">Šp‹Ÿ•F</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w2ml" nowrap="nowrap">
-<a href="/owner/result/recent/882800/" title="å°æž—è‹±ä¸€ãƒ›ãƒ¼ãƒ«ãƒ‡ã‚£ãƒ³ã‚°ã‚¹">å°æž—è‹±ä¸€ãƒ›ãƒ¼ãƒ«ãƒ‡ã‚£ãƒ³ã‚°ã‚¹</a>
+<a href="/owner/result/recent/882800/" title="¬—Ñ‰pˆêƒz[ƒ‹ƒfƒBƒ“ƒOƒX">¬—Ñ‰pˆêƒz[ƒ‹ƒfƒBƒ“ƒOƒX</a>
 </td>
 <td class="txt_r" nowrap="nowrap">646.8</td>
 </diary_snap_cut>
@@ -452,12 +452,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w5ml" nowrap="nowrap"><span>5</span></td>
 <td class="txt_r" nowrap="nowrap">5</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017100461/" id="umalink_201908040309" title="ãƒ¯ãƒ³ã‚¹ã‚«ã‚¤">ãƒ¯ãƒ³ã‚¹ã‚«ã‚¤</a>
+<a href="/horse/2017100461/" id="umalink_201908040309" title="ƒƒ“ƒXƒJƒC">ƒƒ“ƒXƒJƒC</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01178/" title="æ–Žè—¤æ–°">æ–Žè—¤æ–°</a>
+<a href="/jockey/result/recent/01178/" title="Ö“¡V">Ö“¡V</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:24.7</td>
 <td class="txt_c" nowrap="nowrap">2.1/2</td>
@@ -487,12 +487,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[æ±]
-<a href="/trainer/result/recent/01086/" title="æ–Žè—¤èª ">æ–Žè—¤èª </a>
+[“Œ]
+<a href="/trainer/result/recent/01086/" title="Ö“¡½">Ö“¡½</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w5ml" nowrap="nowrap">
-<a href="/owner/result/recent/686006/" title="å¹³äº•è£•">å¹³äº•è£•</a>
+<a href="/owner/result/recent/686006/" title="•½ˆä—T">•½ˆä—T</a>
 </td>
 <td class="txt_r" nowrap="nowrap">403.4</td>
 </diary_snap_cut>
@@ -501,12 +501,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w6ml" nowrap="nowrap"><span>6</span></td>
 <td class="txt_r" nowrap="nowrap">6</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017103137/" id="umalink_201908040309" title="ã‚°ãƒ©ãƒ³ãƒ•ã‚§ã‚¹ã‚¿">ã‚°ãƒ©ãƒ³ãƒ•ã‚§ã‚¹ã‚¿</a>
+<a href="/horse/2017103137/" id="umalink_201908040309" title="ƒOƒ‰ƒ“ƒtƒFƒXƒ^">ƒOƒ‰ƒ“ƒtƒFƒXƒ^</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01144/" title="è±ç”°è£•äºŒ">è±ç”°è£•äºŒ</a>
+<a href="/jockey/result/recent/01144/" title="•H“c—T“ñ">•H“c—T“ñ</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:24.9</td>
 <td class="txt_c" nowrap="nowrap">1.1/4</td>
@@ -533,12 +533,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/01160/" title="æ­¦å¹¸å››éƒŽ">æ­¦å¹¸å››éƒŽ</a>
+[¼]
+<a href="/trainer/result/recent/01160/" title="•KŽl˜Y">•KŽl˜Y</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w6ml" nowrap="nowrap">
-<a href="/owner/result/recent/010803/" title="å¸‚å·ç¾©ç¾Žãƒ›ãƒ¼ãƒ«ãƒ‡ã‚£ãƒ³ã‚°ã‚¹">å¸‚å·ç¾©ç¾Žãƒ›ãƒ¼ãƒ«ãƒ‡ã‚£ãƒ³ã‚°ã‚¹</a>
+<a href="/owner/result/recent/010803/" title="Žsì‹`”üƒz[ƒ‹ƒfƒBƒ“ƒOƒX">Žsì‹`”üƒz[ƒ‹ƒfƒBƒ“ƒOƒX</a>
 </td>
 <td class="txt_r" nowrap="nowrap">240.0</td>
 </diary_snap_cut>
@@ -547,12 +547,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w7ml" nowrap="nowrap"><span>7</span></td>
 <td class="txt_r" nowrap="nowrap">8</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017110117/" id="umalink_201908040309" title="ãƒ•ãƒ«ãƒ•ãƒ©ãƒƒãƒˆ">ãƒ•ãƒ«ãƒ•ãƒ©ãƒƒãƒˆ</a>
+<a href="/horse/2017110117/" id="umalink_201908040309" title="ƒtƒ‹ƒtƒ‰ƒbƒg">ƒtƒ‹ƒtƒ‰ƒbƒg</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01102/" title="åŒ—æ‘å‹ä¸€">åŒ—æ‘å‹ä¸€</a>
+<a href="/jockey/result/recent/01102/" title="–k‘º—Fˆê">–k‘º—Fˆê</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:25.5</td>
 <td class="txt_c" nowrap="nowrap">3.1/2</td>
@@ -582,12 +582,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/00427/" title="æ£®ç§€è¡Œ">æ£®ç§€è¡Œ</a>
+[¼]
+<a href="/trainer/result/recent/00427/" title="XGs">XGs</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w7ml" nowrap="nowrap">
-<a href="/owner/result/recent/265033/" title="å¤§é‡Žå‰›å—£">å¤§é‡Žå‰›å—£</a>
+<a href="/owner/result/recent/265033/" title="‘å–ì„Žk">‘å–ì„Žk</a>
 </td>
 <td class="txt_r" nowrap="nowrap">160.0</td>
 </diary_snap_cut>
@@ -596,15 +596,15 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w6ml" nowrap="nowrap"><span>6</span></td>
 <td class="txt_r" nowrap="nowrap">7</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017109149/" id="umalink_201908040309" title="ãƒ†ã‚¤ã‚¨ãƒ ãƒ¤ãƒžã‚«ã‚¼">ãƒ†ã‚¤ã‚¨ãƒ ãƒ¤ãƒžã‚«ã‚¼</a>
+<a href="/horse/2017109149/" id="umalink_201908040309" title="ƒeƒCƒGƒ€ƒ„ƒ}ƒJƒ[">ƒeƒCƒGƒ€ƒ„ƒ}ƒJƒ[</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ã‚»2</td>
+<td class="txt_c" nowrap="nowrap">ƒZ2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01114/" title="ç”°ä¸­å¥">ç”°ä¸­å¥</a>
+<a href="/jockey/result/recent/01114/" title="“c’†Œ’">“c’†Œ’</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:25.5</td>
-<td class="txt_c" nowrap="nowrap">ãƒãƒŠ</td>
+<td class="txt_c" nowrap="nowrap">ƒnƒi</td>
 <diary_snap_cut>
 <td class="speed_index bml" nowrap="nowrap">
 <div class="txt_c">
@@ -628,12 +628,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/00388/" title="å±±å†…ç ”äºŒ">å±±å†…ç ”äºŒ</a>
+[¼]
+<a href="/trainer/result/recent/00388/" title="ŽR“àŒ¤“ñ">ŽR“àŒ¤“ñ</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w6ml" nowrap="nowrap">
-<a href="/owner/result/recent/356002/" title="ç«¹åœ’æ­£ç¹¼">ç«¹åœ’æ­£ç¹¼</a>
+<a href="/owner/result/recent/356002/" title="’|‰€³ã‹">’|‰€³ã‹</a>
 </td>
 <td class="txt_r" nowrap="nowrap"></td>
 </diary_snap_cut>
@@ -642,12 +642,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w7ml" nowrap="nowrap"><span>7</span></td>
 <td class="txt_r" nowrap="nowrap">9</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017101982/" id="umalink_201908040309" title="ãƒžã‚¤ãƒãƒ«ãƒ˜ãƒ«ãƒˆ">ãƒžã‚¤ãƒãƒ«ãƒ˜ãƒ«ãƒˆ</a>
+<a href="/horse/2017101982/" id="umalink_201908040309" title="ƒ}ƒCƒlƒ‹ƒwƒ‹ƒg">ƒ}ƒCƒlƒ‹ƒwƒ‹ƒg</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01125/" title="å›½åˆ†å„ªä½œ">å›½åˆ†å„ªä½œ</a>
+<a href="/jockey/result/recent/01125/" title="‘•ª—Dì">‘•ª—Dì</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:25.8</td>
 <td class="txt_c" nowrap="nowrap">1.3/4</td>
@@ -674,12 +674,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/01028/" title="è¥¿åœ’æ­£éƒ½">è¥¿åœ’æ­£éƒ½</a>
+[¼]
+<a href="/trainer/result/recent/01028/" title="¼‰€³“s">¼‰€³“s</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w7ml" nowrap="nowrap">
-<a href="/owner/result/recent/546800/" title="ã‚µãƒ©ãƒ–ãƒ¬ãƒƒãƒ‰ã‚¯ãƒ©ãƒ–ãƒ»ãƒ©ãƒ•ã‚£ã‚¢ãƒ³">ã‚µãƒ©ãƒ–ãƒ¬ãƒƒãƒ‰ã‚¯ãƒ©ãƒ–ãƒ»ãƒ©ãƒ•ã‚£ã‚¢ãƒ³</a>
+<a href="/owner/result/recent/546800/" title="ƒTƒ‰ƒuƒŒƒbƒhƒNƒ‰ƒuEƒ‰ƒtƒBƒAƒ“">ƒTƒ‰ƒuƒŒƒbƒhƒNƒ‰ƒuEƒ‰ƒtƒBƒAƒ“</a>
 </td>
 <td class="txt_r" nowrap="nowrap"></td>
 </diary_snap_cut>
@@ -688,12 +688,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w8ml" nowrap="nowrap"><span>8</span></td>
 <td class="txt_r" nowrap="nowrap">11</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017105883/" id="umalink_201908040309" title="ã‚¨ã‚¤ã‚·ãƒ³ã‚¿ãƒ³ãƒãƒ§ã‚¦">ã‚¨ã‚¤ã‚·ãƒ³ã‚¿ãƒ³ãƒãƒ§ã‚¦</a>
+<a href="/horse/2017105883/" id="umalink_201908040309" title="ƒGƒCƒVƒ“ƒ^ƒ“ƒ`ƒ‡ƒE">ƒGƒCƒVƒ“ƒ^ƒ“ƒ`ƒ‡ƒE</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01116/" title="è—¤å²¡åº·å¤ª">è—¤å²¡åº·å¤ª</a>
+<a href="/jockey/result/recent/01116/" title="“¡‰ªN‘¾">“¡‰ªN‘¾</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:25.9</td>
 <td class="txt_c" nowrap="nowrap">1/2</td>
@@ -720,12 +720,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/01009/" title="ç”°æ‰€ç§€å­">ç”°æ‰€ç§€å­</a>
+[¼]
+<a href="/trainer/result/recent/01009/" title="“cŠGF">“cŠGF</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w8ml" nowrap="nowrap">
-<a href="/owner/result/recent/785800/" title="æ „é€²å ‚">æ „é€²å ‚</a>
+<a href="/owner/result/recent/785800/" title="‰hi“°">‰hi“°</a>
 </td>
 <td class="txt_r" nowrap="nowrap"></td>
 </diary_snap_cut>
@@ -734,15 +734,15 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w3ml" nowrap="nowrap"><span>3</span></td>
 <td class="txt_r" nowrap="nowrap">3</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017106130/" id="umalink_201908040309" title="ãƒ«ã‚¬ãƒ¼ã‚µãƒ³ãƒˆ">ãƒ«ã‚¬ãƒ¼ã‚µãƒ³ãƒˆ</a>
+<a href="/horse/2017106130/" id="umalink_201908040309" title="ƒ‹ƒK[ƒTƒ“ƒg">ƒ‹ƒK[ƒTƒ“ƒg</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰2</td>
+<td class="txt_c" nowrap="nowrap">–Ä2</td>
 <td class="txt_c" nowrap="nowrap">54</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/01018/" title="å’Œç”°ç«œäºŒ">å’Œç”°ç«œäºŒ</a>
+<a href="/jockey/result/recent/01018/" title="˜a“c—³“ñ">˜a“c—³“ñ</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:25.9</td>
-<td class="txt_c" nowrap="nowrap">ã‚¯ãƒ“</td>
+<td class="txt_c" nowrap="nowrap">ƒNƒr</td>
 <diary_snap_cut>
 <td class="speed_index bml" nowrap="nowrap">
 <div class="txt_c">
@@ -766,12 +766,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/01148/" title="è¥¿æ‘çœŸå¹¸">è¥¿æ‘çœŸå¹¸</a>
+[¼]
+<a href="/trainer/result/recent/01148/" title="¼‘º^K">¼‘º^K</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w3ml" nowrap="nowrap">
-<a href="/owner/result/recent/102800/" title="ã‚¿ãƒ¼ãƒ•ãƒ»ã‚¹ãƒãƒ¼ãƒˆ">ã‚¿ãƒ¼ãƒ•ãƒ»ã‚¹ãƒãƒ¼ãƒˆ</a>
+<a href="/owner/result/recent/102800/" title="ƒ^[ƒtEƒXƒ|[ƒg">ƒ^[ƒtEƒXƒ|[ƒg</a>
 </td>
 <td class="txt_r" nowrap="nowrap"></td>
 </diary_snap_cut>
@@ -780,12 +780,12 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w4ml" nowrap="nowrap"><span>4</span></td>
 <td class="txt_r" nowrap="nowrap">4</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017105721/" id="umalink_201908040309" title="ã‚¯ãƒªãƒŽã‚¢ãƒ³ã‚«ãƒ¼ãƒžãƒ³">ã‚¯ãƒªãƒŽã‚¢ãƒ³ã‚«ãƒ¼ãƒžãƒ³</a>
+<a href="/horse/2017105721/" id="umalink_201908040309" title="ƒNƒŠƒmƒAƒ“ƒJ[ƒ}ƒ“">ƒNƒŠƒmƒAƒ“ƒJ[ƒ}ƒ“</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/00732/" title="å¹¸è‹±æ˜Ž">å¹¸è‹±æ˜Ž</a>
+<a href="/jockey/result/recent/00732/" title="K‰p–¾">K‰p–¾</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:26.7</td>
 <td class="txt_c" nowrap="nowrap">5</td>
@@ -815,12 +815,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/01129/" title="é«˜æ©‹ç¾©å¿ ">é«˜æ©‹ç¾©å¿ </a>
+[¼]
+<a href="/trainer/result/recent/01129/" title="‚‹´‹`’‰">‚‹´‹`’‰</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w4ml" nowrap="nowrap">
-<a href="/owner/result/recent/970006/" title="æ —æœ¬åšæ™´">æ —æœ¬åšæ™´</a>
+<a href="/owner/result/recent/970006/" title="ŒI–{”Ž°">ŒI–{”Ž°</a>
 </td>
 <td class="txt_r" nowrap="nowrap"></td>
 </diary_snap_cut>
@@ -829,15 +829,15 @@ $('#db_race_detail').addClass('classic');
 <td align="right" class="w1ml" nowrap="nowrap"><span>1</span></td>
 <td class="txt_r" nowrap="nowrap">1</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/horse/2017105100/" id="umalink_201908040309" title="ã‚¨ã‚¤ãƒªã‚¢ã‚¹">ã‚¨ã‚¤ãƒªã‚¢ã‚¹</a>
+<a href="/horse/2017105100/" id="umalink_201908040309" title="ƒGƒCƒŠƒAƒX">ƒGƒCƒŠƒAƒX</a>
 </td>
-<td class="txt_c" nowrap="nowrap">ç‰¡2</td>
+<td class="txt_c" nowrap="nowrap">‰²2</td>
 <td class="txt_c" nowrap="nowrap">55</td>
 <td class="txt_l" nowrap="nowrap">
-<a href="/jockey/result/recent/05243/" title="æŸ´å±±é›„ä¸€">æŸ´å±±é›„ä¸€</a>
+<a href="/jockey/result/recent/05243/" title="ŽÄŽR—Yˆê">ŽÄŽR—Yˆê</a>
 </td>
 <td class="txt_r" nowrap="nowrap">1:29.8</td>
-<td class="txt_c" nowrap="nowrap">å¤§</td>
+<td class="txt_c" nowrap="nowrap">‘å</td>
 <diary_snap_cut>
 <td class="speed_index bml" nowrap="nowrap">
 <div class="txt_c">
@@ -861,12 +861,12 @@ $('#db_race_detail').addClass('classic');
 </td>
 </diary_snap_cut>
 <td class="txt_l" nowrap="nowrap">
-[è¥¿]
-<a href="/trainer/result/recent/00411/" title="æµ…è¦‹ç§€ä¸€">æµ…è¦‹ç§€ä¸€</a>
+[¼]
+<a href="/trainer/result/recent/00411/" title="óŒ©Gˆê">óŒ©Gˆê</a>
 </td>
 <diary_snap_cut>
 <td class="txt_l w1ml" nowrap="nowrap">
-<a href="/owner/result/recent/226800/" title="ã‚µãƒ³ãƒ‡ãƒ¼ãƒ¬ãƒ¼ã‚·ãƒ³ã‚°">ã‚µãƒ³ãƒ‡ãƒ¼ãƒ¬ãƒ¼ã‚·ãƒ³ã‚°</a>
+<a href="/owner/result/recent/226800/" title="ƒTƒ“ƒf[ƒŒ[ƒVƒ“ƒO">ƒTƒ“ƒf[ƒŒ[ƒVƒ“ƒO</a>
 </td>
 <td class="txt_r" nowrap="nowrap"></td>
 </diary_snap_cut>
@@ -874,8 +874,8 @@ $('#db_race_detail').addClass('classic');
 </table>
 <script src="/style/netkeiba.ja/js/umalink.js" type="text/javascript"></script>
 <div class="diary_snap_write_box">
-<p><a href="/?pid=diary_snapshot&amp;snap=aHR0cDovL2RiLm5ldGtlaWJhLmNvbS8/cGlkPXJhY2VfZGV0YWlsJmlkPTIwMTkwODA0MDMwOQ==&amp;meta=race_result" title="ã²ã¨ã“ã¨æ—¥è¨˜ã‚’æ›¸ã"><img class="imgover" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/prof_btn_diary_write_01.png"/></a></p>
-<p>â€»ã“ã®ãƒ¬ãƒ¼ã‚¹ã«ã¤ã„ã¦ã€æ—¥è¨˜ã‚’æ›¸ãã“ã¨ãŒã§ãã¾ã™ã€‚</p>
+<p><a href="/?pid=diary_snapshot&amp;snap=aHR0cDovL2RiLm5ldGtlaWJhLmNvbS8/cGlkPXJhY2VfZGV0YWlsJmlkPTIwMTkwODA0MDMwOQ==&amp;meta=race_result" title="‚Ð‚Æ‚±‚Æ“ú‹L‚ð‘‚­"><img class="imgover" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/prof_btn_diary_write_01.png"/></a></p>
+<p>¦‚±‚ÌƒŒ[ƒX‚É‚Â‚¢‚ÄA“ú‹L‚ð‘‚­‚±‚Æ‚ª‚Å‚«‚Ü‚·B</p>
 </div><!-- /.diary_snap_write_box -->
 <script type="text/javascript">
 $(document).on( 'click', '#action_regist', function(){
@@ -936,56 +936,56 @@ location.reload();
 <div class="result_info box_left">
 <diary_snap>
 <dl class="pay_block">
-<dt><h3>æ‰•ã„æˆ»ã—</h3></dt>
+<dt><h3>•¥‚¢–ß‚µ</h3></dt>
 <dd class="fc">
-<table cellpadding="0" cellspacing="1" class="pay_table_01" summary="æ‰•ã„æˆ»ã—">
+<table cellpadding="0" cellspacing="1" class="pay_table_01" summary="•¥‚¢–ß‚µ">
 <tr>
-<th class="tan">å˜å‹</th>
+<th class="tan">’PŸ</th>
 <td>10</td>
 <td class="txt_r">260</td>
 <td class="txt_r">1</td>
 </tr>
 <tr>
-<th align="center" class="fuku">è¤‡å‹</th>
+<th align="center" class="fuku">•¡Ÿ</th>
 <td>10<br/>2<br/>5</td>
 <td class="txt_r">110<br/>120<br/>140</td>
 <td class="txt_r">1<br/>2<br/>3</td>
 </tr>
 <tr>
-<th align="center" class="waku">æž é€£</th>
+<th align="center" class="waku">˜g˜A</th>
 <td>2 - 8</td>
 <td class="txt_r">380</td>
 <td class="txt_r">1</td>
 </tr>
 <tr>
-<th align="center" class="uren">é¦¬é€£</th>
+<th align="center" class="uren">”n˜A</th>
 <td>2 - 10</td>
 <td class="txt_r">390</td>
 <td class="txt_r">1</td>
 </tr>
 </table>
-<table cellpadding="0" cellspacing="1" class="pay_table_01" summary="æ‰•ã„æˆ»ã—">
+<table cellpadding="0" cellspacing="1" class="pay_table_01" summary="•¥‚¢–ß‚µ">
 <tr>
-<th class="wide">ãƒ¯ã‚¤ãƒ‰</th>
+<th class="wide">ƒƒCƒh</th>
 <td>2 - 10<br/>5 - 10<br/>2 - 5</td>
 <td class="txt_r">190<br/>240<br/>280</td>
 <td class="txt_r">1<br/>2<br/>3</td>
 </tr>
 <tr>
-<th class="utan">é¦¬å˜</th>
-<td>10 â†’ 2</td>
+<th class="utan">”n’P</th>
+<td>10 ¨ 2</td>
 <td class="txt_r">740</td>
 <td class="txt_r">1</td>
 </tr>
 <tr>
-<th class="sanfuku">ä¸‰é€£è¤‡</th>
+<th class="sanfuku">ŽO˜A•¡</th>
 <td>2 - 5 - 10</td>
 <td class="txt_r">530</td>
 <td class="txt_r">1</td>
 </tr>
 <tr>
-<th class="santan">ä¸‰é€£å˜</th>
-<td>10 â†’ 2 â†’ 5</td>
+<th class="santan">ŽO˜A’P</th>
+<td>10 ¨ 2 ¨ 5</td>
 <td class="txt_r">1,870</td>
 <td class="txt_r">1</td>
 </tr>
@@ -993,54 +993,54 @@ location.reload();
 </dd>
 </dl>
 </diary_snap>
-<table cellpadding="0" cellspacing="0" class="result_table_02" summary="é¦¬å ´æƒ…å ±" width="100%">
-<caption>é¦¬å ´æƒ…å ±</caption>
+<table cellpadding="0" cellspacing="0" class="result_table_02" summary="”nêî•ñ" width="100%">
+<caption>”nêî•ñ</caption>
 <tr>
-<th>é¦¬å ´æŒ‡æ•°<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
-<td>ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹ã«ã”åŠ å…¥ã—ã¦é ‚ãã¨<a data-theme="07002" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_22">é¦¬å ´æŒ‡æ•°</a>ãŒç¢ºèªã§ãã¾ã™ã€‚<br/><a data-theme="07002" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_23">ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹æ¡ˆå†…ã¸</a></td>
+<th>”nêŽw”<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/></th>
+<td>ƒvƒŒƒ~ƒAƒT[ƒrƒX‚É‚²‰Á“ü‚µ‚Ä’¸‚­‚Æ<a data-theme="07002" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_22">”nêŽw”</a>‚ªŠm”F‚Å‚«‚Ü‚·B<br/><a data-theme="07002" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_23">ƒvƒŒƒ~ƒAƒT[ƒrƒXˆÄ“à‚Ö</a></td>
 </tr>
 <tr>
-<th>é¦¬å ´ã‚³ãƒ¡ãƒ³ãƒˆ<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/>Â (<a data-theme="07005" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_52">?</a>)</th>
-<td>ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹ã«ã”åŠ å…¥ã—ã¦é ‚ãã¨<a data-theme="07005" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_53">é¦¬å ´ã‚³ãƒ¡ãƒ³ãƒˆ</a>ãŒç¢ºèªã§ãã¾ã™ã€‚<br/><a data-theme="07005" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_54">ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹æ¡ˆå†…ã¸</a></td>
+<th>”nêƒRƒƒ“ƒg<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/>?(<a data-theme="07005" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_52">?</a>)</th>
+<td>ƒvƒŒƒ~ƒAƒT[ƒrƒX‚É‚²‰Á“ü‚µ‚Ä’¸‚­‚Æ<a data-theme="07005" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_53">”nêƒRƒƒ“ƒg</a>‚ªŠm”F‚Å‚«‚Ü‚·B<br/><a data-theme="07005" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_54">ƒvƒŒƒ~ƒAƒT[ƒrƒXˆÄ“à‚Ö</a></td>
 </tr>
 </table>
-<table cellpadding="0" cellspacing="0" class="result_table_02" summary="ã‚³ãƒ¼ãƒŠãƒ¼é€šéŽé †ä½" width="100%">
-<caption>ã‚³ãƒ¼ãƒŠãƒ¼é€šéŽé †ä½</caption>
+<table cellpadding="0" cellspacing="0" class="result_table_02" summary="ƒR[ƒi[’Ê‰ß‡ˆÊ" width="100%">
+<caption>ƒR[ƒi[’Ê‰ß‡ˆÊ</caption>
 <tr>
-<th>3ã‚³ãƒ¼ãƒŠãƒ¼</th>
+<th>3ƒR[ƒi[</th>
 <td>3,7-(9,2)-10(4,11)6(5,8)-1</td>
 </tr><tr>
-<th>4ã‚³ãƒ¼ãƒŠãƒ¼</th>
+<th>4ƒR[ƒi[</th>
 <td>3,7(9,2)-10,4(6,11)(5,8)=1</td>
 </tr>
 </table>
-<table cellpadding="0" cellspacing="0" class="result_table_02" summary="ãƒ©ãƒƒãƒ—ã‚¿ã‚¤ãƒ " width="100%">
-<caption>ãƒ©ãƒƒãƒ—ã‚¿ã‚¤ãƒ </caption>
+<table cellpadding="0" cellspacing="0" class="result_table_02" summary="ƒ‰ƒbƒvƒ^ƒCƒ€" width="100%">
+<caption>ƒ‰ƒbƒvƒ^ƒCƒ€</caption>
 <tr>
-<th>ãƒ©ãƒƒãƒ—</th>
+<th>ƒ‰ƒbƒv</th>
 <td class="race_lap_cell">12.4 - 11.3 - 11.9 - 12.2 - 12.1 - 11.9 - 12.3</td>
 </tr>
 <tr>
-<th>ãƒšãƒ¼ã‚¹</th>
-<td class="race_lap_cell">12.4 - 23.7 - 35.6 - 47.8 - 59.9 - 71.8 - 84.1Â (35.6-36.3)</td>
+<th>ƒy[ƒX</th>
+<td class="race_lap_cell">12.4 - 23.7 - 35.6 - 47.8 - 59.9 - 71.8 - 84.1?(35.6-36.3)</td>
 </tr>
 </table>
 </div><!-- /.result_left -->
 <div class="result_info box_right">
-<table cellpadding="0" cellspacing="0" class="result_table_02" summary="ãƒ¬ãƒ¼ã‚¹åˆ†æž" width="100%">
-<caption>ãƒ¬ãƒ¼ã‚¹åˆ†æž</caption>
+<table cellpadding="0" cellspacing="0" class="result_table_02" summary="ƒŒ[ƒX•ªÍ" width="100%">
+<caption>ƒŒ[ƒX•ªÍ</caption>
 <tr>
-<th>åˆ†æžã‚³ãƒ¡ãƒ³ãƒˆ<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/>Â (<a data-theme="07006" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_62">?</a>)</th>
-<td>ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹ã«ã”åŠ å…¥ã—ã¦é ‚ãã¨<a data-theme="07006" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_63">ãƒ¬ãƒ¼ã‚¹åˆ†æž</a>ãŒç¢ºèªã§ãã¾ã™ã€‚<br/><a data-theme="07006" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_64">ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹æ¡ˆå†…ã¸</a></td>
+<th>•ªÍƒRƒƒ“ƒg<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/>?(<a data-theme="07006" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_62">?</a>)</th>
+<td>ƒvƒŒƒ~ƒAƒT[ƒrƒX‚É‚²‰Á“ü‚µ‚Ä’¸‚­‚Æ<a data-theme="07006" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_63">ƒŒ[ƒX•ªÍ</a>‚ªŠm”F‚Å‚«‚Ü‚·B<br/><a data-theme="07006" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_64">ƒvƒŒƒ~ƒAƒT[ƒrƒXˆÄ“à‚Ö</a></td>
 </tr>
 </table>
-<table cellpadding="0" cellspacing="0" class="result_table_02" summary="æ³¨ç›®é¦¬ ãƒ¬ãƒ¼ã‚¹å¾Œã®çŸ­è©•" width="100%">
-<caption>æ³¨ç›®é¦¬ ãƒ¬ãƒ¼ã‚¹å¾Œã®çŸ­è©•<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/>Â (<a data-theme="07009" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_92">?</a>)</caption>
+<table cellpadding="0" cellspacing="0" class="result_table_02" summary="’–Ú”n ƒŒ[ƒXŒã‚Ì’Z•]" width="100%">
+<caption>’–Ú”n ƒŒ[ƒXŒã‚Ì’Z•]<img height="16" src="https://cdn.netkeiba.com/img.db//style/netkeiba.ja/image/ico_premium.gif" width="16"/>?(<a data-theme="07009" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_92">?</a>)</caption>
 <tr>
-<th>ç€é †:é¦¬å</th>
+<th>’…‡:”n–¼</th>
 </tr>
 <tr>
-<td>ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹ã«ã”åŠ å…¥ã—ã¦é ‚ãã¨<a data-theme="07009" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_93">ãƒ¬ãƒ¼ã‚¹å¾Œã®çŸ­è©•</a>ãŒç¢ºèªã§ãã¾ã™ã€‚<br/><a data-theme="07009" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_94">ãƒ—ãƒ¬ãƒŸã‚¢ã‚µãƒ¼ãƒ“ã‚¹æ¡ˆå†…ã¸</a></td>
+<td>ƒvƒŒƒ~ƒAƒT[ƒrƒX‚É‚²‰Á“ü‚µ‚Ä’¸‚­‚Æ<a data-theme="07009" href="/?pid=info&amp;mode=premium" id="a_monthly_goods_link_93">ƒŒ[ƒXŒã‚Ì’Z•]</a>‚ªŠm”F‚Å‚«‚Ü‚·B<br/><a data-theme="07009" href="https://regist.netkeiba.com/?pid=premium" id="a_monthly_goods_link_94">ƒvƒŒƒ~ƒAƒT[ƒrƒXˆÄ“à‚Ö</a></td>
 </tr>
 </table>
 </div><!-- /.result_right -->
@@ -1057,7 +1057,7 @@ googletag.cmd.push(function() { googletag.display('1492793'); });
 <footer>
 <div class="NkFooterArea">
 <div class="BtnPagetop">
-<a href="javascript:void(0)" title="ãƒšãƒ¼ã‚¸ãƒˆãƒƒãƒ—ã¸"></a>
+<a href="javascript:void(0)" title="ƒy[ƒWƒgƒbƒv‚Ö"></a>
 </div><!-- /.BtnPagetop -->
 <script type="text/javascript">
 $(function() {
@@ -1070,7 +1070,7 @@ return false;
 });
 </script>
 <div class="KeirinLink01">
-<a href="//keirin.netkeiba.com/?rf=nk_pc_footer" title="netkeirin"><img alt="ã„ã¾ç«¶è¼ªãŒç†±ã„ï¼nerkeirinã§ç«¶è¼ªã‚’æ°—è»½ã«æ¥½ã—ã‚‚ã†" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/PC_footer_bnr01.png"/></a>
+<a href="//keirin.netkeiba.com/?rf=nk_pc_footer" title="netkeirin"><img alt="‚¢‚Ü‹£—Ö‚ª”M‚¢Inerkeirin‚Å‹£—Ö‚ð‹CŒy‚ÉŠy‚µ‚à‚¤" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/PC_footer_bnr01.png"/></a>
 </div><!-- /.KeirinLink01 -->
 <dl class="FootSiteTitle fc">
 <dt>
@@ -1079,115 +1079,115 @@ return false;
 </a>
 </dt>
 <dd>
-<p>åˆ©ç”¨è€…æ•°<strong>1700</strong>ä¸‡äººçªç ´ï¼<strong>No.1</strong>ç«¶é¦¬ã‚µã‚¤ãƒˆ</p>
+<p>—˜—pŽÒ”<strong>1700</strong>–œl“Ë”jI<strong>No.1</strong>‹£”nƒTƒCƒg</p>
 </dd>
 </dl>
 <div class="FootWrap">
 <dl class="NkFoot01 NkFootCateLink">
-<dt>ã‚«ãƒ†ã‚´ãƒª</dt>
+<dt>ƒJƒeƒSƒŠ</dt>
 <dd class="fc">
 <ul>
 <li>
-<a href="https://news.netkeiba.com/?rf=footer" title="ãƒ‹ãƒ¥ãƒ¼ã‚¹">ãƒ‹ãƒ¥ãƒ¼ã‚¹</a>
+<a href="https://news.netkeiba.com/?rf=footer" title="ƒjƒ…[ƒX">ƒjƒ…[ƒX</a>
 </li>
 <li>
-<a href="https://race.netkeiba.com/top/?rf=footer" title="ãƒ¬ãƒ¼ã‚¹">ãƒ¬ãƒ¼ã‚¹</a>
+<a href="https://race.netkeiba.com/top/?rf=footer" title="ƒŒ[ƒX">ƒŒ[ƒX</a>
 </li>
 <li>
-<a href="https://yoso.netkeiba.com/?rf=footer" title="ã‚¦ãƒžã„é¦¬åˆ¸">ã‚¦ãƒžã„é¦¬åˆ¸</a>
+<a href="https://yoso.netkeiba.com/?rf=footer" title="ƒEƒ}‚¢”nŒ”">ƒEƒ}‚¢”nŒ”</a>
 </li>
 <li>
-<a href="https://news.netkeiba.com/?pid=column_top&amp;rf=footer" title="ã‚³ãƒ©ãƒ ">ã‚³ãƒ©ãƒ </a>
+<a href="https://news.netkeiba.com/?pid=column_top&amp;rf=footer" title="ƒRƒ‰ƒ€">ƒRƒ‰ƒ€</a>
 </li>
 <li>
 <a href="https://tv.netkeiba.com/?rf=footer" title="netkeibaTV">netkeibaTV</a>
 </li>
 <li>
-<a href="https://nar.netkeiba.com/top/?rf=footer" title="åœ°æ–¹ç«¶é¦¬">åœ°æ–¹ç«¶é¦¬</a>
+<a href="https://nar.netkeiba.com/top/?rf=footer" title="’n•û‹£”n">’n•û‹£”n</a>
 </li>
 <li>
-<a href="https://db.netkeiba.com/?rf=footer" title="ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹">ãƒ‡ãƒ¼ã‚¿ãƒ™ãƒ¼ã‚¹</a>
+<a href="https://db.netkeiba.com/?rf=footer" title="ƒf[ƒ^ƒx[ƒX">ƒf[ƒ^ƒx[ƒX</a>
 </li>
 <li>
-<a href="https://orepro.netkeiba.com/?rf=footer" title="ä¿ºãƒ—ãƒ­">ä¿ºãƒ—ãƒ­</a>
+<a href="https://orepro.netkeiba.com/?rf=footer" title="‰´ƒvƒ">‰´ƒvƒ</a>
 </li>
 </ul>
 <ul>
 <li>
-<a href="https://owner.netkeiba.com/?rf=footer" title="ä¸€å£é¦¬ä¸»">ä¸€å£é¦¬ä¸»</a>
+<a href="https://owner.netkeiba.com/?rf=footer" title="ˆêŒû”nŽå">ˆêŒû”nŽå</a>
 </li>
 <li>
 <a href="https://pog.netkeiba.com/?rf=footer" title="POG">POG</a>
 </li>
 <li>
-<a href="https://bbs.pc.keiba.findfriends.jp/?rf=footer" title="ç«¶é¦¬åºƒå ´">ç«¶é¦¬åºƒå ´</a>
+<a href="https://bbs.pc.keiba.findfriends.jp/?rf=footer" title="‹£”nLê">‹£”nLê</a>
 </li>
 <li>
-<a href="https://dir.netkeiba.com/keibamatome/index.html?rf=footer" title="ã¾ã¨ã‚">ã¾ã¨ã‚</a>
+<a href="https://dir.netkeiba.com/keibamatome/index.html?rf=footer" title="‚Ü‚Æ‚ß">‚Ü‚Æ‚ß</a>
 </li>
 <li>
-<a href="https://yoso.netkeiba.com/senmonshi/?rf=footer" title="ç«¶é¦¬æ–°èž">ç«¶é¦¬æ–°èž</a>
+<a href="https://yoso.netkeiba.com/senmonshi/?rf=footer" title="‹£”nV•·">‹£”nV•·</a>
 </li>
 <li>
-<a href="https://race.netkeiba.com/bookmark/bookmark.html?rf=footer" title="ãŠæ°—ã«å…¥ã‚Šé¦¬">ãŠæ°—ã«å…¥ã‚Šé¦¬</a>
+<a href="https://race.netkeiba.com/bookmark/bookmark.html?rf=footer" title="‚¨‹C‚É“ü‚è”n">‚¨‹C‚É“ü‚è”n</a>
 </li>
 <li>
-<a href="https://regist.netkeiba.com/?rf=footer" title="ã‚¢ã‚«ã‚¦ãƒ³ãƒˆ">ã‚¢ã‚«ã‚¦ãƒ³ãƒˆ</a>
+<a href="https://regist.netkeiba.com/?rf=footer" title="ƒAƒJƒEƒ“ƒg">ƒAƒJƒEƒ“ƒg</a>
 </li>
 </ul>
 </dd>
 </dl>
 <dl class="NkFoot01">
-<dt>ãƒ˜ãƒ«ãƒ—ï¼†ã‚¬ã‚¤ãƒ‰</dt>
+<dt>ƒwƒ‹ƒv•ƒKƒCƒh</dt>
 <dd>
 <ul>
 <li>
-<a href="https://info.netkeiba.com/?rf=footer" title="ãŠçŸ¥ã‚‰ã›">ãŠçŸ¥ã‚‰ã›</a>
+<a href="https://info.netkeiba.com/?rf=footer" title="‚¨’m‚ç‚¹">‚¨’m‚ç‚¹</a>
 </li>
 <li>
-<a href="https://regist.netkeiba.com/?pid=premium&amp;rf=footer" title="ãƒ—ãƒ¬ãƒŸã‚¢ãƒ ã‚µãƒ¼ãƒ“ã‚¹ã®ã”æ¡ˆå†…">ãƒ—ãƒ¬ãƒŸã‚¢ãƒ ã‚µãƒ¼ãƒ“ã‚¹ã®ã”æ¡ˆå†…</a>
+<a href="https://regist.netkeiba.com/?pid=premium&amp;rf=footer" title="ƒvƒŒƒ~ƒAƒ€ƒT[ƒrƒX‚Ì‚²ˆÄ“à">ƒvƒŒƒ~ƒAƒ€ƒT[ƒrƒX‚Ì‚²ˆÄ“à</a>
 </li>
 <li>
-<a href="https://regist.netkeiba.com/?pid=help&amp;rf=footer" title="ã‚ˆãã‚ã‚‹è³ªå•ãƒ»ãŠå•ã„åˆã‚ã›">ã‚ˆãã‚ã‚‹è³ªå•ãƒ»ãŠå•ã„åˆã‚ã›</a>
+<a href="https://regist.netkeiba.com/?pid=help&amp;rf=footer" title="‚æ‚­‚ ‚éŽ¿–âE‚¨–â‚¢‡‚í‚¹">‚æ‚­‚ ‚éŽ¿–âE‚¨–â‚¢‡‚í‚¹</a>
 </li>
 </ul>
 </dd>
 </dl>
 <dl class="NkFoot01">
-<dt>netkeiba.comã«ã¤ã„ã¦</dt>
+<dt>netkeiba.com‚É‚Â‚¢‚Ä</dt>
 <dd>
 <ul>
 <li>
-<a href="https://www.netkeiba.com/recruit/?rf=footer" title="æŽ¡ç”¨æƒ…å ±">æŽ¡ç”¨æƒ…å ±</a>
+<a href="https://www.netkeiba.com/recruit/?rf=footer" title="Ì—pî•ñ">Ì—pî•ñ</a>
 </li>
 <li>
-<a href="https://www.netkeiba.com/info/ad/?rf=footer" title="åºƒå‘ŠæŽ²è¼‰ã«ã¤ã„ã¦">åºƒå‘ŠæŽ²è¼‰ã«ã¤ã„ã¦</a>
+<a href="https://www.netkeiba.com/info/ad/?rf=footer" title="LŒfÚ‚É‚Â‚¢‚Ä">LŒfÚ‚É‚Â‚¢‚Ä</a>
 </li>
 <li>
-<a href="https://www.netkeiba.com/info/kiyaku.html?rf=footer" title="åˆ©ç”¨è¦ç´„">åˆ©ç”¨è¦ç´„</a>
+<a href="https://www.netkeiba.com/info/kiyaku.html?rf=footer" title="—˜—p‹K–ñ">—˜—p‹K–ñ</a>
 </li>
 <li>
-<a href="https://www.netdreamers.co.jp/company/about/privacy.html?rf=footer" title="ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ãƒãƒªã‚·ãƒ¼">ãƒ—ãƒ©ã‚¤ãƒã‚·ãƒ¼ãƒãƒªã‚·ãƒ¼</a>
+<a href="https://www.netdreamers.co.jp/company/about/privacy.html?rf=footer" title="ƒvƒ‰ƒCƒoƒV[ƒ|ƒŠƒV[">ƒvƒ‰ƒCƒoƒV[ƒ|ƒŠƒV[</a>
 </li>
 <li>
-<a href="https://www.netkeiba.com/info/guide.html?rf=footer" title="æŠ•ç¨¿ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³">æŠ•ç¨¿ã‚¬ã‚¤ãƒ‰ãƒ©ã‚¤ãƒ³</a>
+<a href="https://www.netkeiba.com/info/guide.html?rf=footer" title="“ŠeƒKƒCƒhƒ‰ƒCƒ“">“ŠeƒKƒCƒhƒ‰ƒCƒ“</a>
 </li>
 <li>
-<a href="https://www.netkeiba.com/info/tokusyo.html?rf=footer" title="ç‰¹å®šå•†å–å¼•æ³•ã«åŸºã¥ãè¡¨è¨˜">ç‰¹å®šå•†å–å¼•æ³•ã«åŸºã¥ãè¡¨è¨˜</a>
+<a href="https://www.netkeiba.com/info/tokusyo.html?rf=footer" title="“Á’è¤Žæˆø–@‚ÉŠî‚Ã‚­•\‹L">“Á’è¤Žæˆø–@‚ÉŠî‚Ã‚­•\‹L</a>
 </li>
 <li>
-<a href="https://www.netdreamers.co.jp/?rf=footer" title="é‹å–¶ä¼šç¤¾">é‹å–¶ä¼šç¤¾</a>
+<a href="https://www.netdreamers.co.jp/?rf=footer" title="‰^‰c‰ïŽÐ">‰^‰c‰ïŽÐ</a>
 </li>
 </ul>
 </dd>
 </dl>
 <dl class="NkFoot01">
-<dt>ã‚¹ãƒžãƒ›ã§netkeiba</dt>
+<dt>ƒXƒ}ƒz‚Ånetkeiba</dt>
 <dd class="SpNkInfoImg">
-<img alt="æ¤œç´¢" class="SearchImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_searchimg01.png"/>
-<img alt="ãƒãƒ¼ã‚³ãƒ¼ãƒ‰" class="QrImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_qr01.png"/>
+<img alt="ŒŸõ" class="SearchImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_searchimg01.png"/>
+<img alt="ƒo[ƒR[ƒh" class="QrImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_qr01.png"/>
 </dd>
-<dt>ã‚¢ãƒ—ãƒªã§ã‚µã‚¯ã‚µã‚¯netkeiba</dt>
+<dt>ƒAƒvƒŠ‚ÅƒTƒNƒTƒNnetkeiba</dt>
 <dd>
 <ul class="AprStoreList fc">
 <li>
@@ -1201,16 +1201,16 @@ return false;
 <dd class="Nk_Sns">
 <ul class="fc">
 <li>
-<a class="Tw" href="https://twitter.com/netkeiba" title="å…¬å¼ Twitter"></a>
+<a class="Tw" href="https://twitter.com/netkeiba" title="ŒöŽ® Twitter"></a>
 </li>
 <li>
-<a class="Fb" href="https://ja-jp.facebook.com/netkeiba" title="å…¬å¼ Facebook"></a>
+<a class="Fb" href="https://ja-jp.facebook.com/netkeiba" title="ŒöŽ® Facebook"></a>
 </li>
 <li>
 <a class="Line" href="https://line.me/R/ti/p/%40oa-netkeiba" title="LINE"></a>
 </li>
 <li>
-<a class="Yt" href="http://www.youtube.com/user/netkeibaTV" title="netkeibaãƒãƒ£ãƒ³ãƒãƒ«"></a>
+<a class="Yt" href="http://www.youtube.com/user/netkeibaTV" title="netkeibaƒ`ƒƒƒ“ƒlƒ‹"></a>
 </li>
 <li>
 <a class="Ig" href="https://www.instagram.com/netkeiba/" title="Instagram"></a>
@@ -1226,58 +1226,58 @@ return false;
 <div class="GlobalFooterArea">
 <div class="FootWrap">
 <dl class="NkFoot02">
-<dt class="GfootIcon01 IconGame01">netkeiba.com å…¬å¼ç«¶é¦¬ã‚²ãƒ¼ãƒ </dt>
+<dt class="GfootIcon01 IconGame01">netkeiba.com ŒöŽ®‹£”nƒQ[ƒ€</dt>
 <dd>
 <ul>
 <li>
-<a href="https://www.netkeiba.com/game/umasta.html?rf=footer" target="_blank" title="ã†ã¾ã„ã‚‹ã‚¹ã‚¿ã‚¸ã‚¢ãƒ ">ã¿ã‚“ãªã®æ„›é¦¬ã¨ãƒãƒˆãƒ«ï¼ <strong>ã†ã¾ã„ã‚‹ã‚¹ã‚¿ã‚¸ã‚¢ãƒ </strong></a>
+<a href="https://www.netkeiba.com/game/umasta.html?rf=footer" target="_blank" title="‚¤‚Ü‚¢‚éƒXƒ^ƒWƒAƒ€">‚Ý‚ñ‚È‚Ìˆ¤”n‚Æƒoƒgƒ‹I <strong>‚¤‚Ü‚¢‚éƒXƒ^ƒWƒAƒ€</strong></a>
 </li>
 </ul>
 </dd>
-<dt class="GfootIcon01 IconSisterSite01">netkeiba.com å§‰å¦¹ã‚µã‚¤ãƒˆ</dt>
+<dt class="GfootIcon01 IconSisterSite01">netkeiba.com Žo–…ƒTƒCƒg</dt>
 <dd>
 <ul>
 <li>
-<a href="//keirin.netkeiba.com/?rf=footer" target="_blank">ç«¶è¼ªç·åˆãƒ¡ãƒ‡ã‚£ã‚¢ <strong>netkeirin(ãƒãƒƒãƒˆã‚±ã‚¤ãƒªãƒ³)</strong></a>
-</li>
-</ul>
-</dd>
-</dl>
-<dl class="NkFoot02">
-<dt class="GfootIcon01 IconMedia01">é–¢é€£ãƒ¡ãƒ‡ã‚£ã‚¢</dt>
-<dd>
-<ul>
-<li>
-<a href="https://sp.baseball.findfriends.jp/?rf=footer" target="_blank" title="é€±åˆŠãƒ™ãƒ¼ã‚¹ãƒœãƒ¼ãƒ«ONLINE">å¾¹åº•å–æï¼é‡Žçƒæƒ…å ±ã¯ <strong>é€±åˆŠãƒ™ãƒ¼ã‚¹ãƒœãƒ¼ãƒ«ONLINE</strong></a>
-</li>
-<li>
-<a href="https://sp.golf.findfriends.jp/?rf=footer" target="_blank" title="ãƒ¯ãƒƒã‚°ãƒ«ã‚ªãƒ³ãƒ©ã‚¤ãƒ³">ã‚´ãƒ«ãƒ•ãƒ¬ãƒƒã‚¹ãƒ³æƒ…å ±ã‚µã‚¤ãƒˆ <strong>ãƒ¯ãƒƒã‚°ãƒ«ã‚ªãƒ³ãƒ©ã‚¤ãƒ³</strong></a>
-</li>
-<li>
-<a href="https://recipe.sp.findfriends.jp/?rf=footer" target="_blank" title="KATSUYOãƒ¬ã‚·ãƒ”">å°æž—ã‚«ãƒ„ä»£ç›´ä¼ï¼ <strong>KATSUYOãƒ¬ã‚·ãƒ”</strong></a>
+<a href="//keirin.netkeiba.com/?rf=footer" target="_blank">‹£—Ö‘‡ƒƒfƒBƒA <strong>netkeirin(ƒlƒbƒgƒPƒCƒŠƒ“)</strong></a>
 </li>
 </ul>
 </dd>
 </dl>
 <dl class="NkFoot02">
-<dt class="GfootIcon01 IconSoftware01">ã‚½ãƒ•ãƒˆã‚¦ã‚§ã‚¢ãƒ»ãƒ—ãƒ­ãƒ€ã‚¯ãƒˆ</dt>
+<dt class="GfootIcon01 IconMedia01">ŠÖ˜AƒƒfƒBƒA</dt>
 <dd>
 <ul>
 <li>
-<a href="https://smart.lets-ktai.jp/?rf=footer" target="_blank" title="SMARTä¼šå“¡è¨¼">ã‚‚ã£ã¨ã‚‚ã‚»ã‚­ãƒ¥ã‚¢ãªåº—èˆ—å£²ä¸Šå‘ä¸Šã‚¢ãƒ—ãƒª <strong>SMARTä¼šå“¡è¨¼</strong></a>
+<a href="https://sp.baseball.findfriends.jp/?rf=footer" target="_blank" title="TŠ§ƒx[ƒXƒ{[ƒ‹ONLINE">“O’êŽæÞI–ì‹…î•ñ‚Í <strong>TŠ§ƒx[ƒXƒ{[ƒ‹ONLINE</strong></a>
 </li>
 <li>
-<a href="https://lets-ktai.jp/?rf=footer" target="_blank" title="Let'sã‚±ãƒ¼ã‚¿ã‚¤ï¼">ã‚¹ãƒžãƒ›ã‚µã‚¤ãƒˆåˆ¶ä½œASP <strong>Let'sã‚±ãƒ¼ã‚¿ã‚¤ï¼</strong></a>
+<a href="https://sp.golf.findfriends.jp/?rf=footer" target="_blank" title="ƒƒbƒOƒ‹ƒIƒ“ƒ‰ƒCƒ“">ƒSƒ‹ƒtƒŒƒbƒXƒ“î•ñƒTƒCƒg <strong>ƒƒbƒOƒ‹ƒIƒ“ƒ‰ƒCƒ“</strong></a>
 </li>
 <li>
-<a href="https://webspiral.jp/?rf=footer" target="_blank" title="WEB SPIRAL">ã‚µã‚¤ãƒˆé‹å–¶ã‚’åŠ‡çš„ã«åŠ¹çŽ‡åŒ–ã™ã‚‹CMS <strong>WEB SPIRAL</strong></a>
+<a href="https://recipe.sp.findfriends.jp/?rf=footer" target="_blank" title="KATSUYOƒŒƒVƒs">¬—ÑƒJƒc‘ã’¼“`I <strong>KATSUYOƒŒƒVƒs</strong></a>
+</li>
+</ul>
+</dd>
+</dl>
+<dl class="NkFoot02">
+<dt class="GfootIcon01 IconSoftware01">ƒ\ƒtƒgƒEƒFƒAEƒvƒƒ_ƒNƒg</dt>
+<dd>
+<ul>
+<li>
+<a href="https://smart.lets-ktai.jp/?rf=footer" target="_blank" title="SMART‰ïˆõØ">‚à‚Á‚Æ‚àƒZƒLƒ…ƒA‚È“X•Ü”„ãŒüãƒAƒvƒŠ <strong>SMART‰ïˆõØ</strong></a>
+</li>
+<li>
+<a href="https://lets-ktai.jp/?rf=footer" target="_blank" title="Let'sƒP[ƒ^ƒCI">ƒXƒ}ƒzƒTƒCƒg§ìASP <strong>Let'sƒP[ƒ^ƒCI</strong></a>
+</li>
+<li>
+<a href="https://webspiral.jp/?rf=footer" target="_blank" title="WEB SPIRAL">ƒTƒCƒg‰^‰c‚ðŒ€“I‚ÉŒø—¦‰»‚·‚éCMS <strong>WEB SPIRAL</strong></a>
 </li>
 </ul>
 </dd>
 </dl>
 </div><!-- /.FootWrap -->
 <p class="CopyRight">
-<small>Â© Net Dreamers Co., Ltd.</small>
+<small>? Net Dreamers Co., Ltd.</small>
 </p>
 </div><!-- /.GlobalFooterArea -->
 </footer>
