@@ -16,7 +16,7 @@ def get_param():
         row = table.loc[index]
         # キーになる馬番を取得
         no = row['馬番']
-        horse_dict[no][1].horse_num = row['馬番']
+        horse_dict[no][1].horse_no = row['馬番']
     #print(df.loc[0]['着順'])
 
 def html():
@@ -37,22 +37,22 @@ class CommonInfo():
     '''レースを一意に定めるデータのデータクラス'''
     def __init__(self):
         self.__race_date = '' # レース開催日
-        self.__race_num = '' # レース番号
+        self.__race_no = '' # レース番号
         self.__baba_code = '' # 競馬場コード
 
     # getter
     @property
     def race_date(self): return self.__race_date
     @property
-    def race_num(self): return self.__race_num
+    def race_no(self): return self.__race_no
     @property
     def baba_code(self): return self.__baba_code
 
     # setter
     @race_date.setter
     def race_date(self, race_date): self.__race_date = race_date
-    @race_num.setter
-    def race_num(self, race_num): self.__race_num = race_num
+    @race_no.setter
+    def race_no(self, race_no): self.__race_no = race_no
     @baba_code.setter
     def baba_code(self, baba_code): self.__baba_code = baba_code
 
@@ -67,7 +67,7 @@ class RaceInfo():
         self.__around = '' # 回り(右/左)
         self.__in_out = '' # 回り(内/外)
         self.__race_time = '' # 発走時刻
-        self.__hold_num = '' # 開催回
+        self.__hold_no = '' # 開催回
         self.__hold_date = '' # 開催日
         self.__grade = '' # 格・グレード
         self.__require_age = '' # 出走条件(年齢)
@@ -100,7 +100,7 @@ class RaceInfo():
     @property
     def race_time(self): return self.__race_time
     @property
-    def hold_num(self): return self.__hold_num
+    def hold_no(self): return self.__hold_no
     @property
     def hold_date(self): return self.__hold_date
     @property
@@ -145,8 +145,8 @@ class RaceInfo():
     def in_out(self, in_out): self.__in_out = in_out
     @race_time.setter
     def race_time(self, race_time): self.__race_time = race_time
-    @hold_num.setter
-    def hold_num(self, hold_num): self.__hold_num = hold_num
+    @hold_no.setter
+    def hold_no(self, hold_no): self.__hold_no = hold_no
     @hold_date.setter
     def hold_date(self, hold_date): self.__hold_date = hold_date
     @grade.setter
@@ -195,8 +195,8 @@ class RaceResult():
 class HorseInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
-        self.__frame_num = '' # 枠番
-        self.__horse_num = '' # 馬番(複合PK)
+        self.__frame_no = '' # 枠番
+        self.__horse_no = '' # 馬番(複合PK)
         self.__horse_name = '' # 馬名
         self.__age = '' # 馬齢
         self.__gender = '' # 性別
@@ -224,9 +224,9 @@ class HorseInfo():
 
     # getter
     @property
-    def frame_num(self): return self.__frame_num
+    def frame_no(self): return self.__frame_no
     @property
-    def horse_num(self): return self.__horse_num
+    def horse_no(self): return self.__horse_no
     @property
     def horse_name(self): return self.__horse_name
     @property
@@ -273,10 +273,10 @@ class HorseInfo():
     def haircolor(self): return self.__haircolor
 
     # setter
-    @frame_num.setter
-    def frame_num(self, frame_num): self.__frame_num = frame_num
-    @horse_num.setter
-    def horse_num(self, horse_num): self.__horse_num = horse_num
+    @frame_no.setter
+    def frame_no(self, frame_no): self.__frame_no = frame_no
+    @horse_no.setter
+    def horse_no(self, horse_no): self.__horse_no = horse_no
     @horse_name.setter
     def horse_name(self, horse_name): self.__horse_name = horse_name
     @age.setter
@@ -325,14 +325,14 @@ class HorseInfo():
 class HorseResult():
     '''各馬のレース結果のデータクラス'''
     def __init__(self):
-        self.__horse_num = '' # 馬番(複合PK)
+        self.__horse_no = '' # 馬番(複合PK)
         self.__rank = '' # 着順
         self.__goal_time = '' # タイム
         self.__diff_distance = '' # 着差
 
     # getter
     @property
-    def horse_num(self): return self.__horse_num
+    def horse_no(self): return self.__horse_no
     @property
     def rank(self): return self.__rank
     @property
@@ -341,8 +341,8 @@ class HorseResult():
     def diff_distance(self): return self.__diff_distance
 
     # setter
-    @horse_num.setter
-    def horse_num(self, horse_num): self.__horse_num = horse_num
+    @horse_no.setter
+    def horse_no(self, horse_no): self.__horse_no = horse_no
     @rank.setter
     def rank(self, rank): self.__rank = rank
     @goal_time.setter
