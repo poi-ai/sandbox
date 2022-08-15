@@ -1,5 +1,7 @@
+import requests
 import lxml
 import pandas as pd
+import re
 from bs4 import BeautifulSoup
 
 def get_param():
@@ -11,12 +13,63 @@ def get_param():
     # 箱用意{馬番:[HorseInfo, HorseResult]}
     horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
 
+    # 1着馬の馬番
+    winner_horse_no = 0
+
     # 行ごとに切り出し
-    for index in table.index:
+    for i, index in enumerate(table.index):
         row = table.loc[index]
-        # キーになる馬番を取得
+
+        # キーになる馬番を先に取得
         no = row['馬番']
+
+        # 馬の情報の各項目を設定
+        horse_dict[no][0].frame_no = row['枠番']
+        horse_dict[no][0].horse_no = row['馬番']
+        horse_dict[no][0].horse_name = row['馬名']
+        # 頭1文字が性別、2文字目以降が年齢
+        horse_dict[no][0].age = row['性齢'][0]
+        horse_dict[no][0].gender = row['性齢'][1:]
+        horse_dict[no][0].load = row['斤量']
+        horse_dict[no][0].jockey = row['騎手']
+        horse_dict[no][0].win_odds = row['単勝']
+        horse_dict[no][0].popular = row['人気']
+        # 括弧内が増減、外が馬体重
+        weight = re.search('(\d+)\((.+)\)', row['馬体重'])
+        # 馬体重不明チェック(新馬・前走計不時は増減は0と表記)
+        if weight == None:
+            horse_dict[no][0].weight = 0
+            horse_dict[no][0].weight_flg = 0
+            horse_dict[no][0].weight_change = 0
+            horse_dict[no][0].weight_change_flg = 0
+        else:
+            horse_dict[no][0].weight = weight.groups()[0]
+            horse_dict[no][0].weight_flg = 1
+            horse_dict[no][0].weight_change = weight.groups()[1].replace('±', '').replace('+', '')
+            horse_dict[no][0].weight_change_flg = 1
+        # 調教師チェック[東]美浦、[西]栗東
+        trainer = re.search('\[(.+)\] (.+)', row['調教師'])
+        if trainer == None:
+            horse_dict[no][0].trainer = '-'
+            horse_dict[no][0].trainer_belong = '-'
+        else:
+            horse_dict[no][0].trainer = trainer.groups()[0]
+            horse_dict[no][0].trainer_belong = trainer.groups()[1]
+        horse_dict[no][0].horse_no = row['馬番']
+        horse_dict[no][0].owner = row['馬主']
+
+        # レース結果の各項目を設定
         horse_dict[no][1].horse_no = row['馬番']
+        horse_dict[no][1].rank = row['着順']
+        horse_dict[no][1].goal_time = row['タイム']
+        if i == 0:
+            winner_horse_no = no
+        elif i == 1
+            horse_dict[winner_horse_no][1].diff_distance = '-' + str(row['着差'])
+            horse_dict[no][1].diff_distance = row['着差']
+        else:
+            horse_dict[no][1].diff_distance = row['着差']
+        horse_dict[no][1].price = row['賞金(万円)']
     #print(df.loc[0]['着順'])
 
 def html():
@@ -27,10 +80,16 @@ def html():
     return html
 
 def Soup():
-    return BeautifulSoup(HTML, 'lxml')
+    URL = 'https://db.netkeiba.com/race/202204020206/'
+    # 馬柱 https://race.netkeiba.com/race/shutuba.html?race_id=202204020206
+    r = requests.get(URL)
+    return BeautifulSoup(r.content, 'lxml')
 
 def Table(no = 0):
     #table[0]...結果テーブル｜[4]...コーナー順位｜[5]...ラップタイム
+
+    # read_htmlで抜けなくなる余分なタグを除去
+    HTML = str(Soup()).replace('<diary_snap_cut>', '').replace('</diary_snap_cut>', '')
     return pd.read_html(HTML)[no]
 
 class CommonInfo():
@@ -195,21 +254,23 @@ class RaceResult():
 class HorseInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
-        self.__frame_no = '' # 枠番
-        self.__horse_no = '' # 馬番(複合PK)
-        self.__horse_name = '' # 馬名
-        self.__age = '' # 馬齢
-        self.__gender = '' # 性別
-        self.__load = '' # 斤量
-        self.__jockey = '' # 騎手名
+        self.__frame_no = '' # 枠番o
+        self.__horse_no = '' # 馬番(複合PK)o
+        self.__horse_name = '' # 馬名o
+        self.__age = '' # 馬齢o
+        self.__gender = '' # 性別o
+        self.__load = '' # 斤量o
+        self.__jockey = '' # 騎手名o
         self.__jockey_handi = '' # 騎手減量
-        self.__win_odds = '' # 単勝
-        self.__popular = '' # 人気
-        self.__weight = '' # 馬体重
-        self.__weight_change = '' # 馬体重増減
-        self.__trainer = '' # 調教師名
-        self.__trainer_belong = '' # 調教師所属(美浦/栗東)
-        self.__owner = '' # 馬主名
+        self.__win_odds = '' # 単勝オッズo
+        self.__popular = '' # 人気o
+        self.__weight = '' # 馬体重o
+        self.__weight_flg = '' # 馬体重フラグo
+        self.__weight_change = '' # 馬体重増減o
+        self.__weight_change_flg = '' # 馬体重増減フラグo
+        self.__trainer = '' # 調教師名o
+        self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
+        self.__owner = '' # 馬主名o
 
         # 以下は馬柱から
         self.__blank = '' # レース間隔
@@ -246,7 +307,11 @@ class HorseInfo():
     @property
     def weight(self): return self.__weight
     @property
+    def weight_flg(self): return self.__weight_flg
+    @property
     def weight_change(self): return self.__weight_change
+    @property
+    def weight_change_flg(self): return self.__weight_change_flg
     @property
     def trainer(self): return self.__trainer
     @property
@@ -295,8 +360,12 @@ class HorseInfo():
     def popular(self, popular): self.__popular = popular
     @weight.setter
     def weight(self, weight): self.__weight = weight
+    @weight_flg.setter
+    def weight(self, weight): self.__weight_flg = weight_flg
     @weight_change.setter
     def weight_change(self, weight_change): self.__weight_change = weight_change
+    @weight_change_flg.setter
+    def weight_change(self, weight_change_flg): self.__weight_change_flg = weight_change_flg
     @trainer.setter
     def trainer(self, trainer): self.__trainer = trainer
     @trainer_belong.setter
@@ -325,10 +394,13 @@ class HorseInfo():
 class HorseResult():
     '''各馬のレース結果のデータクラス'''
     def __init__(self):
-        self.__horse_no = '' # 馬番(複合PK)
-        self.__rank = '' # 着順
-        self.__goal_time = '' # タイム
-        self.__diff_distance = '' # 着差
+        self.__horse_no = '' # 馬番(複合PK)o
+        self.__rank = '' # 着順o
+        self.__goal_time = '' # タイムo
+        self.__diff_distance = '' # 着差o
+        self.__pass_rank = '' # 通過順
+        self.__nobori_3f = '' # 上り3F
+        self.__price = '' # 賞金o
 
     # getter
     @property
@@ -339,6 +411,12 @@ class HorseResult():
     def goal_time(self): return self.__goal_time
     @property
     def diff_distance(self): return self.__diff_distance
+    @property
+    def pass_rank(self): return self.__pass_rank
+    @property
+    def nobori_3f(self): return self.__nobori_3f
+    @property
+    def price(self): return self.__price
 
     # setter
     @horse_no.setter
@@ -349,11 +427,17 @@ class HorseResult():
     def goal_time(self, goal_time): self.__goal_time = goal_time
     @diff_distance.setter
     def diff_distance(self, diff_distance): self.__diff_distance = diff_distance
+    @pass_rank.setter
+    def nobori_3f(self, pass_rank): self.__pass_rank = pass_rank
+    @nobori_3f.setter
+    def nobori_3f(self, nobori_3f): self.__nobori_3f = nobori_3f
+    @price.setter
+    def price(self, price): self.__price = price
 
 if __name__ == '__main__':
     HTML = html()
-    print(Table(1))
-    exit()
+    #print(Table(1))
+    #exit()
     ci = CommonInfo()
     ri = RaceInfo()
     rr = RaceResult()
