@@ -38,15 +38,11 @@ def get_param():
         weight = re.search('(\d+)\((.+)\)', row['馬体重'])
         # 馬体重不明チェック(新馬・前走計不時は増減は0と表記)
         if weight == None:
-            horse_dict[no][0].weight = 0
-            horse_dict[no][0].weight_flg = 0
-            horse_dict[no][0].weight_change = 0
-            horse_dict[no][0].weight_change_flg = 0
+            horse_dict[no][0].weight = -1
+            horse_dict[no][0].weight_change = -999
         else:
             horse_dict[no][0].weight = weight.groups()[0]
-            horse_dict[no][0].weight_flg = 1
             horse_dict[no][0].weight_change = weight.groups()[1].replace('±', '').replace('+', '')
-            horse_dict[no][0].weight_change_flg = 1
         # 調教師チェック[東]美浦、[西]栗東
         trainer = re.search('\[(.+)\] (.+)', row['調教師'])
         if trainer == None:
@@ -64,7 +60,7 @@ def get_param():
         horse_dict[no][1].goal_time = row['タイム']
         if i == 0:
             winner_horse_no = no
-        elif i == 1
+        elif i == 1:
             horse_dict[winner_horse_no][1].diff_distance = '-' + str(row['着差'])
             horse_dict[no][1].diff_distance = row['着差']
         else:
@@ -265,9 +261,7 @@ class HorseInfo():
         self.__win_odds = '' # 単勝オッズo
         self.__popular = '' # 人気o
         self.__weight = '' # 馬体重o
-        self.__weight_flg = '' # 馬体重フラグo
         self.__weight_change = '' # 馬体重増減o
-        self.__weight_change_flg = '' # 馬体重増減フラグo
         self.__trainer = '' # 調教師名o
         self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
         self.__owner = '' # 馬主名o
@@ -307,11 +301,7 @@ class HorseInfo():
     @property
     def weight(self): return self.__weight
     @property
-    def weight_flg(self): return self.__weight_flg
-    @property
     def weight_change(self): return self.__weight_change
-    @property
-    def weight_change_flg(self): return self.__weight_change_flg
     @property
     def trainer(self): return self.__trainer
     @property
@@ -360,12 +350,8 @@ class HorseInfo():
     def popular(self, popular): self.__popular = popular
     @weight.setter
     def weight(self, weight): self.__weight = weight
-    @weight_flg.setter
-    def weight(self, weight): self.__weight_flg = weight_flg
     @weight_change.setter
     def weight_change(self, weight_change): self.__weight_change = weight_change
-    @weight_change_flg.setter
-    def weight_change(self, weight_change_flg): self.__weight_change_flg = weight_change_flg
     @trainer.setter
     def trainer(self, trainer): self.__trainer = trainer
     @trainer_belong.setter
