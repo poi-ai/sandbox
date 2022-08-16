@@ -4,12 +4,24 @@ import pandas as pd
 import re
 from bs4 import BeautifulSoup
 
-def get_param():
+def get_result():
     # レース結果(HTML全体)
     soup = Soup()
     # レース結果(結果テーブル)
     table = Table(0)
-
+    
+    # 共通(PKになる)レースデータ
+    common_info = CommonInfo()
+    common_info.race_date = 
+    common_info.race_no =
+    common_info.baba_code = 
+    
+    
+    # レース情報
+    race_info = RaceInfo()
+    
+    
+    
     # 箱用意{馬番:[HorseInfo, HorseResult]}
     horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
 
@@ -424,9 +436,4 @@ if __name__ == '__main__':
     HTML = html()
     #print(Table(1))
     #exit()
-    ci = CommonInfo()
-    ri = RaceInfo()
-    rr = RaceResult()
-    hi = HorseInfo()
-    hr = HorseResult()
-    get_param()
+    get_result()
