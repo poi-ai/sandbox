@@ -20,19 +20,18 @@ def url():
 def main():
     # 共通(PKになる)レースデータ
     common_info = CommonInfo()
-    
+
     # TODO 開催日、実装時はインスタンス変数
     common_info.race_date = KAISAI_DATE
     common_info.race_no = RACE_ID[-2:]
-    # TODO 地方も同じかチェック
     common_info.baba_code = RACE_ID[4:6]
-    
+
     # レース結果(DB)からデータ取得
     horese_dict = get_result()
 
     # 馬柱からデータ取得
     get_umabashira()
-    
+
 
 def get_umabashira():
     # 馬柱からデータを取得
@@ -44,15 +43,29 @@ def get_umabashira():
     else:
         soup = Soup(url.DB_RESULT_URL)
 
+    # レース情報格納用データクラス
+    race_info = RaceInfo()
+
     race_data_01 = soup.find('div', class_ = 'RaceData01')
     race_data_list = rm(race_data_01.text).split('/')
-    # TODO リストからデータクラスに格納
-    print(race_data_01)
 
+    race_info.race_time = race_data_list[0].replace('発走', '')
+
+    course = re.search('([芝|ダ])(\d+)m\((.*)\)', race_data_list[1])
+    race_info.baba = course.groups()[0]
+    race_info.distance = course.groups()[1]
+    race_info.around = course.groups()[2]
+
+    race_info.weather = race_data_list[2].replace('天候:', '')
+    race_info.baba_condition = race_data_list[3].replace('馬場:', '')
 
     race_data_02 = soup.find('div', class_ = 'RaceData02')
-    # TODO 切り出し
-    exit()
+    race_data_list = race_data_02.text.split('\n')
+    print(race_data_list)
+
+    for data in race_data_list:
+        # TODO 各出走条件によってフラグを立てたり
+        pass
 
 def get_result():
     # レース結果(HTML全体)
@@ -63,11 +76,11 @@ def get_result():
         soup = BeautifulSoup(html, 'lxml')
     else:
         soup = Soup(url.DB_RESULT_URL)
-    
+
     # レース結果(結果テーブル)
     tables = Table(soup)
     table = tables[0]
-   
+
     # 箱用意{馬番:[HorseInfo, HorseResult]}
     horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
 
@@ -175,13 +188,13 @@ class RaceInfo():
     '''発走前のレースに関するデータのデータクラス'''
     def __init__(self):
         self.__race_name = '' # レース名
-        self.__baba = '' # 馬場
-        self.__weather = '' # 天候
-        self.__baba_status = '' # 馬場状態
-        self.__distance = '' # 距離
-        self.__around = '' # 回り(右/左)
+        self.__baba = '' # 馬場(芝/ダート)o
+        self.__weather = '' # 天候o
+        self.__baba_condition = '' # 馬場状態o
+        self.__distance = '' # 距離o
+        self.__around = '' # 回り(右/左)o
         self.__in_out = '' # 回り(内/外)
-        self.__race_time = '' # 発走時刻
+        self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回
         self.__hold_date = '' # 開催日
         self.__grade = '' # 格・グレード
@@ -205,7 +218,7 @@ class RaceInfo():
     @property
     def weather(self): return self.__weather
     @property
-    def baba_status(self): return self.__baba_status
+    def baba_condition(self): return self.__baba_condition
     @property
     def distance(self): return self.__distance
     @property
@@ -250,8 +263,8 @@ class RaceInfo():
     def baba(self, baba): self.__baba = baba
     @weather.setter
     def weather(self, weather): self.__weather = weather
-    @baba_status.setter
-    def baba_status(self, baba_status): self.__baba_status = baba_status
+    @baba_condition.setter
+    def baba_condition(self, baba_condition): self.__baba_condition = baba_condition
     @distance.setter
     def distance(self, distance): self.__distance = distance
     @around.setter
