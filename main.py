@@ -4,24 +4,70 @@ import pandas as pd
 import re
 from bs4 import BeautifulSoup
 
-def get_result():
-    # レース結果(HTML全体)
-    soup = Soup()
-    # レース結果(結果テーブル)
-    table = Table(0)
-    
+def url():
+    # 馬柱
+    UMABASHIRA_URL = f'https://race.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}'
+    # リアルタイム レース結果
+    RACE_RESULT_URL = f'https://race.netkeiba.com/race/result.html?race_id={RACE_ID}'
+    # DB レース結果
+    DB_RESULT_URL = f'https://db.netkeiba.com/race/{RACE_ID}'
+
+    '''
+    MEMO
+    * レース前に実際に取れるのは馬柱のみなので、レース情報などは馬柱から取得する
+    * 騎手減量がリアルタイム レース結果からしか取得できないので要検討
+    '''
+def main():
     # 共通(PKになる)レースデータ
     common_info = CommonInfo()
-    common_info.race_date = 
-    common_info.race_no =
-    common_info.baba_code = 
     
+    # TODO 開催日、実装時はインスタンス変数
+    common_info.race_date = KAISAI_DATE
+    common_info.race_no = RACE_ID[-2:]
+    # TODO 地方も同じかチェック
+    common_info.baba_code = RACE_ID[4:6]
     
-    # レース情報
-    race_info = RaceInfo()
+    # レース結果(DB)からデータ取得
+    horese_dict = get_result()
+
+    # 馬柱からデータ取得
+    get_umabashira()
     
+
+def get_umabashira():
+    # 馬柱からデータを取得
+    if LOCAL:
+        f = open('umabashira_sjis.txt', 'r')
+        html = f.read()
+        f.close()
+        soup = BeautifulSoup(html, 'lxml')
+    else:
+        soup = Soup(url.DB_RESULT_URL)
+
+    race_data_01 = soup.find('div', class_ = 'RaceData01')
+    race_data_list = rm(race_data_01.text).split('/')
+    # TODO リストからデータクラスに格納
+    print(race_data_01)
+
+
+    race_data_02 = soup.find('div', class_ = 'RaceData02')
+    # TODO 切り出し
+    exit()
+
+def get_result():
+    # レース結果(HTML全体)
+    if LOCAL:
+        f = open('db_sjis.txt', 'r')
+        html = f.read()
+        f.close()
+        soup = BeautifulSoup(html, 'lxml')
+    else:
+        soup = Soup(url.DB_RESULT_URL)
     
-    
+    # レース結果(結果テーブル)
+    tables = Table(soup)
+    table = tables[0]
+   
     # 箱用意{馬番:[HorseInfo, HorseResult]}
     horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
 
@@ -29,6 +75,7 @@ def get_result():
     winner_horse_no = 0
 
     # 行ごとに切り出し
+    # TODO 除外・取消馬の処理
     for i, index in enumerate(table.index):
         row = table.loc[index]
 
@@ -70,6 +117,7 @@ def get_result():
         horse_dict[no][1].horse_no = row['馬番']
         horse_dict[no][1].rank = row['着順']
         horse_dict[no][1].goal_time = row['タイム']
+        # 着差、1着馬は2着との差をマイナスに
         if i == 0:
             winner_horse_no = no
         elif i == 1:
@@ -77,28 +125,28 @@ def get_result():
             horse_dict[no][1].diff_distance = row['着差']
         else:
             horse_dict[no][1].diff_distance = row['着差']
+        horse_dict[no][1].pass_rank = row['通過']
+        horse_dict[no][1].nobiri = row['上り']
         horse_dict[no][1].price = row['賞金(万円)']
-    #print(df.loc[0]['着順'])
 
-def html():
-    # 保存済みのHTML(ローカル内で完結するように疑似取得)
-    f = open('html.txt', 'r')
-    html = f.read()
-    f.close()
-    return html
+    return horse_dict
 
-def Soup():
-    URL = 'https://db.netkeiba.com/race/202204020206/'
+def Soup(URL):
+    # URL = 'https://db.netkeiba.com/race/202204020206/'
     # 馬柱 https://race.netkeiba.com/race/shutuba.html?race_id=202204020206
     r = requests.get(URL)
     return BeautifulSoup(r.content, 'lxml')
 
-def Table(no = 0):
+def Table(soup):
     #table[0]...結果テーブル｜[4]...コーナー順位｜[5]...ラップタイム
 
     # read_htmlで抜けなくなる余分なタグを除去
-    HTML = str(Soup()).replace('<diary_snap_cut>', '').replace('</diary_snap_cut>', '')
-    return pd.read_html(HTML)[no]
+    HTML = str(soup).replace('<diary_snap_cut>', '').replace('</diary_snap_cut>', '')
+    return pd.read_html(HTML)
+
+def rm(str):
+    '''改行・空白を除去'''
+    return str.replace('\n', '').replace(' ', '')
 
 class CommonInfo():
     '''レースを一意に定めるデータのデータクラス'''
@@ -396,8 +444,8 @@ class HorseResult():
         self.__rank = '' # 着順o
         self.__goal_time = '' # タイムo
         self.__diff_distance = '' # 着差o
-        self.__pass_rank = '' # 通過順
-        self.__nobori_3f = '' # 上り3F
+        self.__pass_rank = '' # 通過順o
+        self.__nobori = '' # 上り3Fo
         self.__price = '' # 賞金o
 
     # getter
@@ -412,7 +460,7 @@ class HorseResult():
     @property
     def pass_rank(self): return self.__pass_rank
     @property
-    def nobori_3f(self): return self.__nobori_3f
+    def nobori(self): return self.__nobori
     @property
     def price(self): return self.__price
 
@@ -426,14 +474,16 @@ class HorseResult():
     @diff_distance.setter
     def diff_distance(self, diff_distance): self.__diff_distance = diff_distance
     @pass_rank.setter
-    def nobori_3f(self, pass_rank): self.__pass_rank = pass_rank
-    @nobori_3f.setter
-    def nobori_3f(self, nobori_3f): self.__nobori_3f = nobori_3f
+    def pass_rank(self, pass_rank): self.__pass_rank = pass_rank
+    @nobori.setter
+    def nobori(self, nobori): self.__nobori = nobori
     @price.setter
     def price(self, price): self.__price = price
 
 if __name__ == '__main__':
-    HTML = html()
-    #print(Table(1))
-    #exit()
-    get_result()
+    RACE_ID = '202204020206'
+    # 開催日(組み込み時はインスタンス変数)
+    KAISAI_DATE = '20220724'
+    # PC内で完結か
+    LOCAL = True
+    main()
