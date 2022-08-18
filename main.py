@@ -1,3 +1,4 @@
+from fileinput import hook_encoded
 import requests
 import lxml
 import pandas as pd
@@ -51,7 +52,7 @@ def get_umabashira():
     # レース情報格納用データクラス
     race_info = RaceInfo()
 
-    # コース情報や状態が記載されている枠から切り出し
+    # コース情報や状態を抽出
     race_data_01 = soup.find('div', class_ = 'RaceData01')
     race_data_list = rm(race_data_01.text).split('/')
 
@@ -65,14 +66,30 @@ def get_umabashira():
     race_info.weather = race_data_list[2].replace('天候:', '')
     race_info.baba_condition = race_data_list[3].replace('馬場:', '')
 
-    # 
+    # 出走条件等の抽出
     race_data_02 = soup.find('div', class_ = 'RaceData02')
     race_data_list = race_data_02.text.split('\n')
-    print(race_data_list)
+
+    race_info.hold_no = race_data_list[1].replace('回', '')
+    race_info.hold_date = race_data_list[3].replace('日目', '')
+    race_info.require_age = half(race_data_list[4]).replace('サラ系', '')
+    race_info.grade = half(race_data_list[5])
 
     for data in race_data_list:
-        #race_info.hold_no = data[1].replace('回', '')
-        #race_info.hold_date = data[3].replace('日目', '')
+        horse_num = re.search('(\d+)頭', data)
+        if horse_num != None:
+            race_info.horse_num = horse_num.groups()[0]
+            continue
+
+        prize = re.search('本賞金:(\d+),(\d+),(\d+),(\d+),(\d+)万円', data)
+        if prize != None:
+            race_info.first_prize = prize.groups()[0]
+            race_info.second_prize = prize.groups()[1]
+            race_info.third_prize = prize.groups()[2]
+            race_info.fourth_prize = prize.groups()[3]
+            race_info.fifth_prize = prize.groups()[4]
+            continue
+        
         # TODO 各出走条件によってフラグを立てたり
         pass
 
@@ -170,6 +187,10 @@ def rm(str):
     '''改行・空白を除去'''
     return str.replace('\n', '').replace(' ', '')
 
+def half(str):
+    '''全角を半角へ変換'''
+    return str.translate(str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i in range(94)}))
+
 class CommonInfo():
     '''レースを一意に定めるデータのデータクラス'''
     def __init__(self):
@@ -205,19 +226,19 @@ class RaceInfo():
         self.__in_out = '' # 回り(内/外)
         self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回o
-        self.__hold_date = '' # 開催日
-        self.__grade = '' # 格・グレード
-        self.__require_age = '' # 出走条件(年齢)
+        self.__hold_date = '' # 開催日o
+        self.__grade = '' # 格・グレードo
+        self.__require_age = '' # 出走条件(年齢)o
         self.__require_gender = '' # 出走条件(性別)
         self.__require_country = '' # 出走条件(国内/国際/混合)
         self.__require_local = '' # 出走条件(特別指定/指定/他)
         self.__load_kind = '' # 斤量条件(定量/賞金別定/重賞別定/ハンデ)
-        self.__first_prize = '' # 1着賞金 TODO 同着時チェック
-        self.__second_prize = '' # 2着賞金
-        self.__third_prize = '' # 3着賞金
-        self.__fourth_prize = '' # 4着賞金
-        self.__fifth_prize = '' # 5着賞金
-        self.__horse_num = '' # 出走頭数
+        self.__first_prize = '' # 1着賞金o
+        self.__second_prize = '' # 2着賞金o
+        self.__third_prize = '' # 3着賞金o
+        self.__fourth_prize = '' # 4着賞金o
+        self.__fifth_prize = '' # 5着賞金o
+        self.__horse_num = '' # 出走頭数o
 
     # getter
     @property
@@ -507,8 +528,8 @@ if __name__ == '__main__':
     # 開催日(組み込み時はインスタンス変数)
     KAISAI_DATE = '20220724'
     # PC内で完結か
-    LOCAL = False
+    LOCAL = True
 
-    for i in range(202202010201, 202202010213):
-        RACE_ID = str(i)
-        main()
+    #for i in range(202202010201, 202202010213):
+    #   RACE_ID = str(i)
+    main()
