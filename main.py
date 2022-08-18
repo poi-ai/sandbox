@@ -4,13 +4,18 @@ import pandas as pd
 import re
 from bs4 import BeautifulSoup
 
-def url():
+def url(type):
     # 馬柱
-    UMABASHIRA_URL = f'https://race.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}'
+    if type == 'UMABASHIRA_URL':
+        return f'https://race.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}'
     # リアルタイム レース結果
-    RACE_RESULT_URL = f'https://race.netkeiba.com/race/result.html?race_id={RACE_ID}'
+    elif type == 'RACE_RESULT_URL':
+        return f'https://race.netkeiba.com/race/result.html?race_id={RACE_ID}'
     # DB レース結果
-    DB_RESULT_URL = f'https://db.netkeiba.com/race/{RACE_ID}'
+    elif type == 'DB_RESULT_URL':
+        return f'https://db.netkeiba.com/race/{RACE_ID}'
+
+    return False
 
     '''
     MEMO
@@ -41,11 +46,12 @@ def get_umabashira():
         f.close()
         soup = BeautifulSoup(html, 'lxml')
     else:
-        soup = Soup(url.DB_RESULT_URL)
+        soup = Soup(url('UMABASHIRA_URL'))
 
     # レース情報格納用データクラス
     race_info = RaceInfo()
 
+    # コース情報や状態が記載されている枠から切り出し
     race_data_01 = soup.find('div', class_ = 'RaceData01')
     race_data_list = rm(race_data_01.text).split('/')
 
@@ -59,11 +65,14 @@ def get_umabashira():
     race_info.weather = race_data_list[2].replace('天候:', '')
     race_info.baba_condition = race_data_list[3].replace('馬場:', '')
 
+    # 
     race_data_02 = soup.find('div', class_ = 'RaceData02')
     race_data_list = race_data_02.text.split('\n')
     print(race_data_list)
 
     for data in race_data_list:
+        #race_info.hold_no = data[1].replace('回', '')
+        #race_info.hold_date = data[3].replace('日目', '')
         # TODO 各出走条件によってフラグを立てたり
         pass
 
@@ -75,7 +84,7 @@ def get_result():
         f.close()
         soup = BeautifulSoup(html, 'lxml')
     else:
-        soup = Soup(url.DB_RESULT_URL)
+        soup = Soup(url('DB_RESULT_URL'))
 
     # レース結果(結果テーブル)
     tables = Table(soup)
@@ -195,7 +204,7 @@ class RaceInfo():
         self.__around = '' # 回り(右/左)o
         self.__in_out = '' # 回り(内/外)
         self.__race_time = '' # 発走時刻o
-        self.__hold_no = '' # 開催回
+        self.__hold_no = '' # 開催回o
         self.__hold_date = '' # 開催日
         self.__grade = '' # 格・グレード
         self.__require_age = '' # 出走条件(年齢)
@@ -498,5 +507,8 @@ if __name__ == '__main__':
     # 開催日(組み込み時はインスタンス変数)
     KAISAI_DATE = '20220724'
     # PC内で完結か
-    LOCAL = True
-    main()
+    LOCAL = False
+
+    for i in range(202202010201, 202202010213):
+        RACE_ID = str(i)
+        main()
