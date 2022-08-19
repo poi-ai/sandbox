@@ -1,6 +1,6 @@
-from fileinput import hook_encoded
-import requests
 import lxml
+import requests
+import time
 import pandas as pd
 import re
 from bs4 import BeautifulSoup
@@ -32,12 +32,31 @@ def main():
     common_info.race_no = RACE_ID[-2:]
     common_info.baba_code = RACE_ID[4:6]
 
-    # レース結果(DB)からデータ取得
-    horese_dict = get_result()
+    if not LOCAL and GET_FILE:
+        id_list = get_race_id()
 
-    # 馬柱からデータ取得
-    get_umabashira()
+        for id in id_list:
+            # レースIDをセット
+            global RACE_ID
+            RACE_ID = str(id)
 
+            # レース結果(DB)からデータ取得
+            horse_dict = get_result()
+
+            # 馬柱からデータ取得
+            get_umabashira()
+    else:
+        # レース結果(DB)からデータ取得
+        horse_dict = get_result()
+
+        # 馬柱からデータ取得
+        get_umabashira()
+
+def get_race_id():
+    f = open('race_id.txt', 'r')
+    id_list = [id for id in f]
+    f.close()
+    return id_list
 
 def get_umabashira():
     # 馬柱からデータを取得
@@ -174,6 +193,7 @@ def Soup(URL):
     # URL = 'https://db.netkeiba.com/race/202204020206/'
     # 馬柱 https://race.netkeiba.com/race/shutuba.html?race_id=202204020206
     r = requests.get(URL)
+    time.sleep(3)
     return BeautifulSoup(r.content, 'lxml')
 
 def Table(soup):
@@ -529,6 +549,8 @@ if __name__ == '__main__':
     KAISAI_DATE = '20220724'
     # PC内で完結か
     LOCAL = True
+    # レースIDをファイルから取得するか
+    GET_FILE = True
 
     #for i in range(202202010201, 202202010213):
     #   RACE_ID = str(i)
