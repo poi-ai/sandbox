@@ -24,6 +24,7 @@ def url(type):
     * 騎手減量がリアルタイム レース結果からしか取得できないので要検討
     '''
 def main():
+    global RACE_ID
     # 共通(PKになる)レースデータ
     common_info = CommonInfo()
 
@@ -37,11 +38,10 @@ def main():
 
         for id in id_list:
             # レースIDをセット
-            global RACE_ID
-            RACE_ID = str(id)
+            RACE_ID = str(id).replace('\n', '')
 
             # レース結果(DB)からデータ取得
-            horse_dict = get_result()
+            # horse_dict = get_result()
 
             # 馬柱からデータ取得
             get_umabashira()
@@ -71,10 +71,16 @@ def get_umabashira():
     # レース情報格納用データクラス
     race_info = RaceInfo()
 
-    # コース情報や状態を抽出
-    race_data_01 = soup.find('div', class_ = 'RaceData01')
-    race_data_list = rm(race_data_01.text).split('/')
+    try:
+        # コース情報や状態を抽出
+        race_data_01 = soup.find('div', class_ = 'RaceData01')
+        race_data_list = rm(race_data_01.text).split('/')
 
+        output(race_data_list, 'check1')
+    except:
+        output(str(RACE_ID) + ' 1', 'error')
+
+    '''
     race_info.race_time = race_data_list[0].replace('発走', '')
 
     course = re.search('([芝|ダ])(\d+)m\((.*)\)', race_data_list[1])
@@ -84,11 +90,18 @@ def get_umabashira():
 
     race_info.weather = race_data_list[2].replace('天候:', '')
     race_info.baba_condition = race_data_list[3].replace('馬場:', '')
+    '''
 
+    try:
     # 出走条件等の抽出
-    race_data_02 = soup.find('div', class_ = 'RaceData02')
-    race_data_list = race_data_02.text.split('\n')
+        race_data_02 = soup.find('div', class_ = 'RaceData02')
+        race_data_list = race_data_02.text.split('\n')
 
+        output(race_data_list, 'check2')
+    except:
+        output(str(RACE_ID) + ' 2', 'error')
+
+    '''
     race_info.hold_no = race_data_list[1].replace('回', '')
     race_info.hold_date = race_data_list[3].replace('日目', '')
     race_info.require_age = half(race_data_list[4]).replace('サラ系', '')
@@ -108,9 +121,20 @@ def get_umabashira():
             race_info.fourth_prize = prize.groups()[3]
             race_info.fifth_prize = prize.groups()[4]
             continue
-        
+
         # TODO 各出走条件によってフラグを立てたり
         pass
+    '''
+
+    try:
+        #fc = soup.find('div', class_ = 'fc')
+        fc = soup.select('div[class="fc"]')
+
+        for fcc in fc:
+            horseinfo = str(fcc).replace('\n', '')
+            output(horseinfo, 'check3')
+    except:
+        output(str(RACE_ID) + ' 3', 'error')
 
 def get_result():
     # レース結果(HTML全体)
@@ -202,6 +226,15 @@ def Table(soup):
     # read_htmlで抜けなくなる余分なタグを除去
     HTML = str(soup).replace('<diary_snap_cut>', '').replace('</diary_snap_cut>', '')
     return pd.read_html(HTML)
+
+def output(word, filename):
+    f = open(f'{filename}.txt', 'a', encoding='utf-8')
+    if type(word) is list:
+        f.write(str(word).replace('[', '').replace(']', '').replace("'", ''))
+    else:
+        f.write(str(word))
+    f.write('\n')
+    f.close()
 
 def rm(str):
     '''改行・空白を除去'''
@@ -548,7 +581,7 @@ if __name__ == '__main__':
     # 開催日(組み込み時はインスタンス変数)
     KAISAI_DATE = '20220724'
     # PC内で完結か
-    LOCAL = True
+    LOCAL = False
     # レースIDをファイルから取得するか
     GET_FILE = True
 

@@ -87,4 +87,4 @@ def get_soup(URL):
 
 if __name__ == '__main__':
     #output(['aaa','iii'])
-    main('20220729', '20220731')
+    main('20210801', '20220731')
