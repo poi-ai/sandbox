@@ -71,61 +71,102 @@ def get_umabashira():
     # レース情報格納用データクラス
     race_info = RaceInfo()
 
-    try:
-        # コース情報や状態を抽出
-        race_data_01 = soup.find('div', class_ = 'RaceData01')
-        race_data_list = rm(race_data_01.text).split('/')
+    # コース情報や状態を抽出
+    race_data_01 = soup.find('div', class_ = 'RaceData01')
+    race_data_list = rm(race_data_01.text).split('/')
 
-        output(race_data_list, 'check1')
-    except:
-        output(str(RACE_ID) + ' 1', 'error')
-
-    '''
     race_info.race_time = race_data_list[0].replace('発走', '')
 
-    course = re.search('([芝|ダ])(\d+)m\((.*)\)', race_data_list[1])
-    race_info.baba = course.groups()[0]
+    course = re.search('([芝|ダ|障])(\d+)m\((.*)\)', race_data_list[1])
     race_info.distance = course.groups()[1]
-    race_info.around = course.groups()[2]
+
+    if course.groups()[0] == '障':
+        race_info.race_type = '障'
+
+        baba = course.groups()[2]
+        if '芝' in baba:
+            if 'ダート' in baba:
+                race_info.baba = '芝ダ'
+                race_info.glass_condition = race_data_list[3].replace('馬場:', '')
+                if len(race_data_list) == 5:
+                    race_info.dirt_condition = race_data_list[4].replace('馬場:', '')
+            else:
+                race_info.baba = '芝'
+                race_info.glass_condition = race_data_list[3].replace('馬場:', '')
+        else:
+            race_info.baba = 'ダ'
+            race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
+
+        around = re.sub(r"[芝ダート]", "", baba)
+        if len(around) != 0:
+            race_info.in_out = around
+
+    else:
+        race_info.race_type = '平'
+
+        baba = course.groups()[0]
+        race_info.baba = baba
+        if baba == '芝':
+            race_info.glass_condition = race_data_list[3].replace('馬場:', '')
+        elif baba == 'ダ':
+            race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
+
+        around = course.groups()[2]
+        if around == '直線':
+            race_info.around = '直'
+        else:
+            race_info.around = around[0]
+            if len(around) != 1:
+                race_info.in_out = around[1:]
 
     race_info.weather = race_data_list[2].replace('天候:', '')
-    race_info.baba_condition = race_data_list[3].replace('馬場:', '')
-    '''
 
-    try:
     # 出走条件等の抽出
-        race_data_02 = soup.find('div', class_ = 'RaceData02')
-        race_data_list = race_data_02.text.split('\n')
+    race_data_02 = soup.find('div', class_ = 'RaceData02')
+    race_data_list = race_data_02.text.split('\n')
 
-        output(race_data_list, 'check2')
-    except:
-        output(str(RACE_ID) + ' 2', 'error')
-
-    '''
     race_info.hold_no = race_data_list[1].replace('回', '')
     race_info.hold_date = race_data_list[3].replace('日目', '')
-    race_info.require_age = half(race_data_list[4]).replace('サラ系', '')
+    race_info.require_age = half(race_data_list[4]).replace('サラ系', '').replace('障害', '')
+    # TODO リステッド/準重賞/重賞は全てオープン扱いなのでどっかから切り出す
     race_info.grade = half(race_data_list[5])
 
-    for data in race_data_list:
-        horse_num = re.search('(\d+)頭', data)
-        if horse_num != None:
-            race_info.horse_num = horse_num.groups()[0]
-            continue
+    require = race_data_list[7]
+    if '(国際)' in require:
+        race_info.require_country = '国'
+    elif '(混)' in require:
+        race_info.require_country = '混'
 
-        prize = re.search('本賞金:(\d+),(\d+),(\d+),(\d+),(\d+)万円', data)
-        if prize != None:
-            race_info.first_prize = prize.groups()[0]
-            race_info.second_prize = prize.groups()[1]
-            race_info.third_prize = prize.groups()[2]
-            race_info.fourth_prize = prize.groups()[3]
-            race_info.fifth_prize = prize.groups()[4]
-            continue
+    # TODO 騙馬除外レースが条件になさそうなので引っ張れるところをチェック？
+    if '牝' in require and '牡' not in require:
+        race_info.mare = True
 
-        # TODO 各出走条件によってフラグを立てたり
+    if '(指)' in require:
+        race_info.require_local = '指'
+    elif '(特指)' in require:
+        race_info.require_local = '特'
+
+    if '九州産馬' in require:
+        # TODO
         pass
-    '''
 
+    if '見習騎手' in require:
+        # TODO
+        pass
+
+    # TODO 別定/ハンデ戦はより詳細に分類できるかチェック
+    race_info.load_kind = race_data_list[8]
+    race_info.horse_num = race_data_list[9].replace('頭', '')
+
+    prize = re.search('本賞金:(\d+),(\d+),(\d+),(\d+),(\d+)万円', race_data_list[11])
+    race_info.first_prize = prize.groups()[0]
+    race_info.second_prize = prize.groups()[1]
+    race_info.third_prize = prize.groups()[2]
+    race_info.fourth_prize = prize.groups()[3]
+    race_info.fifth_prize = prize.groups()[4]
+
+    '''
+    TODO 馬情報
     try:
         #fc = soup.find('div', class_ = 'fc')
         fc = soup.select('div[class="fc"]')
@@ -135,6 +176,7 @@ def get_umabashira():
             output(horseinfo, 'check3')
     except:
         output(str(RACE_ID) + ' 3', 'error')
+    '''
 
 def get_result():
     # レース結果(HTML全体)
@@ -270,22 +312,24 @@ class CommonInfo():
 class RaceInfo():
     '''発走前のレースに関するデータのデータクラス'''
     def __init__(self):
-        self.__race_name = '' # レース名
+        self.__race_name = '' # レース名 TODO
+        self.__race_type = '' # 競走形態(平地/障害)o
         self.__baba = '' # 馬場(芝/ダート)o
         self.__weather = '' # 天候o
-        self.__baba_condition = '' # 馬場状態o
+        self.__glass_condition = '' # 馬場状態(芝)o
+        self.__dirt_condition = '' # 馬場状態(ダート)o
         self.__distance = '' # 距離o
         self.__around = '' # 回り(右/左)o
-        self.__in_out = '' # 回り(内/外)
+        self.__in_out = '' # 回り(内/外)o
         self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回o
         self.__hold_date = '' # 開催日o
-        self.__grade = '' # 格・グレードo
+        self.__grade = '' # 格・グレードo TODO
         self.__require_age = '' # 出走条件(年齢)o
-        self.__require_gender = '' # 出走条件(性別)
-        self.__require_country = '' # 出走条件(国内/国際/混合)
-        self.__require_local = '' # 出走条件(特別指定/指定/他)
-        self.__load_kind = '' # 斤量条件(定量/賞金別定/重賞別定/ハンデ)
+        self.__mare = False # 出走条件(牝馬限定)o
+        self.__require_country = '' # 出走条件(国際/混合)o
+        self.__require_local = '' # 出走条件(特別指定/指定)o
+        self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ)o
         self.__first_prize = '' # 1着賞金o
         self.__second_prize = '' # 2着賞金o
         self.__third_prize = '' # 3着賞金o
@@ -297,11 +341,15 @@ class RaceInfo():
     @property
     def race_name(self): return self.__race_name
     @property
+    def race_type(self): return self.__race_type
+    @property
     def baba(self): return self.__baba
     @property
     def weather(self): return self.__weather
     @property
-    def baba_condition(self): return self.__baba_condition
+    def glass_condition(self): return self.__glass_condition
+    @property
+    def dirt_condition(self): return self.__dirt_condition
     @property
     def distance(self): return self.__distance
     @property
@@ -319,7 +367,7 @@ class RaceInfo():
     @property
     def require_age(self): return self.__require_age
     @property
-    def require_gender(self): return self.__require_gender
+    def mare(self): return self.__mare
     @property
     def require_country(self): return self.__require_country
     @property
@@ -342,12 +390,16 @@ class RaceInfo():
     # setter
     @race_name.setter
     def race_name(self, race_name): self.__race_name = race_name
+    @race_type.setter
+    def race_type(self, race_type): self.__race_type = race_type
     @baba.setter
     def baba(self, baba): self.__baba = baba
     @weather.setter
     def weather(self, weather): self.__weather = weather
-    @baba_condition.setter
-    def baba_condition(self, baba_condition): self.__baba_condition = baba_condition
+    @glass_condition.setter
+    def glass_condition(self, glass_condition): self.__glass_condition = glass_condition
+    @dirt_condition.setter
+    def dirt_condition(self, dirt_condition): self.__dirt_condition = dirt_condition
     @distance.setter
     def distance(self, distance): self.__distance = distance
     @around.setter
@@ -364,8 +416,8 @@ class RaceInfo():
     def grade(self, grade): self.__grade = grade
     @require_age.setter
     def require_age(self, require_age): self.__require_age = require_age
-    @require_gender.setter
-    def require_gender(self, require_gender): self.__require_gender = require_gender
+    @mare.setter
+    def mare(self, mare): self.__mare = mare
     @require_country.setter
     def require_country(self, require_country): self.__require_country = require_country
     @require_local.setter
