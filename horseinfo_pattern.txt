@@ -1,0 +1,44 @@
+<div class="fc">
+	<div class="Horse01 fc">マツリダゴッホ</div>
+	<div class="Horse02">
+		※0
+		<a href="https://db.netkeiba.com/horse/2020103949" target="_blank"> シャコンヌ</a>
+		※1
+	</div>
+	<div class="Horse03">ヤマサラグランジュ</div>
+	<div class="Horse04">(サクラバクシンオー)</div>
+	<div class="Horse05">
+		<a href="https://db.netkeiba.com/trainer/result/recent/01171" target="_blank">美浦・小手川</a>
+	</div>
+	<div class="Horse06 fc">
+		※2<img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type02.png?2019073001"/>連闘
+	</div>
+	<div class="Horse07 fc">
+		<div class="Weight color-red">426kg<span>(-2)</span></div>
+		<div class="Popular">
+			<span id="odds-1_01">---.-</span>
+			<span id="ninki-1_01">**</span>
+		</div>
+	</div>
+</div>
+
+外国馬・地方馬の場合※0に挿入
+<span class=""Icon_HorseMark Icon_MaruChi""></span>JRAの競走馬登録のとき、すでに地方競馬に出走したことのある馬であってカク地以外の馬のことです。
+<span class=""Icon_HorseMark Icon_kakuChi""></span>中央競馬指定交流競走に出走する地方競馬所属の馬のことです。
+<span class=""Icon_HorseMark Icon_MaruGai""></span>外国産馬であってカク外以外の馬のことです。
+<span class=""Icon_HorseMark Icon_KakuGai""></span>国際交流競走に出走する外国調教師の管理馬のことです
+
+
+ブリンカー着用時※1に挿入
+<span class=""Mark"">B</span>
+
+↓のパターンがあるが計不？ TODO 要チェック
+<div class=""Horse07 fc""></div> ←計不
+
+※2 脚質によって画像が変わる
+horse_race_type00(脚質なし、未出走)
+race_type01(逃げ)
+race_type02(先行)
+race_type03(差し)
+race_type04(追い)
+race_type05(自在)

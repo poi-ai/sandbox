@@ -43,8 +43,8 @@ def main():
             # レース結果(DB)からデータ取得
             # horse_dict = get_result()
 
-            # 馬柱からデータ取得
-            get_umabashira()
+            # 馬柱からデータ取得 TODO 引数はインスタンス変数に
+            get_umabashira(horse_dict)
     else:
         # レース結果(DB)からデータ取得
         horse_dict = get_result()
@@ -58,7 +58,7 @@ def get_race_id():
     f.close()
     return id_list
 
-def get_umabashira():
+def get_umabashira(horse_dict):
     # 馬柱からデータを取得
     if LOCAL:
         f = open('umabashira_sjis.txt', 'r')
@@ -97,7 +97,7 @@ def get_umabashira():
             race_info.baba = 'ダ'
             race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
 
-        around = re.sub(r"[芝ダート]", "", baba)
+        around = re.sub(r'[芝ダート]', '', baba)
         if len(around) != 0:
             race_info.in_out = around
 
@@ -137,22 +137,20 @@ def get_umabashira():
     elif '(混)' in require:
         race_info.require_country = '混'
 
-    # TODO 騙馬除外レースが条件になさそうなので引っ張れるところをチェック？
+    # TODO 騙馬除外レースが引っ張れなさそうなので引っ張れる場所をチェック？
     if '牝' in require and '牡' not in require:
-        race_info.mare = True
+        race_info.require_mare = '1'
+
+    if '九州産馬' in require:  
+        race_info.require_local = '1'
+
+    if '見習騎手' in require:
+        race_info.require_beginner_jockey = '1'
 
     if '(指)' in require:
         race_info.require_local = '指'
     elif '(特指)' in require:
         race_info.require_local = '特'
-
-    if '九州産馬' in require:
-        # TODO
-        pass
-
-    if '見習騎手' in require:
-        # TODO
-        pass
 
     # TODO 別定/ハンデ戦はより詳細に分類できるかチェック
     race_info.load_kind = race_data_list[8]
@@ -165,6 +163,66 @@ def get_umabashira():
     race_info.fourth_prize = prize.groups()[3]
     race_info.fifth_prize = prize.groups()[4]
 
+    # 各馬の情報(TODO レース結果で取得したものと合体)
+    # horse_info = HorseInfo()
+
+    fc = soup.select('div[class="fc"]')
+    
+    for info in fc:
+        horse_info = ''
+
+        # TODO なんかあやしい
+        for horse in horse_dict:
+            if horse[0].horse_name == horse_type.text:
+                horse_info = horse_dict[horse[0].horse_no][0]
+
+        horse_info.father = info.find('div', class_ = 'Horse01').text
+
+        horse_type = info.find('div', class_ = 'Horse02')
+        
+        
+        # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
+        # TODO パラメータをbelongに統一するかも要検討
+        if 'Icon_MaruChi' in str(horse_type):
+            horse_info.belong = 'マル地'
+        elif 'Icon_kakuChi' in str(horse_type):
+            horse_info.belong = 'カク地'
+        elif 'Icon_MaruGai' in str(horse_type):
+            horse_info.country = 'マル外'
+        elif 'Icon_KakuGai' in str(horse_type):
+            horse_info.country = 'カク外'
+
+        if '<span class="Mark">B</span>' in str(horse_type):
+            horse_info.blinker = '1'
+
+        horse_info.mother = info.find('div', class_ = 'Horse03').text
+        horse_info.grandfather = info.find('div', class_ = 'Horse04').text.replace('(', '').replace(')', '')
+        
+        blank = info.find('div', class_ = 'Horse06').text
+        if blank == '連闘':
+            horse_info.blank = '0'
+        else:
+            blank_week = re.search('中(\d+)週', blank)
+            # TODO 初出走判定
+            if blank_week == None:
+                horse_info.blank = '-1'
+            else:
+                horse_info.blank = prize.groups()[0]
+            
+        running_type = str(info.find('div', class_ = 'Horse06'))
+        if 'horse_race_type00' in running_type:
+            horse_info.running_type = '未'
+        elif 'horse_race_type01' in running_type:
+            horse_info.running_type = '逃'
+        elif 'horse_race_type02' in running_type:
+            horse_info.running_type = '先'
+        elif 'horse_race_type03' in running_type:
+            horse_info.running_type = '差'
+        elif 'horse_race_type04' in running_type:
+            horse_info.running_type = '追'
+        elif 'horse_race_type05' in running_type:
+            horse_info.running_type = '自在'
+    
     '''
     TODO 馬情報
     try:
@@ -326,7 +384,9 @@ class RaceInfo():
         self.__hold_date = '' # 開催日o
         self.__grade = '' # 格・グレードo TODO
         self.__require_age = '' # 出走条件(年齢)o
-        self.__mare = False # 出走条件(牝馬限定)o
+        self.__require_mare = '0' # 出走条件(牝馬限定戦)o
+        self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)o
+        self.__require_beginner_jockey = '0' # 出走条件(見習騎手限定戦)o
         self.__require_country = '' # 出走条件(国際/混合)o
         self.__require_local = '' # 出走条件(特別指定/指定)o
         self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ)o
@@ -367,7 +427,11 @@ class RaceInfo():
     @property
     def require_age(self): return self.__require_age
     @property
-    def mare(self): return self.__mare
+    def require_mare(self): return self.__require_mare
+    @property
+    def require_kyushu(self): return self.__require_kyushu
+    @property
+    def require_beginner_jockey(self): return self.__require_beginner_jockey
     @property
     def require_country(self): return self.__require_country
     @property
@@ -416,8 +480,12 @@ class RaceInfo():
     def grade(self, grade): self.__grade = grade
     @require_age.setter
     def require_age(self, require_age): self.__require_age = require_age
-    @mare.setter
-    def mare(self, mare): self.__mare = mare
+    @require_mare.setter
+    def require_mare(self, require_mare): self.__require_mare = require_mare
+    @require_kyushu.setter
+    def require_kyushu(self, require_kyushu): self.__require_kyushu = require_kyushu
+    @require_beginner_jockey.setter
+    def require_beginner_jockey(self, require_beginner_jockey): self.__require_beginner_jockey = require_beginner_jockey
     @require_country.setter
     def require_country(self, require_country): self.__require_country = require_country
     @require_local.setter
@@ -440,8 +508,8 @@ class RaceInfo():
 class RaceResult():
     '''レース全体のレース結果を保持するデータクラス'''
     def __init__(self):
-        self.__corner_rank = [] # コーナー通過順(馬番)
-        self.__pace = [] # 先頭馬のペース(秒)
+        self.__corner_rank = [] # コーナー通過順(馬番) TODO
+        self.__pace = [] # 先頭馬のペース(秒) TODO
 
     # getter
     @property
@@ -465,7 +533,7 @@ class HorseInfo():
         self.__gender = '' # 性別o
         self.__load = '' # 斤量o
         self.__jockey = '' # 騎手名o
-        self.__jockey_handi = '' # 騎手減量
+        self.__jockey_handi = '' # 騎手減量 TODO
         self.__win_odds = '' # 単勝オッズo
         self.__popular = '' # 人気o
         self.__weight = '' # 馬体重o
@@ -474,15 +542,17 @@ class HorseInfo():
         self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
         self.__owner = '' # 馬主名o
 
-        # 以下は馬柱から
-        self.__blank = '' # レース間隔
-        self.__father = '' # 父名
-        self.__monther = '' # 母名
-        self.__grandfather = '' # 母父名
-        self.__running_type = '' # 脚質(←netkeibaの主観データ？)
-        self.__country = '' # 所属(国内/国外)
-        self.__belong = '' # 所属(中央/地方)
-        self.__blinker = '' # ブリンカー(有/無)
+        # 以下は馬柱から 
+        # TODO 不変データ(血統関係)は別クラスで切り出し、未出走時のみ入れるか検討
+        # TODO ↑最古データが未出走でない場合は取得できないから一回ずつチェック入れる？
+        self.__blank = '' # レース間隔o
+        self.__father = '' # 父名o
+        self.__mother = '' # 母名o
+        self.__grandfather = '' # 母父名o
+        self.__running_type = '' # 脚質(←netkeibaの主観データ？)o
+        self.__country = '' # 所属(外国馬か)o
+        self.__belong = '' # 所属(地方馬か)o
+        self.__blinker = '0' # ブリンカー(有/無)o
         self.__haircolor = '' # 毛色
 
     # getter
@@ -521,7 +591,7 @@ class HorseInfo():
     @property
     def father(self): return self.__father
     @property
-    def monther(self): return self.__monther
+    def mother(self): return self.__mother
     @property
     def grandfather(self): return self.__grandfather
     @property
@@ -570,8 +640,8 @@ class HorseInfo():
     def blank(self, blank): self.__blank = blank
     @father.setter
     def father(self, father): self.__father = father
-    @monther.setter
-    def monther(self, monther): self.__monther = monther
+    @mother.setter
+    def mother(self, mother): self.__mother = mother
     @grandfather.setter
     def grandfather(self, grandfather): self.__grandfather = grandfather
     @running_type.setter
@@ -633,10 +703,13 @@ if __name__ == '__main__':
     # 開催日(組み込み時はインスタンス変数)
     KAISAI_DATE = '20220724'
     # PC内で完結か
+    #LOCAL = True
     LOCAL = False
     # レースIDをファイルから取得するか
     GET_FILE = True
+    #GET_FILE = False
 
     #for i in range(202202010201, 202202010213):
     #   RACE_ID = str(i)
     main()
+    #print(get_result())
