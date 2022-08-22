@@ -128,29 +128,54 @@ def get_umabashira(horse_dict):
     race_info.hold_no = race_data_list[1].replace('回', '')
     race_info.hold_date = race_data_list[3].replace('日目', '')
     race_info.require_age = half(race_data_list[4]).replace('サラ系', '').replace('障害', '')
-    # TODO リステッド/準重賞/重賞は全てオープン扱いなのでどっかから切り出す
     race_info.grade = half(race_data_list[5])
 
+    '''
+    # TODO リステッド/準重賞/重賞は全てオープン扱いなので下記から切り出す
+    <div class="RaceName">レース名
+        <span class="Icon_GradeType Icon_GradeType1"></span>GI
+        <span class="Icon_GradeType Icon_GradeType2"></span>GII
+        <span class="Icon_GradeType Icon_GradeType3"></span>GIII
+        <span class="Icon_GradeType Icon_GradeType4"></span>重賞
+        <span class="Icon_GradeType Icon_GradeType5"></span>OP
+        <span class="Icon_GradeType Icon_GradeType6"></span>1600下
+        <span class="Icon_GradeType Icon_GradeType7"></span>1000下
+        <span class="Icon_GradeType Icon_GradeType8"></span>900下
+        <span class="Icon_GradeType Icon_GradeType9"></span>500下
+        <span class="Icon_GradeType Icon_GradeType10"></span>JGI
+        <span class="Icon_GradeType Icon_GradeType11"></span>JGII
+        <span class="Icon_GradeType Icon_GradeType12"></span>JGIII
+        <span class="Icon_GradeType Icon_GradeType13"></span>WIN5
+        <span class="Icon_GradeType Icon_GradeType14"></span>待選
+        <span class="Icon_GradeType Icon_GradeType15"></span>L
+        <span class="Icon_GradeType Icon_GradeType16"></span>3勝
+        <span class="Icon_GradeType Icon_GradeType17"></span>2勝
+        <span class="Icon_GradeType Icon_GradeType18"></span>1勝
+    </div>
+    '''
     require = race_data_list[7]
     if '(国際)' in require:
         race_info.require_country = '国'
     elif '(混)' in require:
         race_info.require_country = '混'
 
-    # TODO 騙馬除外レースが引っ張れなさそうなので引っ張れる場所をチェック？
-    if '牝' in require and '牡' not in require:
-        race_info.require_mare = '1'
+    if '牡・牝' in require:
+        race_info.require_gender = '牡牝'
+    elif '牝' in require:
+        race_info.require_gender = '牝'
 
-    if '九州産馬' in require:  
+    if '九州産馬' in require:
         race_info.require_local = '1'
 
     if '見習騎手' in require:
         race_info.require_beginner_jockey = '1'
 
     if '(指)' in require:
-        race_info.require_local = '指'
+        race_info.require_local = 'マル指'
     elif '(特指)' in require:
-        race_info.require_local = '特'
+        race_info.require_local = '特指'
+    elif '指' in require:
+        race_info.require_local = 'カク指'
 
     # TODO 別定/ハンデ戦はより詳細に分類できるかチェック
     race_info.load_kind = race_data_list[8]
@@ -167,7 +192,7 @@ def get_umabashira(horse_dict):
     # horse_info = HorseInfo()
 
     fc = soup.select('div[class="fc"]')
-    
+
     for info in fc:
         horse_info = ''
 
@@ -177,10 +202,8 @@ def get_umabashira(horse_dict):
                 horse_info = horse_dict[horse[0].horse_no][0]
 
         horse_info.father = info.find('div', class_ = 'Horse01').text
-
         horse_type = info.find('div', class_ = 'Horse02')
-        
-        
+
         # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
         # TODO パラメータをbelongに統一するかも要検討
         if 'Icon_MaruChi' in str(horse_type):
@@ -197,18 +220,18 @@ def get_umabashira(horse_dict):
 
         horse_info.mother = info.find('div', class_ = 'Horse03').text
         horse_info.grandfather = info.find('div', class_ = 'Horse04').text.replace('(', '').replace(')', '')
-        
+
         blank = info.find('div', class_ = 'Horse06').text
         if blank == '連闘':
             horse_info.blank = '0'
         else:
             blank_week = re.search('中(\d+)週', blank)
-            # TODO 初出走判定
+            # 初出走判定
             if blank_week == None:
                 horse_info.blank = '-1'
             else:
                 horse_info.blank = prize.groups()[0]
-            
+
         running_type = str(info.find('div', class_ = 'Horse06'))
         if 'horse_race_type00' in running_type:
             horse_info.running_type = '未'
@@ -222,19 +245,6 @@ def get_umabashira(horse_dict):
             horse_info.running_type = '追'
         elif 'horse_race_type05' in running_type:
             horse_info.running_type = '自在'
-    
-    '''
-    TODO 馬情報
-    try:
-        #fc = soup.find('div', class_ = 'fc')
-        fc = soup.select('div[class="fc"]')
-
-        for fcc in fc:
-            horseinfo = str(fcc).replace('\n', '')
-            output(horseinfo, 'check3')
-    except:
-        output(str(RACE_ID) + ' 3', 'error')
-    '''
 
 def get_result():
     # レース結果(HTML全体)
@@ -382,9 +392,9 @@ class RaceInfo():
         self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回o
         self.__hold_date = '' # 開催日o
-        self.__grade = '' # 格・グレードo TODO
+        self.__grade = '' # 格・グレード TODO
         self.__require_age = '' # 出走条件(年齢)o
-        self.__require_mare = '0' # 出走条件(牝馬限定戦)o
+        self.__require_gender = '' # 出走条件(牝馬限定戦)o
         self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)o
         self.__require_beginner_jockey = '0' # 出走条件(見習騎手限定戦)o
         self.__require_country = '' # 出走条件(国際/混合)o
@@ -427,7 +437,7 @@ class RaceInfo():
     @property
     def require_age(self): return self.__require_age
     @property
-    def require_mare(self): return self.__require_mare
+    def require_gender(self): return self.__require_gender
     @property
     def require_kyushu(self): return self.__require_kyushu
     @property
@@ -480,8 +490,8 @@ class RaceInfo():
     def grade(self, grade): self.__grade = grade
     @require_age.setter
     def require_age(self, require_age): self.__require_age = require_age
-    @require_mare.setter
-    def require_mare(self, require_mare): self.__require_mare = require_mare
+    @require_gender.setter
+    def require_gender(self, require_gender): self.__require_gender = require_gender
     @require_kyushu.setter
     def require_kyushu(self, require_kyushu): self.__require_kyushu = require_kyushu
     @require_beginner_jockey.setter
