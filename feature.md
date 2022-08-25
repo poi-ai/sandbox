@@ -5,30 +5,30 @@ memo
 
 | 論理名 | 物理名 | テーブル | 型 | 必須 | バリデート | カテゴリ | 備考|
 | ----: | ----: | ----: | ----: | ----: | ----: | ----: | ----: |
-| レース開催日 | race_date |  | D | o |  |  |  |
-| レース番号 | race_no |  | T | o |  |  |  |
-| 競馬場コード | baba_code |  | T | o |  |  |  |
-| レース名 | race_name |  | V | o |  |  |  |
-| レース形態 | race_type |  | E | o |  |  |  |
-| 馬場 | baba |  | E | o |  |  |  |
-| 天候 | wheather |  | E | o |  |  |  |
-| 馬場状態(芝) | glass_condition |  | E | - |  |  |  |
-| 馬場状態(ダ) | dirt_condition |  | E | - |  |  |  |
-| 距離 | distance |  | S | o |  |  |  |
-| 回り | around |  | E | - |  |  |  |
-| 使用コース | in_out |  | V | - |  |  |  |
+| レース開催日 | race_date |  | DATE | o |  |  |  |
+| レース番号 | race_no |  | TINYINT | o |  |  |  |
+| 競馬場コード | baba_code |  | TINYINT | o |  |  |  |
+| レース名 | race_name |  | VARCHAR | o |  |  |  |
+| レース形態 | race_type |  | ENUM | o | - | 平：平地<br>障：障害 |  |
+| 馬場 | baba |  | ENUM | o | - | 芝：芝<br>ダ：ダート<br>芝ダ：芝&ダート | 芝ダは障害のみ |
+| 天候 | wheather |  | ENUM | o | - | 晴：晴れ<br>曇：曇り<br>小雨：小雨<br>雨：雨<br>小雪：小雪<br>雪：雪 |  |
+| 馬場状態(芝) | glass_condition |  | ENUM | - | - | 良：良<br>稍：稍重<br>重：重<br>不：不良 |  |
+| 馬場状態(ダ) | dirt_condition |  | ENUM | - | - | 良：良<br>稍：稍重<br>重：重<br>不：不良 |  |
+| 距離 | distance |  | SMALLINT | o | ? | - |  |
+| 回り | around |  | ENUM | - |  |  |  |
+| 使用コース | in_out |  | VARCHAR | - |  |  |  |
 | 発走時刻 | race_time |  | TIME | o |  |  |  |
-| 開催回 | hold_no |  | T | o |  |  |  |
-| 開催日 | hold_date |  | T | o |  |  |  |
-| クラス | race_class |  |  | o |  |  |  |
-| グレード | grade |  |  | - |  |  |  |
-| 出走条件(馬齢) | require_age |  |  | o |  |  |  |
-| 出走条件(性別) | require_gender |  |  | o |  |  |  |
-| 九州産馬限定戦フラグ | require_kyushu |  |  |  | o |  |  |
-| 見習騎手限定戦フラグ | require_beginner_jockey |  |  | o |  |  |  |
+| 開催回 | hold_no |  | TINYINT | o |  |  |  |
+| 開催日 | hold_date |  | TINYINT | o |  |  |  |
+| クラス | race_class |  | ENUM | o | - | 新馬<br>未勝利<br>500万下<br>1000万下<br>1600万下<br>1勝<br>2勝<br>3勝<br>オープン |  |
+| グレード | grade |  | VARCHAR | - | - | GI<br>GII<br>GIII<br>重賞<br>OP<br>1600万下<br>1000万下<br>900万下<br>500万下<br>JGI<br>JGII<br>JGIII<br>L<br>3勝<br>2勝<br>1勝 | 新馬・未勝利はNULL |
+| 出走条件(馬齢) | require_age |  | ENUM | o | - | 2歳<br>3歳<br>3歳以上<br>4歳以上 |  |
+| 出走条件(性別) | require_gender |  | ENUM | - | - | NULL：制限なし<br>牝：牝馬限定<br>牡牝：騙馬以外 |  |
+| 九州産馬限定戦フラグ | require_kyushu |  | BOOL | o | - | - |  |
+| 見習騎手限定戦フラグ | require_beginner_jockey |  | BOOL | o | - | - |  |
 | 出走条件(国籍)| require_country |  |  | - |  |  |  |
 | 出走条件(地方) | require_local |  |  | - |  |  |  |
-| 斤量条件 | load_kind |  |  | o |  |  |  |
+| 斤量条件 | load_kind |  | ENUM | o | - | 定量<br>馬齢<br>別定<br>ハンデ |  |
 | 1着賞金 | first_prize |  |  | o |  |  |  |
 | 2着賞金 | second_prize |  |  | o |  |  |  |
 | 3着賞金 | third_prize |  |  | o |  |  |  |
