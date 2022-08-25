@@ -128,31 +128,49 @@ def get_umabashira(horse_dict):
     race_info.hold_no = race_data_list[1].replace('回', '')
     race_info.hold_date = race_data_list[3].replace('日目', '')
     race_info.require_age = half(race_data_list[4]).replace('サラ系', '').replace('障害', '')
-    race_info.grade = half(race_data_list[5])
+    race_info.race_class = half(race_data_list[5])
 
-    '''
-    # TODO リステッド/準重賞/重賞は全てオープン扱いなので下記から切り出す
-    <div class="RaceName">レース名
-        <span class="Icon_GradeType Icon_GradeType1"></span>GI
-        <span class="Icon_GradeType Icon_GradeType2"></span>GII
-        <span class="Icon_GradeType Icon_GradeType3"></span>GIII
-        <span class="Icon_GradeType Icon_GradeType4"></span>重賞
-        <span class="Icon_GradeType Icon_GradeType5"></span>OP
-        <span class="Icon_GradeType Icon_GradeType6"></span>1600下
-        <span class="Icon_GradeType Icon_GradeType7"></span>1000下
-        <span class="Icon_GradeType Icon_GradeType8"></span>900下
-        <span class="Icon_GradeType Icon_GradeType9"></span>500下
-        <span class="Icon_GradeType Icon_GradeType10"></span>JGI
-        <span class="Icon_GradeType Icon_GradeType11"></span>JGII
-        <span class="Icon_GradeType Icon_GradeType12"></span>JGIII
-        <span class="Icon_GradeType Icon_GradeType13"></span>WIN5
-        <span class="Icon_GradeType Icon_GradeType14"></span>待選
-        <span class="Icon_GradeType Icon_GradeType15"></span>L
-        <span class="Icon_GradeType Icon_GradeType16"></span>3勝
-        <span class="Icon_GradeType Icon_GradeType17"></span>2勝
-        <span class="Icon_GradeType Icon_GradeType18"></span>1勝
-    </div>
-    '''
+    race_name = soup.find('div', class_ = 'RaceName')
+    race_info.race_name = race_name.text
+
+    # CSSからクラスチェック、13はWIN5
+    if 'Icon_GradeType1"' in str(race_name):
+        race_info.grade = 'GI'
+    elif 'Icon_GradeType2' in str(race_name):
+        race_info.grade = 'GII'
+    elif 'Icon_GradeType3' in str(race_name):
+        race_info.grade = 'GIII'
+    elif 'Icon_GradeType4' in str(race_name):
+        race_info.grade = '重賞'
+    elif 'Icon_GradeType5' in str(race_name):
+        race_info.grade = 'OP'
+    elif 'Icon_GradeType6' in str(race_name):
+        race_info.grade = '1600万下'
+    elif 'Icon_GradeType7' in str(race_name):
+        race_info.grade = '1000万下'
+    elif 'Icon_GradeType8' in str(race_name):
+        race_info.grade = '900万下'
+    elif 'Icon_GradeType9' in str(race_name):
+        race_info.grade = '500万下'
+    elif 'Icon_GradeType10' in str(race_name):
+        race_info.grade = 'JGI'
+    elif 'Icon_GradeType11' in str(race_name):
+        race_info.grade = 'JGII'
+    elif 'Icon_GradeType12' in str(race_name):
+        race_info.grade = 'JGIII'
+    elif 'Icon_GradeType15' in str(race_name):
+        race_info.grade = 'L'
+    elif 'Icon_GradeType16' in str(race_name):
+        race_info.grade = '3勝'
+    elif 'Icon_GradeType17' in str(race_name):
+        race_info.grade = '2勝'
+    elif 'Icon_GradeType18' in str(race_name):
+        race_info.grade = '1勝'
+
+    # TODO 待選とは何か確認
+    if 'Icon_GradeType14' in str(race_name):
+        race_info.grade += '待選'
+
     require = race_data_list[7]
     if '(国際)' in require:
         race_info.require_country = '国'
@@ -313,13 +331,13 @@ def get_result():
         if i == 0:
             winner_horse_no = no
         elif i == 1:
-            horse_dict[winner_horse_no][1].diff_distance = '-' + str(row['着差'])
-            horse_dict[no][1].diff_distance = row['着差']
+            horse_dict[winner_horse_no][1].diff = '-' + str(row['着差'])
+            horse_dict[no][1].diff = row['着差']
         else:
-            horse_dict[no][1].diff_distance = row['着差']
+            horse_dict[no][1].diff = row['着差']
         horse_dict[no][1].pass_rank = row['通過']
         horse_dict[no][1].nobiri = row['上り']
-        horse_dict[no][1].price = row['賞金(万円)']
+        horse_dict[no][1].prize = row['賞金(万円)']
 
     return horse_dict
 
@@ -380,19 +398,20 @@ class CommonInfo():
 class RaceInfo():
     '''発走前のレースに関するデータのデータクラス'''
     def __init__(self):
-        self.__race_name = '' # レース名 TODO
-        self.__race_type = '' # 競走形態(平地/障害)o
+        self.__race_name = '' # レース名o
+        self.__race_type = '' # レース形態(平地/障害)o
         self.__baba = '' # 馬場(芝/ダート)o
         self.__weather = '' # 天候o
         self.__glass_condition = '' # 馬場状態(芝)o
         self.__dirt_condition = '' # 馬場状態(ダート)o
         self.__distance = '' # 距離o
         self.__around = '' # 回り(右/左)o
-        self.__in_out = '' # 回り(内/外)o
+        self.__in_out = '' # 使用コース(内回り/外回り)o
         self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回o
         self.__hold_date = '' # 開催日o
-        self.__grade = '' # 格・グレード TODO
+        self.__race_class = '' # クラスo
+        self.__grade = '' # グレード TODO
         self.__require_age = '' # 出走条件(年齢)o
         self.__require_gender = '' # 出走条件(牝馬限定戦)o
         self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)o
@@ -432,6 +451,8 @@ class RaceInfo():
     def hold_no(self): return self.__hold_no
     @property
     def hold_date(self): return self.__hold_date
+    @property
+    def race_class(self): return self.__race_class
     @property
     def grade(self): return self.__grade
     @property
@@ -486,6 +507,8 @@ class RaceInfo():
     def hold_no(self, hold_no): self.__hold_no = hold_no
     @hold_date.setter
     def hold_date(self, hold_date): self.__hold_date = hold_date
+    @race_class.setter
+    def race_class(self, race_class): self.__race_class = race_class
     @grade.setter
     def grade(self, grade): self.__grade = grade
     @require_age.setter
@@ -552,7 +575,7 @@ class HorseInfo():
         self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
         self.__owner = '' # 馬主名o
 
-        # 以下は馬柱から 
+        # 以下は馬柱から
         # TODO 不変データ(血統関係)は別クラスで切り出し、未出走時のみ入れるか検討
         # TODO ↑最古データが未出走でない場合は取得できないから一回ずつチェック入れる？
         self.__blank = '' # レース間隔o
@@ -671,10 +694,10 @@ class HorseResult():
         self.__horse_no = '' # 馬番(複合PK)o
         self.__rank = '' # 着順o
         self.__goal_time = '' # タイムo
-        self.__diff_distance = '' # 着差o
+        self.__diff = '' # 着差o
         self.__pass_rank = '' # 通過順o
-        self.__nobori = '' # 上り3Fo
-        self.__price = '' # 賞金o
+        self.__agari = '' # 上り3Fo
+        self.__prize = '' # 賞金o
 
     # getter
     @property
@@ -684,13 +707,13 @@ class HorseResult():
     @property
     def goal_time(self): return self.__goal_time
     @property
-    def diff_distance(self): return self.__diff_distance
+    def diff(self): return self.__diff
     @property
     def pass_rank(self): return self.__pass_rank
     @property
-    def nobori(self): return self.__nobori
+    def agari(self): return self.__agari
     @property
-    def price(self): return self.__price
+    def prize(self): return self.__prize
 
     # setter
     @horse_no.setter
@@ -699,14 +722,14 @@ class HorseResult():
     def rank(self, rank): self.__rank = rank
     @goal_time.setter
     def goal_time(self, goal_time): self.__goal_time = goal_time
-    @diff_distance.setter
-    def diff_distance(self, diff_distance): self.__diff_distance = diff_distance
+    @diff.setter
+    def diff(self, diff): self.__diff = diff
     @pass_rank.setter
     def pass_rank(self, pass_rank): self.__pass_rank = pass_rank
-    @nobori.setter
-    def nobori(self, nobori): self.__nobori = nobori
-    @price.setter
-    def price(self, price): self.__price = price
+    @agari.setter
+    def agari(self, agari): self.__agari = agari
+    @prize.setter
+    def prize(self, prize): self.__prize = prize
 
 if __name__ == '__main__':
     RACE_ID = '202204020206'
