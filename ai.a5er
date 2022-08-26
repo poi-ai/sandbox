@@ -1,0 +1,62 @@
+﻿# A5:ER FORMAT:16
+# A5:ER ENCODING:UTF8
+# A5:ER Mk-1 Copyright © 2007 m.matsubara
+# A5:SQL Mk-2 Version 2.17.2 Copyright © 1997 - 2022 m.matsubara
+#  https://a5m2.mmatsubara.com
+
+[Manager]
+ProjectName=ai
+Author=poi
+MaxEntityRowShow=1000
+ReadOnlyRecommend=0
+Page=Main
+PageInfo="Main",3,"A3Landscape",$FFFFFF
+LogicalView=1
+DecodeDomain=0
+ViewModePageIndividually=1
+ViewMode=3
+ViewFormat=0
+UseNondependenceDashLine=0
+FontName=ＭＳ 明朝
+FontSize=16
+PaperSize=A4Landscape
+HeaderLeft=
+HeaderCenter=
+HeaderRight=
+FooterLeft=
+FooterCenter=
+FooterRight=
+ShowPageoutRelation=1
+RDBMSType=5
+RDBMSTypeName=MySQL
+DefaultPkName=%0:s_PKC
+DefaultPkIndexName=%0:s_PKI
+DefaultIndexName=%0:s_IX%1:d
+DefaultFkName=%0:s_FK%1:d
+SqlSeparator=0
+UpperCaseKeyword=0
+ShowTag=1
+ShowCommonAttributes=0
+BugFixEntityWidth=1
+
+[Entity]
+PName=NEW_ENTITY1
+LName=aaa
+Comment=
+TableOption=
+Page=MAIN
+Left=1950
+Top=800
+Field="レースID","race_id","","NOT NULL",0,"","",$FFFFFFFF,""
+Field="馬番","horse_no","TINYINT","NOT NULL",1,"","",$FFFFFFFF,""
+Field="単勝オッズ","tansho_odds","FLOAT",,,"","",$FFFFFFFF,""
+Field="複勝下限オッズ","fukusho_lower_odds","FLOAT",,,"","",$FFFFFFFF,""
+Field="複勝上限オッズ","fukusho_upper_odds","FLOAT",,,"","",$FFFFFFFF,""
+Field="記録時刻","record_time","TIME","NOT NULL",2,"","",$FFFFFFFF,""
+Field="発走まで","before_minutes","TINYINT","NOT NULL",,"","",$FFFFFFFF,""
+EffectMode=None
+Color=$000000
+BkColor=$FFFFFF
+ModifiedDateTime=20220826143139
+Position="MAIN",1950,800
+ZOrder=3
