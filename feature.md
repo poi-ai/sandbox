@@ -26,19 +26,19 @@ memo
 | 出走条件(性別) | require_gender |  | ENUM | - | - | NULL：制限なし<br>牝：牝馬限定<br>牡牝：騙馬以外 |  |
 | 九州産馬限定戦フラグ | require_kyushu |  | BOOL | o | - | - |  |
 | 見習騎手限定戦フラグ | require_beginner_jockey |  | BOOL | o | - | - |  |
-| 出走条件(国籍)| require_country |  |  | - |  |  |  |
-| 出走条件(地方) | require_local |  |  | - |  |  |  |
+| 出走条件(国籍)| require_country |  | ENUM | - |  | マル外<br>カク外 | ※1 |
+| 出走条件(地方) | require_local |  | ENUM | - |  | マル地<br>カク地 | ※2 |
 | 斤量条件 | load_kind |  | ENUM | o | - | 定量<br>馬齢<br>別定<br>ハンデ |  |
-| 1着賞金 | first_prize |  |  | o |  |  |  |
-| 2着賞金 | second_prize |  |  | o |  |  |  |
-| 3着賞金 | third_prize |  |  | o |  |  |  |
-| 4着賞金 | fourth_prize |  |  | o |  |  |  |
-| 5着賞金 | fifth_prize |  |  | o |  |  |  |
-| 出走頭数 | horse_num |  |  | o |  |  |  |
-| 1コーナー通過順 | corner_rank1 |  |  | - |  |  |  |
-| 2コーナー通過順 | corner_rank2 |  |  | - |  |  |  |
-| 3コーナー通過順 | corner_rank3 |  |  | - |  |  |  |
-| 4コーナー通過順 | corner_rank4 |  |  | - |  |  |  |
+| 1着賞金 | first_prize |  | FLOAT | o |  |  | 単位千 |
+| 2着賞金 | second_prize |  | FLOAT | o |  |  | 単位千 |
+| 3着賞金 | third_prize |  | FLOAT | o |  |  | 単位千 |
+| 4着賞金 | fourth_prize |  | FLOAT | o |  |  | 単位千 |
+| 5着賞金 | fifth_prize |  | FLOAT | o |  |  | 単位千 |
+| 出走頭数 | horse_num |  | TINYINT | o |  |  |  |
+| 1コーナー通過順 | corner_rank1 |  | VARCHAR | - |  |  | 馬番列挙 |
+| 2コーナー通過順 | corner_rank2 |  | VARCHAR | - |  |  | 馬番列挙 |
+| 3コーナー通過順 | corner_rank3 |  | VARCHAR | - |  |  | 馬番列挙 |
+| 4コーナー通過順 | corner_rank4 |  | VARCHAR | - |  |  | 馬番列挙 |
 | ペース | pace |  |  | o |  |  |  |
 | 枠番 | frame_no |  |  | o |  |  |  |
 | 馬番 | horse_no |  |  | o |  |  |  |
@@ -60,16 +60,21 @@ memo
 | 母名 | mother |  |  | o |  |  |  |
 | 母父名 | groundfather |  |  | o |  |  |  |
 | 脚質 | running_type |  |  | o |  |  |  |
-| 国籍 | country |  |  | o |  |  |  |
-| 所属 | belong |  |  | o |  |  |  |
-| ブリンカー | blinker |  |  | o |  |  |  |
+| 国籍 | country |  | ENUM | o |  |  |  |
+| 所属 | belong |  | ENUM | o |  |  |  |
+| ブリンカー | blinker |  | BOOL | o |  | 1:有<br>0:無 |  |
 | 毛色 | haircolor |  |  | o |  |  |  |
 | 着順 | rank |  |  | o |  |  |  |
 | 走破タイム | goal_time |  |  | o |  |  |  |
 | 着差 | diff |  |  | o |  |  |  |
-| 1コーナー通過順 | pass_rank1 |  |  | - |  |  |  |
-| 2コーナー通過順 | pass_rank2 |  |  | - |  |  |  |
-| 3コーナー通過順 | pass_rank3 |  |  | - |  |  |  |
-| 4コーナー通過順 | pass_rank4 |  |  | - |  |  |  |
-| 上がり3F | agari |  |  | o |  |  |  |
-| 賞金 | prize |  |  | o |  |  |  |
+| 1コーナー通過順 | pass_rank1 |  | TINYINT | - |  |  | 番手 |
+| 2コーナー通過順 | pass_rank2 |  | TINYINT | - |  |  | 番手 |
+| 3コーナー通過順 | pass_rank3 |  | TINYINT | - |  |  | 番手 |
+| 4コーナー通過順 | pass_rank4 |  | TINYINT | - |  |  | 番手 |
+| 上がり3F | agari |  | FLOAT | o |  |  |  |
+| 賞金 | prize |  | FLOAT | o |  |  | 単位千 |
+
+※1 マル外…外国産馬であってカク外以外の馬のことです。<br>
+カク外...国際交流競走に出走する外国調教師の管理馬のことです。<br>
+※2 マル地…JRAの競走馬登録のとき、すでに地方競馬に出走したことのある馬であってカク地以外の馬のことです。<br>
+カク地…中央競馬指定交流競走に出走する地方競馬所属の馬のことです。<br>
