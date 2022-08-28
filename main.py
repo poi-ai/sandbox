@@ -8,10 +8,10 @@ from bs4 import BeautifulSoup
 def url(type):
     # 馬柱
     if type == 'UMABASHIRA_URL':
-        return f'https://race.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}'
+        return f'https://nar.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}'
     # リアルタイム レース結果
     elif type == 'RACE_RESULT_URL':
-        return f'https://race.netkeiba.com/race/result.html?race_id={RACE_ID}'
+        return f'https://nar.netkeiba.com/race/result.html?race_id={RACE_ID}'
     # DB レース結果
     elif type == 'DB_RESULT_URL':
         return f'https://db.netkeiba.com/race/{RACE_ID}'
@@ -41,7 +41,7 @@ def main():
             RACE_ID = str(id).replace('\n', '')
 
             # レース結果(DB)からデータ取得
-            # horse_dict = get_result()
+            get_result()
 
             # 馬柱からデータ取得
             get_umabashira()
@@ -59,6 +59,7 @@ def get_race_id():
     return id_list
 
 def get_umabashira():
+
     # 馬柱からデータを取得
     if LOCAL:
         f = open('umabashira_sjis.txt', 'r')
@@ -128,10 +129,27 @@ def get_umabashira():
 
     try:
         #fc = soup.find('div', class_ = 'fc')
-        fc = soup.select('div[class="fc"]')
+        fc = soup.select('dl[class="fc"]')
 
         for fcc in fc:
             horseinfo = str(fcc).replace('\n', '')
+            # データ削減用
+            horseinfo = horseinfo.replace('<dl class="fc"><dt class="Horse01 fc">', '!fc hs01!')
+            horseinfo = horseinfo.replace('<dt class="Horse02">', '!hs02!')
+            horseinfo = horseinfo.replace('<a href="https://db.netkeiba.com/horse/', '!hsno lk!')
+            horseinfo = horseinfo.replace('" target="_blank">', '!nwpage!')
+            horseinfo = horseinfo.replace('<span class="Icon_HorseMark Icon_kakuChi"></span>', '!kakuchi00!')
+            horseinfo = horseinfo.replace('<span class="Icon_HorseMark Icon_kakuChi"></span>', '!maruchi00!')
+            horseinfo = horseinfo.replace('<dt class="Horse02">', '!hs02!')
+            horseinfo = horseinfo.replace('<dt class="Horse03">', '!hs03!')
+            horseinfo = horseinfo.replace('<dt class="Horse04">', '!hs04!')
+            horseinfo = horseinfo.replace('<dt class="Horse05">', '!hs05!')
+            horseinfo = horseinfo.replace('<dt class="Horse06 fc">', '!hs06!')
+            horseinfo = horseinfo.replace('<dt class="Horse07 fc">', '!hs07!')
+            horseinfo = horseinfo.replace('<img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type', '!kykstimg!')
+            horseinfo = horseinfo.replace('<a href="https://db.netkeiba.com/trainer/', '!trlk!')
+            horseinfo = horseinfo.replace('人気)</span></div></dt></dl>', '!edtag!')
+            # 削減ここまで
             output(horseinfo, 'check3')
     except:
         output(str(RACE_ID) + ' 3', 'error')
@@ -149,6 +167,13 @@ def get_result():
     # レース結果(結果テーブル)
     tables = Table(soup)
     table = tables[0]
+
+    try:
+        table.to_csv('db_result.csv', mode='a')
+    except:
+        output(str(RACE_ID) + ' result', 'error')
+
+    return
 
     # 箱用意{馬番:[HorseInfo, HorseResult]}
     horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
