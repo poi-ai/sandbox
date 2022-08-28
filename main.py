@@ -40,11 +40,14 @@ def main():
             # レースIDをセット
             RACE_ID = str(id).replace('\n', '')
 
-            # レース結果(DB)からデータ取得
-            get_result()
+            try:
+                # レース結果(DB)からデータ取得
+                get_result()
 
-            # 馬柱からデータ取得
-            get_umabashira()
+                # 馬柱からデータ取得
+                get_umabashira()
+            except:
+                output(str(RACE_ID) + ' other', 'error')
     else:
         # レース結果(DB)からデータ取得
         horse_dict = get_result()
@@ -250,6 +253,8 @@ def Table(soup):
 
     # read_htmlで抜けなくなる余分なタグを除去
     HTML = str(soup).replace('<diary_snap_cut>', '').replace('</diary_snap_cut>', '')
+    #HTML = str(soup)
+    HTML = HTML[:HTML.find('ひとこと日記')]
     return pd.read_html(HTML)
 
 def output(word, filename):
