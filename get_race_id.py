@@ -2,27 +2,44 @@ import time
 import requests
 import re
 from bs4 import BeautifulSoup
+from datetime import datetime, timedelta
 
-def main(oldest_date = '20070728', latest_date = '20220731'):
-    dates = get_dates(oldest_date, latest_date)
+def main(oldest_date = '20100101', latest_date = '20220731'):
+    #dates = get_dates(oldest_date, latest_date)
 
-    for date in dates:
+    tdatetime = datetime.strptime(latest_date, '%Y%m%d')
+
+    date = latest_date
+
+    while oldest_date != date:
         race_ids = get_race_id(date)
         output(race_ids)
+        tdatetime = tdatetime - timedelta(days=1)
+        date = datetime.strftime(tdatetime, '%Y%m%d')
 
 def get_race_id(date):
-    '''指定した日に開催される競馬場のURLを取得する'''
-    # HTMLタグ取得
-    html = get_soup(f'https://db.netkeiba.com/race/list/{date}')
+    html = str(get_soup(f'https://nar.netkeiba.com/top/race_list_sub.html?kaisai_date={date}'))
 
-    # レース一覧記載枠の箇所を抽出
-    race_frame = html.find('div', class_ = 'race_kaisai_info')
+    race_ids = []
+    for i in re.finditer('result.html\?race_id=(\d+)', html):
+        race_ids.append(i.groups()[0])
 
-    # レースへのリンクをすべて取得
-    races = re.finditer(r'/race/(\d+)/', str(race_frame))
+    return race_ids
 
-    # リストに変換して返す
-    return [m.groups()[0] for m in races]
+'''
+def get_race_id(race_holds, date):
+    race_ids = []
+    for race_hold in race_holds:
+        html = str(get_soup(f'https://nar.netkeiba.com/top/race_list_sub.html?kaisai_id={race_hold}&kaisai_date={date}&rf=race_list'))
+
+        print(html)
+        exit()
+        for i in re.finditer('result.html?race_id=(.+)class', html):
+            race_ids.append(i.groups()[0][:10])
+            
+    print(race_ids)
+    exit()
+'''
 
 def output(id_list):
     f = open(f'race_id.txt', 'a')
@@ -87,4 +104,4 @@ def get_soup(URL):
 
 if __name__ == '__main__':
     #output(['aaa','iii'])
-    main('20210801', '20220731')
+    main('20140801', '20220113')
