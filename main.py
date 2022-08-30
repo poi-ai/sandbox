@@ -264,6 +264,12 @@ def get_umabashira(horse_dict):
         elif 'horse_race_type05' in running_type:
             horse_info.running_type = '自在'
 
+    hair_colors = soup.find('span', class_ = 'Barei')
+    for i, hair_color in enumerate(hair_colors):
+        pass
+        # m = re.search('.\d(.+)')
+        # horse_dict[i + 1][0].running_type = m.groups()[0]
+
 def get_result():
     # レース結果(HTML全体)
     if LOCAL:
