@@ -50,7 +50,7 @@ def main():
         horse_dict = get_result()
 
         # 馬柱からデータ取得
-        get_umabashira()
+        horse_dict, race_info = get_umabashira(horse_dict)
 
 def get_race_id():
     f = open('race_id.txt', 'r')
@@ -59,6 +59,8 @@ def get_race_id():
     return id_list
 
 def get_umabashira(horse_dict):
+    # 実運用のhorse_dictはインスタンス変数(self)から引っ張る
+
     # 馬柱からデータを取得
     if LOCAL:
         f = open('umabashira_sjis.txt', 'r')
@@ -266,9 +268,11 @@ def get_umabashira(horse_dict):
 
     hair_colors = soup.find('span', class_ = 'Barei')
     for i, hair_color in enumerate(hair_colors):
-        pass
-        # m = re.search('.\d(.+)')
-        # horse_dict[i + 1][0].running_type = m.groups()[0]
+        m = re.search('.\d(.+)', hair_color)
+        horse_dict[i + 1][0].running_type = m.groups()[0]
+
+    # 実運用ではクラス化するため、返り値なしでインスタンス変数へ代入
+    return horse_dict, race_info
 
 def get_result():
     # レース結果(HTML全体)
@@ -742,11 +746,11 @@ if __name__ == '__main__':
     # 開催日(組み込み時はインスタンス変数)
     KAISAI_DATE = '20220724'
     # PC内で完結か
-    #LOCAL = True
-    LOCAL = False
+    LOCAL = True
+    #LOCAL = False
     # レースIDをファイルから取得するか
-    GET_FILE = True
-    #GET_FILE = False
+    #GET_FILE = True
+    GET_FILE = False
 
     #for i in range(202202010201, 202202010213):
     #   RACE_ID = str(i)
