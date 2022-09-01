@@ -168,6 +168,7 @@ def get_result():
         soup = Soup(url('DB_RESULT_URL'))
 
     # レース結果(結果テーブル)
+    # ばんえいは[4]と[5]はとれない
     tables = Table(soup)
     table = tables[0]
 
@@ -253,8 +254,10 @@ def Table(soup):
 
     # read_htmlで抜けなくなる余分なタグを除去
     HTML = str(soup).replace('<diary_snap_cut>', '').replace('</diary_snap_cut>', '')
-    #HTML = str(soup)
-    HTML = HTML[:HTML.find('ひとこと日記')]
+
+    # ばんえいのときは取得できないテーブルがあるため削る
+    if re.compile('\d{4}65\d{6}').search(RACE_ID):
+        HTML = HTML[:HTML.find('result_table_02') - 60]
     return pd.read_html(HTML)
 
 def output(word, filename):
@@ -613,7 +616,7 @@ if __name__ == '__main__':
     # PC内で完結か
     LOCAL = False
     # レースIDをファイルから取得するか
-    GET_FILE = True
+    GET_FILE = False
 
     #for i in range(202202010201, 202202010213):
     #   RACE_ID = str(i)
