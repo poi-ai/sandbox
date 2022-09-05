@@ -2,81 +2,103 @@
 <html>
 <head>
 <meta charset="utf-8"/>
-<!-- block=common__meta_tag_each_race (cg) -->
+<!-- block=meta_tag_each_race (cg) -->
 <meta content="ja" http-equiv="content-language"/>
 <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
 <meta content="width=1000" name="viewport"/>
 <meta content="telephone=no" name="format-detection"/>
-<meta content="2022年7月31日 新潟6R ２歳新馬の5走表示です。JRA開催レースの出馬表や最新オッズ、レース結果速報、払戻情報をはじめ、競馬予想やデータ分析など予想に役立つ情報も満載です。" name="description"/>
-<meta content="競馬,keiba,出馬表,オッズ,予想,レース結果,払戻し,結果速報,競馬予想,ネット競馬,netkeiba" name="keywords"/>
+<meta content="2022年9月1日 名古屋3R AIゆま様予想公開引の5走表示です。地方競馬 全場の出馬表や最新オッズ、レース結果・払戻情報をはじめ、競馬予想やデータ分析など予想に役立つ情報も満載です。" name="description"/>
+<meta content="地方競馬,オッズ,レース結果,競馬予想,大井競馬,川崎競馬,船橋競馬,浦和競馬,南関競馬,ネット競馬,netkeiba" name="keywords"/>
 <meta content="https://www.netkeiba.com/style/netkeiba.ja/image/netkeiba.png" name="thumbnail"/>
 <!-- ogp用 -->
 <meta content="netkeiba.com" property="og:site_name"/>
 <meta content="article" property="og:type"/>
-<meta content="２歳新馬 5走表示 | 2022年7月31日 新潟6R レース情報(JRA) - netkeiba.com" property="og:title"/>
-<meta content="https://race.netkeiba.com/race/shutuba_past.html?race_id=202204020206" property="og:url"/>
-<meta content="2022年7月31日 新潟6R ２歳新馬の5走表示です。JRA開催レースの出馬表や最新オッズ、レース結果速報、払戻情報をはじめ、競馬予想やデータ分析など予想に役立つ情報も満載です。" property="og:description"/>
+<meta content="AIゆま様予想公開引 5走表示 | 2022年9月1日 名古屋3R 地方競馬レース情報 - netkeiba.com" property="og:title"/>
+<meta content="https://nar.netkeiba.com/race/shutuba_past.html?race_id=202248090103" property="og:url"/>
+<meta content="2022年9月1日 名古屋3R AIゆま様予想公開引の5走表示です。地方競馬 全場の出馬表や最新オッズ、レース結果・払戻情報をはじめ、競馬予想やデータ分析など予想に役立つ情報も満載です。" property="og:description"/>
 <meta content="https://www.netkeiba.com/style/netkeiba.ja/image/netkeiba.png" property="og:image"/>
 <!-- Twitter用 -->
 <meta content="summary" property="twitter:card"/>
 <meta content="@netkeiba" property="twitter:site"/>
 <!-- Facebook用 -->
 <meta content="30367" property="fb:admins"/>
-<link href="https://race.netkeiba.com/race/shutuba_past.html?race_id=202204020206" rel="canonical"/>
-<link href="https://race.sp.netkeiba.com/?pid=shutuba_past&amp;race_id=202204020206" media="only screen and (max-width: 640px)" rel="alternate"/>
-<link href="https://rss.netkeiba.com?pid=rss_netkeiba&amp;site=netkeiba" rel="alternate" type="application/rss+xml"/>
 <!-- アノテーション -->
-<title>２歳新馬 5走表示 | 2022年7月31日 新潟6R レース情報(JRA) - netkeiba.com</title>
+<link href="https://nar.netkeiba.com/race/shutuba_past.html?race_id=202248090103" rel="canonical"/>
+<link href="https://nar.sp.netkeiba.com/race/newspaper.html?race_id=202248090103" media="only screen and (max-width: 640px)" rel="alternate"/>
+<link href="https://rss.netkeiba.com/?pid=rss_netkeiba&amp;site=netkeiba" rel="alternate" type="application/rss+xml"/>
+<title>AIゆま様予想公開引 5走表示 | 2022年9月1日 名古屋3R 地方競馬レース情報 - netkeiba.com</title>
 <!-- 共通css include -->
-<!-- block=common__css (d) -->
-<link href="https://cdn.netkeiba.com/img.racev3/common/css/race_pc_new.css?20220304" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://cdn.netkeiba.com/img.racev3/common/css/colorbox.css" media="all" rel="stylesheet" type="text/css"/>
+<!-- block=race_common_css (d) -->
+<link href="/favicon.ico" rel="shortcut icon"/>
+<link href="https://cdn.netkeiba.com/img.nar/common/css/race_pc_new.css?20220829" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.netkeiba.com/img.nar/common/css/colorbox.css" media="all" rel="stylesheet" type="text/css"/>
 <!-- 共通js include -->
-<!-- block=common__js (d) -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/slick.min.js?2019080501" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/raceapi.action.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/YosoJranar.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/sweetalert.min.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/jquery.colorbox.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.regist.sp/common/js/monthly_goods_link.js?2019101001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/common_pc_new.js?2019073001" type="text/javascript"></script>
+<!-- block=race_common_js (d) -->
+<script src="https://cdn.netkeiba.com/img.nar/common/js/jquery-1.12.4.min.js?2019122401"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/slick.min.js?2019122501" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/common_util.js?2019121001"></script>
+<script src="https://regist.sp.netkeiba.com/common/js/monthly_goods_link.js?2019121001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/jquery.lazyscript.js?2019121001"></script>
+<script src="https://cdn.netkeiba.com/img.yoso2.sp/common/js/yoso/YosoJraNar.js?2019121001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.sp/common/js/sweetalert.min.js?2019121001" type="text/javascript"></script>
 <script type="text/javascript">
-// $Id: race_common_js.html 20040 2019-02-28 07:05:48Z m-ashizawa $
-//window.console = {};
-//window.console.log = function(i){return;};
+<!--
+var _contents_action_api_url = "https://nknewsapi.netkeiba.com/";
+// -->
 </script>
+<script src="https://cdn.netkeiba.com/img.newsapi.sp/common/js/contents.action.js?2019121001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/jquery.cookie.js?2019121001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/jquery.colorbox.js?2019121001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/common_pc_new.js?2019121001" type="text/javascript"></script>
 <!-- Geniee Wrapper Head Tag -->
 <script>
 window.gnshbrequest = window.gnshbrequest || {cmd:[]};
 gnshbrequest.cmd.push(function(){
-gnshbrequest.registerPassback("1491440");
-gnshbrequest.registerPassback("1492791");
-gnshbrequest.registerPassback("1491441");
-gnshbrequest.registerPassback("1491442");
+gnshbrequest.registerPassback("1491444");
+gnshbrequest.registerPassback("1492792");
+gnshbrequest.registerPassback("1491445");
 gnshbrequest.registerPassback("1491463");
 gnshbrequest.forceInternalRequest();
 });
 </script>
 <script async="" src="https://cpt.geniee.jp/hb/v1/211239/47/wrapper.min.js"></script>
 <!-- /Geniee Wrapper Head Tag -->
-<!-- その他 include -->
-<!-- block=race_common_other (d) -->
-<link href="https://cdn.netkeiba.com/img.racev3/common/css/race_newspaper.css?2019073001" media="all" rel="stylesheet" type="text/css"/>
-<link href="https://cdn.netkeiba.com/img.racev3/common/css/race_newspaper_ie.css?2020021401" media="all" rel="stylesheet" type="text/css"/>
+<!-- Netkeiba Ads Lib  -->
+<script src="https://cdn.netkeiba.com/img.sp/common/js/loadFif.js?ver=20200228"></script>
+<script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+</script>
+<script type="text/javascript">
+googletag.cmd.push(function() {
+var nkAdCategory = "nar";
+var href_value = location.href.split("://")[1];
+var url_value = href_value.split("?")[0].substr(0, 40);
+var parameter_value = "null";
+if (location.search) {
+parameter_value = href_value.split("?")[1].substr(0, 40);
+}
+var ref_value = "null";
+if (document.referrer) {
+var ref_array=[];
+ref_array=document.referrer.split("/");
+ref_value = ref_array[2];
+}
+googletag.pubads().setTargeting("url", url_value).setTargeting("url_parameter", parameter_value).setTargeting("ref", ref_value).setTargeting("category", nkAdCategory);
+});
+</script>
+<link href="https://cdn.netkeiba.com/img.nar/common/css/race_newspaper.css?2019121001" media="all" rel="stylesheet" type="text/css"/>
+<link href="https://cdn.netkeiba.com/img.nar/common/css/race_newspaper_ie.css?2019121001" media="all" rel="stylesheet" type="text/css"/>
 </head>
-<body class="race" id="Netkeiba_Race_Shutuba">
-<div id="page">
-<noscript>
-お客様のブラウザはジャバスクリプト（JavaScript）に対応していないか無効になっています。
-</noscript>
-<!-- block=common__race_header (d) -->
-<link href="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/css/pc_header.css" media="all" rel="stylesheet" type="text/css"/>
+<body class="local" id="Netkeiba_Race_Shutuba_Past">
+<div class="Wrap fc" data-role="page">
+<!-- block=race_header (d) -->
+<link href="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/css/pc_header.css" media="screen" rel="stylesheet" type="text/css"/>
 <header class="Header_Area fc">
 <div class="Header_Inner">
 <h1>
 <a href="https://www.netkeiba.com/?rf=logo" title="netkeiba.com">
-<img alt="netkeiba.com" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/netkeiba_logo01.png"/>
+<img alt="netkeiba.com" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/netkeiba_logo01.png?2020022001"/>
 </a>
 </h1>
 <div class="DB_Search_Input">
@@ -106,7 +128,7 @@ gnshbrequest.forceInternalRequest();
 </a>
 </li>
 <li>
-<a class="Icon_Header Icon_MyfavHorse" href="https://race.netkeiba.com/bookmark/bookmark.html?rf=navi">
+<a class="Icon_Header Icon_MyfavHorse" href="https://race.netkeiba.com/?pid=bookmark&amp;rf=navi">
 <span>お気に入り馬</span>
 </a>
 </li>
@@ -116,23 +138,22 @@ gnshbrequest.forceInternalRequest();
 </a>
 </li>
 <li class="disp_none header_stage_area no_login_show">
-<a href="https://regist.netkeiba.com?pid=stage_login&amp;action=login&amp;return_url=https://regist.netkeiba.com">
+<a href="https://regist.netkeiba.com/?pid=stage_login&amp;action=login&amp;return_url=https://regist.netkeiba.com">
 <span>(s)ログイン</span>
 </a>
 </li>
 <li class="disp_none header_stage_area no_login_show">
-<a href="https://regist.netkeiba.com?pid=user_add_form&amp;payment=nk_user&amp;goods_cd=310409&amp;opt=init">
+<a href="https://regist.netkeiba.com/?pid=user_add_form&amp;payment=nk_user&amp;goods_cd=310409&amp;opt=init">
 <span>(s)無料会員登録</span>
 </a>
 </li><li class="disp_none header_stage_area login_show">
-<a href="https://regist.netkeiba.com?pid=stage_login&amp;action=logout&amp;return_url=https://regist.netkeiba.com">
+<a href="https://regist.netkeiba.com/?pid=stage_login&amp;action=logout&amp;return_url=https://regist.netkeiba.com">
 <span>(s)ログアウト</span>
 </a>
 </li>
 </ul>
 <div class="SiteToggleBtn01 Keirin">
 <a href="https://keirin.netkeiba.com/?rf=nk_pc_header">
-<span class="LiveRace">LIVE</span>
 <img alt="" class="KeirinLogoMark01" height="16" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/icon_keirin01.png" width="21"/>競輪
 </a>
 </div><!-- /.SiteToggleBtn01 -->
@@ -144,40 +165,40 @@ gnshbrequest.forceInternalRequest();
 <a href="https://www.netkeiba.com/?rf=navi" id="navi_link_top" title="トップ">トップ</a>
 </li>
 <li class="News">
-<a href="https://news.netkeiba.com?rf=navi" id="navi_link_news" title="ニュース">ニュース</a>
+<a href="https://news.netkeiba.com/?rf=navi" id="navi_link_news" title="ニュース">ニュース</a>
 </li>
 <li class="Race">
-<a href="../top/" id="navi_link_race" title="レース">レース</a>
+<a href="https://race.netkeiba.com/top/" id="navi_link_race" title="レース">レース</a>
 </li>
 <li class="Yoso">
-<a href="https://yoso.netkeiba.com?access=init&amp;rf=navi" id="navi_link_yoso" title="予想">予想</a>
+<a href="https://yoso.netkeiba.com/?access=init&amp;rf=navi" id="navi_link_yoso" title="予想">予想</a>
 </li>
 <li class="Column">
-<a href="https://news.netkeiba.com?pid=column_top&amp;rf=navi" id="navi_link_column" title="コラム">コラム</a>
+<a href="https://news.netkeiba.com/?pid=column_top&amp;rf=navi" id="navi_link_column" title="コラム">コラム</a>
 </li>
 <li class="Tv">
 <a href="https://tv.netkeiba.com/?rf=navi" id="navi_link_tv" title="netkeibaTV">netkeibaTV</a>
 </li>
 <li class="Local">
-<a href="https://nar.netkeiba.com/top/?rf=navi" id="navi_link_nar" title="地方競馬">地方競馬</a>
+<a href="../top/" id="navi_link_nar" title="地方競馬">地方競馬</a>
 </li>
 <li class="Db">
-<a href="https://db.netkeiba.com?rf=navi" id="navi_link_db" title="データベース">データベース</a>
+<a href="https://db.netkeiba.com/?rf=navi" id="navi_link_db" title="データベース">データベース</a>
 </li>
 <li class="Paper">
 <a href="https://yoso.netkeiba.com/senmonshi/?rf=navi" id="navi_link_senmonshi" title="競馬新聞">競馬新聞</a>
 </li>
 <li class="YosoCS">
-<a href="https://orepro.netkeiba.com?rf=navi" id="navi_link_orepro" title="俺プロ">俺プロ</a>
+<a href="https://orepro.netkeiba.com/?rf=navi" id="navi_link_orepro" title="俺プロ">俺プロ</a>
 </li>
 <li class="Owner">
-<a href="https://owner.netkeiba.com?rf=navi" id="navi_link_owner" title="一口馬主">一口馬主</a>
+<a href="https://owner.netkeiba.com/?rf=navi" id="navi_link_owner" title="一口馬主">一口馬主</a>
 </li>
 <li class="Pog">
-<a href="https://pog.netkeiba.com?rf=navi" id="navi_link_pog" title="POG">POG</a>
+<a href="https://pog.netkeiba.com/?rf=navi" id="navi_link_pog" title="POG">POG</a>
 </li>
 <li class="Matome">
-<a href="https://dir.netkeiba.com//keibamatome/index.html?rf=navi" id="navi_link_keibamatome" title="まとめ">まとめ</a>
+<a href="https://dir.netkeiba.com/keibamatome/index.html?rf=navi" id="navi_link_keibamatome" title="まとめ">まとめ</a>
 </li>
 </ul>
 </nav><!-- /.ContentNavi01 -->
@@ -217,232 +238,387 @@ $('.login_show').remove();
 }
 }
 </script>
-<!-- block=shutuba__race_title (cp) -->
+<!-- block=race_title (cg) -->
 <div class="RaceChange_BtnArea">
 <div class="RaceList_Date clearfix">
 <div class="RaceDayPrev">
-<a class="Active" href="../top/race_list.html?kaisai_date=20220724#racelist_top_a">前</a>
+<a href="../top/race_list.html?kaisai_date=20220827#racelist_top_a">前</a>
 </div>
-<dl id="RaceList_DateList">
-<dd><a class="" href="../top/race_list.html?&amp;kaisai_date=20220723&amp;kaisai_id=2022100307&amp;current_group=1020220730#racelist_top_a" title="7月23日(土)">7月23日<span class="Sat">(土)</span></a></dd>
-<dd><a class="" href="../top/race_list.html?&amp;kaisai_date=20220724&amp;kaisai_id=2022100308&amp;current_group=1020220730#racelist_top_a" title="7月24日(日)">7月24日<span class="Sun">(日)</span></a></dd>
-<dd><a class="" href="../top/race_list.html?&amp;kaisai_date=20220730&amp;kaisai_id=2022040201&amp;current_group=1020220730#racelist_top_a" title="7月30日(土)">7月30日<span class="Sat">(土)</span></a></dd><dd class="Active"><a href="../top/race_list.html?kaisai_date=20220731&amp;kaisai_id=2022040202&amp;current_group=1020220730#racelist_top_a" title="7月31日(日)">7月31日<span class="Sun">(日)</span></a></dd>
+<dl class="DayChange_List" id="RaceList_DateList">
+<dd>
+<a href="../top/race_list.html?kaisai_date=20220830#racelist_top_a">08/30<span class="Tue">(火)</span></a>
+</dd>
+<dd>
+<a href="../top/race_list.html?kaisai_date=20220831#racelist_top_a">08/31<span class="Wed">(水)</span></a>
+</dd><dd class="Active">
+<a href="../top/race_list.html?kaisai_date=20220901#racelist_top_a">09/01<span class="Thu">(木)</span></a>
+</dd>
+<dd>
+<a href="../top/race_list.html?kaisai_date=20220902#racelist_top_a">09/02<span class="Fri">(金)</span></a>
+</dd>
+<dd>
+<a href="../top/race_list.html?kaisai_date=20220903#racelist_top_a">09/03<span class="Sat">(土)</span></a>
+</dd>
+<dd>
+<a class="" href="../top/race_list.html">本日へ</a>
+</dd>
 </dl>
 <div class="RaceDayNext">
-<a class="Active" href="../top/race_list.html?kaisai_date=20220806#racelist_top_a">次</a>
+<a href="../top/race_list.html?kaisai_date=20220906#racelist_top_a">次</a>
 </div>
-</div><!-- /.RaceDayWrap -->
-</div>
-<!-- block=shutuba__change_session (d) -->
-<script type="text/javascript">
-var _action_api_url_change_session = '/api/api_post_change_session.html';
-</script>
+</div><!-- / .RaceList_Date -->
+</div><!-- / .RaceChange_BtnArea-->
 <div class="RaceColumn01">
 <div class="RaceColumnWrap fc">
 <div class="RaceMainColumn">
-<!-- block=shutuba__race_kaisai_navi (cp) -->
-<script>
-$(function() {
-$('body').append('<div id="modal_overlay_menu"></div>');
-var overlay = $('#modal_overlay_menu');
-var content = $('#modal_content_menu');
-$('.RaceUseful_Btn').click(function() {
-overlay.show().html($('#modal_content_menu').html());
-});
-overlay.click(function() {
-$(this).hide();
-});
-$('.Close').click(function() {
-overlay.hide();
-});
-});
-</script>
 <div class="RaceKaisaiWrap">
-<ul class="Col Col2">
-<li class="Active"><a href="?race_id=202204020206">新潟</a></li>
-<li><a href="?race_id=202201010406">札幌</a></li>
+<ul class="Col Col">
+<li><a href="?race_id=202230090103">門別</a></li>
+<li><a href="?race_id=202242090103">浦和</a></li><li class="Active"><a href="?race_id=202248090103">名古屋</a></li>
+<li><a href="?race_id=202250090103">園田</a></li>
 </ul>
 </div>
-<!-- /.RaceKaisaiWrap -->
-<!-- block=shutuba__race_kaisai_wrap (cp) -->
 <div class="RaceNumWrap">
 <ul class="fc">
-<li class="">
-<a href="?race_id=202204020201" title="2歳未勝利">
+<li>
+<a href="?race_id=202248090101" title="1R">
 1R
 </a>
-</li><li class="">
-<a href="?race_id=202204020202" title="2歳未勝利">
+</li>
+<li>
+<a href="?race_id=202248090102" title="2R">
 2R
 </a>
-</li><li class="">
-<a href="?race_id=202204020203" title="3歳未勝利">
+</li><li class="Active">
+<a href="?race_id=202248090103" title="3R">
 3R
 </a>
-</li><li class="">
-<a href="?race_id=202204020204" title="3歳未勝利">
+</li>
+<li>
+<a href="?race_id=202248090104" title="4R">
 4R
 </a>
-</li><li class="">
-<a href="?race_id=202204020205" title="2歳新馬">
+</li>
+<li>
+<a href="?race_id=202248090105" title="5R">
 5R
 </a>
-</li><li class="Active">
-<a href="?race_id=202204020206" title="2歳新馬">
+</li>
+<li>
+<a href="?race_id=202248090106" title="6R">
 6R
 </a>
-</li><li class="">
-<a href="?race_id=202204020207" title="3歳未勝利">
+</li>
+<li>
+<a href="?race_id=202248090107" title="7R">
 7R
 </a>
-</li><li class="">
-<a href="?race_id=202204020208" title="3歳以上1勝クラス">
+</li>
+<li>
+<a href="?race_id=202248090108" title="8R">
 8R
 </a>
-</li><li class="">
-<a href="?race_id=202204020209" title="出雲崎特別">
+</li>
+<li>
+<a href="?race_id=202248090109" title="9R">
 9R
 </a>
-</li><li class="">
-<a href="?race_id=202204020210" title="佐渡S">
+</li>
+<li>
+<a href="?race_id=202248090110" title="10R">
 10R
 </a>
-</li><li class="">
-<a href="?race_id=202204020211" title="アイビスSD">
+</li>
+<li>
+<a href="?race_id=202248090111" title="11R">
 11R
 </a>
-</li><li class="">
-<a href="?race_id=202204020212" title="3歳以上2勝クラス">
+</li>
+<li>
+<a href="?race_id=202248090112" title="12R">
 12R
 </a>
 </li>
 </ul>
 </div><!-- /.RaceNumWrap -->
-<!-- block=shutuba__race_main_column (cp) -->
 <div class="RaceList_NameBox">
 <div class="RaceList_Item01">
-<span class="RaceNum">6R</span>
+<div class="Race_Num Race_Fixed">
+<span>3R</span>
+</div><!-- /.Race_Num -->
 </div><!-- /.RaceList_Item01 -->
 <div class="RaceList_Item02">
-<div class="RaceName">2歳新馬
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+<div class="RaceName">AIゆま様予想公開引退記念
 
 
 </div>
 <div class="RaceData01">
-12:55発走 /<!-- <span class="Turf"> --><span> 芝1400m</span> (左)
-/ 天候:晴<span class="Icon_Weather Weather01"></span>
-<span class="Item03">/ 馬場:良</span>
+15:50発走 /<span> ダ1500m</span> (右)
+/ 天候:雨<span class="Icon_Weather Weather03"></span>
+<span class="Item04">/ 馬場:稍</span>
 </div>
 <div class="RaceData02">
-<span>2回</span>
-<span>新潟</span>
+<span>12回</span>
+<span>名古屋</span>
 <span>2日目</span>
-<span>サラ系２歳</span>
-<span>新馬</span>
+<span>サラ系３歳 3歳</span>
 
-<span>(混)</span>
-<span>馬齢</span>
-<span>16頭</span>
+<span>12頭</span>
 <br/>
-<span>本賞金:700,280,180,110,70万円</span>
+<span>本賞金:36.0、11.9、7.2、4.7、3.2万円</span>
 </div>
 </div><!-- /.RaceList_Item02 -->
 <div class="RaceList_Item03">
 <div class="Refundlink">
-<a class="LinkMore" href="../top/payback_list.html?kaisai_date=20220731&amp;kaisai_id=2022040202">新潟 払戻一覧</a>
+<a class="LinkMore" href="../top/payback_list.html?kaisai_date=20220901&amp;kaisai_id=2022480901">名古屋 払戻一覧</a>
 </div>
 <ul class="RaceHeadBtnArea">
 <li>
-<a class="Popup_Img MapRaceBtn" href="https://cdn.netkeiba.com/img.racev3/common/img/course/04_t1400.png?2019073001">
-<span><img alt="Course" onerror="replaceDefaultNoImage()" src="https://cdn.netkeiba.com/img.racev3/common/img/course/thumb_62/04_t1400.png?2019073001"/></span>
+<a class="Popup_Img MapRaceBtn cboxElement" href="https://cdn.netkeiba.com/img.nar/common/img/course/48_d1500.png?2019121001">
+<span><img alt="Course" onerror="replaceDefaultNoImage()" src="https://cdn.netkeiba.com/img.nar/common/img/course/thumb_62/48_d1500.png?2019121001"/></span>
 コース詳細
 </a>
 <script>
 function replaceDefaultNoImage() {
-var baseurl = "https://cdn.netkeiba.com/img.racev3/common/img/course/";
+var baseurl = "https://cdn.netkeiba.com/img.nar/common/img/course/";
 $("a.Popup_Img").attr("href", baseurl + "soon.png");
 $("a.Popup_Img img").attr("src", baseurl + "soon.png");
 }
 </script>
 </li>
 <li>
-<a class="IpatBtn01" href="/ipat/dispatch.html?race_id=202204020206" target="_blank">
-<img alt="IPAT" disabled="false" src="https://cdn.netkeiba.com/img.racev3/common/img/icon/icon_ipat01.png?2019073001"/><span>連携</span>
+<a class="IpatBtn01" href="../ipat/dispatch.html?race_id=202248090103" target="_blank">
+<!--img src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_ipat01.png?2019121001"
+alt="IPAT"--><span>馬券投票</span>
 </a>
 </li>
 </ul>
 <div class="OreproLink">
-<a class="LinkMore SpecialGo" href="../special/index.html?race_id=202204020206">特集へ</a>
-<a class="LinkMore" href="https://orepro.netkeiba.com/bet/shutuba.html?race_id=202204020206&amp;mode=init"><span>俺プロへ</span></a></div>
-</div><!-- /.RaceList_Item03 -->
+</div>
+</div>
 </div><!-- /.RaceList_NameBox -->
-<script>
-$(function() {
-$('.RaceList_NameBox > a').append('<span class="Icon_ArrowB"></span>');
-$('.RaceList_NameBox > a').click(function() {
-$('.RaceList_NameBox a > span').toggleClass('Icon_ArrowT').toggleClass('Icon_ArrowB')
-$('.RaceData_Hide').slideToggle('fast');
-return false;
-});
-if ($("a.Popup_Img").length) {
-$("a.Popup_Img").colorbox();
-}
-});
-</script>
-</div><!-- /.RaceMainColumn -->
-<div class="RaceSideColumn"></div>
-</div><!-- /.RaceColumnWrap -->
-</div><!-- /.RaceColumn01 -->
+</div>
+<div class="RaceSideColumn">
+</div>
+</div>
+</div>
 <div class="RaceColumn02">
-<!-- block=shutuba__race_menu (d) -->
+<!-- block=race_navi (d) -->
 <div class="RaceMenuArea">
 <ul class="RaceMainMenu">
-<li class="race_navi_shutuba" id="navi_shutuba"><a class="Active" href="../race/shutuba.html?race_id=202204020206&amp;rf=race_submenu" title="出馬表"><span class="IconRaceMenu01 IconShutuba"></span>出馬表</a></li>
-<li class="race_navi_odds" id="navi_odds_view"><a class="" href="../odds/index.html?race_id=202204020206&amp;rf=race_submenu" title="オッズ・購入"><span class="IconRaceMenu01 IconOdds"></span>オッズ・購入</a></li>
-<li class="race_navi_yoso" id="navi_yoso_mark_list"><a class="" href="../yoso/mark_list.html?race_id=202204020206&amp;rf=race_submenu" title="予想"><span class="IconRaceMenu01 IconYoso"></span>予想</a></li>
-<li class="race_navi_chokyo"><a class="" href="../race/oikiri.html?race_id=202204020206&amp;rf=race_submenu" title="調教"><span class="IconRaceMenu01 IconTraining"></span>調教</a></li>
-<li class="race_navi_comment"><a class="" href="../race/comment.html?race_id=202204020206&amp;rf=race_submenu" title="厩舎コメント"><span class="IconRaceMenu01 IconComment"></span>厩舎コメント</a></li>
-<li class="race_navi_data"><a class="" href="../race/data_top.html?race_id=202204020206&amp;rf=race_submenu" title="データ分析"><span class="IconRaceMenu01 IconData"></span>データ分析</a></li>
-<li class="race_navi_result"><a class="" href="../race/result.html?race_id=202204020206&amp;rf=race_submenu" title="結果・払戻"><span class="IconRaceMenu01 IconResult"></span>結果・払戻</a></li>
-<li class="race_navi_movie"><a class="" href="../race/movie.html?race_id=202204020206&amp;rf=race_submenu" title="レース映像"><span class="IconRaceMenu01 IconMovie"></span>レース映像</a></li>
-<li class="race_navi_bbs"><a class="" href="../race/bbs.html?race_id=202204020206&amp;rf=race_submenu" title="掲示板"><span class="IconRaceMenu01 IconBBS"></span>掲示板</a></li>
+<li class="race_navi_shutuba" id="navi_shutuba">
+<a href="../race/shutuba.html?race_id=202248090103&amp;rf=race_submenu" title="出馬表">
+<span class="IconRaceMenu01 IconShutuba"></span>出馬表
+</a>
+</li>
+<li class="race_navi_odds" id="navi_odds">
+<a href="../odds/index.html?race_id=202248090103&amp;rf=race_submenu" title="オッズ・購入">
+<span class="IconRaceMenu01 IconOdds"></span>オッズ・購入
+</a>
+</li>
+<li class="race_navi_yoso" id="navi_yoso">
+<a href="../yoso/mark_list.html?race_id=202248090103&amp;rf=race_submenu" title="予想">
+<span class="IconRaceMenu01 IconYoso"></span>予想
+</a>
+</li>
+<li class="race_navi_data" id="navi_data">
+<a href="../race/data_top.html?race_id=202248090103&amp;rf=race_submenu" title="データ分析">
+<span class="IconRaceMenu01 IconData"></span>データ分析
+</a>
+</li>
+<li id="navi_result">
+<a href="../race/result.html?race_id=202248090103&amp;rf=race_submenu" title="結果・払戻">
+<span class="IconRaceMenu01 IconResult"></span>結果・払戻
+</a>
+</li>
+<li id="navi_movie">
+<a href="../race/movie.html?race_id=202248090103&amp;rf=race_submenu" title="レース映像">
+<span class="IconRaceMenu01 IconMovie"></span>レース映像
+</a>
+</li>
+<li id="navi_race_bbs">
+<a href="../race/bbs.html?race_id=202248090103&amp;rf=race_submenu" title="掲示板">
+<span class="IconRaceMenu01 IconBBS"></span>掲示板
+</a>
+</li>
 </ul>
-<div id="AllRaceSubMenu">
-<ul class="RaceSubMenu" id="shutuba_submenu">
-<li><a class="" href="../race/shutuba.html?race_id=202204020206&amp;rf=shutuba_submenu">出走馬</a></li>
-<li><a class="" href="../race/newspaper.html?race_id=202204020206&amp;rf=shutuba_submenu">競馬新聞</a></li>
-<!-- li><a href="https://yoso.netkeiba.com/senmonshi/jra/yoso_list.html?race_id=202204020206&rf=shutuba_submenu" class="NewFlag">専門紙<span class="icon_new_submenu"></span></a></li -->
-<li><a href="https://yoso.netkeiba.com/senmonshi/jra/yoso_list.html?race_id=202204020206&amp;rf=shutuba_submenu">専門紙</a></li>
-<li><a class="Active" href="../race/shutuba_past.html?race_id=202204020206&amp;rf=shutuba_submenu">馬柱(5走)</a></li>
-<li><a class="" href="../race/shutuba_past_9.html?race_id=202204020206&amp;rf=shutuba_submenu" target="_blank">馬柱(9走)</a></li>
-<li><a class="" href="../race/speed.html?race_id=202204020206&amp;rf=shutuba_submenu">タイム指数</a></li>
-<li><a class="" href="../race/holding_time.html?race_id=202204020206&amp;rf=shutuba_submenu">持ちタイム</a></li>
-<li><a class="" href="../race/paddock.html?race_id=202204020206&amp;rf=shutuba_submenu">パドック速報</a></li>
-<li><a class="" href="../race/bias.html?race_id=202204020206&amp;rf=shutuba_submenu">血統</a></li>
-<li><a class="" href="../race/match.html?race_id=202204020206&amp;rf=shutuba_submenu">対戦表</a></li>
-<li><a href="https://race.sp.netkeiba.com/barometer/score.html?race_id=202204020206&amp;rf=shutuba_submenu">調子偏差値</a></li>
+<div class="RaceSubMenu">
+<ul class="Shutuba_Menu01" id="shutuba_menu" style="display: none;">
+<li id="shutuba_navi_race_shutuba"><a href="../race/shutuba.html?race_id=202248090103&amp;rf=shutuba_submenu">出走馬</a></li>
+<li id="shutuba_navi_race_newspaper"><a href="../race/newspaper.html?race_id=202248090103&amp;rf=shutuba_submenu">競馬新聞</a></li>
+<li><a href="https://yoso.netkeiba.com/senmonshi/nar/yoso_list.html?race_id=202248090103&amp;rf=shutuba_submenu">専門紙</a></li>
+<li id="shutuba_navi_race_shutuba_past_5"><a href="../race/shutuba_past.html?race_id=202248090103&amp;rf=shutuba_submenu">馬柱(5走)</a></li>
+<li id="shutuba_navi_race_shutuba_past_9"><a href="../race/shutuba_past_9.html?race_id=202248090103&amp;rf=shutuba_submenu" target="_blank">馬柱(9走)</a></li>
+<li id="shutuba_navi_race_speed"><a href="../race/speed.html?race_id=202248090103&amp;rf=shutuba_submenu">タイム指数</a></li>
+<li id="shutuba_navi_race_holding_time"><a href="../race/holding_time.html?race_id=202248090103&amp;rf=shutuba_submenu">持ちタイム</a></li>
+<li id="shutuba_navi_race_bias"><a href="../race/bias.html?race_id=202248090103&amp;rf=shutuba_submenu">血統</a></li>
+<li id="shutuba_navi_race_match"><a href="../race/match.html?race_id=202248090103&amp;rf=shutuba_submenu">対戦表</a></li>
+</ul>
+<ul class="Yoso_Menu01" id="yoso_menu" style="display: none;">
+<li id="yoso_navi_yoso_mark_list"><a href="../yoso/mark_list.html?race_id=202248090103&amp;rf=shutuba_submenu">予想印一覧</a></li>
+<li id="yoso_navi_yoso_yoso_pro_opinion_list"><a href="../yoso/yoso_pro_opinion_list.html?race_id=202248090103&amp;rf=shutuba_submenu">プロの見解/買い目</a></li>
+<li id="yoso_navi_yoso_yoso_cp"><a href="../yoso/yoso_cp.html?race_id=202248090103&amp;rf=shutuba_submenu">CP予想</a></li>
 </ul>
 </div>
-</div><!-- /.RaceMenuArea -->
+</div><!-- /.RaceInfo_Navi -->
 <script>
+(function($) {
+$('.No_Link a').click(function() {
+return false;
+});
+/* navigation tab active */
+var q = get_page_query();
+var page_id = 'race_shutuba_past';
+var odds_type = '';
+if(undefined == q['type']){
+odds_type = 'b0';
+}else{
+odds_type = q['type'];
+}
+if(undefined == q['mode']){
+data_type = 'coursedata';
+}else{
+data_type = q['mode'];
+}
+//    page_id = 'odds';
+//    console.log('page_id='+page_id);
+// 選択されているタブをアクティブ表示
+$("[id^='navi_']").each(function(){
+var tab_id = $(this).prop('id');
+if(tab_id == 'navi_shutuba'){
+if (['race_shutuba', 'race_newspaper', 'race_speed','race_shutuba_past','race_bias', 'race_match', 'race_holding_time'].includes(page_id)) {
+$('#'+tab_id).addClass("Tab_Active");
+}
+} else if (tab_id == 'navi_odds') {
+if (['odds_index', 'odds_myodds'].includes(page_id)) {
+$('#'+tab_id).addClass("Tab_Active");
+}
+} else if (tab_id == 'navi_yoso') {
+if (['yoso_mark_list', 'yoso_yoso_pro_opinion_list', 'yoso_yoso_pro_opinion_detail', 'yoso_yoso_cp'].includes(page_id)) {
+$('#'+tab_id).addClass("Tab_Active");
+}
+} else if (tab_id == 'navi_data') {
+if (['race_data_top','race_data','race_data_list','race_surf_summary'].includes(page_id)) {
+$('#'+tab_id).addClass("Tab_Active");
+}
+} else if (tab_id == 'navi_result') {
+if (['race_result', 'race_flash'].includes(page_id)) {
+$('#'+tab_id).addClass("Tab_Active");
+}
+} else if (tab_id == 'navi_race_bbs') {
+if (['race_bbs', 'race_bbs_report'].includes(page_id)) {
+$('#'+tab_id).addClass("Tab_Active");
+}
+}else if (tab_id == 'navi_movie') {
+if (['race_movie'].includes(page_id)) {
+$('#'+tab_id).addClass("Tab_Active");
+}
+}
+});
+// オッズ選択の時、オッズメニューを表示
+$('#shutuba_menu').hide();
+$('#odds_menu').hide();
+$('#yoso_menu').hide();
+$('#result_menu').hide();
+if('odds_index' == page_id || 'odds_myodds' == page_id)
+{
+// 選択されているタブをアクティブ表示
+$("[id^='odds_navi_']").each(function(){
+var tab_id = $(this).prop('id');
+if(page_id == 'odds_index' && tab_id == 'odds_navi_'+odds_type){
+$('#'+tab_id).addClass("Active");
+}
+});
+$('#odds_menu').show();
+}
+else if (page_id.startsWith('yoso_'))
+{
+$("[id^='yoso_navi_']").each(function()
+{
+var tab_id = $(this).prop('id');
+if(tab_id == 'yoso_navi_'+page_id
+|| (page_id=='yoso_yoso_pro_opinion_detail' && tab_id=='yoso_navi_yoso_yoso_pro_opinion_list'))
+{
+$('#'+tab_id).addClass("Active");
+}
+});
+$('#yoso_menu').show();
+}
+else if (['race_result', 'race_flash'].includes(page_id))
+{
+$("[id^='result_navi_']").each(function()
+{
+var tab_id = $(this).prop('id');
+if(tab_id == 'result_navi_'+page_id)
+{
+$('#'+tab_id).addClass("Active");
+}
+});
+$('#result_menu').show();
+}
+else if (['race_shutuba', 'race_newspaper', 'race_shutuba_past', 'race_speed', 'race_bias', 'race_match', 'race_holding_time'].includes(page_id))
+{
+$("[id^='shutuba_navi_']").each(function()
+{
+var tab_id = $(this).prop('id');
+var mode = q['mode']==undefined?'5':'9';
+if( tab_id.endsWith(page_id)
+|| (page_id == 'race_shutuba_past' && tab_id.endsWith('shutuba_past_' + mode)) )
+{
+$('#'+tab_id).addClass("Active");
+}
+});
+$('#shutuba_menu').show();
+}
+else if (page_id.startsWith('race_data'))
+{
+$("[id^='data_navi_']").each(function()
+{
+var tab_id = $(this).prop('id');
+if(tab_id == 'data_navi_'+data_type )
+{
+$('#'+tab_id).addClass("Active");
+}
+});
+$('#data_menu').show();
+}
+//新聞の出し分け(Android5未満、iOS10未満は新聞非表示)
+var ua = navigator.userAgent.toLowerCase();
+if( ua.indexOf("android") > 0 ) {
+var version = parseFloat(ua.slice(ua.indexOf("android")+8));
+if( version < 5 ) {
+//$("#shutuba_past_link").removeAttr('style');
+} else {
+$("#newspaper_link_race_navi").removeAttr('style');
+}
+} else if(ua.indexOf('ipod touch') >= 0 || ua.indexOf('iphone') >= 0 || ua.indexOf('ipad') >= 0){
+var version = ua.split('os ')[1].split(' ')[0];
+if (version.indexOf('_') >= 0){
+version = parseInt(version.split('_')[0]);
+}
+if( version < 10 ) {
+//$("#shutuba_past_link").removeAttr('style');
+} else {
+$("#newspaper_link_race_navi").removeAttr('style');
+}
+} else {
+$("#newspaper_link_race_navi").removeAttr('style');
+}
+})(jQuery);
+// ページURLのパラメータ取得
+function get_page_query()
+{
+var query = location.search.replace(/^\?/, '').split('&');
+var ary_q = {};
+for(i=0; i<query.length; i++){
+var q = query[i].split('=');
+ary_q[q[0]] = q[1];
+}
+return ary_q;
+}
 function newspaper_link()
 {
-window.location.href = 'https://rapl.netkeiba.com/race/newspaper.html?race_id=202204020206';
+window.location.href = 'https://nar.netkeiba.com/race/newspaper.html?race_id=202248090103&rf=race_toggle_menu';
 }
 </script>
 <script type="text/javascript">
@@ -452,11 +628,11 @@ housiki = '';
 }
 $("#odds_view_result").html('');
 if (housiki != '') {
-var url = "../odds/odds_get_form.html?type="+baken_kind+"&race_id=202204020206&housiki="+housiki+"&rf=shutuba_submenu";
+var url = "../odds/odds_get_form.html?type="+baken_kind+"&race_id=202248090103&housiki="+housiki+"&rf=shutuba_submenu";
 } else {
-var url = "../odds/odds_get_form.html?type="+baken_kind+"&race_id=202204020206&rf=shutuba_submenu";
+var url = "../odds/odds_get_form.html?type="+baken_kind+"&race_id=202248090103&rf=shutuba_submenu";
 }
-$("[id^=odds_navi_] a").each ( function() { $(this).removeClass("Active"); } )
+$("[id^=odds_navi_] a").each ( function() { $(this).removeClass("Active"); $(this).parent().removeClass("Active");} )
 $.ajax({
 type: "GET",
 cache: false,
@@ -471,48 +647,45 @@ $("#odds_view_form").empty().append(data);
 });
 }
 </script>
+<!-- block=racev3_surf (d) -->
 <div class="Newspaper_Container">
-<!-- block=shutuba_past__content (cg) -->
+<!-- block=shutuba_past (cg) -->
 <script type="text/javascript">
 // $Id: $
-var _action_api_url = 'https://race.netkeiba.com'+'/api/api_post_social_cart.html';
-var _action_api_url_myhorse = 'https://race.netkeiba.com'+'/api/api_get_myhorse_entry.html';
-var _race_location_url = 'https://race.netkeiba.com';
-var _shutuba_cart_group = 'horse_202204020206';
-var _shutuba_race_id = '202204020206';
-var _race_cookie_domain_ = '.netkeiba.com';
-var _action_api_url_race_movie_data = 'https://race.netkeiba.com/api/api_get_list_race_movie_data.html';
+var _action_api_url = 'https://nar.netkeiba.com'+'/api/api_post_social_cart.html';
+var _race_location_url = 'https://nar.netkeiba.com';
+var _action_api_my_horse_url = 'https://nar.netkeiba.com'+'/api/api_get_myhorse_entry.html';
+var _shutuba_cart_group = 'horse_202248090103';
+var _shutuba_race_id = '202248090103';
+var _nar_cookie_domain_ = '.netkeiba.com';
+var _action_api_url_race_movie_data = 'https://nar.netkeiba.com/api/api_get_list_race_movie_data.html';
 var arg_kaisai_date = '';
 </script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/social_cart.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/race/shutuba.js?2020061101" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/race/api_myhorse.action.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/race/race_movie.js?2019073001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/social_cart.js?2019121001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/race/shutuba.js?2020061101" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/race/api_myhorse.action.js?2019121001" type="text/javascript"></script>
+<script src="https://cdn.netkeiba.com/img.nar/common/js/race/race_movie.js?2019121701" type="text/javascript"></script>
 <div class="Shutuba_HorseList">
-<table class="Shutuba_Table Shutuba_Past5_Table" id="sort_table">
-<thead>
+<table class="Shutuba_Table Shutuba_Past5_Table">
 <tr class="Header">
 <th class="Waku">枠</th>
 <th class="Waku">馬番</th>
-<th>印
-<div class="ChangeMarkBtn">
-<div class="BtnInput BtnInputTick">
-<input class="BtnInputLabel" onclick="change_mark_mode('shutuba_past','202204020206', _race_cookie_domain_);" type="button" value="切替"/>
+<th class="CheckMark">
+印
+<br/>
+<div class="BtnInput">
+<input class="BtnInputLabel" onclick="change_mark_mode('shutuba_past','202248090103', _nar_cookie_domain_);" type="button" value="切替"/>
 </div>
-</div><!-- /.ChangeMarkBtn -->
 </th>
-<th class="Horse_Info">
+<th class="Horse_Info" id="sort_cell_odds_1">
 <div class="Horse_Info_ItemWrap">
 <span class="Horse_Info_Item01">馬名</span>
 <div class="Tooltip_OddsUpLimit_Wrap" id="odds_update_info">
 <div class="Odds_Title_Sort">
-<span id="odds_title"></span>
-<a href="javascript:void(0)" id="OddsSortBtn1" style="display: none"><img alt="" name="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/sort.png?2019073001" width="14"/></a>
+<span id="odds_title">オッズ</span>
+<span id="official_time"></span>
+<a href="#" id="OddsSortBtn1"><img alt="" name="" src="https://cdn.netkeiba.com/img.nar/common/img/race/sort.png?2019121001" width="14"/></a>
 </div>
-<button class="BtnInputLabel OddsUpdataBtn LiveOddsUpdate" id="act-manual_update" style="display:none" type="button">
-<span class="OddsUpLimitTxt01">更新</span>
-<span class="OddsUpLimitTxt02" style="display:none">あと<span id="OddsUpLimitCount"></span>回</span>
-</button>
 </div>
 </div><!-- /.Horse_Info_ItemWrap -->
 </th>
@@ -523,859 +696,1838 @@ var arg_kaisai_date = '';
 <th>4走</th>
 <th>5走</th>
 </tr>
-</thead>
-<tbody>
-<tr class="HorseList" id="tr_10">
+<tr class="HorseList" id="tr_1">
 <td class="Waku1">1</td>
 <td class="Waku">1</td>
 <td class="Horse_Select">
-<select class="makeMeFancy_10" id="mark_10" name="10" style="display: none">
+<select class="makeMeFancy_1" id="mark_1" name="1" style="display: none">
 <option data-html-text="--" value="1_0">--</option><option data-html-text="◎" value="1_1">◎</option><option data-html-text="◯" value="1_2">◯</option><option data-html-text="▲" value="1_3">▲</option><option data-html-text="△" value="1_4">△</option><option data-html-text="☆" value="1_5">☆</option><option data-html-text="&amp;#10003" value="1_98">&amp;#10003</option><option data-html-text="消" value="1_99">消</option>
 </select>
 </td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">イスラボニータ</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020102627" target="_blank"> トレジャートレイル</a>
-</div>
-<div class="Horse03">アナモリ</div>
-<div class="Horse04">(トワイニング)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01177" target="_blank">美浦・伊坂</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">456kg<span>(0)</span></div>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">マジェスティックウォリアー</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103411/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>サンエイグレース</a>
+</dt>
+<dt class="Horse03">エルビーローズ</dt>
+<dt class="Horse04">(クロフネ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05671/">愛知・倉地学</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・倉地学</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">399kg<span>(+1)</span></div>
 <div class="Popular">
-<span id="odds-1_01">---.-</span>
-<span id="ninki-1_01">**</span>
+
+400.3
+<span>(12人気)</span>
 </div>
-</div>
-</div>
+</dt>
+</dl>
 </td>
 <td class="Jockey">
-<span class="Barei">牡2青</span>
-<img alt="" id="fuku_img10" onerror="DefaultImg(10)" src="https://cdn.netkeiba.com/img/db/colours/310007.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01150" target="_blank">石川</a><br/>
+<span class="Barei">牝3鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/x08f96.gif" id = "fuku_img1" alt="" width="32" onerror="DefaultImg(1)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/00000/">村上弘</a><br />
+-->
+村上弘<br/>
 <span>54.0</span>
 </td>
-<td class="Rest">
-<div class="Data02">兄 ロッソビアンコネロ(０勝)</div><div class="Data02">兄 マサハヤリュウ(０勝)</div><div class="Data02">姉 ピッコラストレーガ(０勝)</div><div class="Data02">4月22日生まれ</div>
+<td class="Past" id="myhorse_202248081703">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.17名古屋</span>
+<span class="Num">7</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081703">3歳6組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:39.5 <strong>不</strong></div>
+<div class="Data03">10頭3番10人 村上弘樹 54.0</div>
+<div class="Data06">7-8-8(41.4)398(+2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102909" target="_blank">エドノバイオレット</a>(1.9)</div>
+<a class="movie_202248081703" href="https://race.netkeiba.com/race/movie.html?race_id=202248081703" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081703" href="../race/movie.html?race_id=202248081703">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248080202">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.02名古屋</span>
+<span class="Num">10</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080202">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:41.8 <strong>良</strong></div>
+<div class="Data03">10頭4番9人 今井貴大 54.0</div>
+<div class="Data06">5-7-9(43.7)396(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100100" target="_blank">キーファイン</a>(4.4)</div>
+<a class="movie_202248080202" href="https://race.netkeiba.com/race/movie.html?race_id=202248080202" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080202" href="../race/movie.html?race_id=202248080202">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248071802">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.18名古屋</span>
+<span class="Num">8</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248071802">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.8 <strong>重</strong></div>
+<div class="Data03">10頭3番8人 今井貴大 54.0</div>
+<div class="Data06">9-9-10(40.4)396(+1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105762" target="_blank">サヴァンナナイツ</a>(1.3)</div>
+<a class="movie_202248071802" href="https://race.netkeiba.com/race/movie.html?race_id=202248071802" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248071802" href="../race/movie.html?race_id=202248071802">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248070603">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.06名古屋</span>
+<span class="Num">10</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248070603">亜希子あり
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.2 <strong>重</strong></div>
+<div class="Data03">12頭1番12人 村上弘樹 54.0</div>
+<div class="Data06">11-12-12(40.4)395(+3)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101899" target="_blank">ハーディローズ</a>(2.3)</div>
+<a class="movie_202248070603" href="https://race.netkeiba.com/race/movie.html?race_id=202248070603" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248070603" href="../race/movie.html?race_id=202248070603">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248062103">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.21名古屋</span>
+<span class="Num">10</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248062103">3歳6組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:39.6 <strong>稍</strong></div>
+<div class="Data03">12頭2番12人 村上弘樹 54.0</div>
+<div class="Data06">10-11-10(41.2)392(-4)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101816" target="_blank">ハーピーティアラ</a>(2.5)</div>
+<a class="movie_202248062103" href="https://race.netkeiba.com/race/movie.html?race_id=202248062103" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248062103" href="../race/movie.html?race_id=202248062103">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-</tr><tr class="HorseList" id="tr_17">
-<td class="Waku1">1</td>
+</tr><tr class="HorseList" id="tr_2">
+<td class="Waku2">2</td>
 <td class="Waku">2</td>
 <td class="Horse_Select">
-<select class="makeMeFancy_17" id="mark_17" name="17" style="display: none">
+<select class="makeMeFancy_2" id="mark_2" name="2" style="display: none">
 <option data-html-text="--" value="2_0">--</option><option data-html-text="◎" value="2_1">◎</option><option data-html-text="◯" value="2_2">◯</option><option data-html-text="▲" value="2_3">▲</option><option data-html-text="△" value="2_4">△</option><option data-html-text="☆" value="2_5">☆</option><option data-html-text="&amp;#10003" value="2_98">&amp;#10003</option><option data-html-text="消" value="2_99">消</option>
 </select>
 </td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">サトノアラジン</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020104493" target="_blank"> ヒャクマンボルト</a>
-</div>
-<div class="Horse03">ダノンジュエル</div>
-<div class="Horse04">(キングカメハメハ)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01089" target="_blank">美浦・武市</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">476kg<span>(0)</span></div>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">ドゥラメンテ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103073/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>マリブレディ</a>
+</dt>
+<dt class="Horse03">ドナルチア</dt>
+<dt class="Horse04">(Malibu Moon)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05281/">愛知・塚田隆男</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・塚田隆男</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">395kg<span>(+6)</span></div>
 <div class="Popular">
-<span id="odds-1_02">---.-</span>
-<span id="ninki-1_02">**</span>
+
+23.1
+<span>(7人気)</span>
 </div>
-</div>
-</div>
+</dt>
+</dl>
 </td>
 <td class="Jockey">
-<span class="Barei">牡2鹿</span>
-<img alt="" id="fuku_img17" onerror="DefaultImg(17)" src="https://cdn.netkeiba.com/img/db/colours/024031.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01077" target="_blank">石橋脩</a><br/>
+<span class="Barei">牝3鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/x0a441.gif" id = "fuku_img2" alt="" width="32" onerror="DefaultImg(2)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/00000/">友森翔</a><br />
+-->
+友森翔<br/>
 <span>54.0</span>
 </td>
-<td class="Rest">
+<td class="Past Ranking_1" id="myhorse_202248081802">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.18名古屋</span>
+<span class="Num">1</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081802">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.4 <strong>不</strong></div>
+<div class="Data03">10頭9番3人 渡辺竜也 54.0</div>
+<div class="Data06">3-3-3(41.3)389(-9)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100756" target="_blank">コスモマナ</a>(-0.3)</div>
+<a class="movie_202248081802" href="https://race.netkeiba.com/race/movie.html?race_id=202248081802" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081802" href="../race/movie.html?race_id=202248081802">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248080401">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.04名古屋</span>
+<span class="Num">5</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080401">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ920 0:58.1 <strong>良</strong></div>
+<div class="Data03">9頭4番5人 友森翔太 54.0</div>
+<div class="Data06">7(37.4)398(+4)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105671" target="_blank">ニグレッド</a>(1.2)</div>
+<a class="movie_202248080401" href="https://race.netkeiba.com/race/movie.html?race_id=202248080401" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080401" href="../race/movie.html?race_id=202248080401">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past Ranking_3" id="myhorse_202248072101">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.21名古屋</span>
+<span class="Num">3</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248072101">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.3 <strong>稍</strong></div>
+<div class="Data03">11頭3番6人 友森翔太 54.0</div>
+<div class="Data06">4-5-3(40.0)394(-1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102615" target="_blank">キタノパフューム</a>(0.3)</div>
+<a class="movie_202248072101" href="https://race.netkeiba.com/race/movie.html?race_id=202248072101" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248072101" href="../race/movie.html?race_id=202248072101">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248070701">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.07名古屋</span>
+<span class="Num">5</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248070701">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ920 0:57.3 <strong>稍</strong></div>
+<div class="Data03">11頭7番7人 友森翔太 54.0</div>
+<div class="Data06">9(36.6)395(+1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101323" target="_blank">アイファーステップ</a>(1.3)</div>
+<a class="movie_202248070701" href="https://race.netkeiba.com/race/movie.html?race_id=202248070701" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248070701" href="../race/movie.html?race_id=202248070701">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248062301">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.23名古屋</span>
+<span class="Num">8</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248062301">3歳11組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.7 <strong>重</strong></div>
+<div class="Data03">12頭5番11人 友森翔太 54.0</div>
+<div class="Data06">12-12-11(40.0)394(-1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102268" target="_blank">ソッフィアーレ</a>(2.0)</div>
+<a class="movie_202248062301" href="https://race.netkeiba.com/race/movie.html?race_id=202248062301" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248062301" href="../race/movie.html?race_id=202248062301">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-</tr><tr class="HorseList" id="tr_12">
-<td class="Waku2">2</td>
+</tr><tr class="HorseList" id="tr_3">
+<td class="Waku3">3</td>
 <td class="Waku">3</td>
 <td class="Horse_Select">
-<select class="makeMeFancy_12" id="mark_12" name="12" style="display: none">
+<select class="makeMeFancy_3" id="mark_3" name="3" style="display: none">
 <option data-html-text="--" value="3_0">--</option><option data-html-text="◎" value="3_1">◎</option><option data-html-text="◯" value="3_2">◯</option><option data-html-text="▲" value="3_3">▲</option><option data-html-text="△" value="3_4">△</option><option data-html-text="☆" value="3_5">☆</option><option data-html-text="&amp;#10003" value="3_98">&amp;#10003</option><option data-html-text="消" value="3_99">消</option>
 </select>
 </td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">ホッコータルマエ</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020105175" target="_blank"> ホバーコルテ</a>
-</div>
-<div class="Horse03">エアワルツ</div>
-<div class="Horse04">(ダンスインザダーク)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01116" target="_blank">美浦・新開</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">432kg<span>(0)</span></div>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">リオンディーズ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019106522/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>オリビアバローズ</a>
+</dt>
+<dt class="Horse03">マザイ</dt>
+<dt class="Horse04">(ファスリエフ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05200/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">490kg<span>(0)</span></div>
 <div class="Popular">
-<span id="odds-1_03">---.-</span>
-<span id="ninki-1_03">**</span>
+<span class="Odds_Ninki">1.7</span>
+<span>(1人気)</span>
 </div>
-</div>
-</div>
+</dt>
+</dl>
 </td>
 <td class="Jockey">
-<span class="Barei">牝2鹿</span>
-<img alt="" id="fuku_img12" onerror="DefaultImg(12)" src="https://cdn.netkeiba.com/img/db/colours/629800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01134" target="_blank">嶋田</a><br/>
+<span class="Barei">牝3鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/112033.gif" id = "fuku_img3" alt="" width="32" onerror="DefaultImg(3)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/05171/">岡部誠</a><br />
+-->
+岡部誠<br/>
 <span>54.0</span>
 </td>
-<td class="Rest">
-<div class="Data02">兄 チャンピオンピース(０勝)</div><div class="Data02">姉 アークリオン(公)</div><div class="Data02">兄 ゴールドキルクス(公)</div><div class="Data02">3月4日生まれ</div>
+<td class="Past Ranking_1" id="myhorse_202248081801">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.18名古屋</span>
+<span class="Num">1</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081801">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ920 0:57.2 <strong>不</strong></div>
+<div class="Data03">10頭2番4人 渡辺竜也 54.0</div>
+<div class="Data06">1(36.7)490(+16)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102700" target="_blank">ライクアパール</a>(-0.5)</div>
+<a class="movie_202248081801" href="https://race.netkeiba.com/race/movie.html?race_id=202248081801" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081801" href="../race/movie.html?race_id=202248081801">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202210030502">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.16小倉</span>
+<span class="Num">9</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202210030502">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1700 1:47.7 <strong>重</strong></div>
+<div class="Data03">16頭5番12人 松若風馬 54.0</div>
+<div class="Data06">16-16-13-12(39.3)474(-16)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100635" target="_blank">ラニカイ</a>(3.3)</div>
+<a class="movie_202210030502" href="https://race.netkeiba.com/race/movie.html?race_id=202210030502" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202209030403">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.26阪神</span>
+<span class="Num">4</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202209030403">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1800 1:58.4 <strong>良</strong></div>
+<div class="Data03">16頭12番9人 石橋脩 54.0</div>
+<div class="Data06">15-15-15-12(38.7)490(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105849" target="_blank">ドゥライトアルディ</a>(2.0)</div>
+<a class="movie_202209030403" href="https://race.netkeiba.com/race/movie.html?race_id=202209030403" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202207040402">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.12中京</span>
+<span class="Num">8</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202207040402">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1800 1:57.6 <strong>良</strong></div>
+<div class="Data03">10頭4番5人 岩田望来 54.0</div>
+<div class="Data06">9-10-7-9(42.4)490(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102986" target="_blank">シゲルオトヒメ</a>(3.3)</div>
+<a class="movie_202207040402" href="https://race.netkeiba.com/race/movie.html?race_id=202207040402" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
 <td class="Rest">
+<span class="Data02">姉 コパノフィーリング(３勝)</span><span class="Data02">兄 メジャーハリケーン(１勝)</span><span class="Data02">姉 メジャータイフーン(１勝)</span>
 </td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_3">
-<td class="Waku2">2</td>
+</tr><tr class="HorseList" id="tr_4">
+<td class="Waku4">4</td>
 <td class="Waku">4</td>
 <td class="Horse_Select">
-<select class="makeMeFancy_3" id="mark_3" name="3" style="display: none">
+<select class="makeMeFancy_4" id="mark_4" name="4" style="display: none">
 <option data-html-text="--" value="4_0">--</option><option data-html-text="◎" value="4_1">◎</option><option data-html-text="◯" value="4_2">◯</option><option data-html-text="▲" value="4_3">▲</option><option data-html-text="△" value="4_4">△</option><option data-html-text="☆" value="4_5">☆</option><option data-html-text="&amp;#10003" value="4_98">&amp;#10003</option><option data-html-text="消" value="4_99">消</option>
 </select>
 </td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">ハービンジャー</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020102451" target="_blank"> ヴァーナルブルーム</a>
-</div>
-<div class="Horse03">ベストティアラ</div>
-<div class="Horse04">(マンハッタンカフェ)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01163" target="_blank">美浦・林</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">418kg<span>(0)</span></div>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">ジャスタウェイ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019105471/" target="_blank"> サンパティーク</a>
+</dt>
+<dt class="Horse03">モアザンセイクリッド</dt>
+<dt class="Horse04">(More Than Ready)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05281/">愛知・塚田隆男</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・塚田隆男</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中5週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">473kg<span>(+5)</span></div>
 <div class="Popular">
-<span id="odds-1_04">---.-</span>
-<span id="ninki-1_04">**</span>
+<span class="Odds_Ninki">4.8</span>
+<span>(2人気)</span>
 </div>
-</div>
-</div>
+</dt>
+</dl>
 </td>
 <td class="Jockey">
-<span class="Barei">牝2鹿</span>
-<img alt="" id="fuku_img3" onerror="DefaultImg(3)" src="https://cdn.netkeiba.com/img/db/colours/547800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01092" target="_blank">津村</a><br/>
-<span>54.0</span>
+<span class="Barei">牝3黒鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/x006e7.gif" id = "fuku_img4" alt="" width="32" onerror="DefaultImg(4)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/00000/">塚本征</a><br />
+-->
+塚本征<br/>
+<span>53.0</span>
 </td>
-<td class="Rest">
-<div class="Data02">従姉 モズカッチャン(４勝)</div><div class="Data02">従兄 ラテンロック(５勝)</div><div class="Data02">近親 フォワードカフェ(現)</div><div class="Data02">3月1日生まれ</div>
+<td class="Past" id="myhorse_202210030802">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.24小倉</span>
+<span class="Num">10</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202210030802">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1700 1:48.3 <strong>良</strong></div>
+<div class="Data03">16頭2番13人 藤懸貴志 54.0</div>
+<div class="Data06">16-16-14-14(38.6)468(+4)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105404" target="_blank">リゴレット</a>(2.0)</div>
+<a class="movie_202210030802" href="https://race.netkeiba.com/race/movie.html?race_id=202210030802" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202207030201">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.05.08中京</span>
+<span class="Num">11</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202207030201">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1800 1:59.2 <strong>良</strong></div>
+<div class="Data03">13頭5番7人 藤懸貴志 54.0</div>
+<div class="Data06">12-13-13-12(39.2)464(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019103149" target="_blank">エピックジョイ</a>(2.3)</div>
+<a class="movie_202207030201" href="https://race.netkeiba.com/race/movie.html?race_id=202207030201" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202209020801">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.04.17阪神</span>
+<span class="Num">12</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202209020801">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1800 1:57.1 <strong>良</strong></div>
+<div class="Data03">16頭14番5人 藤懸貴志 54.0</div>
+<div class="Data06">15-15-13-13(39.6)464(+2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019106060" target="_blank">ラピドゥス</a>(1.8)</div>
+<a class="movie_202209020801" href="https://race.netkeiba.com/race/movie.html?race_id=202209020801" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202209010701">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.03.05阪神</span>
+<span class="Num">4</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202209010701">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1800 1:56.7 <strong>良</strong></div>
+<div class="Data03">14頭2番6人 藤懸貴志 54.0</div>
+<div class="Data06">12-12-4-5(40.1)462(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019106565" target="_blank">メイショウソウゲツ</a>(1.0)</div>
+<a class="movie_202209010701" href="https://race.netkeiba.com/race/movie.html?race_id=202209010701" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202209010101">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.02.12阪神</span>
+<span class="Num">5</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202209010101">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1800 1:56.2 <strong>良</strong></div>
+<div class="Data03">12頭9番8人 藤懸貴志 54.0</div>
+<div class="Data06">12-12-10-8(38.3)462(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019106605" target="_blank">ランスオブウェイブ</a>(1.2)</div>
+<a class="movie_202209010101" href="https://race.netkeiba.com/race/movie.html?race_id=202209010101" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-</tr><tr class="HorseList" id="tr_2">
-<td class="Waku3">3</td>
+</tr><tr class="HorseList" id="tr_5">
+<td class="Waku5">5</td>
 <td class="Waku">5</td>
 <td class="Horse_Select">
-<select class="makeMeFancy_2" id="mark_2" name="2" style="display: none">
+<select class="makeMeFancy_5" id="mark_5" name="5" style="display: none">
 <option data-html-text="--" value="5_0">--</option><option data-html-text="◎" value="5_1">◎</option><option data-html-text="◯" value="5_2">◯</option><option data-html-text="▲" value="5_3">▲</option><option data-html-text="△" value="5_4">△</option><option data-html-text="☆" value="5_5">☆</option><option data-html-text="&amp;#10003" value="5_98">&amp;#10003</option><option data-html-text="消" value="5_99">消</option>
 </select>
 </td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">カレンブラックヒル</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020105310" target="_blank"> イースターエッグ</a>
-</div>
-<div class="Horse03">エバーローズ</div>
-<div class="Horse04">(ウインクリューガー)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01077" target="_blank">美浦・加藤和</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">418kg<span>(0)</span></div>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">アドマイヤムーン</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019106901/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ルミナスブルー</a>
+</dt>
+<dt class="Horse03">ホワイトピクシイ</dt>
+<dt class="Horse04">(ホワイトマズル)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05200/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">427kg<span>(+2)</span></div>
 <div class="Popular">
-<span id="odds-1_05">---.-</span>
-<span id="ninki-1_05">**</span>
+<span class="Odds_Ninki">5.0</span>
+<span>(3人気)</span>
 </div>
-</div>
-</div>
+</dt>
+</dl>
 </td>
 <td class="Jockey">
-<span class="Barei">牝2鹿</span>
-<img alt="" id="fuku_img2" onerror="DefaultImg(2)" src="https://cdn.netkeiba.com/img/db/colours/911800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01184" target="_blank">原</a><br/>
-<span>51.0</span>
+<span class="Barei">セ3黒鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/112033.gif" id = "fuku_img5" alt="" width="32" onerror="DefaultImg(5)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/05196/">宮下瞳</a><br />
+-->
+宮下瞳<br/>
+<span>54.0</span>
 </td>
-<td class="Rest">
-<div class="Data02">姉 マイヨアポア(現)</div><div class="Data02">姉 スカーレットジェム(０勝)</div><div class="Data02">姉 ブロッケンリング(０勝)</div><div class="Data02">4月8日生まれ</div>
+<td class="Past Ranking_2" id="myhorse_202248081702">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.17名古屋</span>
+<span class="Num">2</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081702">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.5 <strong>不</strong></div>
+<div class="Data03">10頭3番3人 渡辺竜也 56.0</div>
+<div class="Data06">4-5-2(39.9)425(-3)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101945" target="_blank">ビップジャスミン</a>(1.2)</div>
+<a class="movie_202248081702" href="https://race.netkeiba.com/race/movie.html?race_id=202248081702" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081702" href="../race/movie.html?race_id=202248081702">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past Ranking_2" id="myhorse_202248080403">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.04名古屋</span>
+<span class="Num">2</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080403">3歳10組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:36.9 <strong>良</strong></div>
+<div class="Data03">10頭5番5人 渡辺竜也 56.0</div>
+<div class="Data06">5-5-4(39.5)428(+5)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105090" target="_blank">マイレッドスター</a>(0.7)</div>
+<a class="movie_202248080403" href="https://race.netkeiba.com/race/movie.html?race_id=202248080403" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080403" href="../race/movie.html?race_id=202248080403">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248072103">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.21名古屋</span>
+<span class="Num">5</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248072103">3歳9組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.0 <strong>稍</strong></div>
+<div class="Data03">12頭11番4人 岡部誠 56.0</div>
+<div class="Data06">4-4-4(40.9)423(-5)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100423" target="_blank">コスモフーディエ</a>(0.6)</div>
+<a class="movie_202248072103" href="https://race.netkeiba.com/race/movie.html?race_id=202248072103" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248072103" href="../race/movie.html?race_id=202248072103">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248070703">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.07名古屋</span>
+<span class="Num">4</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248070703">ゆうかちゃ
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.6 <strong>稍</strong></div>
+<div class="Data03">11頭5番3人 渡辺竜也 56.0</div>
+<div class="Data06">4-5-6(41.3)428(-7)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100100" target="_blank">キーファイン</a>(0.5)</div>
+<a class="movie_202248070703" href="https://race.netkeiba.com/race/movie.html?race_id=202248070703" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248070703" href="../race/movie.html?race_id=202248070703">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
+<td class="Past" id="myhorse_202248062303">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.23名古屋</span>
+<span class="Num">5</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248062303">3歳9組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.1 <strong>重</strong></div>
+<div class="Data03">12頭11番1人 岡部誠 56.0</div>
+<div class="Data06">5-4-5(41.6)435(+6)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101899" target="_blank">ハーディローズ</a>(1.3)</div>
+<a class="movie_202248062303" href="https://race.netkeiba.com/race/movie.html?race_id=202248062303" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248062303" href="../race/movie.html?race_id=202248062303">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-</tr><tr class="HorseList" id="tr_13">
-<td class="Waku3">3</td>
+</tr><tr class="HorseList" id="tr_6">
+<td class="Waku5">5</td>
 <td class="Waku">6</td>
 <td class="Horse_Select">
-<select class="makeMeFancy_13" id="mark_13" name="13" style="display: none">
+<select class="makeMeFancy_6" id="mark_6" name="6" style="display: none">
 <option data-html-text="--" value="6_0">--</option><option data-html-text="◎" value="6_1">◎</option><option data-html-text="◯" value="6_2">◯</option><option data-html-text="▲" value="6_3">▲</option><option data-html-text="△" value="6_4">△</option><option data-html-text="☆" value="6_5">☆</option><option data-html-text="&amp;#10003" value="6_98">&amp;#10003</option><option data-html-text="消" value="6_99">消</option>
 </select>
 </td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">トゥザワールド</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020104250" target="_blank"> マジカルガール</a>
-</div>
-<div class="Horse03">ミラクルガール</div>
-<div class="Horse04">(ロックオブジブラルタル)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01195" target="_blank">美浦・嘉藤</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">406kg<span>(0)</span></div>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">ストロングリターン</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019101632/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ホットジュエル</a>
+</dt>
+<dt class="Horse03">ジュエルアラモード</dt>
+<dt class="Horse04">(ダイワメジャー)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05230/">愛知・迫田清美</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・迫田清美</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">477kg<span>(-1)</span></div>
 <div class="Popular">
-<span id="odds-1_06">---.-</span>
-<span id="ninki-1_06">**</span>
+
+22.3
+<span>(6人気)</span>
 </div>
-</div>
-</div>
+</dt>
+</dl>
 </td>
 <td class="Jockey">
-<span class="Barei">牝2黒鹿</span>
-<img alt="" id="fuku_img13" onerror="DefaultImg(13)" src="https://cdn.netkeiba.com/img/db/colours/629800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01135" target="_blank">杉原</a><br/>
-<span>54.0</span>
+<span class="Barei">牝3栗</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/x09a75.gif" id = "fuku_img6" alt="" width="32" onerror="DefaultImg(6)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/05602/">細川智</a><br />
+-->
+細川智<br/>
+<span>53.0</span>
 </td>
-<td class="Rest">
-<div class="Data02">姉 ナタラディーヴァ(１勝)</div><div class="Data02">姉 ミラドール(０勝)</div><div class="Data02">兄 ブライトンビーチ(０勝)</div><div class="Data02">3月4日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_11">
-<td class="Waku4">4</td>
-<td class="Waku">7</td>
-<td class="Horse_Select">
-<select class="makeMeFancy_11" id="mark_11" name="11" style="display: none">
-<option data-html-text="--" value="7_0">--</option><option data-html-text="◎" value="7_1">◎</option><option data-html-text="◯" value="7_2">◯</option><option data-html-text="▲" value="7_3">▲</option><option data-html-text="△" value="7_4">△</option><option data-html-text="☆" value="7_5">☆</option><option data-html-text="&amp;#10003" value="7_98">&amp;#10003</option><option data-html-text="消" value="7_99">消</option>
-</select>
-</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">マインドユアビスケッツ</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020102867" target="_blank"> フルメタルボディー</a>
+<td class="Past" id="myhorse_202248081703">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.17名古屋</span>
+<span class="Num">5</span>
 </div>
-<div class="Horse03">ザレマ</div>
-<div class="Horse04">(ダンスインザダーク)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01110" target="_blank">栗東・清水久</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">490kg<span>(0)</span></div>
-<div class="Popular">
-<span id="odds-1_07">---.-</span>
-<span id="ninki-1_07">**</span>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081703">3歳6組
+
+</a>
 </div>
-</div>
+<div class="Data05">ダ1500 1:38.9 <strong>不</strong></div>
+<div class="Data03">10頭9番4人 細川智史 53.0</div>
+<div class="Data06">8-7-7(41.2)478(+6)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102909" target="_blank">エドノバイオレット</a>(1.3)</div>
+<a class="movie_202248081703" href="https://race.netkeiba.com/race/movie.html?race_id=202248081703" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081703" href="../race/movie.html?race_id=202248081703">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
 </div>
 </td>
-<td class="Jockey">
-<span class="Barei">牡2栗</span>
-<img alt="" id="fuku_img11" onerror="DefaultImg(11)" src="https://cdn.netkeiba.com/img/db/colours/415800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01122" target="_blank">三浦</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">兄 バレッティ(現)</div><div class="Data02">兄 ミッキーオリビエ(４勝)</div><div class="Data02">姉 グランドピルエット(２勝)</div><div class="Data02">4月3日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_6">
-<td class="Waku4">4</td>
-<td class="Waku">8</td>
-<td class="Horse_Select">
-<select class="makeMeFancy_6" id="mark_6" name="6" style="display: none">
-<option data-html-text="--" value="8_0">--</option><option data-html-text="◎" value="8_1">◎</option><option data-html-text="◯" value="8_2">◯</option><option data-html-text="▲" value="8_3">▲</option><option data-html-text="△" value="8_4">△</option><option data-html-text="☆" value="8_5">☆</option><option data-html-text="&amp;#10003" value="8_98">&amp;#10003</option><option data-html-text="消" value="8_99">消</option>
-</select>
-</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">ビーチパトロール</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020104232" target="_blank"> サッチモ</a>
+<td class="Past Ranking_1" id="myhorse_202248052702">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.05.27名古屋</span>
+<span class="Num">1</span>
 </div>
-<div class="Horse03">ラブユー</div>
-<div class="Horse04">(マーベラスサンデー)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01035" target="_blank">美浦・佐藤</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">406kg<span>(0)</span></div>
-<div class="Popular">
-<span id="odds-1_08">---.-</span>
-<span id="ninki-1_08">**</span>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248052702">3歳9組
+
+</a>
 </div>
-</div>
+<div class="Data05">ダ1500 1:36.7 <strong>不</strong></div>
+<div class="Data03">10頭2番4人 丹羽克輝 54.0</div>
+<div class="Data06">1-1-1(40.2)472(+9)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105642" target="_blank">ナオミチャン</a>(0.0)</div>
+<a class="movie_202248052702" href="https://race.netkeiba.com/race/movie.html?race_id=202248052702" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248052702" href="../race/movie.html?race_id=202248052702">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
 </div>
 </td>
-<td class="Jockey">
-<span class="Barei">牝2黒鹿</span>
-<img alt="" id="fuku_img6" onerror="DefaultImg(6)" src="https://cdn.netkeiba.com/img/db/colours/738800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01154" target="_blank">松若</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">姉 ラブリアージェ(現)</div><div class="Data02">近親 シークレットアーム(２勝)</div><div class="Data02">近親 ジャイアン(２勝)</div><div class="Data02">3月13日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_8">
-<td class="Waku5">5</td>
-<td class="Waku">9</td>
-<td class="Horse_Select">
-<select class="makeMeFancy_8" id="mark_8" name="8" style="display: none">
-<option data-html-text="--" value="9_0">--</option><option data-html-text="◎" value="9_1">◎</option><option data-html-text="◯" value="9_2">◯</option><option data-html-text="▲" value="9_3">▲</option><option data-html-text="△" value="9_4">△</option><option data-html-text="☆" value="9_5">☆</option><option data-html-text="&amp;#10003" value="9_98">&amp;#10003</option><option data-html-text="消" value="9_99">消</option>
-</select>
-</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">ロードカナロア</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020106616" target="_blank"> タイムアンドタイド</a>
+<td class="Past Ranking_3" id="myhorse_202248052003">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.05.20名古屋</span>
+<span class="Num">3</span>
 </div>
-<div class="Horse03">リンダリンダ</div>
-<div class="Horse04">(フレンチデピュティ)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01150" target="_blank">美浦・池上</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">498kg<span>(0)</span></div>
-<div class="Popular">
-<span id="odds-1_09">---.-</span>
-<span id="ninki-1_09">**</span>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248052003">3歳10組
+
+</a>
 </div>
-</div>
+<div class="Data05">ダ1500 1:38.7 <strong>良</strong></div>
+<div class="Data03">11頭10番1人 木之前葵 52.0</div>
+<div class="Data06">9-6-5(39.9)463(-11)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100246" target="_blank">エンジェルワン</a>(0.2)</div>
+<a class="movie_202248052003" href="https://race.netkeiba.com/race/movie.html?race_id=202248052003" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248052003" href="../race/movie.html?race_id=202248052003">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
 </div>
 </td>
-<td class="Jockey">
-<span class="Barei">牡2黒鹿</span>
-<img alt="" id="fuku_img8" onerror="DefaultImg(8)" src="https://cdn.netkeiba.com/img/db/colours/050803.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01018" target="_blank">和田竜</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">姉 イッシキ(公)</div><div class="Data02">近親 トレイントレイン(２勝)</div><div class="Data02">近親 ルージュロワイヤル(０勝)</div><div class="Data02">5月6日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_9">
-<td class="Waku5">5</td>
-<td class="Waku">10</td>
-<td class="Horse_Select">
-<select class="makeMeFancy_9" id="mark_9" name="9" style="display: none">
-<option data-html-text="--" value="10_0">--</option><option data-html-text="◎" value="10_1">◎</option><option data-html-text="◯" value="10_2">◯</option><option data-html-text="▲" value="10_3">▲</option><option data-html-text="△" value="10_4">△</option><option data-html-text="☆" value="10_5">☆</option><option data-html-text="&amp;#10003" value="10_98">&amp;#10003</option><option data-html-text="消" value="10_99">消</option>
-</select>
-</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">レッドファルクス</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020102934" target="_blank"> ディナトセレーネ</a>
+<td class="Past" id="myhorse_202248050602">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.05.06名古屋</span>
+<span class="Num">4</span>
 </div>
-<div class="Horse03">ダイワミランダ</div>
-<div class="Horse04">(ハービンジャー)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01103" target="_blank">美浦・尾関</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">446kg<span>(0)</span></div>
-<div class="Popular">
-<span id="odds-1_10">---.-</span>
-<span id="ninki-1_10">**</span>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248050602">3歳10組
+
+</a>
 </div>
-</div>
+<div class="Data05">ダ1500 1:38.0 <strong>良</strong></div>
+<div class="Data03">11頭9番3人 木之前葵 52.0</div>
+<div class="Data06">3-3-3(39.8)474(+6)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019103962" target="_blank">サトミン</a>(1.4)</div>
+<a class="movie_202248050602" href="https://race.netkeiba.com/race/movie.html?race_id=202248050602" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248050602" href="../race/movie.html?race_id=202248050602">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
 </div>
 </td>
-<td class="Jockey">
-<span class="Barei">牝2芦</span>
-<img alt="" id="fuku_img9" onerror="DefaultImg(9)" src="https://cdn.netkeiba.com/img/db/colours/415800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/05212" target="_blank">Ｍデム</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">兄 エイカイマッケンロ(現)</div><div class="Data02">近親 ダイワレジェンド(４勝)</div><div class="Data02">近親 ダイワメモリー(３勝)</div><div class="Data02">2月18日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr>
-<tr class="HorseList Cancel">
-<td class="Waku6">6</td>
-<td class="Waku">11</td>
-<td class="Cancel_NoData">取消</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">マインドユアビスケッツ</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020102575" target="_blank"> ウィズザドリーム</a>
+<td class="Past" id="myhorse_202209020303">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.04.02阪神</span>
+<span class="Num">15</span>
 </div>
-<div class="Horse03">ドリームアドリーム</div>
-<div class="Horse04">(ディープインパクト)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01117" target="_blank">栗東・高野</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202209020303">3歳未勝利
+
+</a>
 </div>
+<div class="Data05">ダ1200 1:16.1 <strong>良</strong></div>
+<div class="Data03">16頭10番16人 斎藤新 54.0</div>
+<div class="Data06">12-14(38.8)468(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105970" target="_blank">スリードレフォン</a>(2.8)</div>
+<a class="movie_202209020303" href="https://race.netkeiba.com/race/movie.html?race_id=202209020303" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
 </div>
-</td>
-<td class="Jockey">
-<span class="Barei">牡2栗</span>
-<img alt="" id="fuku_img" onerror="DefaultImg()" src="https://cdn.netkeiba.com/img/db/colours/808800.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01126" target="_blank">松山</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">兄 ツヴァイシュテルネ(現)</div><div class="Data02">姉 メイショウセイフウ(０勝)</div><div class="Data02">近親 スペクラ(０勝)</div><div class="Data02">3月16日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
 </td>
 </tr><tr class="HorseList" id="tr_7">
 <td class="Waku6">6</td>
-<td class="Waku">12</td>
+<td class="Waku">7</td>
 <td class="Horse_Select">
 <select class="makeMeFancy_7" id="mark_7" name="7" style="display: none">
+<option data-html-text="--" value="7_0">--</option><option data-html-text="◎" value="7_1">◎</option><option data-html-text="◯" value="7_2">◯</option><option data-html-text="▲" value="7_3">▲</option><option data-html-text="△" value="7_4">△</option><option data-html-text="☆" value="7_5">☆</option><option data-html-text="&amp;#10003" value="7_98">&amp;#10003</option><option data-html-text="消" value="7_99">消</option>
+</select>
+</td>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">エイシンフラッシュ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103520/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>エムズフラッシュ</a>
+</dt>
+<dt class="Horse03">メメクザリアーナ</dt>
+<dt class="Horse04">(ジャングルポケット)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05200/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中3週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">435kg<span>(-9)</span></div>
+<div class="Popular">
+
+47.3
+<span>(9人気)</span>
+</div>
+</dt>
+</dl>
+</td>
+<td class="Jockey">
+<span class="Barei">牡3黒鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/x0ae79.gif" id = "fuku_img7" alt="" width="32" onerror="DefaultImg(7)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/05489/">今井貴</a><br />
+-->
+今井貴<br/>
+<span>56.0</span>
+</td>
+<td class="Past" id="myhorse_202248080201">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.02名古屋</span>
+<span class="Num">10</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080201">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ920 0:58.8 <strong>良</strong></div>
+<div class="Data03">10頭2番1人 岡部誠 56.0</div>
+<div class="Data06">9(38.6)444(+4)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102804" target="_blank">マジックスパート</a>(2.6)</div>
+<a class="movie_202248080201" href="https://race.netkeiba.com/race/movie.html?race_id=202248080201" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080201" href="../race/movie.html?race_id=202248080201">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202210030203">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.03小倉</span>
+<span class="Num">13</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202210030203">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1000 1:00.8 <strong>良</strong></div>
+<div class="Data03">14頭7番4人 幸英明 56.0</div>
+<div class="Data06">10-8(37.0)440(+2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019103370" target="_blank">ゴーウィズフェイス</a>(2.1)</div>
+<a class="movie_202210030203" href="https://race.netkeiba.com/race/movie.html?race_id=202210030203" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202207040306">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.11中京</span>
+<span class="Num">9</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202207040306">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">芝1200 1:09.4 <strong>良</strong></div>
+<div class="Data03">18頭16番8人 角田大河 53.0</div>
+<div class="Data06">9-10(34.9)438(+4)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019103293" target="_blank">キタサンユーダイ</a>(1.0)</div>
+<a class="movie_202207040306" href="https://race.netkeiba.com/race/movie.html?race_id=202207040306" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202210020502">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.02.26小倉</span>
+<span class="Num">6</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202210020502">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">芝1200 1:09.3 <strong>良</strong></div>
+<div class="Data03">18頭8番5人 菱田裕二 56.0</div>
+<div class="Data06">7-3(35.2)434(-2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019103233" target="_blank">ニシノデフィレ</a>(1.0)</div>
+<a class="movie_202210020502" href="https://race.netkeiba.com/race/movie.html?race_id=202210020502" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past Ranking_2" id="myhorse_202210010806">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.02.06小倉</span>
+<span class="Num">2</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202210010806">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">芝1200 1:09.6 <strong>良</strong></div>
+<div class="Data03">18頭7番12人 西谷凜 53.0</div>
+<div class="Data06">1-1(34.6)436(-6)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019103563" target="_blank">アスターディゴン</a>(0.1)</div>
+<a class="movie_202210010806" href="https://race.netkeiba.com/race/movie.html?race_id=202210010806" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+</tr><tr class="HorseList" id="tr_8">
+<td class="Waku6">6</td>
+<td class="Waku">8</td>
+<td class="Horse_Select">
+<select class="makeMeFancy_8" id="mark_8" name="8" style="display: none">
+<option data-html-text="--" value="8_0">--</option><option data-html-text="◎" value="8_1">◎</option><option data-html-text="◯" value="8_2">◯</option><option data-html-text="▲" value="8_3">▲</option><option data-html-text="△" value="8_4">△</option><option data-html-text="☆" value="8_5">☆</option><option data-html-text="&amp;#10003" value="8_98">&amp;#10003</option><option data-html-text="消" value="8_99">消</option>
+</select>
+</td>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">ドリームジャーニー</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103560/" target="_blank"> ユイノペニーワイズ</a>
+</dt>
+<dt class="Horse03">ストームエンジェル</dt>
+<dt class="Horse04">(ストーミングホーム)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/00823/">愛知・錦見勇夫</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・錦見勇夫</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中6週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">433kg<span>(-4)</span></div>
+<div class="Popular">
+
+11.5
+<span>(4人気)</span>
+</div>
+</dt>
+</dl>
+</td>
+<td class="Jockey">
+<span class="Barei">牡3黒鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/x03917.gif" id = "fuku_img8" alt="" width="32" onerror="DefaultImg(8)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/05324/">丹羽克</a><br />
+-->
+丹羽克<br/>
+<span>56.0</span>
+</td>
+<td class="Past Ranking_3" id="myhorse_202235071209">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.12盛岡</span>
+<span class="Num">3</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202235071209">アメジスト
+
+</a>
+</div>
+<div class="Data05">芝1700 1:45.0 <strong>稍</strong></div>
+<div class="Data03">12頭5番4人 山本政聡 56.0</div>
+<div class="Data06">8-8-8-7(35.1)437(-19)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100910" target="_blank">ゼンノテンバ</a>(1.1)</div>
+<a class="movie_202235071209" href="https://race.netkeiba.com/race/movie.html?race_id=202235071209" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202235071209" href="../race/movie.html?race_id=202235071209">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202205030302">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.11東京</span>
+<span class="Num">13</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202205030302">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">ダ1600 1:40.3 <strong>良</strong></div>
+<div class="Data03">15頭11番2人 江田照男 56.0</div>
+<div class="Data06">7-7(39.6)456(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102957" target="_blank">バイタルエリア</a>(2.2)</div>
+<a class="movie_202205030302" href="https://race.netkeiba.com/race/movie.html?race_id=202205030302" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202205021003">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.05.22東京</span>
+<span class="Num">11</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202205021003">3歳未勝利
+
+</a>
+</div>
+<div class="Data05">芝1400 1:22.5 <strong>稍</strong></div>
+<div class="Data03">18頭18番6人 江田照男 56.0</div>
+<div class="Data06">11-10(35.1)456(+6)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019110025" target="_blank">レイヴンズコー</a>(0.9)</div>
+<a class="movie_202205021003" href="https://race.netkeiba.com/race/movie.html?race_id=202205021003" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past Ranking_3" id="myhorse_202105050306">
+<div class="Data_Item">
+<div class="Data01">
+<span>2021.11.13東京</span>
+<span class="Num">3</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202105050306">2歳新馬
+
+</a>
+</div>
+<div class="Data05">芝1600 1:37.3 <strong>良</strong></div>
+<div class="Data03">10頭2番4人 江田照男 55.0</div>
+<div class="Data06">6-6(33.8)450(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019104687" target="_blank">ソバナ</a>(0.1)</div>
+<a class="movie_202105050306" href="https://race.netkeiba.com/race/movie.html?race_id=202105050306" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Rest">
+<span class="Data02">姉 ギガバイト(０勝)</span><span class="Data02">姉 マッドクレスト(公)</span><span class="Data02">姉 クリスタルツリー(公)</span>
+</td>
+</tr><tr class="HorseList" id="tr_9">
+<td class="Waku7">7</td>
+<td class="Waku">9</td>
+<td class="Horse_Select">
+<select class="makeMeFancy_9" id="mark_9" name="9" style="display: none">
+<option data-html-text="--" value="9_0">--</option><option data-html-text="◎" value="9_1">◎</option><option data-html-text="◯" value="9_2">◯</option><option data-html-text="▲" value="9_3">▲</option><option data-html-text="△" value="9_4">△</option><option data-html-text="☆" value="9_5">☆</option><option data-html-text="&amp;#10003" value="9_98">&amp;#10003</option><option data-html-text="消" value="9_99">消</option>
+</select>
+</td>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">アドマイヤムーン</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019101455/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ゼアル</a>
+</dt>
+<dt class="Horse03">グリーンアイズII</dt>
+<dt class="Horse04">(Green Desert)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05177/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">418kg<span>(-1)</span></div>
+<div class="Popular">
+
+40.8
+<span>(8人気)</span>
+</div>
+</dt>
+</dl>
+</td>
+<td class="Jockey">
+<span class="Barei">牝3芦</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/x0a721.gif" id = "fuku_img9" alt="" width="32" onerror="DefaultImg(9)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/05543/">山田祥</a><br />
+-->
+山田祥<br/>
+<span>54.0</span>
+</td>
+<td class="Past Ranking_3" id="myhorse_202248081702">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.17名古屋</span>
+<span class="Num">3</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081702">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.8 <strong>不</strong></div>
+<div class="Data03">10頭10番6人 浅野皓大 53.0</div>
+<div class="Data06">4-4-4(40.4)419(-1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101945" target="_blank">ビップジャスミン</a>(1.5)</div>
+<a class="movie_202248081702" href="https://race.netkeiba.com/race/movie.html?race_id=202248081702" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081702" href="../race/movie.html?race_id=202248081702">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248080404">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.04名古屋</span>
+<span class="Num">5</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080404">海底ウイス
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:39.0 <strong>良</strong></div>
+<div class="Data03">10頭2番6人 今井貴大 54.0</div>
+<div class="Data06">5-4-5(41.8)420(+1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019103653" target="_blank">メイショウイモジ</a>(1.4)</div>
+<a class="movie_202248080404" href="https://race.netkeiba.com/race/movie.html?race_id=202248080404" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080404" href="../race/movie.html?race_id=202248080404">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248071801">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.18名古屋</span>
+<span class="Num">7</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248071801">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.5 <strong>重</strong></div>
+<div class="Data03">10頭4番6人 宮下瞳 52.0</div>
+<div class="Data06">7-7-7(39.8)419(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101330" target="_blank">アイファーグローブ</a>(1.7)</div>
+<a class="movie_202248071801" href="https://race.netkeiba.com/race/movie.html?race_id=202248071801" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248071801" href="../race/movie.html?race_id=202248071801">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248070602">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.06名古屋</span>
+<span class="Num">9</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248070602">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.8 <strong>重</strong></div>
+<div class="Data03">11頭5番4人 宮下瞳 52.0</div>
+<div class="Data06">5-5-7(41.8)419(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019106759" target="_blank">アップモンスター</a>(2.0)</div>
+<a class="movie_202248070602" href="https://race.netkeiba.com/race/movie.html?race_id=202248070602" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248070602" href="../race/movie.html?race_id=202248070602">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248062103">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.21名古屋</span>
+<span class="Num">6</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248062103">3歳6組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.1 <strong>稍</strong></div>
+<div class="Data03">12頭7番7人 宮下瞳 52.0</div>
+<div class="Data06">7-7-7(40.3)419(-2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101816" target="_blank">ハーピーティアラ</a>(1.0)</div>
+<a class="movie_202248062103" href="https://race.netkeiba.com/race/movie.html?race_id=202248062103" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248062103" href="../race/movie.html?race_id=202248062103">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+</tr><tr class="HorseList" id="tr_10">
+<td class="Waku7">7</td>
+<td class="Waku">10</td>
+<td class="Horse_Select">
+<select class="makeMeFancy_10" id="mark_10" name="10" style="display: none">
+<option data-html-text="--" value="10_0">--</option><option data-html-text="◎" value="10_1">◎</option><option data-html-text="◯" value="10_2">◯</option><option data-html-text="▲" value="10_3">▲</option><option data-html-text="△" value="10_4">△</option><option data-html-text="☆" value="10_5">☆</option><option data-html-text="&amp;#10003" value="10_98">&amp;#10003</option><option data-html-text="消" value="10_99">消</option>
+</select>
+</td>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">アジアエクスプレス</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019101480/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>カラニ</a>
+</dt>
+<dt class="Horse03">パイナマナ</dt>
+<dt class="Horse04">(カネヒキリ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05346/">愛知・荒巻透</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・荒巻透</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">505kg<span>(+2)</span></div>
+<div class="Popular">
+
+127.2
+<span>(10人気)</span>
+</div>
+</dt>
+</dl>
+</td>
+<td class="Jockey">
+<span class="Barei">牡3黒鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/136030.gif" id = "fuku_img10" alt="" width="32" onerror="DefaultImg(10)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/00000/">加藤誓</a><br />
+-->
+加藤誓<br/>
+<span>56.0</span>
+</td>
+<td class="Past" id="myhorse_202248081703">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.17名古屋</span>
+<span class="Num">8</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081703">3歳6組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:40.1 <strong>不</strong></div>
+<div class="Data03">10頭5番8人 藤原幹生 56.0</div>
+<div class="Data06">4-4-6(42.8)503(-2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102909" target="_blank">エドノバイオレット</a>(2.5)</div>
+<a class="movie_202248081703" href="https://race.netkeiba.com/race/movie.html?race_id=202248081703" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081703" href="../race/movie.html?race_id=202248081703">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248080201">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.02名古屋</span>
+<span class="Num">6</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080201">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ920 0:58.4 <strong>良</strong></div>
+<div class="Data03">10頭1番10人 丸山真一 56.0</div>
+<div class="Data06">7(38.2)505(+3)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102804" target="_blank">マジックスパート</a>(2.2)</div>
+<a class="movie_202248080201" href="https://race.netkeiba.com/race/movie.html?race_id=202248080201" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080201" href="../race/movie.html?race_id=202248080201">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248071802">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.18名古屋</span>
+<span class="Num">10</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248071802">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:39.7 <strong>重</strong></div>
+<div class="Data03">10頭4番4人 藤原良一 56.0</div>
+<div class="Data06">1-4-6(43.6)502(+3)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105762" target="_blank">サヴァンナナイツ</a>(2.2)</div>
+<a class="movie_202248071802" href="https://race.netkeiba.com/race/movie.html?race_id=202248071802" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248071802" href="../race/movie.html?race_id=202248071802">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248070603">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.06名古屋</span>
+<span class="Num">4</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248070603">亜希子あり
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.0 <strong>重</strong></div>
+<div class="Data03">12頭11番6人 藤原良一 56.0</div>
+<div class="Data06">3-3-4(41.2)499(-2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101899" target="_blank">ハーディローズ</a>(1.1)</div>
+<a class="movie_202248070603" href="https://race.netkeiba.com/race/movie.html?race_id=202248070603" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248070603" href="../race/movie.html?race_id=202248070603">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past Ranking_1" id="myhorse_202248062302">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.23名古屋</span>
+<span class="Num">1</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248062302">3歳10組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:36.8 <strong>重</strong></div>
+<div class="Data03">11頭7番5人 藤原良一 56.0</div>
+<div class="Data06">1-2-1(39.8)501(-6)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019104341" target="_blank">エグゼクティブラン</a>(-0.2)</div>
+<a class="movie_202248062302" href="https://race.netkeiba.com/race/movie.html?race_id=202248062302" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248062302" href="../race/movie.html?race_id=202248062302">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+</tr><tr class="HorseList" id="tr_11">
+<td class="Waku8">8</td>
+<td class="Waku">11</td>
+<td class="Horse_Select">
+<select class="makeMeFancy_11" id="mark_11" name="11" style="display: none">
+<option data-html-text="--" value="11_0">--</option><option data-html-text="◎" value="11_1">◎</option><option data-html-text="◯" value="11_2">◯</option><option data-html-text="▲" value="11_3">▲</option><option data-html-text="△" value="11_4">△</option><option data-html-text="☆" value="11_5">☆</option><option data-html-text="&amp;#10003" value="11_98">&amp;#10003</option><option data-html-text="消" value="11_99">消</option>
+</select>
+</td>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">ビッグアーサー</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019100365/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ブタノカックーニ</a>
+</dt>
+<dt class="Horse03">エルモアレッタ</dt>
+<dt class="Horse04">(ヨハネスブルグ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05368/">愛知・櫻井今朝</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・櫻井今朝</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">479kg<span>(-2)</span></div>
+<div class="Popular">
+
+171.8
+<span>(11人気)</span>
+</div>
+</dt>
+</dl>
+</td>
+<td class="Jockey">
+<span class="Barei">牡3鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/155031.gif" id = "fuku_img11" alt="" width="32" onerror="DefaultImg(11)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/05435/">柿原翔</a><br />
+-->
+柿原翔<br/>
+<span>56.0</span>
+</td>
+<td class="Past" id="myhorse_202248081703">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.17名古屋</span>
+<span class="Num">10</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248081703">3歳6組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:41.0 <strong>不</strong></div>
+<div class="Data03">10頭7番9人 柿原翔 56.0</div>
+<div class="Data06">10-10-10(42.1)481(+1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102909" target="_blank">エドノバイオレット</a>(3.4)</div>
+<a class="movie_202248081703" href="https://race.netkeiba.com/race/movie.html?race_id=202248081703" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248081703" href="../race/movie.html?race_id=202248081703">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248080202">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.02名古屋</span>
+<span class="Num">8</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080202">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:40.8 <strong>良</strong></div>
+<div class="Data03">10頭7番10人 柿原翔 56.0</div>
+<div class="Data06">9-9-10(41.9)480(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100100" target="_blank">キーファイン</a>(3.4)</div>
+<a class="movie_202248080202" href="https://race.netkeiba.com/race/movie.html?race_id=202248080202" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080202" href="../race/movie.html?race_id=202248080202">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248071802">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.18名古屋</span>
+<span class="Num">9</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248071802">名古屋モー
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.9 <strong>重</strong></div>
+<div class="Data03">10頭2番9人 柿原翔 56.0</div>
+<div class="Data06">8-8-9(40.6)480(+4)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019105762" target="_blank">サヴァンナナイツ</a>(1.4)</div>
+<a class="movie_202248071802" href="https://race.netkeiba.com/race/movie.html?race_id=202248071802" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248071802" href="../race/movie.html?race_id=202248071802">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248070603">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.06名古屋</span>
+<span class="Num">11</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248070603">亜希子あり
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:38.3 <strong>重</strong></div>
+<div class="Data03">12頭3番11人 柿原翔 56.0</div>
+<div class="Data06">12-11-10(40.8)476(+2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101899" target="_blank">ハーディローズ</a>(2.4)</div>
+<a class="movie_202248070603" href="https://race.netkeiba.com/race/movie.html?race_id=202248070603" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248070603" href="../race/movie.html?race_id=202248070603">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+<td class="Past" id="myhorse_202248062103">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.21名古屋</span>
+<span class="Num">11</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248062103">3歳6組
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:39.8 <strong>稍</strong></div>
+<div class="Data03">12頭3番10人 柿原翔 56.0</div>
+<div class="Data06">12-12-12(40.9)474(-1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019101816" target="_blank">ハーピーティアラ</a>(2.7)</div>
+<a class="movie_202248062103" href="https://race.netkeiba.com/race/movie.html?race_id=202248062103" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248062103" href="../race/movie.html?race_id=202248062103">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
+</td>
+</tr><tr class="HorseList" id="tr_12">
+<td class="Waku8">8</td>
+<td class="Waku">12</td>
+<td class="Horse_Select">
+<select class="makeMeFancy_12" id="mark_12" name="12" style="display: none">
 <option data-html-text="--" value="12_0">--</option><option data-html-text="◎" value="12_1">◎</option><option data-html-text="◯" value="12_2">◯</option><option data-html-text="▲" value="12_3">▲</option><option data-html-text="△" value="12_4">△</option><option data-html-text="☆" value="12_5">☆</option><option data-html-text="&amp;#10003" value="12_98">&amp;#10003</option><option data-html-text="消" value="12_99">消</option>
 </select>
 </td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">エピファネイア</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020100343" target="_blank"> ジュンフシナ</a>
-</div>
-<div class="Horse03">アルフィルク</div>
-<div class="Horse04">(アグネスタキオン)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01153" target="_blank">美浦・中舘</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">474kg<span>(0)</span></div>
+<td class="Horse_Info">
+<dl class="fc">
+<dt class="Horse01 fc">ヴァンセンヌ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019105671/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ニグレッド</a>
+</dt>
+<dt class="Horse03">ブラックバカラ</dt>
+<dt class="Horse04">(ロージズインメイ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05668/">愛知・坂口義幸</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・坂口義幸</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type02.png?2019121001"/>中3週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">415kg<span>(+7)</span></div>
 <div class="Popular">
-<span id="odds-1_12">---.-</span>
-<span id="ninki-1_12">**</span>
 </div>
-</div>
-</div>
+</dt>
+</dl>
 </td>
 <td class="Jockey">
-<span class="Barei">牡2黒鹿</span>
-<img alt="" id="fuku_img7" onerror="DefaultImg(7)" src="https://cdn.netkeiba.com/img/db/colours/165033.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01174" target="_blank">岩田望</a><br/>
+<span class="Barei">牝3黒鹿</span>
+<!-- <img src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/149033.gif" id = "fuku_img12" alt="" width="32" onerror="DefaultImg(12)"><br> -->
+<!--
+<a href="https://db.netkeiba.com/jockey/00000/">丸山真</a><br />
+-->
+丸山真<br/>
 <span>54.0</span>
 </td>
-<td class="Rest">
-<div class="Data02">兄 プレイングラン(１勝)</div><div class="Data02">兄 ドラゴンハート(１勝)</div><div class="Data02">兄 マックスハート(０勝)</div><div class="Data02">3月24日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_1">
-<td class="Waku7">7</td>
-<td class="Waku">13</td>
-<td class="Horse_Select">
-<select class="makeMeFancy_1" id="mark_1" name="1" style="display: none">
-<option data-html-text="--" value="13_0">--</option><option data-html-text="◎" value="13_1">◎</option><option data-html-text="◯" value="13_2">◯</option><option data-html-text="▲" value="13_3">▲</option><option data-html-text="△" value="13_4">△</option><option data-html-text="☆" value="13_5">☆</option><option data-html-text="&amp;#10003" value="13_98">&amp;#10003</option><option data-html-text="消" value="13_99">消</option>
-</select>
-</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">ミッキーロケット</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020103320" target="_blank"> アイサマン</a>
+<td class="Past Ranking_1" id="myhorse_202248080401">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.08.04名古屋</span>
+<span class="Num">1</span>
 </div>
-<div class="Horse03">ガラディナー</div>
-<div class="Horse04">(サンデーサイレンス)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01062" target="_blank">栗東・藤岡</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">426kg<span>(0)</span></div>
-<div class="Popular">
-<span id="odds-1_13">---.-</span>
-<span id="ninki-1_13">**</span>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248080401">名古屋モー
+
+</a>
 </div>
-</div>
+<div class="Data05">ダ920 0:56.9 <strong>良</strong></div>
+<div class="Data03">9頭6番1人 丸山真一 54.0</div>
+<div class="Data06">1(37.6)408(-3)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102237" target="_blank">クリノシュワシュワ</a>(-0.2)</div>
+<a class="movie_202248080401" href="https://race.netkeiba.com/race/movie.html?race_id=202248080401" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248080401" href="../race/movie.html?race_id=202248080401">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
 </div>
 </td>
-<td class="Jockey">
-<span class="Barei">牝2鹿</span>
-<img alt="" id="fuku_img1" onerror="DefaultImg(1)" src="https://cdn.netkeiba.com/img/db/colours/522031.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01116" target="_blank">藤岡康</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">兄 ベストリゾート(３勝)</div><div class="Data02">姉 デュッセルドルフ(２勝)</div><div class="Data02">兄 タルトオポム(１勝)</div><div class="Data02">3月20日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_15">
-<td class="Waku7">7</td>
-<td class="Waku">14</td>
-<td class="Horse_Select">
-<select class="makeMeFancy_15" id="mark_15" name="15" style="display: none">
-<option data-html-text="--" value="14_0">--</option><option data-html-text="◎" value="14_1">◎</option><option data-html-text="◯" value="14_2">◯</option><option data-html-text="▲" value="14_3">▲</option><option data-html-text="△" value="14_4">△</option><option data-html-text="☆" value="14_5">☆</option><option data-html-text="&amp;#10003" value="14_98">&amp;#10003</option><option data-html-text="消" value="14_99">消</option>
-</select>
-</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">リアルインパクト</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020103747" target="_blank"> アヴェッリーノ</a>
+<td class="Past" id="myhorse_202248072102">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.21名古屋</span>
+<span class="Num">5</span>
 </div>
-<div class="Horse03">アメリデラックス</div>
-<div class="Horse04">(アメリカンボス)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01063" target="_blank">美浦・的場</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">472kg<span>(0)</span></div>
-<div class="Popular">
-<span id="odds-1_14">---.-</span>
-<span id="ninki-1_14">**</span>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248072102">名古屋モー
+
+</a>
 </div>
-</div>
+<div class="Data05">ダ1500 1:38.7 <strong>稍</strong></div>
+<div class="Data03">12頭6番2人 丸山真一 54.0</div>
+<div class="Data06">1-2-3(41.7)411(+5)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100685" target="_blank">レセダ</a>(2.3)</div>
+<a class="movie_202248072102" href="https://race.netkeiba.com/race/movie.html?race_id=202248072102" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248072102" href="../race/movie.html?race_id=202248072102">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
 </div>
 </td>
-<td class="Jockey">
-<span class="Barei">牡2栗</span>
-<img alt="" id="fuku_img15" onerror="DefaultImg(15)" src="https://cdn.netkeiba.com/img/db/colours/917031.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/00422" target="_blank">内田博</a><br/>
-<span>54.0</span>
+<td class="Past" id="myhorse_202248070703">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.07.07名古屋</span>
+<span class="Num">6</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202248070703">ゆうかちゃ
+
+</a>
+</div>
+<div class="Data05">ダ1500 1:37.9 <strong>稍</strong></div>
+<div class="Data03">11頭7番6人 丸山真一 54.0</div>
+<div class="Data06">1-1-1(42.8)406(+1)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019100100" target="_blank">キーファイン</a>(0.8)</div>
+<a class="movie_202248070703" href="https://race.netkeiba.com/race/movie.html?race_id=202248070703" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202248070703" href="../race/movie.html?race_id=202248070703">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
-<div class="Data02">姉 ヤシロコマチ(公)</div><div class="Data02">姉 ヨシノローズ(公)</div><div class="Data02">近親 フィエールデエス(公)</div><div class="Data02">5月5日生まれ</div>
+<td class="Past" id="myhorse_202254061905">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.06.19高知</span>
+<span class="Num">8</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202254061905">3歳ー6
+
+</a>
+</div>
+<div class="Data05">ダ1400 1:34.9 <strong>重</strong></div>
+<div class="Data03">11頭3番7人 畑中信司 54.0</div>
+<div class="Data06">1-1-2-5(42.6)405(+2)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102138" target="_blank">コジロウ</a>(2.0)</div>
+<a class="movie_202254061905" href="https://race.netkeiba.com/race/movie.html?race_id=202254061905" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202254061905" href="../race/movie.html?race_id=202254061905">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
+<td class="Past" id="myhorse_202254053102">
+<div class="Data_Item">
+<div class="Data01">
+<span>2022.05.31高知</span>
+<span class="Num">9</span>
+</div>
+<div class="Data02">
+<a href="https://db.netkeiba.com/race/202254053102">3歳ー6
+
+</a>
+</div>
+<div class="Data05">ダ1300 1:28.9 <strong>不</strong></div>
+<div class="Data03">12頭1番8人 畑中信司 54.0</div>
+<div class="Data06">6-6-7-9(42.9)403(0)</div>
+<div class="Data07"><a href="https://db.netkeiba.com/horse/2019102647" target="_blank">ナナコロビヤオキ</a>(4.5)</div>
+<a class="movie_202254053102" href="https://race.netkeiba.com/race/movie.html?race_id=202254053102" style="display: none">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+<a class="movie_202254053102" href="../race/movie.html?race_id=202254053102">
+<span class="Icon_Mv"><img alt="映像を見る" height="15" src="https://cdn.netkeiba.com/img.nar/common/img/icon/icon_race_movie.png?2019121701" width="24"/></span>
+</a>
+</div>
 </td>
 </tr>
-<tr class="HorseList Cancel">
-<td class="Waku8">8</td>
-<td class="Waku">15</td>
-<td class="Cancel_NoData">取消</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">ハーツクライ</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020105654" target="_blank"> エメイヴェイモン</a>
-</div>
-<div class="Horse03">ルシュクル</div>
-<div class="Horse04">(サクラバクシンオー)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01039" target="_blank">栗東・中竹</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-</div>
-</div>
-</td>
-<td class="Jockey">
-<span class="Barei">牝2芦</span>
-<img alt="" id="fuku_img" onerror="DefaultImg()" src="https://cdn.netkeiba.com/img/db/colours/242031.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01014" target="_blank">福永</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">兄 ビアンフェ(現)</div><div class="Data02">姉 ブランボヌール(３勝)</div><div class="Data02">兄 エントシャイデン(現)</div><div class="Data02">2月24日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr><tr class="HorseList" id="tr_5">
-<td class="Waku8">8</td>
-<td class="Waku">16</td>
-<td class="Horse_Select">
-<select class="makeMeFancy_5" id="mark_5" name="5" style="display: none">
-<option data-html-text="--" value="16_0">--</option><option data-html-text="◎" value="16_1">◎</option><option data-html-text="◯" value="16_2">◯</option><option data-html-text="▲" value="16_3">▲</option><option data-html-text="△" value="16_4">△</option><option data-html-text="☆" value="16_5">☆</option><option data-html-text="&amp;#10003" value="16_98">&amp;#10003</option><option data-html-text="消" value="16_99">消</option>
-</select>
-</td>
-<td class="Horse_Info" data-sort-value="99999999" id="Horse_Info_Data">
-<div class="fc">
-<div class="Horse01 fc">ダイワメジャー</div>
-<div class="Horse02">
-<a href="https://db.netkeiba.com/horse/2020104342" target="_blank"> キガン</a>
-</div>
-<div class="Horse03">プリンセスオブザスターズ</div>
-<div class="Horse04">(Sea The Stars)</div>
-<div class="Horse05"><a href="https://db.netkeiba.com/trainer/result/recent/01068" target="_blank">美浦・小島</a></div>
-<div class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/horse_race_type00.png?2019073001"/></div>
-<div class="Horse07 fc">
-<div class="Weight color-red">472kg<span>(0)</span></div>
-<div class="Popular">
-<span id="odds-1_16">---.-</span>
-<span id="ninki-1_16">**</span>
-</div>
-</div>
-</div>
-</td>
-<td class="Jockey">
-<span class="Barei">牝2栗</span>
-<img alt="" id="fuku_img5" onerror="DefaultImg(5)" src="https://cdn.netkeiba.com/img/db/colours/624007.gif?2019080501" width="32"/><br/>
-<a href="https://db.netkeiba.com/jockey/result/recent/01179" target="_blank">菅原明</a><br/>
-<span>54.0</span>
-</td>
-<td class="Rest">
-<div class="Data02">全兄 ショウナンラスボス(現)</div><div class="Data02">従姉 クリノイヴァンカ(現)</div><div class="Data02">従兄 セブンミラクル(０勝)</div><div class="Data02">1月30日生まれ</div>
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-<td class="Rest">
-</td>
-</tr>
-</tbody>
 </table>
 </div><!-- /.Shutuba_HorseList -->
-<div id="free_odds_limit_overlay" style="display:none;"></div>
-<!-- オッズ -->
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/ndcommon.min.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/zlib.min.js?2019073001" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/jquery.odds_update.js?2020042701" type="text/javascript"></script>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/jquery.colorbox.js?2019073001" type="text/javascript"></script>
-<link href="https://cdn.netkeiba.com/img.racev3/common/css/colorbox.css?2019073001" rel="stylesheet"/>
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/jquery.tablesorter.js?2020042201" type="text/javascript"></script>
-<script>
-"use strict"
-$(function(){
-var sorted = 0;
-var firstTime = true;
-var table_sorte = function(t_header_flg){
-sorted = 0;
-$("#sort_table").trigger("sortReset");
-$('#sort_table th').unbind();
-$.tablesorter.destroy( $('#sort_table'), true, function(table) {});
-$("[id^=sort_table]").tablesorter({
-sortReset   : true,
-sortRestart : true,
-headers: {
-0: { sorter: "false" },
-1: { sorter: "false" },
-2: { sorter: "false" },
-3: { sorter: "false" },
-4: { sorter: "false" },
-5: { sorter: "false" },
-6: { sorter: "false" },
-7: { sorter: "false" },
-8: { sorter: "false" },
-9: { sorter: "false" },
-},
-//tablesorterの不具合のため、馬番がNULLの場合に馬名のソートの振る舞いを変更する
-textExtraction: function(node) {
-var attr = $(node).attr('data-sort-value');
-if (typeof attr !== 'undefined' && attr !== false) {
-return attr;
-}
-return $(node).text();
-}
-});
-};
-$(document).on('click', '#OddsSortBtn1', function() {
-if (sorted == 0) {
-sorted = 1;
-$("#sort_table").trigger("sorton", [ [[3,0]] ]);
-var activeImg = 'https://cdn.netkeiba.com/img.racev3/common/img/race/sort_active_2.png';
-$('#OddsSortBtn1').find('img').attr('src', activeImg);
-} else {
-sorted = 0;
-$("#sort_table").trigger("sorton", [ [[1,0]] ]);
-var activeImg = 'https://cdn.netkeiba.com/img.racev3/common/img/race/sort.png?2019073001';
-$('#OddsSortBtn1').find('img').attr('src', activeImg);
-}
-});
-var tableSorteAction = function() {
-var odds = $('td.Horse_Info.Horse07.odds');
-var t_sorts_flg = [false, false, false, true, false, false, false, false, false, false];
-table_sorte(t_sorts_flg);
-};
-$("#sort_table tbody tr.HorseList td:nth-child(2)").each ( function() {
-if (!$(this).text()) {
-$(this).attr('data-sort-value', $(this).parent().index());
-}
-});
-$.oddsUpdate({
-apiUrl:'https://race.netkeiba.com/api/api_get_jra_odds.html',
-raceId:'202204020206',
-isPremium:0,
-displayDiffTime:false,
-PremiumLinkReturnUrl : 'http%3A%2F%2Frace.netkeiba.com%2Frace%2Fshutuba_past.html%3Frace_id%3D202204020206',
-PremiumLinkReturnRf : 'shutuba_past',
-compress:true,
-callbackApiComplete:function(_this,_odds_status,_data){
-if (_data) {
-$("#OddsSortBtn1").show();
-// オッズ見出し
-if(_odds_status=='yoso'){
-$('#odds_title').html('予想<br />オッズ');
-} else if(_odds_status=='result'){
-$('#odds_title').html('オッズ');
-} else if(_odds_status=='middle') {
-$('#premium_guide').show();
-$('#odds_title').html('オッズ');
-} else {
-$('#odds_title').html('オッズ');
-}
-// マイオッズ遷移先
-var action = 'https://race.netkeiba.com';
-var action_form_pid = '../odds/myodds';
-if(_odds_status=='yoso'){
-action = '';
-action_form_pid = '../odds/index';
-}
-$('#shutuba_form').attr('action',action_form_pid+".html");
-// オッズ着色
-$('[id^="odds-"]').each(function(i){
-var data_key = $(this).prop('id').replace('odds-','').split('_');
-var type = data_key[0];
-var no = data_key[1];
-if(!$.isEmptyObject(_data['odds'][type])){
-var ary_row = _data['odds'][type];
-var row = ary_row[no];
-if (row) {
-$(this).text(row[0]);
-$(this).parents('td#Horse_Info_Data').attr("data-sort-value", sprintf("%08d", row[0]*1000+row[2]));
-if(type==1){
-$(this).removeClass('Odds_Ninki');
-if(row[0]<10){
-$(this).addClass('Odds_Ninki');
-}
-var ninki_key = 'ninki-1_'+data_key[1];
-$('#'+ninki_key).text('('+row[2]+'人気)');
-}
-}
-}
-});
-if (firstTime) {
-firstTime = false;
-tableSorteAction();
-} else {
-$("#sort_table").trigger('update', [true]);
-}
-}
-},
-});
-});
-</script>
 <div class="ShutubaTableFormWrap clearfix">
-<form action="" class="Contents_Box" id="shutuba_form" method="get">
-<input name="race_id" type="hidden" value="202204020206"/>
+<form action="../odds/myodds.html?race_id=202248090103" class="Contents_Box" id="shutuba_form" method="get">
+<input name="race_id" type="hidden" value="202248090103"/>
 <div class="Shutuba_Form_Footer Phase01_Btn">
-<button class="SubmitBtn" type="submit"><span class="Icon_Sprite_Nk Icon_RaceInfo32_3"></span>選んだ馬のオッズを見る</button>
-<!-- <input class="SubmitBtn" type="submit" value="チェックした馬のオッズを見る" /> -->
+<button class="SubmitBtn Type_B" type="submit"><span class="Icon_Sprite_Nk Icon_RaceInfo32_3"></span>選んだ馬のオッズを見る</button>
 </div>
 </form><!-- /.shutuba_form -->
-<div class="OnOffArea OddsAutoCheck ToggleCheck LiveOddsUpdate" style="display:none">
-<label class="OddsAutoCheckLabel">
-<span class="OddsAutoTxt">オッズの自動更新をONにする(最終更新 <span id="official_time"></span>)</span>
-<input id="act-auto_update" type="checkbox"/>
-<span class="CheckLabelTxt"></span>
-</label>
-</div><!-- /.OddsAutoCheck ToggleCheck -->
 </div>
+<div class="Description_Box mb10">
+<dl>
+<dt class="Title">馬券の買い方</dt>
+<dd>
+<div class="Baken_Flow">
+<div class="Baken_Flow_Title"><strong>馬から選択</strong><br/>気になる出走馬から購入できます。</div>
+<div class="Inner">
+<div class="Step">
+<p class="Step_Title">1.出馬表で気になる馬にチェック</p>
+<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/baken_flow02.png?2019121001"/></div>
+</div>
+<div class="Step">
+<p class="Step_Title">2.「選んだ馬のオッズを見る」をタップ</p>
+<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/baken_flow01.png?2019121001"/></div>
+</div>
+<p class="Note">組み合わせを選択して馬券の購入へすすめます。</p>
+</div><!-- /.Inner -->
+</div><!-- /.Baken_Flow -->
+<div class="Baken_Flow">
+<div class="Baken_Flow_Title"><strong>オッズから選択</strong><br/>お好みの式別から購入できます。</div>
+<div class="Inner">
+<div class="Step">
+<p class="Step_Title">1.オッズ・購入をタップ</p>
+<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/baken_flow03.png?2019121001"/></div>
+</div>
+<div class="Step">
+<p class="Step_Title">2.お好みの方式をタップ</p>
+<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/baken_flow04.png?2019121001"/></div>
+</div>
+<p class="Note">組み合わせを作成、選択して馬券の購入へすすめます。</p>
+</div><!-- /.Inner -->
+</div><!-- /.Baken_Flow -->
+</dd>
+</dl>
+</div><!-- /.Description_Box -->
+<p class="RaceInfo_Notice01">
+※結果・成績・オッズなどのデータは、必ず主催者発表のものと照合しご確認ください。
+</p>
+<!-- /.RaceInfo_Notice01 -->
 <script type="text/javascript">
 //勝負服データがない場合はNO DATAイメージに切り替え
 function DefaultImg(umaban){
-document.getElementById("fuku_img"+umaban).src="https://cdn.netkeiba.com/img/db/colours/no_data.gif?2019080501";
+document.getElementById("fuku_img"+umaban).src="http://cimg.db.sp.netkeiba.com/common/img/sp/db/fuku/no_data.gif";
 }
-$(document).ready(function () {
-$('.Description_Box > dl > dt').append('<span class="Icon_ArrowB"></span>');
-$('.Description_Box > dl > dt').click(function() {
-$('.Description_Box > dl > dt > span').toggleClass('Icon_ArrowT').toggleClass('Icon_ArrowB')
-$('+ dd', this).slideToggle('fast');
+$(function () {
+$('.Description_Box').each(function() {
+var box = $(this);
+var btn = box.find('> dl > dt');
+var contents = box.find('> dl > dd');
+btn.append('<span class="Icon_ArrowB"></span>');
+contents.hide();
+btn.click(function() {
+btn.find('span').toggleClass('Icon_ArrowT').toggleClass('Icon_ArrowB');
+contents.slideToggle(200);
 });
-$('.Viewpoint_Box > dl > dt').append('<span class="Icon_ArrowB"></span>');
-$('.Viewpoint_Box > dl > dt').click(function() {
-$('.Viewpoint_Box > dl > dt > span').toggleClass('Icon_ArrowT').toggleClass('Icon_ArrowB')
-$('+ dd', this).slideToggle('fast');
 });
 });
 document.addEventListener("DOMContentLoaded", function(event) {
@@ -1395,9 +2547,28 @@ return results[1] || 0;
 }
 }
 // オッズ更新click
-$(function(){
-var url =  $(location).attr('href');
+$(function () {
+var url = $(location).attr('href');
+var sort = $.urlParam('sort');
 var mode = $.urlParam('mode');
+$("#OddsSortBtn1").on("click", function (e) {
+e.preventDefault();
+if (sort == null) {
+window.location.href = url + "&sort=odds";
+} else if (sort == "odds") {
+var clean_uri = url.substring(0, url.indexOf("?"));
+window.history.replaceState({}, document.title, clean_uri);
+if (mode == 9) {
+window.location.href = clean_uri + "?race_id=202248090103&mode=9";
+} else {
+window.location.href = clean_uri + "?race_id=202248090103";
+}
+}
+});
+if (sort == "odds") {
+var activeImg = 'https://cdn.netkeiba.com/img.nar/common/img/race/sort_active_2.png';
+$('#OddsSortBtn1').find('img').attr('src', activeImg);
+}
 setTimeout(function () {
 var $popup9th = $(".Premium_Regist_Box.Past5");
 if($popup9th.length){
@@ -1408,739 +2579,128 @@ $popup9th.css('visibility', 'visible');
 },100);
 });
 </script>
-<!-- block=shutuba_past__help (d) -->
-<div class="Viewpoint_Box Flow">
-<dl>
-<dt>出馬表(5走表示)の見方</dt>
-<dd>
-<div class="Baken_Flow">
-<div class="Baken_Flow_Title"><strong>馬・騎手</strong></div>
-<div class="Inner">
-<div class="table_container Img_Area">
-<img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/Horse_Info_sample.png?2019073001"/>
 </div>
-<div class="table_container">
-<table class="Shutuba_Table Shutuba_Past5_Table table02">
-<tr class="HorseList"><td class="Horse_Info"><dl>
-<dt class="Horse01">父名</dt>
-<dt class="Horse02">[馬記号] <span class="color_blue">馬名</span> [ブリンカー]</dt>
-<dt class="Horse03">母名</dt>
-<dt class="Horse04">(母父名)</dt>
-<dt class="Horse05 color_blue">厩舎</dt>
-<dt class="Horse06">脚質<div class="Popular">前走からの間隔</div></dt>
-<dt class="Horse07"><div class="Weight">馬体重(増減)</div>
-<div class="Popular">単勝オッズ(人気)</div></dt>
-</dl>
-</td>
-<td class="Jockey">
-<span class="Barei">性齢、毛色</span><img alt="" src="https://cdn.netkeiba.com/img/db/colours/no_data.gif?2019073001" width="32"/><span class="Barei">勝負服</span><span class="color_blue Barei">騎手</span>
-<span>斤量</span>
-</td>
-</tr>
-</table>
-</div>
-<div class="symbol_txt_area">
-<p class="title">※[馬記号]</p>
-<p><span class="Icon_HorseMark Icon_MaruChi"></span>… JRA競走馬登録時、地方で出走経験あり</p>
-<p><span class="Icon_HorseMark Icon_kakuChi"></span>…地方競馬所属</p>
-<p><span class="Icon_HorseMark Icon_MaruGai"></span>…日本所属の外国産馬</p>
-<p><span class="Icon_HorseMark Icon_KakuGai"></span>…外国所属</p>
-</div>
-<div class="symbol_txt_area">
-<p class="title">※脚質</p>
-<p>左から、「逃」「先行」「差」「追込」</p>
-</div>
-</div><!-- /.Inner -->
-</div><!-- /.Baken_Flow -->
-<div class="Baken_Flow Record_Area">
-<div class="Baken_Flow_Title"><strong>過去成績</strong></div>
-<div class="Inner">
-<div class="table_container">
-<table class="Shutuba_Table Shutuba_Past5_Table table03">
-<tbody>
-<tr class="HorseList">
-<td class="Rest">
-<span class="Data01">4ヵ月休養</span><span class="Data01">鉄砲 [0.0.0.1]</span><span class="Data01">2走目 [0.0.0.0]</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table_container">
-<table class="Shutuba_Table Shutuba_Past5_Table table04">
-<tbody>
-<tr class="HorseList">
-<td class="Rest">
-<span class="Data01">休養期間</span><span>休み明け初戦成績<br/>［1着.2着.3着.4着以下］</span><span>休み明け２戦目成績<br/>［1着.2着.3着.4着以下]</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table_container">
-<table class="Shutuba_Table Shutuba_Past5_Table table05">
-<tbody>
-<tr class="HorseList">
-<td class="Past">
-<span class="Data01">2017.05.28盛岡</span>
-<span class="Data02 color_blue">サファイア<span class="Icon_GradeType Icon_GradeType2"></span></span>
-<span class="Data03"><span class="Num">1</span>10頭9番7人気</span>
-<span class="Data05">芝2400(左)稍<strong>2:34.3</strong></span>
-<span class="Data04">阿部英俊 56.0506kg(+6)</span>
-<span class="Data06">37.91-1-1-1</span>
-<span class="Data07"><span class="color_blue">サンエイジャック</span>(-0.2)</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table_container">
-<table class="Shutuba_Table Shutuba_Past5_Table table06">
-<tbody>
-<tr class="HorseList">
-<td class="Past">
-<span class="Data01">日付競馬場</span>
-<span class="Data02"><span class="color_blue">レース名</span>クラス</span>
-<span class="Data03">着順、出走頭数、馬番、単勝人気</span>
-<span class="Data05">馬場、距離(回り)、馬場状態、<strong>タイム</strong></span>
-<span class="Data04">騎手、斤量、馬体重(増減)</span>
-<span class="Data06">ラスト3fタイム、通過順位</span>
-<span class="Data07"><span class="color_blue">1着馬</span>(1着馬との着差)<br/>※当該馬が1着の場合は<span class="color_blue">２着馬</span>(２着馬との着差)</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div><!-- /.Inner -->
-</div><!-- /.Baken_Flow -->
-<div class="Baken_Flow">
-<div class="Baken_Flow_Title"><strong>兄弟・誕生日</strong></div>
-<div class="Inner">
-<div class="table_container">
-<table class="Shutuba_Table Shutuba_Past5_Table table07">
-<tbody>
-<tr class="HorseList">
-<td class="Rest">
-<span class="Data02">姉 レオパルディナ(現)</span><span class="Data02">姉 アイムユアドリーム(３勝)</span><span class="Data02">近親 レオパルドゥス(１勝)</span><span class="Data02">4月8日生まれ</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="table_container">
-<table class="Shutuba_Table Shutuba_Past5_Table table08">
-<tbody>
-<tr class="HorseList">
-<td class="Rest">
-<span class="Data02">兄弟または近親(勝利数)</span><span class="Date02_01">現役の場合は(現)</span><span class="Date02_02">地方所属馬は(公)</span><span class="BirthDay">本馬の誕生日</span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="symbol_txt_area">
-<p>兄弟・誕生日は、新馬・未勝利戦等、戦績の少ない馬の前走以前の欄に表示されます</p>
-</div>
-</div><!-- /.Inner -->
-</div><!-- /.Baken_Flow -->
-</dd>
-</dl>
-</div><!-- /.Description_Box -->
-<div class="Description_Box Flow">
-<dl>
-<dt>馬券の買い方</dt>
-<dd>
-<div class="Baken_Flow">
-<div class="Baken_Flow_Title"><strong>馬から選択</strong><br/>気になる出走馬から購入できます。</div>
-<div class="Inner">
-<div class="Step">
-<p class="Step_Title">1.出馬表で気になる馬にチェック</p>
-<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/baken_flow02.png?2019073001"/></div>
-</div>
-<div class="Step">
-<p class="Step_Title">2.「選んだ馬のオッズを見る」をタップ</p>
-<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/baken_flow01.png?2019073001"/></div>
-</div>
-<p class="Note">組み合わせを選択して馬券の購入へすすめます。</p>
-</div><!-- /.Inner -->
-</div><!-- /.Baken_Flow -->
-<div class="Baken_Flow">
-<div class="Baken_Flow_Title"><strong>オッズから選択</strong><br/>お好みの式別から購入できます。</div>
-<div class="Inner">
-<div class="Step">
-<p class="Step_Title">1.オッズ・購入をタップ</p>
-<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/baken_flow03.png?2019073001"/></div>
-</div>
-<div class="Step">
-<p class="Step_Title">2.お好みの方式をタップ</p>
-<div class="Image"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/baken_flow04.png?2019073001"/></div>
-</div>
-<p class="Note">組み合わせを作成、選択して馬券の購入へすすめます。</p>
-</div><!-- /.Inner -->
-</div><!-- /.Baken_Flow -->
-</dd>
-</dl>
-</div><!-- /.Description_Box -->
-<div class="Shutuba_Update_Time">
-<dl>
-<dt>出馬表オッズの更新時間について</dt>
-<dd>
-<table class="Update_Time_Table">
-<tr class="Header">
-<th colspan="2">出馬表</th>
-</tr>
-<tr>
-<th>特別登録</th>
-<td>前週日曜18時頃<span>※G1は前々週</span></td>
-</tr>
-<tr>
-<th>出走想定</th>
-<td>水曜20時まで<span>※プレミアムコース</span></td>
-</tr>
-<tr>
-<th>出走確定</th>
-<td>木曜18時頃</td>
-</tr>
-<tr>
-<th>枠順確定</th>
-<td>レース前日の11時頃</td>
-</tr>
-</table>
-<p class="Note">※特別登録では重賞レースを対象に想定騎手を公開しております</p>
-<table class="Update_Time_Table">
-<tr class="Header">
-<th colspan="2">オッズ</th>
-</tr>
-<tr>
-<th>予想<br/>
-オッズ</th>
-<td>(特別)一週間前から<br/>
-(平場)木曜18時頃</td>
-</tr>
-<tr>
-<th>JRA公式<br/>
-オッズ</th>
-<td>
-<dl>
-<dt>プレミアムサービスをご利用の皆さま</dt>
-<dd>
-常にリアルタイムのオッズを表示。自動更新機能もお使いいただけます。
-</dd>
-<dt>無料版をご利用の皆さま</dt>
-<dd>
-1時間に1回の定期更新に加え、1日5回までの手動更新もお試しいただけます。
-</dd>
-</dl>
-</td>
-</tr>
-</table>
-</dd>
-</dl>
-</div><!-- /.Shutuba_Update_Time -->
-<p class="RaceInfo_Notice01">※結果・成績・オッズなどのデータは、必ず主催者発表のものと照合しご確認ください。</p>
-</div>
-<!-- block=shutuba__race_surf (d) -->
-<div class="RaceHeadlineAll">
-<div class="RaceHeadline" id="race_message_box">
-<div class="ListHeadlineWrapper">
-</div>
-</div>
-</div>
-<!--<script type="text/javascript" src="https://cdn.netkeiba.com/img.racev3/common/js/raceapi.action.js?2019073001"></script>-->
+<!-- block=ad_dfp (d) -->
+<!-- block=tokusen (cg) -->
 <script type="text/javascript">
-var _raceapi_action_api_url = "https://race.netkeiba.com"+'/api/api_get_racev3_surf.html';
+<!--
+var _raceapi_action_api_url = "https://nar.netkeiba.com/api/api_get_narv3_surf.html";
+// -->
+</script>
+<div class="RaceSurfArea" id="RaceInfoTop202248090103"></div>
+<script type="text/javascript">
+<!--
 $( document ).ready( function() {
-showRaceV3Surf( "race_message_box", "202204020206" );
+showRaceTokusen( "RaceInfoTop202248090103", "202248090103" );
 } );
-/**
-* 空であるかどうか
-*
-* @param  mixd    _var 変数
-* @return boolean      true=空である false=空ではない
-*/
-function _empty( _var )
-{
-if ( undefined == _var || null == _var || '' == _var )
-{
-return true;
+function showRaceTokusen(_show_id,_race_id){
+var _data={pid:"api_get_narv3_surf"};
+_data.input="UTF-8";
+_data.output="jsonp";
+_data.race_id=_race_id;
+_data.id=_race_id;
+$.ajax({type:"GET",
+url:_raceapi_action_api_url,
+data:_data,
+dataType:_data.output,
+timeout:3e3,
+success:function(data){$("#"+_show_id).html(data)}
+})
 }
-return false;
-}
+// -->
 </script>
-<!-- block=race_expect (cp) -->
-<script src="https://cdn.netkeiba.com/img.racev3/common/js/slick.min.js" type="text/javascript"></script>
-<section class="Sec_Deploy_Race">
-<div class="Title_Sec" style="position: relative">
-<h2>レース展開予想</h2>
-<dl class="RacePace">
-<dt>ペース</dt>
-<dd class="Pace_S">S</dd>
-</dl>
-</div><!-- / .Title_Sec -->
-<div class="race_expect">
-<p class="deploy_race_image"><img alt="" src="https://cdn.netkeiba.com/img.racev3/common/img/race/04_t1400.png?2019073001"/></p>
-<div class="race_expect_slide">
-<div class="RaceOddsArea">
-<div class="RaceOddsMenu">
-<ul class="jyo_tab">
-<li><div><a class="Active" href="javascript:void(0)">スタート後</a></div></li>
-<li><div><a class="" href="javascript:void(0)">3コーナー</a></div></li>
-<li><div><a class="" href="javascript:void(0)">4コーナー</a></div></li>
-</ul>
-</div>
-</div>
-<div class="DeployRace_Slide">
-<div class="DeployRace_SlideBox" id="DeployRace">
-<div class="DeployRace_SlideBoxItem">
-<ul>
-<li>
-<dl>
-<dt>先頭</dt>
-<dd>
-<ul>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>先団</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan8">15</span>エメイ</li><li><span class="lblWaku WakuBan5">10</span>ディナ</li><li><span class="lblWaku WakuBan8">16</span>キガン</li><li><span class="lblWaku WakuBan6">11</span>ウィズ</li><li><span class="lblWaku WakuBan4">7</span>フルメ</li><li><span class="lblWaku WakuBan6">12</span>ジュン</li><li><span class="lblWaku WakuBan5">9</span>タイム</li><li><span class="lblWaku WakuBan2">4</span>ヴァー</li><li><span class="lblWaku WakuBan4">8</span>サッチ</li><li><span class="lblWaku WakuBan7">13</span>アイサ</li><li><span class="lblWaku WakuBan3">6</span>マジカ</li><li><span class="lblWaku WakuBan1">2</span>ヒャク</li><li><span class="lblWaku WakuBan1">1</span>トレジ</li><li><span class="lblWaku WakuBan3">5</span>イース</li><li><span class="lblWaku WakuBan7">14</span>アヴェ</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>中団</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan2">3</span>ホバー</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>後方</dt>
-<dd>
-<ul>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div><!-- /.DeployRace_SlideBoxItem --><div class="DeployRace_SlideBoxItem">
-<ul>
-<li>
-<dl>
-<dt>先頭</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan8">15</span>エメイ</li><li><span class="lblWaku WakuBan5">10</span>ディナ</li><li><span class="lblWaku WakuBan8">16</span>キガン</li><li><span class="lblWaku WakuBan6">11</span>ウィズ</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>先団</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan4">7</span>フルメ</li><li><span class="lblWaku WakuBan6">12</span>ジュン</li><li><span class="lblWaku WakuBan5">9</span>タイム</li><li><span class="lblWaku WakuBan2">4</span>ヴァー</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>中団</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan4">8</span>サッチ</li><li><span class="lblWaku WakuBan7">13</span>アイサ</li><li><span class="lblWaku WakuBan3">6</span>マジカ</li><li><span class="lblWaku WakuBan1">2</span>ヒャク</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>後方</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan1">1</span>トレジ</li><li><span class="lblWaku WakuBan3">5</span>イース</li><li><span class="lblWaku WakuBan7">14</span>アヴェ</li><li><span class="lblWaku WakuBan2">3</span>ホバー</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div><!-- /.DeployRace_SlideBoxItem --><div class="DeployRace_SlideBoxItem">
-<ul>
-<li>
-<dl>
-<dt>先頭</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan8">15</span>エメイ</li><li><span class="lblWaku WakuBan5">10</span>ディナ</li><li><span class="lblWaku WakuBan8">16</span>キガン</li><li><span class="lblWaku WakuBan6">11</span>ウィズ</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>先団</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan4">7</span>フルメ</li><li><span class="lblWaku WakuBan6">12</span>ジュン</li><li><span class="lblWaku WakuBan5">9</span>タイム</li><li><span class="lblWaku WakuBan2">4</span>ヴァー</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>中団</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan4">8</span>サッチ</li><li><span class="lblWaku WakuBan7">13</span>アイサ</li><li><span class="lblWaku WakuBan3">6</span>マジカ</li><li><span class="lblWaku WakuBan1">2</span>ヒャク</li>
-</ul>
-</dd>
-</dl>
-</li><li>
-<dl>
-<dt>後方</dt>
-<dd>
-<ul>
-<li><span class="lblWaku WakuBan1">1</span>トレジ</li><li><span class="lblWaku WakuBan3">5</span>イース</li><li><span class="lblWaku WakuBan7">14</span>アヴェ</li><li><span class="lblWaku WakuBan2">3</span>ホバー</li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-</div><!-- /.DeployRace_SlideBoxItem -->
-</div><!-- /.DeployRace_SlideBox -->
-</div><!-- /.DeployRace_Slide -->
-</div>
-</div>
-</section><!-- Sec_Deploy_Race -->
-<script>
-$(document).ready(function(){
-//
-var $slider = $('#DeployRace');
-if($slider.hasClass('slick-initialized')){
-$('.jyo_tab li  a').removeClass('Active');
-$('.jyo_tab li').eq(0).find('a').addClass('Active');
-$slider.slick('slickGoTo', parseInt(0));
-}else{
-$slider.slick({
-slidesToShow: 1,
-dots: false,
-infinite: true,
-arrows: true,
-autoplay: false,
-speed: 300,
-adaptiveHeight: true,
-});
-}
-$slider.on('afterChange', function(event, slick, currentSlide){
-$('.jyo_tab li a').removeClass('Active');
-var curSlider = $(slick.$slides[currentSlide]);
-var ChangeslideIndex = curSlider.data('slick-index');
-$('.jyo_tab li').eq(ChangeslideIndex).find('a').addClass('Active');
-});
-$('.jyo_tab a').click(function(e){
-e.preventDefault();
-var activeLi = $(this).closest('li');
-var slideIndex = $('.jyo_tab li').index(activeLi);
-$slider.slick('slickGoTo', parseInt(slideIndex));
-});
-});
-</script>
-<!-- block=top3data (cp) -->
-<!-- 各データ上位3頭 -->
-<section class="top3data">
+<!-- block=kyakusitu (cg) -->
 <div class="Contents_Header">
 <div class="Title_Sec Border_Bottom Border_Top">
-<h2>各データ上位3頭</h2>
+<h2>レース展開予想</h2>
 </div><!-- /.Title_Sec -->
-</div><!-- /.Contents_Header -->
-<div class="PickupHorseArea">
 </div>
-</section>
-<!-- block=shutuba__race_kyaku_type (d) -->
-<!-- block=comment__list (cp) -->
-<div class="Contents_Header Header_Comment">
-<div class="Title_Sec Border_Bottom">
-<h3 class="TitleHeading TitleHeadingDataTop"><span>厩舎コメント</span></h3>
-</div>
-<!-- / .Title_Sec-->
-</div>
-<!-- / .Contents_Header-->
-<table class="Stable_Comment" id="All_Comment_Table">
-<tbody>
+<p class="Inner_Txt03">過去５走のコーナー通過順を元にした展開予想です。</p>
+<table class="RaceCommon_Table Kyaku_Type">
 <tr>
-<th nowrap="" width="20">枠</th>
-<th class="pt05" nowrap="" width="20">馬<br/>番</th>
-<th nowrap="" width="180">馬名</th>
-<th>コメント</th>
-<th>評価</th>
+<th>逃げ</th>
+<td>
+
+－
+</td>
 </tr>
 <tr>
-<td class="Waku1" nowrap="">1</td>
-<td class="Waku" nowrap="">1</td>
-<td class="Horse_Name" nowrap=""><a href="https://db.netkeiba.com/horse/2020102627" target="_blank">トレジャートレイル</a></td>
-<td class="txt_l">
-<dl class="Comment_Cell">
-<dt></dt>
-<dd>水準級の仕上がりにあるけど、馬体が緩く気性も幼い。使いつつ良くなれば。<span>〈伊坂師〉</span></dd>
-</dl>
-</td>
-<td class="Hyoka"><span class="Icon_RaceInfo Icon_Mark_03"></span>
-</td>
-</tr><tr>
-<td class="Waku1" nowrap="">1</td>
-<td class="Waku" nowrap="">2</td>
-<td class="Horse_Name" nowrap=""><a href="https://db.netkeiba.com/horse/2020104493" target="_blank">ヒャクマンボルト</a></td>
-<td class="txt_l">
-<dl class="Comment_Cell">
-<dt></dt>
-<dd>手先がまだ不器用な面は残るけれどケイコ時計は出ている。流れに乗れれば。<span>〈武市師〉</span></dd>
-</dl>
-</td>
-<td class="Hyoka"><span class="Icon_RaceInfo Icon_Mark_02"></span>
-</td>
-</tr><tr>
-<td class="Waku2" nowrap="">2</td>
-<td class="Waku" nowrap="">3</td>
-<td class="Horse_Name" nowrap=""><a href="https://db.netkeiba.com/horse/2020105175" target="_blank">ホバーコルテ</a></td>
-<td class="txt_l">
-<dl class="Comment_Cell">
-<dt></dt>
-<dd>徐々に良化中だが初戦向きのタイプではない。使いつつ良くなってくれれば。<span>〈新開師〉</span></dd>
-</dl>
-</td>
-<td class="Hyoka"><span class="Icon_RaceInfo Icon_Mark_03"></span>
+<th>先行</th>
+<td>
+<div class="Kyaku_Type_box">
+<span class="WakuBan8 Waku_Umaban Kyaku_Type_Num">12</span><br/>
+<span class="UmaName">ニグレ</span>
+</div>
 </td>
 </tr>
-</tbody>
-</table>
-<p class="RaceInfo_Notice01 mb15 Txt_R">提供：<a href="http://www.daily.co.jp/horse/" target="_blank">デイリースポーツ</a></p>
-<div class="LinkBtn_03" id="comment_list_btn">
-<a class="LinkBtn_More" href="javascript:void(0)">
-<span class="Icon_More02">すべての厩舎コメントを見る</span>
-</a>
+<tr>
+<th>差し</th>
+<td>
+<div class="Kyaku_Type_box">
+<span class="WakuBan2 Waku_Umaban Kyaku_Type_Num">2</span><br/>
+<span class="UmaName">マリブ</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan5 Waku_Umaban Kyaku_Type_Num">5</span><br/>
+<span class="UmaName">ルミナ</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan5 Waku_Umaban Kyaku_Type_Num">6</span><br/>
+<span class="UmaName">ホット</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan6 Waku_Umaban Kyaku_Type_Num">7</span><br/>
+<span class="UmaName">エムズ</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan6 Waku_Umaban Kyaku_Type_Num">8</span><br/>
+<span class="UmaName">ユイノ</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan7 Waku_Umaban Kyaku_Type_Num">9</span><br/>
+<span class="UmaName">ゼアル</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan7 Waku_Umaban Kyaku_Type_Num">10</span><br/>
+<span class="UmaName">カラニ</span>
 </div>
-<div class="Premium_Regist_Box disp_none" id="Premium_Regist_Box_comment" style="display: none;">
-<p class="Premium_Regist_Msg">続きはプレミアムサービス<br/>登録でご覧になれます。</p>
-<div class="mb20">
-<a class="Premium_Regist_Btn" data-theme="01007" href="https://regist.netkeiba.com?pid=premium&amp;service=p05&amp;return_url=http%3A%2F%2Frace.netkeiba.com%2Frace%2Fshutuba_past.html%3Frace_id%3D202204020206" id="a_monthly_goods_link_09">続きを見る</a>
-</div>
-<p class="Premium_Regist_Txt02"><a href="https://regist.netkeiba.com/account/?pid=login">登録済みの方はこちらからログイン</a></p>
-</div><!-- /.Premium_Regist_Box -->
-<script>
-$(function() {
-// var param = get_page_query();
-// var page_id = '';
-// if(undefined == param['pid']){
-//     page_id = 'shutuba';
-// }else{
-//     page_id = param['pid'];
-// }
-// if (page_id == "shutuba" || page_id == 'shutuba_past') {
-var Premium_Regist_comment = $('#comment_list_btn');
-var Premium_Regist_Btn_comment = Premium_Regist_comment.find('.LinkBtn_More');
-Premium_Regist_Btn_comment.click(function() {
-$(this).hide();
-$('#Premium_Regist_Box_comment').fadeIn('fast');
-return false;
-});
-//}else if(page_id == "comment") {
-$(function() {
-
-return false;
-});
-// }
-
-});
-</script>
-<!-- block=oikiri__content (cp) -->
-<div class="OikiriAllWrapper">
-<div class="Contents_Box mb00 OikiriContentWrap">
-<div class="Contents_Header">
-<div class="Border_Bottom">
-<h3 class="TitleHeading"><span class="TitleHeadingWin">調教タイム</span>
-</h3>
-</div><!-- /.Title_Sec -->
-</div><!-- /.Contents_Header -->
-<link href="https://cdn.netkeiba.com/img.yoso/common/css/colorbox.css?2019073001" media="all" rel="stylesheet" type="text/css"/>
-<table class="race_table_01 nk_tb_common OikiriTable Stable_Time" id="">
-<tr align="center">
-<th nowrap="" width="20">枠</th>
-<th nowrap="" width="20">馬<br/>番</th>
-<th nowrap="" width="180">馬名</th>
-<th nowrap="">日付</th>
-<th nowrap="">コース</th>
-<th nowrap="">馬場</th>
-<th nowrap="">乗り役</th>
-<th class="TrainTime" nowrap="">
-<div class="InnerTrainTime">
-<span>調教タイム</span>
-<div class="RapShowCheckArea">
-<input id="RapShowCheck01" name="" type="checkbox"/>
-<label for="RapShowCheck01">
-<span>ラップ表示</span>
-</label>
-</div><!-- /.RapShowCheckArea -->
-</div>
-</th>
-<th nowrap="">位置</th>
-<th nowrap="">脚色</th>
-<th colspan="2" nowrap="">評価</th>
+</td>
 </tr>
-<tr class="OikiriDataHead1 HorseList" id="tr_">
-<td class="Waku1" nowrap="" rowspan="1"><span>1</span></td>
-<td class="Umaban" nowrap="" rowspan="1">1</td>
-<td class="Horse_Info fc" rowspan="1">
-<div class="Horse_Name"><a href="https://db.netkeiba.com/horse/2020102627" target="_blank">トレジャートレイル</a></div>
-</td>
-<td class="Training_Day" nowrap="">2022/07/27(水)</td>
-<td nowrap="">美坂</td>
-<td nowrap="">稍</td>
-<td nowrap="">助手</td>
-<td class="TrainingTimeData txt_l">
-<ul class="TrainingTimeDataList">
-<li>-<span class="RapTime"></span></li><li>54.3<span class="RapTime">(14.2)</span></li><li>40.1<span class="RapTime">(13.6)</span></li><li>26.5<span class="RapTime">(13.5)</span></li><li>13.0<span class="RapTime">(13.0)</span></li>
-</ul>
-<div class="Comment_Cell">
-<p>外<a href="https://db.netkeiba.com/horse/2018104022" target="_blank">サウスジェラート</a>強めと併入</p>
+<tr>
+<th>追込</th>
+<td>
+<div class="Kyaku_Type_box">
+<span class="WakuBan1 Waku_Umaban Kyaku_Type_Num">1</span><br/>
+<span class="UmaName">サンエ</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan3 Waku_Umaban Kyaku_Type_Num">3</span><br/>
+<span class="UmaName">オリビ</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan4 Waku_Umaban Kyaku_Type_Num">4</span><br/>
+<span class="UmaName">サンパ</span>
+</div><div class="Kyaku_Type_box">
+<span class="WakuBan8 Waku_Umaban Kyaku_Type_Num">11</span><br/>
+<span class="UmaName">ブタノ</span>
 </div>
 </td>
-<td nowrap="">1</td>
-<td class="TrainingLoad" nowrap="">一杯</td>
-<td class="Training_Critic" nowrap="">乗込むも</td>
-<td class="Rank_C" nowrap="" width="25">C</td>
-</tr><tr class="OikiriDataHead2 HorseList" id="tr_">
-<td class="Waku1" nowrap="" rowspan="1"><span>1</span></td>
-<td class="Umaban" nowrap="" rowspan="1">2</td>
-<td class="Horse_Info fc" rowspan="1">
-<div class="Horse_Name"><a href="https://db.netkeiba.com/horse/2020104493" target="_blank">ヒャクマンボルト</a></div>
-</td>
-<td class="Training_Day" nowrap="">2022/07/27(水)</td>
-<td nowrap="">美坂</td>
-<td nowrap="">稍</td>
-<td nowrap="">助手</td>
-<td class="TrainingTimeData txt_l">
-<ul class="TrainingTimeDataList">
-<li>-<span class="RapTime"></span></li><li class="TokeiColor02">53.2<span class="RapTime">(15.3)</span></li><li class="TokeiColor01">37.9<span class="RapTime">(13.2)</span></li><li class="TokeiColor01">24.7<span class="RapTime">(12.2)</span></li><li class="TokeiColor02">12.5<span class="RapTime">(12.5)</span></li>
-</ul>
-<div class="Comment_Cell">
-<p>外<a href="https://db.netkeiba.com/horse/2018106426" target="_blank">ニシノオイカゼ</a>馬也と併入</p>
-</div>
-</td>
-<td nowrap="">1</td>
-<td class="TrainingLoad" nowrap="">馬也</td>
-<td class="Training_Critic" nowrap="">乗込入念</td>
-<td class="Rank_C" nowrap="" width="25">C</td>
-</tr><tr class="OikiriDataHead3 HorseList" id="tr_">
-<td class="Waku2" nowrap="" rowspan="1"><span>2</span></td>
-<td class="Umaban" nowrap="" rowspan="1">3</td>
-<td class="Horse_Info fc" rowspan="1">
-<div class="Horse_Name"><a href="https://db.netkeiba.com/horse/2020105175" target="_blank">ホバーコルテ</a></div>
-</td>
-<td class="Training_Day" nowrap="">2022/07/27(水)</td>
-<td nowrap="">南Ｗ</td>
-<td nowrap="">稍</td>
-<td nowrap="">見習</td>
-<td class="TrainingTimeData txt_l">
-<ul class="TrainingTimeDataList">
-<li>85.4<span class="RapTime">(15.1)</span></li><li>70.3<span class="RapTime">(15.1)</span></li><li>55.2<span class="RapTime">(14.7)</span></li><li>40.5<span class="RapTime">(27.9)</span></li><li class="TokeiColor02">12.6<span class="RapTime">(12.6)</span></li>
-</ul>
-<div class="Comment_Cell">
-<p>中<a href="https://db.netkeiba.com/horse/2020102712" target="_blank">マグノリアレーン</a>馬也と併入</p>
-<p>外<a href="https://db.netkeiba.com/horse/2020100626" target="_blank">サツキフラッシュ</a>仕掛と併入</p>
-</div>
-</td>
-<td nowrap="">4</td>
-<td class="TrainingLoad" nowrap="">強め</td>
-<td class="Training_Critic" nowrap="">気配平凡</td>
-<td class="Rank_C" nowrap="" width="25">C</td>
 </tr>
 </table>
-<p class="RaceInfo_Notice01 mt05 Txt_R OikiriNotice">提供：<a href="http://www.daily.co.jp/horse/" target="_blank">デイリースポーツ</a></p>
-</div><!-- /.Contents_Box -->
-<div class="LinkBtn_03" id="oikiri_list_btn">
-<a class="LinkBtn_More" href="">
-<span class="Icon_More02">すべての最終調教を見る</span>
-</a>
-</div><!-- /.LinkBtn_03 -->
-<div class="LinkBtn_03 disp_none" id="oikiri_all_list_btn">
-<a class="LinkBtn_More" href="../race/oikiri.html?race_id=202204020206&amp;type=1">
-<span class="Icon_More01">すべての中間調教を見る</span>
-</a>
-</div><!-- /.LinkBtn_03 -->
-<div class="Premium_Regist_Box disp_none" id="Premium_Regist_Box_oikiri" style="display: none;">
-<p class="Premium_Regist_Msg">続きはプレミアムサービス<br/>登録でご覧になれます。</p>
-<div class="mb20">
-<a class="Premium_Regist_Btn" data-theme="01006" href="https://regist.netkeiba.com/?pid=premium&amp;course=420&amp;service=p01&amp;return_url=http%3A%2F%2Frace.netkeiba.com%2Frace%2Fshutuba_past.html%3Frace_id%3D202204020206" id="a_monthly_goods_link_08">続きを見る</a>
-</div>
-<p class="Premium_Regist_Txt02"><a href="https://regist.netkeiba.com/account/?pid=login">登録済みの方はこちらからログイン</a></p>
-</div><!-- /.Premium_Regist_Box -->
-</div>
-<script>
-$(function() {
-// if (page_id == "shutuba" || page_id == 'shutuba_past') {
-var Premium_Regist_oikiri = $('#oikiri_list_btn');
-var Premium_Regist_Btn_oikiri = Premium_Regist_oikiri.find('.LinkBtn_More');
-Premium_Regist_Btn_oikiri.click(function() {
-$(this).hide();
-$('#Premium_Regist_Box_oikiri').fadeIn('fast');
-return false;
-});
-// }else if(page_id == "oikiri") {
-$(function() {
-
-return false;
-});
-
-});
-</script>
-<script>
-$(function() {
-// ラップ表示
-var cookieName = 'oikiri_lap_no_dislay';
-var now   = new Date();
-now.setDate(now.getFullYear() + 1)
-var expires = now.toGMTString();
-var cookie_domain = '.netkeiba.com';
-var is_cookie = document.cookie.indexOf(cookieName);
-if(is_cookie == -1 ){
-//cookieがなかったら表示
-$('#RapShowCheck01').attr("checked",true);
-$("ul.TrainingTimeDataList .RapTime").css("display", "block");
-}else{
-$('#RapShowCheck01').attr("checked",false);
-$("ul.TrainingTimeDataList .RapTime").hide();
-}
-$("#RapShowCheck01").change(function() {
-var YosoCheckProp = $('#RapShowCheck01').prop('checked');
-if (!YosoCheckProp) {
-document.cookie = cookieName + '=1; path=/; expires=' + expires + '; domain=' + cookie_domain + ';';
-$("ul.TrainingTimeDataList .RapTime").hide();
-} else {
-document.cookie = cookieName + "=; path=/; max-age=0; domain=" + cookie_domain + ';';//リセット
-$("ul.TrainingTimeDataList .RapTime").css("display", "block");
-}
-});
-});
-</script>
+<p class="RaceInfo_Notice01 mb28">※実際のレース展開とは異なる場合があります。<br/><!-- ※JRA初出走・過去５走でJRA未出走の馬は、先行・差しのいずれかに振り分けています。 --></p>
+<!-- block=shutuba_race_menu (d) -->
+<!-- block=race_column_list (d) -->
+<!-- block=popup_racelist (d) -->
 <!-- block=common__advertisement_gam (d) -->
 <div class="nk_AdvBox_pc mt30">
-<!-- Geniee Wrapper Body Tag 1492791 -->
-<div data-cptid="1492791">
+<!-- Geniee Wrapper Body Tag 1492792 -->
+<div data-cptid="1492792">
 <script>
 gnshbrequest.cmd.push(function() {
-gnshbrequest.applyPassback("1492791", "[data-cptid='1492791']");
+gnshbrequest.applyPassback("1492792", "[data-cptid='1492792']");
 });
 </script>
 </div>
-<!-- /Geniee Wrapper Body Tag 1492791 -->
+<!-- /Geniee Wrapper Body Tag 1492792 -->
 </div>
-</div><!-- / .RaceColumn02 -->
-</div><!-- / #page -->
+</div><!-- /RaceColumn02 -->
+</div><!-- /Wrap -->
+<!-- block=ad_dfp (d) -->
+<!-- フッター -->
 <footer>
-<!-- block=common__race_footer (cg) -->
+<!-- block=race_footer (cg) -->
 <div class="NkFooterArea">
 <div class="BtnPagetop">
 <a href="javascript:void(0)" title="ページトップへ"></a>
@@ -2161,7 +2721,7 @@ return false;
 <dl class="FootSiteTitle fc">
 <dt>
 <a href="https://www.netkeiba.com/?rf=footer" title="netkeiba.com">
-<img alt="netkeiba.com" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/netkeiba_logo01.png?2019073001"/>
+<img alt="netkeiba.com" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/netkeiba_logo01.png?2019121001"/>
 </a>
 </dt>
 <dd>
@@ -2174,51 +2734,51 @@ return false;
 <dd class="fc">
 <ul>
 <li>
-<a href="https://news.netkeiba.com?rf=footer" title="ニュース">ニュース</a>
+<a href="https://news.netkeiba.com/?rf=footer" title="ニュース">ニュース</a>
 </li>
 <li>
 <a href="https://race.netkeiba.com/top/?rf=footer" title="レース">レース</a>
 </li>
 <li>
-<a href="https://yoso.netkeiba.com?rf=footer" title="ウマい馬券">ウマい馬券</a>
+<a href="https://yoso.netkeiba.com/?rf=footer" title="ウマい馬券">ウマい馬券</a>
 </li>
 <li>
-<a href="https://news.netkeiba.com?pid=column_top&amp;rf=footer" title="コラム">コラム</a>
+<a href="https://news.netkeiba.com/?pid=column_top&amp;rf=footer" title="コラム">コラム</a>
 </li>
 <li>
 <a href="https://tv.netkeiba.com/?rf=footer" title="netkeibaTV">netkeibaTV</a>
 </li>
 <li>
-<a href="https://nar.netkeiba.com/top/?rf=footer" title="地方競馬">地方競馬</a>
+<a href="https://nar.netkeiba.com/?rf=footer" title="地方競馬">地方競馬</a>
 </li>
 <li>
-<a href="https://db.netkeiba.com?rf=footer" title="データベース">データベース</a>
+<a href="https://db.netkeiba.com/?rf=footer" title="データベース">データベース</a>
 </li>
 <li>
-<a href="https://orepro.netkeiba.com?rf=footer" title="俺プロ">俺プロ</a>
+<a href="https://orepro.netkeiba.com/?rf=footer" title="俺プロ">俺プロ</a>
 </li>
 </ul>
 <ul>
 <li>
-<a href="https://owner.netkeiba.com?rf=footer" title="一口馬主">一口馬主</a>
+<a href="https://owner.netkeiba.com/?rf=footer" title="一口馬主">一口馬主</a>
 </li>
 <li>
-<a href="https://pog.netkeiba.com?rf=footer" title="POG">POG</a>
+<a href="https://pog.netkeiba.com/?rf=footer" title="POG">POG</a>
 </li>
 <li>
-<a href="https://bbs.pc.keiba.findfriends.jp?rf=footer" title="競馬広場">競馬広場</a>
+<a href="https://bbs.pc.keiba.findfriends.jp/?rf=footer" title="競馬広場">競馬広場</a>
 </li>
 <li>
-<a href="https://dir.netkeiba.com//keibamatome/index.html?rf=footer" title="まとめ">まとめ</a>
+<a href="https://www.netkeiba.com/keibamatome/index.html?rf=footer" title="まとめ">まとめ</a>
 </li>
 <li>
 <a href="https://yoso.netkeiba.com/senmonshi/?rf=footer" title="競馬新聞">競馬新聞</a>
 </li>
 <li>
-<a href="https://race.netkeiba.com/bookmark/bookmark.html?rf=footer" title="お気に入り馬">お気に入り馬</a>
+<a href="https://race.netkeiba.com/?pid=bookmark&amp;rf=footer" title="お気に入り馬">お気に入り馬</a>
 </li>
 <li>
-<a href="https://regist.netkeiba.com?rf=footer" title="アカウント">アカウント</a>
+<a href="https://regist.netkeiba.com/?rf=footer" title="アカウント">アカウント</a>
 </li>
 </ul>
 </dd>
@@ -2228,13 +2788,13 @@ return false;
 <dd>
 <ul>
 <li>
-<a href="https://info.netkeiba.com//?rf=footer" title="お知らせ">お知らせ</a>
+<a href="https://info.netkeiba.com/?rf=footer" title="お知らせ">お知らせ</a>
 </li>
 <li>
-<a href="https://regist.netkeiba.com?pid=premium&amp;rf=footer" title="プレミアムサービスのご案内">プレミアムサービスのご案内</a>
+<a href="https://regist.netkeiba.com/?pid=premium&amp;rf=footer" title="プレミアムサービスのご案内">プレミアムサービスのご案内</a>
 </li>
 <li>
-<a href="https://regist.netkeiba.com?pid=help&amp;rf=footer" title="よくある質問・お問い合わせ">よくある質問・お問い合わせ</a>
+<a href="https://regist.netkeiba.com/?pid=help&amp;rf=footer" title="よくある質問・お問い合わせ">よくある質問・お問い合わせ</a>
 </li>
 </ul>
 </dd>
@@ -2270,14 +2830,14 @@ return false;
 <dl class="NkFoot01">
 <dt>スマホでnetkeiba</dt>
 <dd class="SpNkInfoImg">
-<img alt="検索" class="SearchImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_searchimg01.png?2019073001"/>
-<img alt="バーコード" class="QrImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_qr01.png?2019073001"/>
+<img alt="検索" class="SearchImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_searchimg01.png?2019121001"/>
+<img alt="バーコード" class="QrImg01" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/img_nk_qr01.png?2019121001"/>
 </dd>
 <dt>アプリでサクサクnetkeiba</dt>
 <dd>
 <ul class="AprStoreList fc">
 <li>
-<a href="https://itunes.apple.com/jp/app/id464562684/" title="Appstore"><img alt="Appstore" class="" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/bnr_appstore_01.png?2019073001"/></a>
+<a href="https://itunes.apple.com/jp/app/id464562684/" title="Appstore"><img alt="Appstore" class="" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/bnr_appstore_01.png?2019121001"/></a>
 </li>
 <li>
 <a href="https://play.google.com/store/apps/details?id=jp.co.netdreamers.netkeiba" title="googleplay"><img alt="googleplay" class="" src="https://cdn.netkeiba.com/img.www/style/netkeiba.ja/image/common/bnr_googleplay_01.png?20210728"/></a>
@@ -2378,7 +2938,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <div class="nk_AdvBox_pc mt30">
 <div id="geniee_overlay_outer" style="position:fixed; bottom: 0px; width:100%; height:90px; left:0px; right:0px; margin:auto; z-index:1000000000; text-align: center;background-color: rgba(40, 40, 40, 0.2);"> <img id="gn_interstitial_close_icon" onclick="document.getElementById('geniee_overlay_outer').style.display='none';" src="https://js.gsspcln.jp/i/7c087a913cb9d4e76b672c4dc767c1a2.png" style="height: 29px; width: 29px; display: block; position: absolute; top: 0px; left: 0px; right:0px; margin: 0px auto; z-index: 999999; transform: translateX(-378.5px);"/>
 <!-- Geniee Wrapper Body Tag 1491463 -->
-<div data-cptid="1491463" style="text-align: center;">
+<div data-cptid="1491463">
 <script>
 gnshbrequest.cmd.push(function() {
 gnshbrequest.applyPassback("1491463", "[data-cptid='1491463']");

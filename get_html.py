@@ -2,11 +2,11 @@ import lxml
 import requests
 from bs4 import BeautifulSoup
 
-RACE_ID = '202204020206'
-r = requests.get(f'https://db.netkeiba.com/race/{RACE_ID}')
+RACE_ID = '202248090103'
+r = requests.get(f'https://nar.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}')
 soup = str(BeautifulSoup(r.content, 'lxml'))
 
-filename = 'db'
+filename = 'umabashira'
 f = open(f'{filename}_utf8.txt', 'w', encoding='UTF-8')
 f.writelines(soup)
 f = open(f'{filename}_sjis.txt', 'w', encoding='Shift-JIS', errors="ignore")

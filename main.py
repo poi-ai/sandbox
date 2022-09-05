@@ -8,10 +8,10 @@ from bs4 import BeautifulSoup
 def url(type):
     # 馬柱
     if type == 'UMABASHIRA_URL':
-        return f'https://race.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}'
+        return f'https://nar.netkeiba.com/race/shutuba_past.html?race_id={RACE_ID}'
     # リアルタイム レース結果
     elif type == 'RACE_RESULT_URL':
-        return f'https://race.netkeiba.com/race/result.html?race_id={RACE_ID}'
+        return f'https://nar.netkeiba.com/race/result.html?race_id={RACE_ID}'
     # DB レース結果
     elif type == 'DB_RESULT_URL':
         return f'https://db.netkeiba.com/race/{RACE_ID}'
@@ -749,9 +749,9 @@ class HorseResult():
     def prize(self, prize): self.__prize = prize
 
 if __name__ == '__main__':
-    RACE_ID = '202204020206'
+    RACE_ID = '202248090103'
     # 開催日(組み込み時はインスタンス変数)
-    KAISAI_DATE = '20220724'
+    KAISAI_DATE = '20220901'
     # PC内で完結か
     LOCAL = True
     #LOCAL = False
