@@ -52,6 +52,12 @@ def main():
         # 馬柱からデータ取得
         horse_dict, race_info = get_umabashira(horse_dict)
 
+        # インスタンス変数確認用
+        for dict in horse_dict:
+            print(vars(horse_dict[dict][0]))
+            print(vars(horse_dict[dict][1]))
+        print(vars(race_info))
+
 def get_race_id():
     f = open('race_id.txt', 'r')
     id_list = [id for id in f]
@@ -133,7 +139,7 @@ def get_umabashira(horse_dict):
     race_info.race_class = half(race_data_list[5])
 
     race_name = soup.find('div', class_ = 'RaceName')
-    race_info.race_name = race_name.text
+    race_info.race_name = race_name.text.replace('\n', '')
 
     # CSSからクラスチェック、13はWIN5
     if 'Icon_GradeType1"' in str(race_name):
@@ -173,7 +179,7 @@ def get_umabashira(horse_dict):
     if 'Icon_GradeType14' in str(race_name):
         race_info.grade += '待選'
 
-    require = race_data_list[7]
+    require = race_data_list[6]
     if '(国際)' in require:
         race_info.require_country = '国'
     elif '(混)' in require:
@@ -198,10 +204,10 @@ def get_umabashira(horse_dict):
         race_info.require_local = 'カク指'
 
     # TODO 別定/ハンデ戦はより詳細に分類できるかチェック
-    race_info.load_kind = race_data_list[8]
-    race_info.horse_num = race_data_list[9].replace('頭', '')
+    race_info.load_kind = race_data_list[7]
+    race_info.horse_num = race_data_list[8].replace('頭', '')
 
-    prize = re.search('本賞金:(\d+),(\d+),(\d+),(\d+),(\d+)万円', race_data_list[11])
+    prize = re.search('本賞金:(\d+),(\d+),(\d+),(\d+),(\d+)万円', race_data_list[10])
     race_info.first_prize = prize.groups()[0]
     race_info.second_prize = prize.groups()[1]
     race_info.third_prize = prize.groups()[2]
@@ -216,13 +222,14 @@ def get_umabashira(horse_dict):
     for info in fc:
         horse_info = ''
 
-        # TODO なんかあやしい
+        horse_type = info.find('div', class_ = 'Horse02')
+
+        # 
         for horse in horse_dict:
-            if horse[0].horse_name == horse_type.text:
-                horse_info = horse_dict[horse[0].horse_no][0]
+            if horse_dict[horse][0].horse_name == rm(horse_type.text):
+                horse_info = horse_dict[horse][0]
 
         horse_info.father = info.find('div', class_ = 'Horse01').text
-        horse_type = info.find('div', class_ = 'Horse02')
 
         # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
         # TODO パラメータをbelongに統一するかも要検討
