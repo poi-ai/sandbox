@@ -54,9 +54,17 @@ def main():
 
         # インスタンス変数確認用
         for dict in horse_dict:
-            print(vars(horse_dict[dict][0]))
-            print(vars(horse_dict[dict][1]))
-        print(vars(race_info))
+            print('---------------------')
+            horse_info = vars(horse_dict[dict][0])
+            for key in horse_info:
+                print(f'{key} : {horse_info[key]}')
+            horse_result = vars(horse_dict[dict][1])
+            for key in horse_result:
+                print(f'{key} : {horse_result[key]}')
+            print('---------------------')
+        ri = vars(race_info)
+        for key in ri:
+            print(f'{key} : {ri[key]}')
 
 def get_race_id():
     f = open('race_id.txt', 'r')
