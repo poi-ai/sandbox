@@ -54,9 +54,18 @@ def main():
 
         # インスタンス変数確認用
         for dict in horse_dict:
-            print(vars(horse_dict[dict][0]))
-            print(vars(horse_dict[dict][1]))
-        print(vars(race_info))
+            print('---------------------')
+            horse_info = vars(horse_dict[dict][0])
+            for key in horse_info:
+                print(f'{key} : {horse_info[key]}')
+            horse_result = vars(horse_dict[dict][1])
+            for key in horse_result:
+                print(f'{key} : {horse_result[key]}')
+            print('---------------------')
+        ri = vars(race_info)
+        for key in ri:
+            print(f'{key} : {ri[key]}')
+
 
 def get_race_id():
     f = open('race_id.txt', 'r')
@@ -127,16 +136,16 @@ def get_umabashira(horse_dict):
             if len(around) != 1:
                 race_info.in_out = around[1:]
 
-    race_info.weather = race_data_list[2].replace('天候:', '')
-
     # 出走条件等の抽出
     race_data_02 = soup.find('div', class_ = 'RaceData02')
     race_data_list = race_data_02.text.split('\n')
 
     race_info.hold_no = race_data_list[1].replace('回', '')
+    # TODO 天候の記載なし
     race_info.hold_date = race_data_list[3].replace('日目', '')
+    # TODO↓[4]に出走条件(年齢)もクラス情報もあるため分割処理が必要
     race_info.require_age = half(race_data_list[4]).replace('サラ系', '').replace('障害', '')
-    race_info.race_class = half(race_data_list[5])
+    race_info.race_class = half(race_data_list[4])
 
     race_name = soup.find('div', class_ = 'RaceName')
     race_info.race_name = race_name.text.replace('\n', '')
@@ -179,43 +188,16 @@ def get_umabashira(horse_dict):
     if 'Icon_GradeType14' in str(race_name):
         race_info.grade += '待選'
 
-    require = race_data_list[6]
-    if '(国際)' in require:
-        race_info.require_country = '国'
-    elif '(混)' in require:
-        race_info.require_country = '混'
+    race_info.horse_num = race_data_list[5].replace('頭', '')
 
-    if '牡・牝' in require:
-        race_info.require_gender = '牡牝'
-    elif '牝' in require:
-        race_info.require_gender = '牝'
+    # TODO 年齢以外の出走条件取得
 
-    if '九州産馬' in require:
-        race_info.require_local = '1'
-
-    if '見習騎手' in require:
-        race_info.require_beginner_jockey = '1'
-
-    if '(指)' in require:
-        race_info.require_local = 'マル指'
-    elif '(特指)' in require:
-        race_info.require_local = '特指'
-    elif '指' in require:
-        race_info.require_local = 'カク指'
-
-    # TODO 別定/ハンデ戦はより詳細に分類できるかチェック
-    race_info.load_kind = race_data_list[7]
-    race_info.horse_num = race_data_list[8].replace('頭', '')
-
-    prize = re.search('本賞金:(\d+),(\d+),(\d+),(\d+),(\d+)万円', race_data_list[10])
+    prize = re.search('本賞金:(.+)、(.+)、(.+)、(.+)、(.+)万円', race_data_list[7])
     race_info.first_prize = prize.groups()[0]
     race_info.second_prize = prize.groups()[1]
     race_info.third_prize = prize.groups()[2]
     race_info.fourth_prize = prize.groups()[3]
     race_info.fifth_prize = prize.groups()[4]
-
-    # 各馬の情報(TODO レース結果で取得したものと合体)
-    # horse_info = HorseInfo()
 
     fc = soup.select('div[class="fc"]')
 
@@ -224,7 +206,7 @@ def get_umabashira(horse_dict):
 
         horse_type = info.find('div', class_ = 'Horse02')
 
-        # 
+        # 馬番(キー)から設定するdictを選択
         for horse in horse_dict:
             if horse_dict[horse][0].horse_name == rm(horse_type.text):
                 horse_info = horse_dict[horse][0]
@@ -418,7 +400,7 @@ class RaceInfo():
         self.__race_name = '' # レース名o
         self.__race_type = '' # レース形態(平地/障害)o
         self.__baba = '' # 馬場(芝/ダート)o
-        self.__weather = '' # 天候o
+        self.__weather = '' # 天候
         self.__glass_condition = '' # 馬場状態(芝)o
         self.__dirt_condition = '' # 馬場状態(ダート)o
         self.__distance = '' # 距離o
@@ -430,11 +412,11 @@ class RaceInfo():
         self.__race_class = '' # クラスo
         self.__grade = '' # グレード TODO
         self.__require_age = '' # 出走条件(年齢)o
-        self.__require_gender = '' # 出走条件(牝馬限定戦)o
-        self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)o
-        self.__require_beginner_jockey = '0' # 出走条件(見習騎手限定戦)o
-        self.__require_country = '' # 出走条件(国際/混合)o
-        self.__require_local = '' # 出走条件(特別指定/指定)o
+        self.__require_gender = '' # 出走条件(牝馬限定戦)
+        self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)
+        self.__require_beginner_jockey = '0' # 出走条件(見習騎手限定戦)
+        self.__require_country = '' # 出走条件(国際/混合)
+        self.__require_local = '' # 出走条件(特別指定/指定)
         self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ)o
         self.__first_prize = '' # 1着賞金o
         self.__second_prize = '' # 2着賞金o
