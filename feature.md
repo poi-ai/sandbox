@@ -9,14 +9,14 @@ memo
 | レース番号 | race_no |  | TINYINT | o | - |  |
 | 競馬場コード | baba_code |  | TINYINT | o | - | netkeiba独自コード |
 | レース名 | race_name |  | VARCHAR | o | - |  |
-| レース形態 | race_type |  | ENUM | o | 平：平地<br>障：障害 |  |
-| 馬場 | baba |  | ENUM | o | 芝：芝<br>ダ：ダート<br>芝ダ：芝&ダート | 芝ダは障害のみ |
-| 天候 | wheather |  | ENUM | o | 晴：晴れ<br>曇：曇り<br>小雨：小雨<br>雨：雨<br>小雪：小雪<br>雪：雪 |  |
-| 馬場状態(芝) | glass_condition |  | ENUM | - | 良：良<br>稍：稍重<br>重：重<br>不：不良 |  |
-| 馬場状態(ダ) | dirt_condition |  | ENUM | - | 良：良<br>稍：稍重<br>重：重<br>不：不良 |  |
+| レース形態 | race_type |  | ENUM | o | 平：平地<br>障：障害<br>-----<br>地方は障害なし |  |
+| 馬場 | baba |  | ENUM | o | 芝：芝<br>ダ：ダート<br>芝ダ：芝&ダート<br>-----<br>芝：芝<br>ダ：ダート<br>直：ばんえい<br> | 芝ダは障害のみ<br>-----<br>直はばんえいのみ |
+| 天候 | wheather |  | ENUM | o | 晴：晴れ<br>曇：曇り<br>小雨：小雨<br>雨：雨<br>小雪：小雪<br>雪：雪<br>-------<br>地方・同 |  |
+| 馬場状態(芝) | glass_condition |  | ENUM | - | 良：良<br>稍：稍重<br>重：重<br>不：不良<br>-------<br>地方・同 |  |
+| 馬場状態(ダ) | dirt_condition |  | ENUM | - | 良：良<br>稍：稍重<br>重：重<br>不：不良<br>-------<br>地方・同(ばんえいの湿度カラム追加) |  |
 | 距離 | distance |  | SMALLINT | o | - |  |
-| 回り | around |  | ENUM | - |  |  |
-| 使用コース | in_out |  | VARCHAR | - |  | 未網羅 |
+| 回り | around |  | ENUM | - | TODO 中央<br>-----<br>地方競馬<br>右：右<br>左：左 |  |
+| 使用コース | in_out |  | VARCHAR | - | TODO 中央<br>-----<br>地方競馬記載なし | |
 | 発走時刻 | race_time |  | TIME | o |  | hh:mm |
 | 開催回 | hold_no |  | TINYINT | o |  |  |
 | 開催日 | hold_date |  | TINYINT | o |  |  |
