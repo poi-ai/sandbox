@@ -1,3 +1,4 @@
+import output
 import lxml
 import requests
 import time
@@ -54,17 +55,16 @@ def main():
 
         # インスタンス変数確認用
         for dict in horse_dict:
-            print('---------------------')
             horse_info = vars(horse_dict[dict][0])
-            for key in horse_info:
-                print(f'{key} : {horse_info[key]}')
+            df = pd.DataFrame.from_dict(horse_info, orient='index').T
+            output.csv(df, 'horse_info')
+
             horse_result = vars(horse_dict[dict][1])
-            for key in horse_result:
-                print(f'{key} : {horse_result[key]}')
-            print('---------------------')
-        ri = vars(race_info)
-        for key in ri:
-            print(f'{key} : {ri[key]}')
+            df = pd.DataFrame.from_dict(horse_result, orient='index').T
+            output.csv(df, 'horse_result')
+
+        df = pd.DataFrame.from_dict(vars(race_info), orient='index').T
+        output.csv(df, 'race_info')
 
 def get_race_id():
     f = open('race_id.txt', 'r')
@@ -379,15 +379,6 @@ def Table(soup):
     # read_htmlで抜けなくなる余分なタグを除去
     HTML = str(soup).replace('<diary_snap_cut>', '').replace('</diary_snap_cut>', '')
     return pd.read_html(HTML)
-
-def output(word, filename):
-    f = open(f'{filename}.txt', 'a', encoding='utf-8')
-    if type(word) is list:
-        f.write(str(word).replace('[', '').replace(']', '').replace("'", ''))
-    else:
-        f.write(str(word))
-    f.write('\n')
-    f.close()
 
 def rm(str):
     '''改行・空白を除去'''
