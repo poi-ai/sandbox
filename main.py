@@ -94,32 +94,17 @@ def get_umabashira(horse_dict):
 
     race_info.race_time = race_data_list[0].replace('発走', '')
 
-    course = re.search('([芝|ダ|障])(\d+)m\((.*)\)', race_data_list[1])
-    race_info.distance = course.groups()[1]
+    # TODO race_type、in_out除去
 
-    if course.groups()[0] == '障':
-        race_info.race_type = '障'
-
-        baba = course.groups()[2]
-        if '芝' in baba:
-            if 'ダート' in baba:
-                race_info.baba = '芝ダ'
-                race_info.glass_condition = race_data_list[3].replace('馬場:', '')
-                if len(race_data_list) == 5:
-                    race_info.dirt_condition = race_data_list[4].replace('馬場:', '')
-            else:
-                race_info.baba = '芝'
-                race_info.glass_condition = race_data_list[3].replace('馬場:', '')
-        else:
-            race_info.baba = 'ダ'
-            race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
-
-        around = re.sub(r'[芝ダート]', '', baba)
-        if len(around) != 0:
-            race_info.in_out = around
-
+    # TODO レースIDからばんえい判定
+    if re.compile('\d{4}65\d{6}').search(RACE_ID):
+        race_info.baba = 'ば'
+        race_info.distance = '200'
+        # TODO ばんえいの馬場状態変数追加
     else:
-        race_info.race_type = '平'
+        course = re.search('([芝|ダ])(\d+)m\((.*)\)', race_data_list[1])
+
+        race_info.distance = course.groups()[1]
 
         baba = course.groups()[0]
         race_info.baba = baba
@@ -128,13 +113,7 @@ def get_umabashira(horse_dict):
         elif baba == 'ダ':
             race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
 
-        around = course.groups()[2]
-        if around == '直線':
-            race_info.around = '直'
-        else:
-            race_info.around = around[0]
-            if len(around) != 1:
-                race_info.in_out = around[1:]
+        race_info.around = course.groups()[2]
 
     # 出走条件等の抽出
     race_data_02 = soup.find('div', class_ = 'RaceData02')
@@ -143,9 +122,10 @@ def get_umabashira(horse_dict):
     race_info.hold_no = race_data_list[1].replace('回', '')
     # TODO 天候の記載なし
     race_info.hold_date = race_data_list[3].replace('日目', '')
-    # TODO↓[4]に出走条件(年齢)もクラス情報もあるため分割処理が必要
-    race_info.require_age = half(race_data_list[4]).replace('サラ系', '').replace('障害', '')
-    race_info.race_class = half(race_data_list[4])
+
+    require_split = race_data_list[4].find(' ')
+    race_info.require_age = half(race_data_list[4][:require_split]).replace('サラ系', '')
+    race_info.race_class = half(race_data_list[4][require_split + 1:])
 
     race_name = soup.find('div', class_ = 'RaceName')
     race_info.race_name = race_name.text.replace('\n', '')
@@ -311,7 +291,7 @@ def get_result():
         else:
             horse_dict[no][0].weight = weight.groups()[0]
             horse_dict[no][0].weight_change = weight.groups()[1].replace('±', '').replace('+', '')
-        # 調教師チェック[東]美浦、[西]栗東
+        # TODO 調教師チェック,ほぼ全部[地]になるので馬柱から抽出した方がよさそう
         trainer = re.search('\[(.+)\] (.+)', row['調教師'])
         if trainer == None:
             horse_dict[no][0].trainer = '-'
