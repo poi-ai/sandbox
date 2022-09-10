@@ -1,5 +1,6 @@
 import output
 import lxml
+import numpy as np
 import requests
 import time
 import pandas as pd
@@ -235,10 +236,14 @@ def get_umabashira(horse_dict):
         elif 'horse_race_type05' in running_type:
             horse_info.running_type = '自在'
 
-    hair_colors = soup.find('span', class_ = 'Barei')
+    hair_colors = soup.find_all('span', class_ = 'Barei')
     for i, hair_color in enumerate(hair_colors):
-        m = re.search('.\d(.+)', hair_color)
-        horse_dict[i + 1][0].running_type = m.groups()[0]
+        m = re.search('.\d(.+)', hair_color.text)
+        # 別の箇所でも使われているクラスなので判定が必要
+        if m == None:
+            break
+        else:
+            horse_dict[i + 1][0].hair_color = m.groups()[0]
 
     # 実運用ではクラス化するため、返り値なしでインスタンス変数へ代入
     return horse_dict, race_info
@@ -276,8 +281,8 @@ def get_result():
         horse_dict[no][0].horse_no = row['馬番']
         horse_dict[no][0].horse_name = row['馬名']
         # 頭1文字が性別、2文字目以降が年齢
-        horse_dict[no][0].age = row['性齢'][0]
-        horse_dict[no][0].gender = row['性齢'][1:]
+        horse_dict[no][0].gender = row['性齢'][0]
+        horse_dict[no][0].age = row['性齢'][1:]
         horse_dict[no][0].load = row['斤量']
         horse_dict[no][0].jockey = row['騎手']
         horse_dict[no][0].win_odds = row['単勝']
@@ -294,11 +299,11 @@ def get_result():
         # TODO 調教師チェック,ほぼ全部[地]になるので馬柱から抽出した方がよさそう
         trainer = re.search('\[(.+)\] (.+)', row['調教師'])
         if trainer == None:
-            horse_dict[no][0].trainer = '-'
             horse_dict[no][0].trainer_belong = '-'
+            horse_dict[no][0].trainer = '-'
         else:
-            horse_dict[no][0].trainer = trainer.groups()[0]
-            horse_dict[no][0].trainer_belong = trainer.groups()[1]
+            horse_dict[no][0].trainer_belong = trainer.groups()[0]
+            horse_dict[no][0].trainer = trainer.groups()[1]
         horse_dict[no][0].horse_no = row['馬番']
         horse_dict[no][0].owner = row['馬主']
 
@@ -315,8 +320,10 @@ def get_result():
         else:
             horse_dict[no][1].diff = row['着差']
         horse_dict[no][1].pass_rank = row['通過']
-        horse_dict[no][1].nobiri = row['上り']
-        horse_dict[no][1].prize = row['賞金(万円)']
+        horse_dict[no][1].agari = row['上り']
+        if not np.isnan(row['賞金(万円)']):
+            horse_dict[no][1].prize = row['賞金(万円)']
+
 
     return horse_dict
 
@@ -556,7 +563,7 @@ class HorseInfo():
         self.__country = '' # 所属(外国馬か)o
         self.__belong = '' # 所属(地方馬か)o
         self.__blinker = '0' # ブリンカー(有/無)o
-        self.__haircolor = '' # 毛色
+        self.__hair_color = '' # 毛色
 
     # getter
     @property
@@ -606,7 +613,7 @@ class HorseInfo():
     @property
     def blinker(self): return self.__blinker
     @property
-    def haircolor(self): return self.__haircolor
+    def hair_color(self): return self.__hair_color
 
     # setter
     @frame_no.setter
@@ -655,8 +662,8 @@ class HorseInfo():
     def belong(self, belong): self.__belong = belong
     @blinker.setter
     def blinker(self, blinker): self.__blinker = blinker
-    @haircolor.setter
-    def haircolor(self, haircolor): self.__haircolor = haircolor
+    @hair_color.setter
+    def hair_color(self, hair_color): self.__hair_color = hair_color
 
 class HorseResult():
     '''各馬のレース結果のデータクラス'''
@@ -667,7 +674,7 @@ class HorseResult():
         self.__diff = '' # 着差o
         self.__pass_rank = '' # 通過順o
         self.__agari = '' # 上り3Fo
-        self.__prize = '' # 賞金o
+        self.__prize = '0' # 賞金o
 
     # getter
     @property
