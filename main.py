@@ -42,31 +42,30 @@ def main():
             # レースIDをセット
             RACE_ID = str(id).replace('\n', '')
 
+            # 馬柱からデータ取得
+            horse_dict, race_info = get_umabashira()
+
             # レース結果(DB)からデータ取得
-            # horse_dict = get_result()
-
-            # 馬柱からデータ取得 TODO 引数はインスタンス変数に
-            get_umabashira(horse_dict)
+            horse_dict = get_result(horse_dict, race_info)
     else:
-        # レース結果(DB)からデータ取得
-        horse_dict = get_result()
-
         # 馬柱からデータ取得
-        horse_dict, race_info = get_umabashira(horse_dict)
+        horse_dict, race_info = get_umabashira()
 
-        # インスタンス変数確認用
-        for dict in horse_dict:
-            horse_info = vars(horse_dict[dict][0])
-            df = pd.DataFrame.from_dict(horse_info, orient='index').T
-            output.csv(df, 'horse_info')
+        # レース結果(DB)からデータ取得
+        horse_dict = get_result(horse_dict, race_info)
 
-            horse_result = vars(horse_dict[dict][1])
-            df = pd.DataFrame.from_dict(horse_result, orient='index').T
-            output.csv(df, 'horse_result')
+    # インスタンス変数確認用
+    for dict in horse_dict:
+        horse_info = vars(horse_dict[dict][0])
+        df = pd.DataFrame.from_dict(horse_info, orient='index').T
+        output.csv(df, 'horse_info')
 
-        df = pd.DataFrame.from_dict(vars(race_info), orient='index').T
-        output.csv(df, 'race_info')
+        horse_result = vars(horse_dict[dict][1])
+        df = pd.DataFrame.from_dict(horse_result, orient='index').T
+        output.csv(df, 'horse_result')
 
+    df = pd.DataFrame.from_dict(vars(race_info), orient='index').T
+    output.csv(df, 'race_info')
 
 def get_race_id():
     f = open('race_id.txt', 'r')
@@ -74,8 +73,24 @@ def get_race_id():
     f.close()
     return id_list
 
-def get_umabashira(horse_dict):
+def get_umabashira():
     # 実運用のhorse_dictはインスタンス変数(self)から引っ張る
+    # TODO 追加でとるframe_no o
+    '''
+    ●horse_no o
+    horse_name o
+    gender o
+    age o
+    load o
+    jockey o
+    win_odds o
+    popular o
+    weight o
+    weight_change o
+    trainer_belong o
+    trainer o
+    owner x
+    '''
 
     # 馬柱からデータを取得
     if LOCAL:
@@ -179,6 +194,9 @@ def get_umabashira(horse_dict):
     race_info.third_prize = prize.groups()[2]
     race_info.fourth_prize = prize.groups()[3]
     race_info.fifth_prize = prize.groups()[4]
+
+    # 箱用意{馬番:[HorseInfo, HorseResult]}
+    horse_dict = {i: [HorseInfo(), HorseResult()] for i in range(1, int(race_info.horse_num + 1))}
 
     fc = soup.select('div[class="fc"]')
 
@@ -324,6 +342,55 @@ def get_result():
         if not np.isnan(row['賞金(万円)']):
             horse_dict[no][1].prize = row['賞金(万円)']
 
+    return horse_dict
+
+def get_re():
+    # TODO owner, pass_rank, prizeが取れない
+    # レース結果(HTML全体)
+    if LOCAL:
+        f = open('result_sjis.txt', 'r')
+        html = f.read()
+        f.close()
+        soup = BeautifulSoup(html, 'lxml')
+    else:
+        soup = Soup(url('RACE_RESULT_URL'))
+
+    # レース結果(結果テーブル)
+    tables = Table(soup)
+    table = tables[0]
+
+    # 箱用意{馬番:[HorseInfo, HorseResult]}
+    horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
+
+    # 1着馬の馬番
+    winner_horse_no = 0
+
+    # 行ごとに切り出し
+    # TODO 除外・取消馬の処理
+    for i, index in enumerate(table.index):
+        row = table.loc[index]
+
+        # キーになる馬番を先に取得
+        no = row['馬番']
+
+        # レース結果の各項目を設定
+        horse_dict[no][1].horse_no = row['馬番']
+        horse_dict[no][1].rank = row['着順']
+        horse_dict[no][1].goal_time = row['タイム']
+        # 着差、1着馬は2着との差をマイナスに
+        # TODO 同着時対応
+        if i == 0:
+            winner_horse_no = no
+        elif i == 1:
+            horse_dict[winner_horse_no][1].diff = '-' + str(row['着差'])
+            horse_dict[no][1].diff = row['着差']
+        else:
+            horse_dict[no][1].diff = row['着差']
+        # 通過はtables[3]の枠から取得。ただし、read_htmlは使わない(使えない)
+        # horse_dict[no][1].pass_rank = row['通過']
+        horse_dict[no][1].agari = row['後3F']
+        # if not np.isnan(row['賞金(万円)']):
+        #     horse_dict[no][1].prize = row['賞金(万円)']
 
     return horse_dict
 
@@ -721,5 +788,6 @@ if __name__ == '__main__':
 
     #for i in range(202202010201, 202202010213):
     #   RACE_ID = str(i)
-    main()
+    #main()
     #print(get_result())
+    get_re()
