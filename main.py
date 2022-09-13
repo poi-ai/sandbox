@@ -7,6 +7,8 @@ import pandas as pd
 import re
 from bs4 import BeautifulSoup
 
+ZERO_FIX = '0'
+
 def url(type):
     # 馬柱
     if type == 'UMABASHIRA_URL':
@@ -103,6 +105,8 @@ def get_umabashira():
 
     # レース情報格納用データクラス
     race_info = RaceInfo()
+    # 各馬情報用意{馬番:[HorseInfo, HorseResult]}
+    horse_dict = {}
 
     # コース情報や状態を抽出
     race_data_01 = soup.find('div', class_ = 'RaceData01')
@@ -110,7 +114,7 @@ def get_umabashira():
 
     race_info.race_time = race_data_list[0].replace('発走', '')
 
-    # TODO race_type、in_out除去
+    # TODO in_out除去
 
     # TODO レースIDからばんえい判定
     if re.compile('\d{4}65\d{6}').search(RACE_ID):
@@ -131,12 +135,14 @@ def get_umabashira():
 
         race_info.around = course.groups()[2]
 
+    # TODO ばんえいチェック
+    race_info.weather = race_data_list[2].replace('天候:', '')
+
     # 出走条件等の抽出
     race_data_02 = soup.find('div', class_ = 'RaceData02')
     race_data_list = race_data_02.text.split('\n')
 
     race_info.hold_no = race_data_list[1].replace('回', '')
-    # TODO 天候の記載なし
     race_info.hold_date = race_data_list[3].replace('日目', '')
 
     require_split = race_data_list[4].find(' ')
@@ -195,23 +201,13 @@ def get_umabashira():
     race_info.fourth_prize = prize.groups()[3]
     race_info.fifth_prize = prize.groups()[4]
 
-    # 箱用意{馬番:[HorseInfo, HorseResult]}
-    horse_dict = {i: [HorseInfo(), HorseResult()] for i in range(1, int(race_info.horse_num + 1))}
+    fc = soup.select('dl[class="fc"]')
 
-    fc = soup.select('div[class="fc"]')
+    for i, info in enumerate(fc):
+        horse_info = HorseInfo()
 
-    for info in fc:
-        horse_info = ''
-
+        horse_info.father = info.find('dt', class_ = 'Horse01').text
         horse_type = info.find('div', class_ = 'Horse02')
-
-        # 馬番(キー)から設定するdictを選択
-        for horse in horse_dict:
-            if horse_dict[horse][0].horse_name == rm(horse_type.text):
-                horse_info = horse_dict[horse][0]
-
-        horse_info.father = info.find('div', class_ = 'Horse01').text
-
         # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
         # TODO パラメータをbelongに統一するかも要検討
         if 'Icon_MaruChi' in str(horse_type):
@@ -225,6 +221,8 @@ def get_umabashira():
 
         if '<span class="Mark">B</span>' in str(horse_type):
             horse_info.blinker = '1'
+
+        horse_info.horse_name = horse_type.text
 
         horse_info.mother = info.find('div', class_ = 'Horse03').text
         horse_info.grandfather = info.find('div', class_ = 'Horse04').text.replace('(', '').replace(')', '')
@@ -266,7 +264,7 @@ def get_umabashira():
     # 実運用ではクラス化するため、返り値なしでインスタンス変数へ代入
     return horse_dict, race_info
 
-def get_result():
+def get_re():
     # レース結果(HTML全体)
     if LOCAL:
         f = open('db_sjis.txt', 'r')
@@ -344,7 +342,7 @@ def get_result():
 
     return horse_dict
 
-def get_re():
+def get_result():
     # TODO owner, pass_rank, prizeが取れない
     # レース結果(HTML全体)
     if LOCAL:
@@ -443,14 +441,14 @@ class RaceInfo():
     '''発走前のレースに関するデータのデータクラス'''
     def __init__(self):
         self.__race_name = '' # レース名o
-        self.__race_type = '' # レース形態(平地/障害)o
+        self.__race_type = '平' # レース形態(平地/障害/ばんえい)o
         self.__baba = '' # 馬場(芝/ダート)o
         self.__weather = '' # 天候
         self.__glass_condition = '' # 馬場状態(芝)o
         self.__dirt_condition = '' # 馬場状態(ダート)o
         self.__distance = '' # 距離o
         self.__around = '' # 回り(右/左)o
-        self.__in_out = '' # 使用コース(内回り/外回り)o
+        self.__in_out = ZERO_FIX # 使用コース(内回り/外回り)o
         self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回o
         self.__hold_date = '' # 開催日o
@@ -458,8 +456,8 @@ class RaceInfo():
         self.__grade = '' # グレード TODO
         self.__require_age = '' # 出走条件(年齢)o
         self.__require_gender = '' # 出走条件(牝馬限定戦)
-        self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)
-        self.__require_beginner_jockey = '0' # 出走条件(見習騎手限定戦)
+        self.__require_kyushu = ZERO_FIX # 出走条件(九州産馬限定戦)
+        self.__require_beginner_jockey = ZERO_FIX # 出走条件(見習騎手限定戦)
         self.__require_country = '' # 出走条件(国際/混合)
         self.__require_local = '' # 出走条件(特別指定/指定)
         self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ)o
@@ -618,10 +616,6 @@ class HorseInfo():
         self.__trainer = '' # 調教師名o
         self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
         self.__owner = '' # 馬主名o
-
-        # 以下は馬柱から
-        # TODO 不変データ(血統関係)は別クラスで切り出し、未出走時のみ入れるか検討
-        # TODO ↑最古データが未出走でない場合は取得できないから一回ずつチェック入れる？
         self.__blank = '' # レース間隔o
         self.__father = '' # 父名o
         self.__mother = '' # 母名o
@@ -788,6 +782,5 @@ if __name__ == '__main__':
 
     #for i in range(202202010201, 202202010213):
     #   RACE_ID = str(i)
-    #main()
+    main()
     #print(get_result())
-    get_re()

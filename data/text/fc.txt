@@ -1,0 +1,244 @@
+[<dl class="fc">
+<dt class="Horse01 fc">マジェスティックウォリアー</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103411/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>サンエイグレース</a>
+</dt>
+<dt class="Horse03">エルビーローズ</dt>
+<dt class="Horse04">(クロフネ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05671/">愛知・倉地学</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・倉地学</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">399kg<span>(+1)</span></div>
+<div class="Popular">
+
+400.3
+<span>(12人気)</span>
+</div>
+</dt>
+</dl>, 
+
+
+
+
+
+
+
+
+<dl class="fc">
+<dt class="Horse01 fc">ドゥラメンテ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103073/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>マリブレディ</a>
+</dt>
+<dt class="Horse03">ドナルチア</dt>
+<dt class="Horse04">(Malibu Moon)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05281/">愛知・塚田隆男</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・塚田隆男</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">395kg<span>(+6)</span></div>
+<div class="Popular">
+
+23.1
+<span>(7人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">リオンディーズ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019106522/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>オリビアバローズ</a>
+</dt>
+<dt class="Horse03">マザイ</dt>
+<dt class="Horse04">(ファスリエフ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05200/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">490kg<span>(0)</span></div>
+<div class="Popular">
+<span class="Odds_Ninki">1.7</span>
+<span>(1人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">ジャスタウェイ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019105471/" target="_blank"> サンパティーク</a>
+</dt>
+<dt class="Horse03">モアザンセイクリッド</dt>
+<dt class="Horse04">(More Than Ready)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05281/">愛知・塚田隆男</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・塚田隆男</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中5週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">473kg<span>(+5)</span></div>
+<div class="Popular">
+<span class="Odds_Ninki">4.8</span>
+<span>(2人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">アドマイヤムーン</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019106901/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ルミナスブルー</a>
+</dt>
+<dt class="Horse03">ホワイトピクシイ</dt>
+<dt class="Horse04">(ホワイトマズル)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05200/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">427kg<span>(+2)</span></div>
+<div class="Popular">
+<span class="Odds_Ninki">5.0</span>
+<span>(3人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">ストロングリターン</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019101632/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ホットジュエル</a>
+</dt>
+<dt class="Horse03">ジュエルアラモード</dt>
+<dt class="Horse04">(ダイワメジャー)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05230/">愛知・迫田清美</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・迫田清美</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">477kg<span>(-1)</span></div>
+<div class="Popular">
+
+22.3
+<span>(6人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">エイシンフラッシュ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103520/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>エムズフラッシュ</a>
+</dt>
+<dt class="Horse03">メメクザリアーナ</dt>
+<dt class="Horse04">(ジャングルポケット)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05200/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中3週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">435kg<span>(-9)</span></div>
+<div class="Popular">
+
+47.3
+<span>(9人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">ドリームジャーニー</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019103560/" target="_blank"> ユイノペニーワイズ</a>
+</dt>
+<dt class="Horse03">ストームエンジェル</dt>
+<dt class="Horse04">(ストーミングホーム)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/00823/">愛知・錦見勇夫</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・錦見勇夫</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中6週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">433kg<span>(-4)</span></div>
+<div class="Popular">
+
+11.5
+<span>(4人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">アドマイヤムーン</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019101455/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ゼアル</a>
+</dt>
+<dt class="Horse03">グリーンアイズII</dt>
+<dt class="Horse04">(Green Desert)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05177/">愛知・藤ヶ崎一</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・藤ヶ崎一</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">418kg<span>(-1)</span></div>
+<div class="Popular">
+
+40.8
+<span>(8人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">アジアエクスプレス</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019101480/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>カラニ</a>
+</dt>
+<dt class="Horse03">パイナマナ</dt>
+<dt class="Horse04">(カネヒキリ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05346/">愛知・荒巻透</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・荒巻透</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type03.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">505kg<span>(+2)</span></div>
+<div class="Popular">
+
+127.2
+<span>(10人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">ビッグアーサー</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019100365/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ブタノカックーニ</a>
+</dt>
+<dt class="Horse03">エルモアレッタ</dt>
+<dt class="Horse04">(ヨハネスブルグ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05368/">愛知・櫻井今朝</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・櫻井今朝</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type04.png?2019121001"/>中1週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">479kg<span>(-2)</span></div>
+<div class="Popular">
+
+171.8
+<span>(11人気)</span>
+</div>
+</dt>
+</dl>, <dl class="fc">
+<dt class="Horse01 fc">ヴァンセンヌ</dt>
+<dt class="Horse02">
+<a href="https://db.netkeiba.com/horse/2019105671/" target="_blank"><span class="Icon_HorseMark Icon_kakuChi"></span>ニグレッド</a>
+</dt>
+<dt class="Horse03">ブラックバカラ</dt>
+<dt class="Horse04">(ロージズインメイ)</dt>
+<!--
+<dt class="Horse05"><a href="https://db.netkeiba.com/trainer/05668/">愛知・坂口義幸</a>&nbsp;&nbsp;</dt>
+-->
+<dt class="Horse05">愛知・坂口義幸</dt>
+<dt class="Horse06 fc"><img alt="" src="https://cdn.netkeiba.com/img.nar/common/img/race/horse_race_type02.png?2019121001"/>中3週</dt>
+<dt class="Horse07 fc">
+<div class="Weight">415kg<span>(+7)</span></div>
+<div class="Popular">
+</div>
+</dt>
+</dl>]
