@@ -79,19 +79,19 @@ def get_umabashira():
     # 実運用のhorse_dictはインスタンス変数(self)から引っ張る
     # TODO 追加でとるframe_no o
     '''
-    ●horse_no o
-    horse_name o
-    gender o
-    age o
-    load o
-    jockey o
-    win_odds o
-    popular o
-    weight o
-    weight_change o
-    trainer_belong o
-    trainer o
-    owner x
+    ●horse_no
+    horse_name
+    gender
+    age
+    load
+    jockey
+    win_odds
+    popular
+    weight
+    weight_change
+    trainer_belong
+    trainer
+    owner
     '''
 
     # 馬柱からデータを取得
@@ -105,8 +105,6 @@ def get_umabashira():
 
     # レース情報格納用データクラス
     race_info = RaceInfo()
-    # 各馬情報用意{馬番:[HorseInfo, HorseResult]}
-    horse_dict = {}
 
     # コース情報や状態を抽出
     race_data_01 = soup.find('div', class_ = 'RaceData01')
@@ -114,7 +112,7 @@ def get_umabashira():
 
     race_info.race_time = race_data_list[0].replace('発走', '')
 
-    # TODO in_out除去
+    # TODO 地方はin_out除去
 
     # TODO レースIDからばんえい判定
     if re.compile('\d{4}65\d{6}').search(RACE_ID):
@@ -201,13 +199,16 @@ def get_umabashira():
     race_info.fourth_prize = prize.groups()[3]
     race_info.fifth_prize = prize.groups()[4]
 
+    # 各馬情報用意{馬番:HorseInfo, 馬番:HorseInfo,...}
+    horse_dict = {}
+
     fc = soup.select('dl[class="fc"]')
 
     for i, info in enumerate(fc):
         horse_info = HorseInfo()
 
         horse_info.father = info.find('dt', class_ = 'Horse01').text
-        horse_type = info.find('div', class_ = 'Horse02')
+        horse_type = info.find('dt', class_ = 'Horse02')
         # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
         # TODO パラメータをbelongに統一するかも要検討
         if 'Icon_MaruChi' in str(horse_type):
@@ -222,11 +223,13 @@ def get_umabashira():
         if '<span class="Mark">B</span>' in str(horse_type):
             horse_info.blinker = '1'
 
+        #TODO 馬IDカラム追加
+
         horse_info.horse_name = horse_type.text
 
-        horse_info.mother = info.find('div', class_ = 'Horse03').text
-        horse_info.grandfather = info.find('div', class_ = 'Horse04').text.replace('(', '').replace(')', '')
-
+        horse_info.mother = info.find('dt', class_ = 'Horse03').text
+        horse_info.grandfather = info.find('dt', class_ = 'Horse04').text.replace('(', '').replace(')', '')
+        ####################
         blank = info.find('div', class_ = 'Horse06').text
         if blank == '連闘':
             horse_info.blank = '0'
