@@ -79,18 +79,10 @@ def get_umabashira():
     # 実運用のhorse_dictはインスタンス変数(self)から引っ張る
     # TODO 追加でとるframe_no o
     '''
-    ●horse_no
-    horse_name
     gender
     age
     load
     jockey
-    win_odds
-    popular
-    weight
-    weight_change
-    trainer_belong
-    trainer
     owner
     '''
 
@@ -223,14 +215,24 @@ def get_umabashira():
         if '<span class="Mark">B</span>' in str(horse_type):
             horse_info.blinker = '1'
 
-        #TODO 馬IDカラム追加
+        m = re.search('db.netkeiba.com/horse/(\d+)/"', str(horse_type))
+        if m != None:
+            horse_info.horse_id = m.groups()[0]
 
         horse_info.horse_name = horse_type.text
 
         horse_info.mother = info.find('dt', class_ = 'Horse03').text
         horse_info.grandfather = info.find('dt', class_ = 'Horse04').text.replace('(', '').replace(')', '')
-        ####################
-        blank = info.find('div', class_ = 'Horse06').text
+
+        trainer = info.find('dt', class_ = 'Horse05').text.split('・')
+        horse_info.trainer_belong = trainer[0]
+        horse_info.trainer = trainer[1]
+
+        trainer_id = re.search('db.netkeiba.com/trainer/(\d+)/', str(info))
+        if trainer_id != None:
+            horse_info.trainer_id = trainer_id.groups()[0]
+
+        blank = info.find('dt', class_ = 'Horse06').text
         if blank == '連闘':
             horse_info.blank = '0'
         else:
@@ -239,9 +241,9 @@ def get_umabashira():
             if blank_week == None:
                 horse_info.blank = '-1'
             else:
-                horse_info.blank = prize.groups()[0]
+                horse_info.blank = blank_week.groups()[0]
 
-        running_type = str(info.find('div', class_ = 'Horse06'))
+        running_type = str(info.find('dt', class_ = 'Horse06'))
         if 'horse_race_type00' in running_type:
             horse_info.running_type = '未'
         elif 'horse_race_type01' in running_type:
@@ -254,6 +256,36 @@ def get_umabashira():
             horse_info.running_type = '追'
         elif 'horse_race_type05' in running_type:
             horse_info.running_type = '自在'
+
+        weight = re.search('(\d+)kg\((.+)\)', info.find('dt', class_ = 'Horse07').text)
+        if weight != None:
+            horse_info.weight = weight.groups()[0]
+            horse_info.weight_change = str(int(weight.groups()[1]))
+
+        odds = re.search('(\d+\.\d)\((.+)人気\)', rm(info.find('dt', class_ = 'Horse07').text))
+        if odds != None:
+            horse_info.popular = odds.groups()[0]
+            horse_info.win_odds = odds.groups()[1]
+
+        horse_dict[str(i + 1)] = horse_info
+
+
+
+    jockeys = soup.find_all('td', class_ = 'Jockey')
+
+    for i, info in enumerate(jockeys):
+        horse_info = horse_dict[str(i + 1)]
+
+        m = re.search('([牡|牝|セ])(\d+)(.+)', info.find('span', class_ = 'Barei').text)
+        if m != None:
+            horse_info.gender = m.groups()[0]
+            horse_info.age = m.groups()[1]
+            horse_info.hair_color = m.groups()[2]
+
+        horse_dict[str(i + 1)] = horse_info
+
+    exit()
+    #####################################
 
     hair_colors = soup.find_all('span', class_ = 'Barei')
     for i, hair_color in enumerate(hair_colors):
@@ -604,8 +636,9 @@ class RaceResult():
 class HorseInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
+        self.__horse_id = '' # 馬ID(netkeiba準拠、複合PK)
         self.__frame_no = '' # 枠番o
-        self.__horse_no = '' # 馬番(複合PK)o
+        self.__horse_no = '' # 馬番o
         self.__horse_name = '' # 馬名o
         self.__age = '' # 馬齢o
         self.__gender = '' # 性別o
@@ -616,6 +649,7 @@ class HorseInfo():
         self.__popular = '' # 人気o
         self.__weight = '' # 馬体重o
         self.__weight_change = '' # 馬体重増減o
+        self.__trainer_id = '' # 調教師IDo
         self.__trainer = '' # 調教師名o
         self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
         self.__owner = '' # 馬主名o
@@ -630,6 +664,8 @@ class HorseInfo():
         self.__hair_color = '' # 毛色
 
     # getter
+    @property
+    def horse_id(self): return self.__horse_id
     @property
     def frame_no(self): return self.__frame_no
     @property
@@ -654,6 +690,8 @@ class HorseInfo():
     def weight(self): return self.__weight
     @property
     def weight_change(self): return self.__weight_change
+    @property
+    def trainer_id(self): return self.__trainer_id
     @property
     def trainer(self): return self.__trainer
     @property
@@ -680,6 +718,8 @@ class HorseInfo():
     def hair_color(self): return self.__hair_color
 
     # setter
+    @horse_id.setter
+    def horse_id(self, horse_id): self.__horse_id = horse_id
     @frame_no.setter
     def frame_no(self, frame_no): self.__frame_no = frame_no
     @horse_no.setter
@@ -704,6 +744,8 @@ class HorseInfo():
     def weight(self, weight): self.__weight = weight
     @weight_change.setter
     def weight_change(self, weight_change): self.__weight_change = weight_change
+    @trainer_id.setter
+    def trainer_id(self, trainer_id): self.__trainer_id = trainer_id
     @trainer.setter
     def trainer(self, trainer): self.__trainer = trainer
     @trainer_belong.setter
@@ -732,7 +774,8 @@ class HorseInfo():
 class HorseResult():
     '''各馬のレース結果のデータクラス'''
     def __init__(self):
-        self.__horse_no = '' # 馬番(複合PK)o
+        self.__horse_id = '' # 馬ID(netkeiba準拠、複合PK)
+        self.__horse_no = '' # 馬番o
         self.__rank = '' # 着順o
         self.__goal_time = '' # タイムo
         self.__diff = '' # 着差o
@@ -741,6 +784,8 @@ class HorseResult():
         self.__prize = '0' # 賞金o
 
     # getter
+    @property
+    def horse_id(self): return self.__horse_id
     @property
     def horse_no(self): return self.__horse_no
     @property
@@ -757,6 +802,8 @@ class HorseResult():
     def prize(self): return self.__prize
 
     # setter
+    @horse_id.setter
+    def horse_id(self, horse_id): self.__horse_id = horse_id
     @horse_no.setter
     def horse_no(self, horse_no): self.__horse_no = horse_no
     @rank.setter
