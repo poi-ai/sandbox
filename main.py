@@ -125,7 +125,7 @@ def get_umabashira():
 
         race_info.around = course.groups()[2]
 
-    # TODO ばんえいチェック
+    # TODO ばんえいの場合どうかチェック
     race_info.weather = race_data_list[2].replace('天候:', '')
 
     # 出走条件等の抽出
@@ -195,7 +195,6 @@ def get_umabashira():
     horse_dict = {}
 
     fc = soup.select('dl[class="fc"]')
-
     for i, info in enumerate(fc):
         horse_info = HorseInfo()
 
@@ -258,21 +257,24 @@ def get_umabashira():
             horse_info.running_type = '自在'
 
         weight = re.search('(\d+)kg\((.+)\)', info.find('dt', class_ = 'Horse07').text)
+        # TODO 計不対応
         if weight != None:
             horse_info.weight = weight.groups()[0]
             horse_info.weight_change = str(int(weight.groups()[1]))
 
         odds = re.search('(\d+\.\d)\((.+)人気\)', rm(info.find('dt', class_ = 'Horse07').text))
+        # TODO 取消馬対応
         if odds != None:
             horse_info.popular = odds.groups()[0]
             horse_info.win_odds = odds.groups()[1]
 
+        horse_info.horse_no = str(i + 1)
+
+        # TODO 枠番計算ロジック
+        
         horse_dict[str(i + 1)] = horse_info
 
-
-
     jockeys = soup.find_all('td', class_ = 'Jockey')
-
     for i, info in enumerate(jockeys):
         horse_info = horse_dict[str(i + 1)]
 
@@ -282,7 +284,19 @@ def get_umabashira():
             horse_info.age = m.groups()[1]
             horse_info.hair_color = m.groups()[2]
 
+        jockey = re.search('db.netkeiba.com/jockey/(\d+)/">(.+)</a>', str(info))
+        if jockey != None:
+            horse_info.jockey_id = jockey.groups()[0]
+            horse_info.jockey = jockey.groups()[1]
+
+        load = re.search('<span>(\d+\d.\d+)</span>', str(info))
+        if load != None:
+            horse_info.load = load.groups()[0]
+            
+
         horse_dict[str(i + 1)] = horse_info
+
+    exit()
 
     exit()
     #####################################
@@ -476,26 +490,26 @@ class RaceInfo():
     '''発走前のレースに関するデータのデータクラス'''
     def __init__(self):
         self.__race_name = '' # レース名o
-        self.__race_type = '平' # レース形態(平地/障害/ばんえい)o
+        self.__race_type = '平' # レース形態(平地/障害/ばんえい)
         self.__baba = '' # 馬場(芝/ダート)o
-        self.__weather = '' # 天候
+        self.__weather = '' # 天候△
         self.__glass_condition = '' # 馬場状態(芝)o
         self.__dirt_condition = '' # 馬場状態(ダート)o
         self.__distance = '' # 距離o
         self.__around = '' # 回り(右/左)o
-        self.__in_out = ZERO_FIX # 使用コース(内回り/外回り)o
+        self.__in_out = ZERO_FIX # 使用コース(内回り/外回り)[地方はないため0固定]
         self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回o
         self.__hold_date = '' # 開催日o
         self.__race_class = '' # クラスo
-        self.__grade = '' # グレード TODO
+        self.__grade = '' # グレードo TODO
         self.__require_age = '' # 出走条件(年齢)o
-        self.__require_gender = '' # 出走条件(牝馬限定戦)
-        self.__require_kyushu = ZERO_FIX # 出走条件(九州産馬限定戦)
-        self.__require_beginner_jockey = ZERO_FIX # 出走条件(見習騎手限定戦)
-        self.__require_country = '' # 出走条件(国際/混合)
-        self.__require_local = '' # 出走条件(特別指定/指定)
-        self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ)o
+        self.__require_gender = '' # 出走条件(牝馬限定戦) TODO
+        self.__require_kyushu = ZERO_FIX # 出走条件(九州産馬限定戦) TODO
+        self.__require_beginner_jockey = ZERO_FIX # 出走条件(見習騎手限定戦) TODO
+        self.__require_country = '' # 出走条件(国際/混合) TODO
+        self.__require_local = '' # 出走条件(特別指定/指定) TODO
+        self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ) TODO
         self.__first_prize = '' # 1着賞金o
         self.__second_prize = '' # 2着賞金o
         self.__third_prize = '' # 3着賞金o
@@ -636,13 +650,14 @@ class RaceResult():
 class HorseInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
-        self.__horse_id = '' # 馬ID(netkeiba準拠、複合PK)
-        self.__frame_no = '' # 枠番o
+        self.__horse_id = '' # 馬ID(netkeiba準拠、複合PK)o
+        self.__frame_no = '' # 枠番 TODO
         self.__horse_no = '' # 馬番o
         self.__horse_name = '' # 馬名o
         self.__age = '' # 馬齢o
         self.__gender = '' # 性別o
         self.__load = '' # 斤量o
+        self.__jockey_id = '' # 騎手IDo
         self.__jockey = '' # 騎手名o
         self.__jockey_handi = '' # 騎手減量 TODO
         self.__win_odds = '' # 単勝オッズo
@@ -652,7 +667,7 @@ class HorseInfo():
         self.__trainer_id = '' # 調教師IDo
         self.__trainer = '' # 調教師名o
         self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
-        self.__owner = '' # 馬主名o
+        self.__owner = '' # 馬主名 TODO
         self.__blank = '' # レース間隔o
         self.__father = '' # 父名o
         self.__mother = '' # 母名o
@@ -661,7 +676,7 @@ class HorseInfo():
         self.__country = '' # 所属(外国馬か)o
         self.__belong = '' # 所属(地方馬か)o
         self.__blinker = '0' # ブリンカー(有/無)o
-        self.__hair_color = '' # 毛色
+        self.__hair_color = '' # 毛色o
 
     # getter
     @property
@@ -678,6 +693,8 @@ class HorseInfo():
     def gender(self): return self.__gender
     @property
     def load(self): return self.__load
+    @property
+    def jockey_id(self): return self.__jockey_id
     @property
     def jockey(self): return self.__jockey
     @property
@@ -732,6 +749,8 @@ class HorseInfo():
     def gender(self, gender): self.__gender = gender
     @load.setter
     def load(self, load): self.__load = load
+    @jockey_id.setter
+    def jockey_id(self, jockey_id): self.__jockey_id = jockey_id
     @jockey.setter
     def jockey(self, jockey): self.__jockey = jockey
     @jockey_handi.setter
