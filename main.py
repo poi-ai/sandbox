@@ -77,14 +77,6 @@ def get_race_id():
 
 def get_umabashira():
     # 実運用のhorse_dictはインスタンス変数(self)から引っ張る
-    # TODO 追加でとるframe_no o
-    '''
-    gender
-    age
-    load
-    jockey
-    owner
-    '''
 
     # 馬柱からデータを取得
     if LOCAL:
@@ -192,7 +184,7 @@ def get_umabashira():
     race_info.fifth_prize = prize.groups()[4]
 
     # 各馬情報用意{馬番:HorseInfo, 馬番:HorseInfo,...}
-    horse_dict = {}
+    horse_info_dict = {}
 
     fc = soup.select('dl[class="fc"]')
     for i, info in enumerate(fc):
@@ -270,13 +262,13 @@ def get_umabashira():
 
         horse_info.horse_no = str(i + 1)
 
-        # TODO 枠番計算ロジック
-        
-        horse_dict[str(i + 1)] = horse_info
+        horse_info.frame_no = frame_no_culc(race_info.horse_num, int(i + 1))
+
+        horse_info_dict[str(i + 1)] = horse_info
 
     jockeys = soup.find_all('td', class_ = 'Jockey')
     for i, info in enumerate(jockeys):
-        horse_info = horse_dict[str(i + 1)]
+        horse_info = horse_info_dict[str(i + 1)]
 
         m = re.search('([牡|牝|セ])(\d+)(.+)', info.find('span', class_ = 'Barei').text)
         if m != None:
@@ -292,26 +284,10 @@ def get_umabashira():
         load = re.search('<span>(\d+\d.\d+)</span>', str(info))
         if load != None:
             horse_info.load = load.groups()[0]
-            
 
-        horse_dict[str(i + 1)] = horse_info
+        horse_info_dict[str(i + 1)] = horse_info
 
-    exit()
-
-    exit()
-    #####################################
-
-    hair_colors = soup.find_all('span', class_ = 'Barei')
-    for i, hair_color in enumerate(hair_colors):
-        m = re.search('.\d(.+)', hair_color.text)
-        # 別の箇所でも使われているクラスなので判定が必要
-        if m == None:
-            break
-        else:
-            horse_dict[i + 1][0].hair_color = m.groups()[0]
-
-    # 実運用ではクラス化するため、返り値なしでインスタンス変数へ代入
-    return horse_dict, race_info
+    return horse_info_dict, race_info
 
 def get_re():
     # レース結果(HTML全体)
@@ -440,6 +416,28 @@ def get_result():
         #     horse_dict[no][1].prize = row['賞金(万円)']
 
     return horse_dict
+
+def frame_no_culc(horse_num, horse_no):
+    horse_no = int(horse_no)
+    horse_num = int(horse_num)
+
+    if horse_no == 1:
+        return str(1)
+
+    if horse_num <= 8 or horse_no < horse_num * -1 + 18:
+        return str(horse_no)
+    elif horse_num <= 16:
+        if horse_no <= 8:
+            return str(min(8, horse_no) - int((horse_no - (horse_num * -1 + 16)) / 2))
+        else:
+            return str(int(8 - (horse_num - horse_no - 1) / 2))
+    else:
+        if horse_no >= 17:
+            return str(8)
+        elif horse_num == 18 and horse_no == 15:
+            return str(7)
+        else:
+            return frame_no_culc(16, horse_no)
 
 def Soup(URL):
     # URL = 'https://db.netkeiba.com/race/202204020206/'
