@@ -45,24 +45,25 @@ def main():
             RACE_ID = str(id).replace('\n', '')
 
             # 馬柱からデータ取得
-            horse_dict, race_info = get_umabashira()
+            horse_info_dict, race_info = get_umabashira()
 
             # レース結果(DB)からデータ取得
-            horse_dict = get_result(horse_dict, race_info)
+            horse_result_dict = get_result(horse_info_dict, race_info)
     else:
         # 馬柱からデータ取得
-        horse_dict, race_info = get_umabashira()
+        horse_info_dict, race_info = get_umabashira()
 
         # レース結果(DB)からデータ取得
-        horse_dict = get_result(horse_dict, race_info)
+        horse_result_dict = get_result(horse_info_dict, race_info)
 
     # インスタンス変数確認用
-    for dict in horse_dict:
-        horse_info = vars(horse_dict[dict][0])
+    for index in horse_info_dict:
+        horse_info = vars(horse_info_dict[index])
         df = pd.DataFrame.from_dict(horse_info, orient='index').T
         output.csv(df, 'horse_info')
 
-        horse_result = vars(horse_dict[dict][1])
+    for index in horse_result_dict:
+        horse_result = vars(horse_result_dict[index])
         df = pd.DataFrame.from_dict(horse_result, orient='index').T
         output.csv(df, 'horse_result')
 
@@ -210,7 +211,7 @@ def get_umabashira():
         if m != None:
             horse_info.horse_id = m.groups()[0]
 
-        horse_info.horse_name = horse_type.text
+        horse_info.horse_name = horse_type.text.replace('\n', '')
 
         horse_info.mother = info.find('dt', class_ = 'Horse03').text
         horse_info.grandfather = info.find('dt', class_ = 'Horse04').text.replace('(', '').replace(')', '')
@@ -367,7 +368,7 @@ def get_re():
 
     return horse_dict
 
-def get_result():
+def get_result(horse_info_dict, race_info):
     # TODO owner, pass_rank, prizeが取れない
     # レース結果(HTML全体)
     if LOCAL:
@@ -382,40 +383,73 @@ def get_result():
     tables = Table(soup)
     table = tables[0]
 
-    # 箱用意{馬番:[HorseInfo, HorseResult]}
-    horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
+    # 箱用意{馬番:HorseResult, 馬番:HorseResult, ...}
+    horse_result_dict = {}
 
     # 1着馬の馬番
     winner_horse_no = 0
 
-    # 行ごとに切り出し
+    # 列ごとに切り出し
     # TODO 除外・取消馬の処理
     for i, index in enumerate(table.index):
+        horse_result = HorseResult()
+
+        # 結果テーブルの列取得
         row = table.loc[index]
 
-        # キーになる馬番を先に取得
-        no = row['馬番']
-
         # レース結果の各項目を設定
-        horse_dict[no][1].horse_no = row['馬番']
-        horse_dict[no][1].rank = row['着順']
-        horse_dict[no][1].goal_time = row['タイム']
+        horse_result.horse_no = row['馬番']
+        horse_result.rank = row['着順']
+        horse_result.goal_time = row['タイム']
+
         # 着差、1着馬は2着との差をマイナスに
         # TODO 同着時対応
         if i == 0:
-            winner_horse_no = no
+            winner_horse_no = str(row['馬番'])
         elif i == 1:
-            horse_dict[winner_horse_no][1].diff = '-' + str(row['着差'])
-            horse_dict[no][1].diff = row['着差']
+            horse_result_dict[winner_horse_no].diff = '-' + str(row['着差'])
+            horse_result.diff = row['着差']
         else:
-            horse_dict[no][1].diff = row['着差']
-        # 通過はtables[3]の枠から取得。ただし、read_htmlは使わない(使えない)
-        # horse_dict[no][1].pass_rank = row['通過']
-        horse_dict[no][1].agari = row['後3F']
-        # if not np.isnan(row['賞金(万円)']):
-        #     horse_dict[no][1].prize = row['賞金(万円)']
+            horse_result.diff = row['着差']
 
-    return horse_dict
+        # TODO 同着時計算
+        if str(row['着順']) == '1':
+            horse_result.prize = str(race_info.first_prize)
+        elif str(row['着順']) == '2':
+            horse_result.prize = str(race_info.second_prize)
+        elif str(row['着順']) == '3':
+            horse_result.prize = str(race_info.third_prize)
+        elif str(row['着順']) == '4':
+            horse_result.prize = str(race_info.fourth_prize)
+        elif str(row['着順']) == '5':
+            horse_result.prize = str(race_info.fifth_prize)
+
+        horse_result.agari = row['後3F']
+
+        horse_result.horse_id = horse_info_dict[str(row['馬番'])].horse_id
+
+        horse_result_dict[str(row['馬番'])] = horse_result
+
+    # レース全体の流れ、結果
+    race_result = RaceResult()
+
+    # コーナー通過順、read_htmlでは','が除去されるため抽出不可
+    rank_table = soup.find('table', class_ = 'RaceCommon_Table Corner_Num').text.split('\n')
+    for index in range(len(rank_table)):
+        if rank_table[index] == '1コーナー':
+            race_result.corner1_rank = rank_table[index + 1].replace(',', '、')
+        elif rank_table[index] == '2コーナー':
+            race_result.corner2_rank = rank_table[index + 1].replace(',', '、')
+        elif rank_table[index] == '3コーナー':
+            race_result.corner3_rank = rank_table[index + 1].replace(',', '、')
+        elif rank_table[index] == '4コーナー':
+            race_result.corner4_rank = rank_table[index + 1].replace(',', '、')
+    
+    lap_table = soup.find('table', class_ = 'RaceCommon_Table Race_HaronTime')
+    print(lap_table)
+    exit()
+
+    return horse_result_dict, race_result
 
 def frame_no_culc(horse_num, horse_no):
     horse_no = int(horse_no)
@@ -630,18 +664,33 @@ class RaceInfo():
 class RaceResult():
     '''レース全体のレース結果を保持するデータクラス'''
     def __init__(self):
-        self.__corner_rank = [] # コーナー通過順(馬番) TODO
+        self.__corner1_rank = '' # 第1コーナー通過順(馬番)
+        self.__corner2_rank = '' # 第2コーナー通過順(馬番)
+        self.__corner3_rank = '' # 第3コーナー通過順(馬番)
+        self.__corner4_rank = '' # 第4コーナー通過順(馬番)
         self.__pace = [] # 先頭馬のペース(秒) TODO
 
     # getter
     @property
-    def corner_rank(self): return self.__corner_rank
+    def corner1_rank(self): return self.__corner1_rank
+    @property
+    def corner2_rank(self): return self.__corner2_rank
+    @property
+    def corner3_rank(self): return self.__corner3_rank
+    @property
+    def corner4_rank(self): return self.__corner4_rank
     @property
     def pace(self): return self.__pace
 
     # setter
-    @corner_rank.setter
-    def corner_rank(self, corner_rank): self.__corner_rank = corner_rank
+    @corner1_rank.setter
+    def corner1_rank(self, corner1_rank): self.__corner1_rank = corner1_rank
+    @corner2_rank.setter
+    def corner2_rank(self, corner2_rank): self.__corner2_rank = corner2_rank
+    @corner3_rank.setter
+    def corner3_rank(self, corner3_rank): self.__corner3_rank = corner3_rank
+    @corner4_rank.setter
+    def corner4_rank(self, corner4_rank): self.__corner4_rank = corner4_rank
     @pace.setter
     def pace(self, pace): self.__pace = pace
 
@@ -796,7 +845,6 @@ class HorseResult():
         self.__rank = '' # 着順o
         self.__goal_time = '' # タイムo
         self.__diff = '' # 着差o
-        self.__pass_rank = '' # 通過順o
         self.__agari = '' # 上り3Fo
         self.__prize = '0' # 賞金o
 
@@ -811,8 +859,6 @@ class HorseResult():
     def goal_time(self): return self.__goal_time
     @property
     def diff(self): return self.__diff
-    @property
-    def pass_rank(self): return self.__pass_rank
     @property
     def agari(self): return self.__agari
     @property
@@ -829,8 +875,6 @@ class HorseResult():
     def goal_time(self, goal_time): self.__goal_time = goal_time
     @diff.setter
     def diff(self, diff): self.__diff = diff
-    @pass_rank.setter
-    def pass_rank(self, pass_rank): self.__pass_rank = pass_rank
     @agari.setter
     def agari(self, agari): self.__agari = agari
     @prize.setter
