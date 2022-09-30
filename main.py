@@ -29,13 +29,6 @@ def url(type):
     '''
 def main():
     global RACE_ID
-    # 共通(PKになる)レースデータ
-    common_info = CommonInfo()
-
-    # TODO 開催日、実装時はインスタンス変数
-    common_info.race_date = KAISAI_DATE
-    common_info.race_no = RACE_ID[-2:]
-    common_info.baba_code = RACE_ID[4:6]
 
     if not LOCAL and GET_FILE:
         id_list = get_race_id()
@@ -48,13 +41,18 @@ def main():
             horse_info_dict, race_info = get_umabashira()
 
             # レース結果(DB)からデータ取得
-            horse_result_dict = get_result(horse_info_dict, race_info)
+            horse_result_dict, race_result = get_result(horse_info_dict, race_info)
     else:
         # 馬柱からデータ取得
         horse_info_dict, race_info = get_umabashira()
 
         # レース結果(DB)からデータ取得
-        horse_result_dict = get_result(horse_info_dict, race_info)
+        horse_result_dict, race_result = get_result(horse_info_dict, race_info)
+
+    # TODO 開催日、実装時はインスタンス変数
+    race_date = KAISAI_DATE
+    race_no = RACE_ID[-2:]
+    baba_code = RACE_ID[4:6]
 
     # インスタンス変数確認用
     for index in horse_info_dict:
@@ -445,9 +443,8 @@ def get_result(horse_info_dict, race_info):
         elif rank_table[index] == '4コーナー':
             race_result.corner4_rank = rank_table[index + 1].replace(',', '、')
     
+    # TODO ラップ抽出
     lap_table = soup.find('table', class_ = 'RaceCommon_Table Race_HaronTime')
-    print(lap_table)
-    exit()
 
     return horse_result_dict, race_result
 
@@ -495,32 +492,13 @@ def half(str):
     '''全角を半角へ変換'''
     return str.translate(str.maketrans({chr(0xFF01 + i): chr(0x21 + i) for i in range(94)}))
 
-class CommonInfo():
-    '''レースを一意に定めるデータのデータクラス'''
-    def __init__(self):
-        self.__race_date = '' # レース開催日
-        self.__race_no = '' # レース番号
-        self.__baba_code = '' # 競馬場コード
-
-    # getter
-    @property
-    def race_date(self): return self.__race_date
-    @property
-    def race_no(self): return self.__race_no
-    @property
-    def baba_code(self): return self.__baba_code
-
-    # setter
-    @race_date.setter
-    def race_date(self, race_date): self.__race_date = race_date
-    @race_no.setter
-    def race_no(self, race_no): self.__race_no = race_no
-    @baba_code.setter
-    def baba_code(self, baba_code): self.__baba_code = baba_code
-
 class RaceInfo():
     '''発走前のレースに関するデータのデータクラス'''
     def __init__(self):
+        self.__race_id = '' # レースID(netkeiba準拠、PK)
+        self.__race_date = '' # レース開催日
+        self.__race_no = '' # レース番号
+        self.__baba_code = '' # 競馬場コード
         self.__race_name = '' # レース名o
         self.__race_type = '平' # レース形態(平地/障害/ばんえい)
         self.__baba = '' # 馬場(芝/ダート)o
@@ -550,6 +528,14 @@ class RaceInfo():
         self.__horse_num = '' # 出走頭数o
 
     # getter
+    @property
+    def race_id(self): return self.__race_id
+    @property
+    def race_date(self): return self.__race_date
+    @property
+    def race_no(self): return self.__race_no
+    @property
+    def baba_code(self): return self.__baba_code
     @property
     def race_name(self): return self.__race_name
     @property
@@ -606,6 +592,14 @@ class RaceInfo():
     def horse_num(self): return self.__horse_num
 
     # setter
+    @race_id.setter
+    def race_id(self, race_id): self.__race_id = race_id
+    @race_date.setter
+    def race_date(self, race_date): self.__race_date = race_date
+    @race_no.setter
+    def race_no(self, race_no): self.__race_no = race_no
+    @baba_code.setter
+    def baba_code(self, baba_code): self.__baba_code = baba_code
     @race_name.setter
     def race_name(self, race_name): self.__race_name = race_name
     @race_type.setter
@@ -664,6 +658,7 @@ class RaceInfo():
 class RaceResult():
     '''レース全体のレース結果を保持するデータクラス'''
     def __init__(self):
+        self.__race_id = '' # レースID(netkeiba準拠、PK)
         self.__corner1_rank = '' # 第1コーナー通過順(馬番)
         self.__corner2_rank = '' # 第2コーナー通過順(馬番)
         self.__corner3_rank = '' # 第3コーナー通過順(馬番)
@@ -671,6 +666,8 @@ class RaceResult():
         self.__pace = [] # 先頭馬のペース(秒) TODO
 
     # getter
+    @property
+    def race_id(self): return self.__race_id
     @property
     def corner1_rank(self): return self.__corner1_rank
     @property
@@ -683,6 +680,8 @@ class RaceResult():
     def pace(self): return self.__pace
 
     # setter
+    @race_id.setter
+    def race_id(self, race_id): self.__race_id = race_id
     @corner1_rank.setter
     def corner1_rank(self, corner1_rank): self.__corner1_rank = corner1_rank
     @corner2_rank.setter
@@ -697,7 +696,7 @@ class RaceResult():
 class HorseInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
-        self.__horse_id = '' # 馬ID(netkeiba準拠、複合PK)o
+        self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
         self.__frame_no = '' # 枠番 TODO
         self.__horse_no = '' # 馬番o
         self.__horse_name = '' # 馬名o
@@ -840,7 +839,7 @@ class HorseInfo():
 class HorseResult():
     '''各馬のレース結果のデータクラス'''
     def __init__(self):
-        self.__horse_id = '' # 馬ID(netkeiba準拠、複合PK)
+        self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)
         self.__horse_no = '' # 馬番o
         self.__rank = '' # 着順o
         self.__goal_time = '' # タイムo
