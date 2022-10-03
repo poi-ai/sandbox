@@ -442,7 +442,7 @@ def get_result(horse_info_dict, race_info):
             race_result.corner3_rank = rank_table[index + 1].replace(',', '、')
         elif rank_table[index] == '4コーナー':
             race_result.corner4_rank = rank_table[index + 1].replace(',', '、')
-    
+
     # TODO ラップ抽出
     lap_table = soup.find('table', class_ = 'RaceCommon_Table Race_HaronTime')
 
@@ -658,11 +658,11 @@ class RaceInfo():
 class RaceResult():
     '''レース全体のレース結果を保持するデータクラス'''
     def __init__(self):
-        self.__race_id = '' # レースID(netkeiba準拠、PK)
-        self.__corner1_rank = '' # 第1コーナー通過順(馬番)
-        self.__corner2_rank = '' # 第2コーナー通過順(馬番)
-        self.__corner3_rank = '' # 第3コーナー通過順(馬番)
-        self.__corner4_rank = '' # 第4コーナー通過順(馬番)
+        self.__race_id = '' # レースID(netkeiba準拠、PK)o
+        self.__corner1_rank = '' # 第1コーナー通過順(馬番)o
+        self.__corner2_rank = '' # 第2コーナー通過順(馬番)o
+        self.__corner3_rank = '' # 第3コーナー通過順(馬番)o
+        self.__corner4_rank = '' # 第4コーナー通過順(馬番)o
         self.__pace = [] # 先頭馬のペース(秒) TODO
 
     # getter
@@ -697,9 +697,8 @@ class HorseInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
         self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
-        self.__frame_no = '' # 枠番 TODO
+        self.__frame_no = '' # 枠番 o
         self.__horse_no = '' # 馬番o
-        self.__horse_name = '' # 馬名o
         self.__age = '' # 馬齢o
         self.__gender = '' # 性別o
         self.__load = '' # 斤量o
@@ -715,14 +714,10 @@ class HorseInfo():
         self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
         self.__owner = '' # 馬主名 TODO
         self.__blank = '' # レース間隔o
-        self.__father = '' # 父名o
-        self.__mother = '' # 母名o
-        self.__grandfather = '' # 母父名o
         self.__running_type = '' # 脚質(←netkeibaの主観データ？)o
         self.__country = '' # 所属(外国馬か)o
         self.__belong = '' # 所属(地方馬か)o
         self.__blinker = '0' # ブリンカー(有/無)o
-        self.__hair_color = '' # 毛色o
 
     # getter
     @property
@@ -731,8 +726,6 @@ class HorseInfo():
     def frame_no(self): return self.__frame_no
     @property
     def horse_no(self): return self.__horse_no
-    @property
-    def horse_name(self): return self.__horse_name
     @property
     def age(self): return self.__age
     @property
@@ -764,12 +757,6 @@ class HorseInfo():
     @property
     def blank(self): return self.__blank
     @property
-    def father(self): return self.__father
-    @property
-    def mother(self): return self.__mother
-    @property
-    def grandfather(self): return self.__grandfather
-    @property
     def running_type(self): return self.__running_type
     @property
     def country(self): return self.__country
@@ -777,8 +764,6 @@ class HorseInfo():
     def belong(self): return self.__belong
     @property
     def blinker(self): return self.__blinker
-    @property
-    def hair_color(self): return self.__hair_color
 
     # setter
     @horse_id.setter
@@ -787,8 +772,6 @@ class HorseInfo():
     def frame_no(self, frame_no): self.__frame_no = frame_no
     @horse_no.setter
     def horse_no(self, horse_no): self.__horse_no = horse_no
-    @horse_name.setter
-    def horse_name(self, horse_name): self.__horse_name = horse_name
     @age.setter
     def age(self, age): self.__age = age
     @gender.setter
@@ -819,12 +802,6 @@ class HorseInfo():
     def owner(self, owner): self.__owner = owner
     @blank.setter
     def blank(self, blank): self.__blank = blank
-    @father.setter
-    def father(self, father): self.__father = father
-    @mother.setter
-    def mother(self, mother): self.__mother = mother
-    @grandfather.setter
-    def grandfather(self, grandfather): self.__grandfather = grandfather
     @running_type.setter
     def running_type(self, running_type): self.__running_type = running_type
     @country.setter
@@ -833,6 +810,42 @@ class HorseInfo():
     def belong(self, belong): self.__belong = belong
     @blinker.setter
     def blinker(self, blinker): self.__blinker = blinker
+
+
+class HorseCharInfo():
+    def __init__(self):
+        self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
+        self.__horse_name = '' # 馬名o
+        self.__father = '' # 父名o
+        self.__mother = '' # 母名o
+        self.__grandfather = '' # 母父名o
+        self.__hair_color = '' # 毛色o
+
+    # getter
+    @property
+    def horse_id(self): return self.__horse_id
+    @property
+    def horse_name(self): return self.__horse_name
+    @property
+    def father(self): return self.__father
+    @property
+    def mother(self): return self.__mother
+    @property
+    def grandfather(self): return self.__grandfather
+    @property
+    def hair_color(self): return self.__hair_color
+
+    # setter
+    @horse_id.setter
+    def horse_id(self, horse_id): self.__horse_id = horse_id
+    @horse_name.setter
+    def horse_name(self, horse_name): self.__horse_name = horse_name
+    @father.setter
+    def father(self, father): self.__father = father
+    @mother.setter
+    def mother(self, mother): self.__mother = mother
+    @grandfather.setter
+    def grandfather(self, grandfather): self.__grandfather = grandfather
     @hair_color.setter
     def hair_color(self, hair_color): self.__hair_color = hair_color
 
