@@ -182,12 +182,12 @@ def get_umabashira():
     race_info.fourth_prize = prize.groups()[3]
     race_info.fifth_prize = prize.groups()[4]
 
-    # 各馬情報用意{馬番:HorseInfo, 馬番:HorseInfo,...}
+    # 各馬情報用意{馬番:HorseRaceInfo, 馬番:HorseRaceInfo,...}
     horse_info_dict = {}
 
     fc = soup.select('dl[class="fc"]')
     for i, info in enumerate(fc):
-        horse_info = HorseInfo()
+        horse_info = HorseRaceInfo()
 
         horse_info.father = info.find('dt', class_ = 'Horse01').text
         horse_type = info.find('dt', class_ = 'Horse02')
@@ -287,84 +287,6 @@ def get_umabashira():
         horse_info_dict[str(i + 1)] = horse_info
 
     return horse_info_dict, race_info
-
-def get_re():
-    # レース結果(HTML全体)
-    if LOCAL:
-        f = open('db_sjis.txt', 'r')
-        html = f.read()
-        f.close()
-        soup = BeautifulSoup(html, 'lxml')
-    else:
-        soup = Soup(url('DB_RESULT_URL'))
-
-    # レース結果(結果テーブル)
-    tables = Table(soup)
-    table = tables[0]
-
-    # 箱用意{馬番:[HorseInfo, HorseResult]}
-    horse_dict = {i: [HorseInfo(), HorseResult()] for i in table['馬番']}
-
-    # 1着馬の馬番
-    winner_horse_no = 0
-
-    # 行ごとに切り出し
-    # TODO 除外・取消馬の処理
-    for i, index in enumerate(table.index):
-        row = table.loc[index]
-
-        # キーになる馬番を先に取得
-        no = row['馬番']
-
-        # 馬の情報の各項目を設定
-        horse_dict[no][0].frame_no = row['枠番']
-        horse_dict[no][0].horse_no = row['馬番']
-        horse_dict[no][0].horse_name = row['馬名']
-        # 頭1文字が性別、2文字目以降が年齢
-        horse_dict[no][0].gender = row['性齢'][0]
-        horse_dict[no][0].age = row['性齢'][1:]
-        horse_dict[no][0].load = row['斤量']
-        horse_dict[no][0].jockey = row['騎手']
-        horse_dict[no][0].win_odds = row['単勝']
-        horse_dict[no][0].popular = row['人気']
-        # 括弧内が増減、外が馬体重
-        weight = re.search('(\d+)\((.+)\)', row['馬体重'])
-        # 馬体重不明チェック(新馬・前走計不時は増減は0と表記)
-        if weight == None:
-            horse_dict[no][0].weight = -1
-            horse_dict[no][0].weight_change = -999
-        else:
-            horse_dict[no][0].weight = weight.groups()[0]
-            horse_dict[no][0].weight_change = weight.groups()[1].replace('±', '').replace('+', '')
-        # TODO 調教師チェック,ほぼ全部[地]になるので馬柱から抽出した方がよさそう
-        trainer = re.search('\[(.+)\] (.+)', row['調教師'])
-        if trainer == None:
-            horse_dict[no][0].trainer_belong = '-'
-            horse_dict[no][0].trainer = '-'
-        else:
-            horse_dict[no][0].trainer_belong = trainer.groups()[0]
-            horse_dict[no][0].trainer = trainer.groups()[1]
-        horse_dict[no][0].horse_no = row['馬番']
-        horse_dict[no][0].owner = row['馬主']
-
-        # レース結果の各項目を設定
-        horse_dict[no][1].horse_no = row['馬番']
-        horse_dict[no][1].rank = row['着順']
-        horse_dict[no][1].goal_time = row['タイム']
-        # 着差、1着馬は2着との差をマイナスに
-        if i == 0:
-            winner_horse_no = no
-        elif i == 1:
-            horse_dict[winner_horse_no][1].diff = '-' + str(row['着差'])
-            horse_dict[no][1].diff = row['着差']
-        else:
-            horse_dict[no][1].diff = row['着差']
-        horse_dict[no][1].pass_rank = row['通過']
-        horse_dict[no][1].agari = row['上り']
-        if not np.isnan(row['賞金(万円)']):
-            horse_dict[no][1].prize = row['賞金(万円)']
-
-    return horse_dict
 
 def get_result(horse_info_dict, race_info):
     # TODO owner, pass_rank, prizeが取れない
@@ -693,7 +615,7 @@ class RaceResult():
     @pace.setter
     def pace(self, pace): self.__pace = pace
 
-class HorseInfo():
+class HorseRaceInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
         self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
