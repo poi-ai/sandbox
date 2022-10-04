@@ -38,16 +38,16 @@ def main():
             RACE_ID = str(id).replace('\n', '')
 
             # 馬柱からデータ取得
-            horse_info_dict, race_info = get_umabashira()
+            horse_race_info_dict, race_info = get_umabashira()
 
             # レース結果(DB)からデータ取得
-            horse_result_dict, race_result = get_result(horse_info_dict, race_info)
+            horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
     else:
         # 馬柱からデータ取得
-        horse_info_dict, race_info = get_umabashira()
+        horse_race_info_dict, race_info = get_umabashira()
 
         # レース結果(DB)からデータ取得
-        horse_result_dict, race_result = get_result(horse_info_dict, race_info)
+        horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
 
     # TODO 開催日、実装時はインスタンス変数
     race_date = KAISAI_DATE
@@ -55,10 +55,10 @@ def main():
     baba_code = RACE_ID[4:6]
 
     # インスタンス変数確認用
-    for index in horse_info_dict:
-        horse_info = vars(horse_info_dict[index])
-        df = pd.DataFrame.from_dict(horse_info, orient='index').T
-        output.csv(df, 'horse_info')
+    for index in horse_race_info_dict:
+        horse_race_info = vars(horse_race_info_dict[index])
+        df = pd.DataFrame.from_dict(horse_race_info, orient='index').T
+        output.csv(df, 'horse_race_info')
 
     for index in horse_result_dict:
         horse_result = vars(horse_result_dict[index])
@@ -182,113 +182,116 @@ def get_umabashira():
     race_info.fourth_prize = prize.groups()[3]
     race_info.fifth_prize = prize.groups()[4]
 
-    # 各馬情報用意{馬番:HorseRaceInfo, 馬番:HorseRaceInfo,...}
-    horse_info_dict = {}
+    # 各馬情報の箱用意{馬番:HorseRaceInfo, 馬番:HorseRaceInfo,...}
+    horse_race_info_dict = {}
+    horse_char_info_dict = {}
 
     fc = soup.select('dl[class="fc"]')
     for i, info in enumerate(fc):
-        horse_info = HorseRaceInfo()
+        horse_race_info = HorseRaceInfo()
+        horse_char_info = HorseCharInfo()
 
-        horse_info.father = info.find('dt', class_ = 'Horse01').text
+        horse_char_info.father = info.find('dt', class_ = 'Horse01').text
         horse_type = info.find('dt', class_ = 'Horse02')
         # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
         # TODO パラメータをbelongに統一するかも要検討
         if 'Icon_MaruChi' in str(horse_type):
-            horse_info.belong = 'マル地'
+            horse_race_info.belong = 'マル地'
         elif 'Icon_kakuChi' in str(horse_type):
-            horse_info.belong = 'カク地'
+            horse_race_info.belong = 'カク地'
         elif 'Icon_MaruGai' in str(horse_type):
-            horse_info.country = 'マル外'
+            horse_race_info.country = 'マル外'
         elif 'Icon_KakuGai' in str(horse_type):
-            horse_info.country = 'カク外'
+            horse_race_info.country = 'カク外'
 
         if '<span class="Mark">B</span>' in str(horse_type):
-            horse_info.blinker = '1'
+            horse_race_info.blinker = '1'
 
         m = re.search('db.netkeiba.com/horse/(\d+)/"', str(horse_type))
         if m != None:
-            horse_info.horse_id = m.groups()[0]
+            horse_race_info.horse_id = m.groups()[0]
 
-        horse_info.horse_name = horse_type.text.replace('\n', '')
+        horse_char_info.horse_name = horse_type.text.replace('\n', '')
 
-        horse_info.mother = info.find('dt', class_ = 'Horse03').text
-        horse_info.grandfather = info.find('dt', class_ = 'Horse04').text.replace('(', '').replace(')', '')
+        horse_char_info.mother = info.find('dt', class_ = 'Horse03').text
+        horse_char_info.grandfather = info.find('dt', class_ = 'Horse04').text.replace('(', '').replace(')', '')
 
         trainer = info.find('dt', class_ = 'Horse05').text.split('・')
-        horse_info.trainer_belong = trainer[0]
-        horse_info.trainer = trainer[1]
+        horse_race_info.trainer_belong = trainer[0]
+        horse_race_info.trainer = trainer[1]
 
         trainer_id = re.search('db.netkeiba.com/trainer/(\d+)/', str(info))
         if trainer_id != None:
-            horse_info.trainer_id = trainer_id.groups()[0]
+            horse_race_info.trainer_id = trainer_id.groups()[0]
 
         blank = info.find('dt', class_ = 'Horse06').text
         if blank == '連闘':
-            horse_info.blank = '0'
+            horse_race_info.blank = '0'
         else:
             blank_week = re.search('中(\d+)週', blank)
             # 初出走判定
             if blank_week == None:
-                horse_info.blank = '-1'
+                horse_race_info.blank = '-1'
             else:
-                horse_info.blank = blank_week.groups()[0]
+                horse_race_info.blank = blank_week.groups()[0]
 
         running_type = str(info.find('dt', class_ = 'Horse06'))
         if 'horse_race_type00' in running_type:
-            horse_info.running_type = '未'
+            horse_race_info.running_type = '未'
         elif 'horse_race_type01' in running_type:
-            horse_info.running_type = '逃'
+            horse_race_info.running_type = '逃'
         elif 'horse_race_type02' in running_type:
-            horse_info.running_type = '先'
+            horse_race_info.running_type = '先'
         elif 'horse_race_type03' in running_type:
-            horse_info.running_type = '差'
+            horse_race_info.running_type = '差'
         elif 'horse_race_type04' in running_type:
-            horse_info.running_type = '追'
+            horse_race_info.running_type = '追'
         elif 'horse_race_type05' in running_type:
-            horse_info.running_type = '自在'
+            horse_race_info.running_type = '自在'
 
         weight = re.search('(\d+)kg\((.+)\)', info.find('dt', class_ = 'Horse07').text)
         # TODO 計不対応
         if weight != None:
-            horse_info.weight = weight.groups()[0]
-            horse_info.weight_change = str(int(weight.groups()[1]))
+            horse_race_info.weight = weight.groups()[0]
+            horse_race_info.weight_change = str(int(weight.groups()[1]))
 
         odds = re.search('(\d+\.\d)\((.+)人気\)', rm(info.find('dt', class_ = 'Horse07').text))
         # TODO 取消馬対応
         if odds != None:
-            horse_info.popular = odds.groups()[0]
-            horse_info.win_odds = odds.groups()[1]
+            horse_race_info.popular = odds.groups()[0]
+            horse_race_info.win_odds = odds.groups()[1]
 
-        horse_info.horse_no = str(i + 1)
+        horse_race_info.horse_no = str(i + 1)
 
-        horse_info.frame_no = frame_no_culc(race_info.horse_num, int(i + 1))
+        horse_race_info.frame_no = frame_no_culc(race_info.horse_num, int(i + 1))
 
-        horse_info_dict[str(i + 1)] = horse_info
+        horse_race_info_dict[str(i + 1)] = horse_race_info
 
     jockeys = soup.find_all('td', class_ = 'Jockey')
     for i, info in enumerate(jockeys):
-        horse_info = horse_info_dict[str(i + 1)]
+        horse_race_info = horse_race_info_dict[str(i + 1)]
 
         m = re.search('([牡|牝|セ])(\d+)(.+)', info.find('span', class_ = 'Barei').text)
         if m != None:
-            horse_info.gender = m.groups()[0]
-            horse_info.age = m.groups()[1]
-            horse_info.hair_color = m.groups()[2]
+            horse_race_info.gender = m.groups()[0]
+            horse_race_info.age = m.groups()[1]
+            horse_char_info.hair_color = m.groups()[2]
 
         jockey = re.search('db.netkeiba.com/jockey/(\d+)/">(.+)</a>', str(info))
         if jockey != None:
-            horse_info.jockey_id = jockey.groups()[0]
-            horse_info.jockey = jockey.groups()[1]
+            horse_race_info.jockey_id = jockey.groups()[0]
+            horse_race_info.jockey = jockey.groups()[1]
 
         load = re.search('<span>(\d+\d.\d+)</span>', str(info))
         if load != None:
-            horse_info.load = load.groups()[0]
+            horse_race_info.load = load.groups()[0]
 
-        horse_info_dict[str(i + 1)] = horse_info
+        horse_race_info_dict[str(i + 1)] = horse_race_info
+        horse_char_info_dict[str(i + 1)] = horse_char_info
 
-    return horse_info_dict, race_info
+    return horse_race_info_dict, race_info
 
-def get_result(horse_info_dict, race_info):
+def get_result(horse_race_info_dict, race_info):
     # TODO owner, pass_rank, prizeが取れない
     # レース結果(HTML全体)
     if LOCAL:
@@ -346,29 +349,31 @@ def get_result(horse_info_dict, race_info):
 
         horse_result.agari = row['後3F']
 
-        horse_result.horse_id = horse_info_dict[str(row['馬番'])].horse_id
+        horse_result.horse_id = horse_race_info_dict[str(row['馬番'])].horse_id
 
         horse_result_dict[str(row['馬番'])] = horse_result
 
-    # レース全体の流れ、結果
-    race_result = RaceResult()
+    # レースの経過情報
+    race_progress_info = RaceProgressInfo()
+
+    race_progress_info.race_info = RACE_ID
 
     # コーナー通過順、read_htmlでは','が除去されるため抽出不可
     rank_table = soup.find('table', class_ = 'RaceCommon_Table Corner_Num').text.split('\n')
     for index in range(len(rank_table)):
         if rank_table[index] == '1コーナー':
-            race_result.corner1_rank = rank_table[index + 1].replace(',', '、')
+            race_progress_info.corner1_rank = rank_table[index + 1].replace(',', '、')
         elif rank_table[index] == '2コーナー':
-            race_result.corner2_rank = rank_table[index + 1].replace(',', '、')
+            race_progress_info.corner2_rank = rank_table[index + 1].replace(',', '、')
         elif rank_table[index] == '3コーナー':
-            race_result.corner3_rank = rank_table[index + 1].replace(',', '、')
+            race_progress_info.corner3_rank = rank_table[index + 1].replace(',', '、')
         elif rank_table[index] == '4コーナー':
-            race_result.corner4_rank = rank_table[index + 1].replace(',', '、')
+            race_progress_info.corner4_rank = rank_table[index + 1].replace(',', '、')
 
     # TODO ラップ抽出
     lap_table = soup.find('table', class_ = 'RaceCommon_Table Race_HaronTime')
 
-    return horse_result_dict, race_result
+    return horse_result_dict, race_progress_info
 
 def frame_no_culc(horse_num, horse_no):
     horse_no = int(horse_no)
@@ -577,7 +582,7 @@ class RaceInfo():
     @horse_num.setter
     def horse_num(self, horse_num): self.__horse_num = horse_num
 
-class RaceResult():
+class RaceProgressInfo():
     '''レース全体のレース結果を保持するデータクラス'''
     def __init__(self):
         self.__race_id = '' # レースID(netkeiba準拠、PK)o
@@ -737,11 +742,11 @@ class HorseRaceInfo():
 class HorseCharInfo():
     def __init__(self):
         self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
-        self.__horse_name = '' # 馬名o
-        self.__father = '' # 父名o
-        self.__mother = '' # 母名o
-        self.__grandfather = '' # 母父名o
-        self.__hair_color = '' # 毛色o
+        self.__horse_name = '' # 馬名
+        self.__father = '' # 父名
+        self.__mother = '' # 母名
+        self.__grandfather = '' # 母父名
+        self.__hair_color = '' # 毛色
 
     # getter
     @property
