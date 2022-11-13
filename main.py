@@ -41,13 +41,13 @@ def main():
             horse_race_info_dict, race_info = get_umabashira()
 
             # レース結果(DB)からデータ取得
-            horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
+            #horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
     else:
         # 馬柱からデータ取得
         horse_race_info_dict, race_info = get_umabashira()
 
         # レース結果(DB)からデータ取得
-        horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
+        #horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
 
     # TODO 開催日、実装時はインスタンス変数
     race_date = KAISAI_DATE
@@ -60,10 +60,10 @@ def main():
         df = pd.DataFrame.from_dict(horse_race_info, orient='index').T
         output.csv(df, 'horse_race_info')
 
-    for index in horse_result_dict:
-        horse_result = vars(horse_result_dict[index])
-        df = pd.DataFrame.from_dict(horse_result, orient='index').T
-        output.csv(df, 'horse_result')
+    #for index in horse_result_dict:
+    #    horse_result = vars(horse_result_dict[index])
+    #    df = pd.DataFrame.from_dict(horse_result, orient='index').T
+    #    output.csv(df, 'horse_result')
 
     df = pd.DataFrame.from_dict(vars(race_info), orient='index').T
     output.csv(df, 'race_info')
@@ -95,8 +95,6 @@ def get_umabashira():
 
     race_info.race_time = race_data_list[0].replace('発走', '')
 
-    # TODO 地方はin_out除去
-
     # TODO レースIDからばんえい判定
     if re.compile('\d{4}65\d{6}').search(RACE_ID):
         race_info.baba = 'ば'
@@ -116,7 +114,6 @@ def get_umabashira():
 
         race_info.around = course.groups()[2]
 
-    # TODO ばんえいの場合どうかチェック
     race_info.weather = race_data_list[2].replace('天候:', '')
 
     # 出走条件等の抽出
@@ -167,7 +164,7 @@ def get_umabashira():
     elif 'Icon_GradeType18' in str(race_name):
         race_info.grade = '1勝'
 
-    # TODO 待選とは何か確認
+    # TODO 待選とは何か。暫定処理としてグレードの末尾に付けておく
     if 'Icon_GradeType14' in str(race_name):
         race_info.grade += '待選'
 
