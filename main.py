@@ -7,8 +7,6 @@ import pandas as pd
 import re
 from bs4 import BeautifulSoup
 
-ZERO_FIX = '0'
-
 def url(type):
     # 馬柱
     if type == 'UMABASHIRA_URL':
@@ -41,13 +39,13 @@ def main():
             horse_race_info_dict, race_info = get_umabashira()
 
             # レース結果(DB)からデータ取得
-            #horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
+            horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
     else:
         # 馬柱からデータ取得
         horse_race_info_dict, race_info = get_umabashira()
 
         # レース結果(DB)からデータ取得
-        #horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
+        horse_result_dict, race_progress_info = get_result(horse_race_info_dict, race_info)
 
     # TODO 開催日、実装時はインスタンス変数
     race_date = KAISAI_DATE
@@ -89,23 +87,15 @@ def get_umabashira():
     # レース情報格納用データクラス
     race_info = RaceInfo()
 
-    # コース情報や状態を抽出
+    # コース情報や馬場状態の枠
     race_data_01 = soup.find('div', class_ = 'RaceData01')
     race_data_list = rm(race_data_01.text).split('/')
 
-    # 発送時刻取得
+    # 発走時刻取得
     race_info.race_time = race_data_list[0].replace('発走', '')
 
-    # ばんえい判定は馬柱メソッド呼び出し前に入れとくべきかも
-    # TODO レースIDからばんえい判定
-
-    # 芝/ダ
+    # 馬場(芝/ダ)、馬場状態
     course = re.search('([芝|ダ])(\d+)m\((.*)\)', race_data_list[1])
-
-    # 距離
-    race_info.distance = course.groups()[1]
-
-    # 馬場状態
     baba = course.groups()[0]
     race_info.baba = baba
     if baba == '芝':
@@ -113,21 +103,24 @@ def get_umabashira():
     elif baba == 'ダ':
         race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
 
-    # 周回
+    # 距離
+    race_info.distance = course.groups()[1]
+
+    # 回り(右/左)
     race_info.around = course.groups()[2]
 
     # 天候
     race_info.weather = race_data_list[2].replace('天候:', '')
 
-    # 出走条件等の抽出
+    # 出走条件等の枠
     race_data_02 = soup.find('div', class_ = 'RaceData02')
-    race_data_list = race_data_02.text.split('\n')
 
     # 開催回/日
+    race_data_list = race_data_02.text.split('\n')
     race_info.hold_no = race_data_list[1].replace('回', '')
     race_info.hold_date = race_data_list[3].replace('日目', '')
 
-    # 出走馬齢条件/クラス
+    # 出走条件(馬齢/クラス)
     require_split = race_data_list[4].find(' ')
     race_info.require_age = half(race_data_list[4][:require_split]).replace('サラ系', '')
     race_info.race_class = half(race_data_list[4][require_split + 1:])
@@ -197,12 +190,10 @@ def get_umabashira():
         # 不変の馬情報格納用(馬名、父・母名...)
         horse_char_info = HorseCharInfo()
 
-        # TODO
+        # 所属や馬名の書いてある枠
         horse_type = info.find('dt', class_ = 'Horse02')
 
         # 外国産(所属)馬/地方所属馬判定
-        # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
-        # TODO パラメータをbelongに統一するかも要検討
         if 'Icon_MaruChi' in str(horse_type):
             horse_race_info.belong = 'マル地'
         elif 'Icon_kakuChi' in str(horse_type):
@@ -220,6 +211,7 @@ def get_umabashira():
         m = re.search('db.netkeiba.com/horse/(\d+)/"', str(horse_type))
         if m != None:
             horse_race_info.horse_id = m.groups()[0]
+            horse_char_info.horse_id = m.groups()[0]
 
         # 馬名
         horse_char_info.horse_name = horse_type.text.replace('\n', '')
@@ -380,9 +372,10 @@ def get_result(horse_race_info_dict, race_info):
     # レースの経過情報
     race_progress_info = RaceProgressInfo()
 
-    race_progress_info.race_info = RACE_ID
+    race_progress_info.race_id = RACE_ID
 
-    # コーナー通過順、read_htmlでは','が除去されるため抽出不可
+    # コーナー通過順、pd.read_htmlでは','が除去されるため抽出不可
+    # CSV出力時に区切り文字と混合しないため「、」を採用
     rank_table = soup.find('table', class_ = 'RaceCommon_Table Corner_Num').text.split('\n')
     for index in range(len(rank_table)):
         if rank_table[index] == '1コーナー':
@@ -394,8 +387,14 @@ def get_result(horse_race_info_dict, race_info):
         elif rank_table[index] == '4コーナー':
             race_progress_info.corner4_rank = rank_table[index + 1].replace(',', '、')
 
-    # TODO ラップ抽出
+    # ラップ抽出(非公表の競馬は空)
+    # CSV出力時に区切り文字と混合しないため「、」を採用
     lap_table = soup.find('table', class_ = 'RaceCommon_Table Race_HaronTime')
+    if lap_table != None:
+        race_progress_info.lap_distance = '、'.join([distance.text.replace('m', '') for distance in lap_table.find_all('th')])
+        race_progress_info.lap_time = '、'.join([change_seconds(lap.text) for lap in lap_table.find('tr', class_ = 'HaronTime').find_all('td')])
+
+    exit()
 
     return horse_result_dict, race_progress_info
 
@@ -420,6 +419,13 @@ def frame_no_culc(horse_num, horse_no):
             return str(7)
         else:
             return frame_no_culc(16, horse_no)
+
+def change_seconds(minutes_time):
+    separate_time = re.match('(\d+):(\d+).(\d+)', minutes_time)
+    if separate_time != None:
+        return str(int(separate_time.groups()[0]) * 60 + int(separate_time.groups()[1]) + float(separate_time.groups()[2]) * 0.1)
+    else:
+        return minutes_time
 
 def Soup(URL):
     # URL = 'https://db.netkeiba.com/race/202204020206/'
@@ -447,29 +453,29 @@ class RaceInfo():
     '''発走前のレースに関するデータのデータクラス'''
     def __init__(self):
         self.__race_id = '' # レースID(netkeiba準拠、PK)
-        self.__race_date = '' # レース開催日
-        self.__race_no = '' # レース番号
-        self.__baba_code = '' # 競馬場コード
+        self.__race_date = '' # レース開催日 [TODO 遷移ロジック作成時に追加]
+        self.__race_no = '' # レース番号 [TODO 遷移ロジック作成時に追加]
+        self.__baba_code = '' # 競馬場コード [TODO 遷移ロジック作成時に追加]
         self.__race_name = '' # レース名o
-        self.__race_type = '平' # レース形態(平地/障害/ばんえい)
+        self.__race_type = '平' # レース形態(平地/障害)
         self.__baba = '' # 馬場(芝/ダート)o
         self.__weather = '' # 天候△
         self.__glass_condition = '' # 馬場状態(芝)o
         self.__dirt_condition = '' # 馬場状態(ダート)o
         self.__distance = '' # 距離o
         self.__around = '' # 回り(右/左)o
-        self.__in_out = ZERO_FIX # 使用コース(内回り/外回り)[地方はないため0固定]
+        self.__in_out = '0' # 使用コース(内回り/外回り)[地方はないため0固定]
         self.__race_time = '' # 発走時刻o
         self.__hold_no = '' # 開催回o
         self.__hold_date = '' # 開催日o
         self.__race_class = '' # クラスo
-        self.__grade = '' # グレードo TODO
+        self.__grade = '' # グレードo[ TODO 待戦未判明]
         self.__require_age = '' # 出走条件(年齢)o
-        self.__require_gender = '' # 出走条件(牝馬限定戦) TODO
-        self.__require_kyushu = ZERO_FIX # 出走条件(九州産馬限定戦) TODO
-        self.__require_beginner_jockey = ZERO_FIX # 出走条件(見習騎手限定戦) TODO
-        self.__require_country = '' # 出走条件(国際/混合) TODO
-        self.__require_local = '' # 出走条件(特別指定/指定) TODO
+        self.__require_gender = '' # 出走条件(牝馬限定戦)[ TODO netkeibaから取れない。楽天・オッズパークなら取れる]
+        self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)[2022地方初開催、ただnetkeibaでは拾えないため0固定]
+        self.__require_beginner_jockey = '0' # 出走条件(見習騎手限定戦)[地方は存在しないため0固定]
+        self.__require_country = '0' # 出走条件(国際/混合)[地方は東京大賞典のみなので0固定]
+        self.__require_local = '0' # 出走条件(特別指定/指定)[地方馬がJRAに出れるかなので関係ない、0固定]
         self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ) TODO
         self.__first_prize = '' # 1着賞金o
         self.__second_prize = '' # 2着賞金o
@@ -614,7 +620,8 @@ class RaceProgressInfo():
         self.__corner2_rank = '' # 第2コーナー通過順(馬番)o
         self.__corner3_rank = '' # 第3コーナー通過順(馬番)o
         self.__corner4_rank = '' # 第4コーナー通過順(馬番)o
-        self.__pace = [] # 先頭馬のペース(秒) TODO
+        self.__lap_distance = '' # 先頭馬のラップ測定距離(m)
+        self.__lap_time = '' # 先頭馬のラップタイム(秒)
 
     # getter
     @property
@@ -628,7 +635,9 @@ class RaceProgressInfo():
     @property
     def corner4_rank(self): return self.__corner4_rank
     @property
-    def pace(self): return self.__pace
+    def lap_distance(self): return self.__lap_distance
+    @property
+    def lap_time(self): return self.__lap_time
 
     # setter
     @race_id.setter
@@ -641,8 +650,10 @@ class RaceProgressInfo():
     def corner3_rank(self, corner3_rank): self.__corner3_rank = corner3_rank
     @corner4_rank.setter
     def corner4_rank(self, corner4_rank): self.__corner4_rank = corner4_rank
-    @pace.setter
-    def pace(self, pace): self.__pace = pace
+    @lap_distance.setter
+    def lap_distance(self, lap_distance): self.__lap_distance = lap_distance
+    @lap_time.setter
+    def lap_time(self, lap_time): self.__lap_time = lap_time
 
 class HorseRaceInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
@@ -655,15 +666,15 @@ class HorseRaceInfo():
         self.__load = '' # 斤量o
         self.__jockey_id = '' # 騎手IDo
         self.__jockey = '' # 騎手名o
-        self.__jockey_handi = '' # 騎手減量 TODO
+        self.__jockey_handi = '' # 騎手減量 [ TODO 出馬表から取れない]
         self.__win_odds = '' # 単勝オッズo
         self.__popular = '' # 人気o
         self.__weight = '' # 馬体重o
         self.__weight_change = '' # 馬体重増減o
         self.__trainer_id = '' # 調教師IDo
         self.__trainer = '' # 調教師名o
-        self.__trainer_belong = '' # 調教師所属(美浦/栗東)o
-        self.__owner = '' # 馬主名 TODO
+        self.__trainer_belong = '' # 調教師所属厩舎o
+        self.__owner = '' # 馬主名 [ TODO 出馬表から取れない]
         self.__blank = '' # レース間隔o
         self.__running_type = '' # 脚質(←netkeibaの主観データ？)o
         self.__country = '' # 所属(外国馬か)o
@@ -764,6 +775,7 @@ class HorseRaceInfo():
 
 
 class HorseCharInfo():
+    '''各馬の不変のデータを保持するクラス'''
     def __init__(self):
         self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
         self.__horse_name = '' # 馬名
