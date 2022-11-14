@@ -93,44 +93,50 @@ def get_umabashira():
     race_data_01 = soup.find('div', class_ = 'RaceData01')
     race_data_list = rm(race_data_01.text).split('/')
 
+    # 発送時刻取得
     race_info.race_time = race_data_list[0].replace('発走', '')
 
+    # ばんえい判定は馬柱メソッド呼び出し前に入れとくべきかも
     # TODO レースIDからばんえい判定
-    if re.compile('\d{4}65\d{6}').search(RACE_ID):
-        race_info.baba = 'ば'
-        race_info.distance = '200'
-        # TODO ばんえいの馬場状態変数追加
-    else:
-        course = re.search('([芝|ダ])(\d+)m\((.*)\)', race_data_list[1])
 
-        race_info.distance = course.groups()[1]
+    # 芝/ダ
+    course = re.search('([芝|ダ])(\d+)m\((.*)\)', race_data_list[1])
 
-        baba = course.groups()[0]
-        race_info.baba = baba
-        if baba == '芝':
-            race_info.glass_condition = race_data_list[3].replace('馬場:', '')
-        elif baba == 'ダ':
-            race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
+    # 距離
+    race_info.distance = course.groups()[1]
 
-        race_info.around = course.groups()[2]
+    # 馬場状態
+    baba = course.groups()[0]
+    race_info.baba = baba
+    if baba == '芝':
+        race_info.glass_condition = race_data_list[3].replace('馬場:', '')
+    elif baba == 'ダ':
+        race_info.dirt_condition = race_data_list[3].replace('馬場:', '')
 
+    # 周回
+    race_info.around = course.groups()[2]
+
+    # 天候
     race_info.weather = race_data_list[2].replace('天候:', '')
 
     # 出走条件等の抽出
     race_data_02 = soup.find('div', class_ = 'RaceData02')
     race_data_list = race_data_02.text.split('\n')
 
+    # 開催回/日
     race_info.hold_no = race_data_list[1].replace('回', '')
     race_info.hold_date = race_data_list[3].replace('日目', '')
 
+    # 出走馬齢条件/クラス
     require_split = race_data_list[4].find(' ')
     race_info.require_age = half(race_data_list[4][:require_split]).replace('サラ系', '')
     race_info.race_class = half(race_data_list[4][require_split + 1:])
 
+    # レース名
     race_name = soup.find('div', class_ = 'RaceName')
     race_info.race_name = race_name.text.replace('\n', '')
 
-    # CSSからクラスチェック、13はWIN5
+    # CSSからグレードチェック、13はWIN5
     if 'Icon_GradeType1"' in str(race_name):
         race_info.grade = 'GI'
     elif 'Icon_GradeType2' in str(race_name):
@@ -164,14 +170,15 @@ def get_umabashira():
     elif 'Icon_GradeType18' in str(race_name):
         race_info.grade = '1勝'
 
-    # TODO 待選とは何か。暫定処理としてグレードの末尾に付けておく
+    # TODO 待選とは何かわからないが、暫定処理としてグレードの末尾に付けておく
     if 'Icon_GradeType14' in str(race_name):
         race_info.grade += '待選'
 
     race_info.horse_num = race_data_list[5].replace('頭', '')
 
-    # TODO 年齢以外の出走条件取得
+    # TODO 年齢以外の出走条件取得、あれば
 
+    # レース賞金
     prize = re.search('本賞金:(.+)、(.+)、(.+)、(.+)、(.+)万円', race_data_list[7])
     race_info.first_prize = prize.groups()[0]
     race_info.second_prize = prize.groups()[1]
@@ -185,11 +192,15 @@ def get_umabashira():
 
     fc = soup.select('dl[class="fc"]')
     for i, info in enumerate(fc):
+        # 本レースでの馬情報格納用(馬体重、馬齢...)
         horse_race_info = HorseRaceInfo()
+        # 不変の馬情報格納用(馬名、父・母名...)
         horse_char_info = HorseCharInfo()
 
-        horse_char_info.father = info.find('dt', class_ = 'Horse01').text
+        # TODO
         horse_type = info.find('dt', class_ = 'Horse02')
+
+        # 外国産(所属)馬/地方所属馬判定
         # TODO マル/カクの違いはレース種別の違いだけなので、種類は地/外だけにするか要検討
         # TODO パラメータをbelongに統一するかも要検討
         if 'Icon_MaruChi' in str(horse_type):
@@ -201,26 +212,34 @@ def get_umabashira():
         elif 'Icon_KakuGai' in str(horse_type):
             horse_race_info.country = 'カク外'
 
+        # ブリンカー有無
         if '<span class="Mark">B</span>' in str(horse_type):
             horse_race_info.blinker = '1'
 
+        # netkeiba独自の馬ID
         m = re.search('db.netkeiba.com/horse/(\d+)/"', str(horse_type))
         if m != None:
             horse_race_info.horse_id = m.groups()[0]
 
+        # 馬名
         horse_char_info.horse_name = horse_type.text.replace('\n', '')
 
+        # 父名・母名・母父名
+        horse_char_info.father = info.find('dt', class_ = 'Horse01').text
         horse_char_info.mother = info.find('dt', class_ = 'Horse03').text
         horse_char_info.grandfather = info.find('dt', class_ = 'Horse04').text.replace('(', '').replace(')', '')
 
+        # 調教師・調教師所属
         trainer = info.find('dt', class_ = 'Horse05').text.split('・')
         horse_race_info.trainer_belong = trainer[0]
         horse_race_info.trainer = trainer[1]
 
+        # netkeiba独自の調教師ID
         trainer_id = re.search('db.netkeiba.com/trainer/(\d+)/', str(info))
         if trainer_id != None:
             horse_race_info.trainer_id = trainer_id.groups()[0]
 
+        # 出走間隔(週)
         blank = info.find('dt', class_ = 'Horse06').text
         if blank == '連闘':
             horse_race_info.blank = '0'
@@ -232,6 +251,7 @@ def get_umabashira():
             else:
                 horse_race_info.blank = blank_week.groups()[0]
 
+        # 脚質(netkeiba独自)
         running_type = str(info.find('dt', class_ = 'Horse06'))
         if 'horse_race_type00' in running_type:
             horse_race_info.running_type = '未'
@@ -246,39 +266,46 @@ def get_umabashira():
         elif 'horse_race_type05' in running_type:
             horse_race_info.running_type = '自在'
 
+        # 馬体重
         weight = re.search('(\d+)kg\((.+)\)', info.find('dt', class_ = 'Horse07').text)
         # TODO 計不対応
         if weight != None:
             horse_race_info.weight = weight.groups()[0]
             horse_race_info.weight_change = str(int(weight.groups()[1]))
 
+        # 単勝オッズ
         odds = re.search('(\d+\.\d)\((.+)人気\)', rm(info.find('dt', class_ = 'Horse07').text))
         # TODO 取消馬対応
         if odds != None:
             horse_race_info.popular = odds.groups()[0]
             horse_race_info.win_odds = odds.groups()[1]
 
+        # 馬番・枠番
         horse_race_info.horse_no = str(i + 1)
-
         horse_race_info.frame_no = frame_no_culc(race_info.horse_num, int(i + 1))
 
         horse_race_info_dict[str(i + 1)] = horse_race_info
 
+    # 騎手等記載の隣の枠から情報取得
     jockeys = soup.find_all('td', class_ = 'Jockey')
     for i, info in enumerate(jockeys):
         horse_race_info = horse_race_info_dict[str(i + 1)]
 
+        # 性別・馬齢・毛色
         m = re.search('([牡|牝|セ])(\d+)(.+)', info.find('span', class_ = 'Barei').text)
         if m != None:
             horse_race_info.gender = m.groups()[0]
             horse_race_info.age = m.groups()[1]
             horse_char_info.hair_color = m.groups()[2]
 
+        # 騎手名・netkeiba独自の騎手ID
+        # TODO 騎手ID未存在時、騎手名だけ
         jockey = re.search('db.netkeiba.com/jockey/(\d+)/">(.+)</a>', str(info))
         if jockey != None:
             horse_race_info.jockey_id = jockey.groups()[0]
             horse_race_info.jockey = jockey.groups()[1]
 
+        # 斤量
         load = re.search('<span>(\d+\d.\d+)</span>', str(info))
         if load != None:
             horse_race_info.load = load.groups()[0]
