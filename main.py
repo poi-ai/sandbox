@@ -456,33 +456,28 @@ class RaceInfo():
         self.__race_date = '' # レース開催日 [TODO 遷移ロジック作成時に追加]
         self.__race_no = '' # レース番号 [TODO 遷移ロジック作成時に追加]
         self.__baba_code = '' # 競馬場コード [TODO 遷移ロジック作成時に追加]
-        self.__race_name = '' # レース名o
-        self.__race_type = '平' # レース形態(平地/障害)
-        self.__baba = '' # 馬場(芝/ダート)o
-        self.__weather = '' # 天候△
-        self.__glass_condition = '' # 馬場状態(芝)o
-        self.__dirt_condition = '' # 馬場状態(ダート)o
-        self.__distance = '' # 距離o
-        self.__around = '' # 回り(右/左)o
-        self.__in_out = '0' # 使用コース(内回り/外回り)[地方はないため0固定]
-        self.__race_time = '' # 発走時刻o
-        self.__hold_no = '' # 開催回o
-        self.__hold_date = '' # 開催日o
-        self.__race_class = '' # クラスo
+        self.__race_name = '' # レース名
+        self.__race_type = '平' # レース形態(平地/障害)[地方は平地固定]
+        self.__baba = '' # 馬場(芝/ダート)
+        self.__weather = '' # 天候
+        self.__glass_condition = '' # 馬場状態(芝)
+        self.__dirt_condition = '' # 馬場状態(ダート)
+        self.__distance = '' # 距離
+        self.__around = '' # 回り(右/左)
+        self.__in_out = '0' # 使用コース(内回り/外回り)[地方は内外ないため0固定]
+        self.__race_time = '' # 発走時刻
+        self.__hold_no = '' # 開催回
+        self.__hold_date = '' # 開催日
+        self.__race_class = '' # クラス
         self.__grade = '' # グレードo[ TODO 待戦未判明]
         self.__require_age = '' # 出走条件(年齢)o
-        self.__require_gender = '' # 出走条件(牝馬限定戦)[ TODO netkeibaから取れない。楽天・オッズパークなら取れる]
-        self.__require_kyushu = '0' # 出走条件(九州産馬限定戦)[2022地方初開催、ただnetkeibaでは拾えないため0固定]
-        self.__require_beginner_jockey = '0' # 出走条件(見習騎手限定戦)[地方は存在しないため0固定]
-        self.__require_country = '0' # 出走条件(国際/混合)[地方は東京大賞典のみなので0固定]
-        self.__require_local = '0' # 出走条件(特別指定/指定)[地方馬がJRAに出れるかなので関係ない、0固定]
-        self.__load_kind = '' # 斤量条件(定量/馬齢/別定/ハンデ) TODO
-        self.__first_prize = '' # 1着賞金o
-        self.__second_prize = '' # 2着賞金o
-        self.__third_prize = '' # 3着賞金o
-        self.__fourth_prize = '' # 4着賞金o
-        self.__fifth_prize = '' # 5着賞金o
-        self.__horse_num = '' # 出走頭数o
+        self.__load_kind = '0' # 斤量条件(定量/馬齢/別定/ハンデ)[地方では取らないため0固定]
+        self.__first_prize = '' # 1着賞金
+        self.__second_prize = '' # 2着賞金
+        self.__third_prize = '' # 3着賞金
+        self.__fourth_prize = '' # 4着賞金
+        self.__fifth_prize = '' # 5着賞金
+        self.__horse_num = '' # 出走頭数
 
     # getter
     @property
@@ -523,16 +518,6 @@ class RaceInfo():
     def grade(self): return self.__grade
     @property
     def require_age(self): return self.__require_age
-    @property
-    def require_gender(self): return self.__require_gender
-    @property
-    def require_kyushu(self): return self.__require_kyushu
-    @property
-    def require_beginner_jockey(self): return self.__require_beginner_jockey
-    @property
-    def require_country(self): return self.__require_country
-    @property
-    def require_local(self): return self.__require_local
     @property
     def load_kind(self): return self.__load_kind
     @property
@@ -587,16 +572,6 @@ class RaceInfo():
     def grade(self, grade): self.__grade = grade
     @require_age.setter
     def require_age(self, require_age): self.__require_age = require_age
-    @require_gender.setter
-    def require_gender(self, require_gender): self.__require_gender = require_gender
-    @require_kyushu.setter
-    def require_kyushu(self, require_kyushu): self.__require_kyushu = require_kyushu
-    @require_beginner_jockey.setter
-    def require_beginner_jockey(self, require_beginner_jockey): self.__require_beginner_jockey = require_beginner_jockey
-    @require_country.setter
-    def require_country(self, require_country): self.__require_country = require_country
-    @require_local.setter
-    def require_local(self, require_local): self.__require_local = require_local
     @load_kind.setter
     def load_kind(self, load_kind): self.__load_kind = load_kind
     @first_prize.setter
@@ -615,11 +590,11 @@ class RaceInfo():
 class RaceProgressInfo():
     '''レース全体のレース結果を保持するデータクラス'''
     def __init__(self):
-        self.__race_id = '' # レースID(netkeiba準拠、PK)o
-        self.__corner1_rank = '' # 第1コーナー通過順(馬番)o
-        self.__corner2_rank = '' # 第2コーナー通過順(馬番)o
-        self.__corner3_rank = '' # 第3コーナー通過順(馬番)o
-        self.__corner4_rank = '' # 第4コーナー通過順(馬番)o
+        self.__race_id = '' # レースID(netkeiba準拠、PK)
+        self.__corner1_rank = '' # 第1コーナー通過順(馬番)
+        self.__corner2_rank = '' # 第2コーナー通過順(馬番)
+        self.__corner3_rank = '' # 第3コーナー通過順(馬番)
+        self.__corner4_rank = '' # 第4コーナー通過順(馬番)
         self.__lap_distance = '' # 先頭馬のラップ測定距離(m)
         self.__lap_time = '' # 先頭馬のラップタイム(秒)
 
@@ -658,28 +633,28 @@ class RaceProgressInfo():
 class HorseRaceInfo():
     '''各馬の発走前のデータを保持するデータクラス'''
     def __init__(self):
-        self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
-        self.__frame_no = '' # 枠番 o
-        self.__horse_no = '' # 馬番o
-        self.__age = '' # 馬齢o
-        self.__gender = '' # 性別o
-        self.__load = '' # 斤量o
-        self.__jockey_id = '' # 騎手IDo
-        self.__jockey = '' # 騎手名o
+        self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)
+        self.__frame_no = '' # 枠番
+        self.__horse_no = '' # 馬番
+        self.__age = '' # 馬齢
+        self.__gender = '' # 性別
+        self.__load = '' # 斤量
+        self.__jockey_id = '' # 騎手ID
+        self.__jockey = '' # 騎手名
         self.__jockey_handi = '' # 騎手減量 [ TODO 出馬表から取れない]
-        self.__win_odds = '' # 単勝オッズo
-        self.__popular = '' # 人気o
-        self.__weight = '' # 馬体重o
-        self.__weight_change = '' # 馬体重増減o
-        self.__trainer_id = '' # 調教師IDo
-        self.__trainer = '' # 調教師名o
-        self.__trainer_belong = '' # 調教師所属厩舎o
+        self.__win_odds = '' # 単勝オッズ
+        self.__popular = '' # 人気
+        self.__weight = '' # 馬体重
+        self.__weight_change = '' # 馬体重増減
+        self.__trainer_id = '' # 調教師ID
+        self.__trainer = '' # 調教師名
+        self.__trainer_belong = '' # 調教師所属厩舎
         self.__owner = '' # 馬主名 [ TODO 出馬表から取れない]
-        self.__blank = '' # レース間隔o
-        self.__running_type = '' # 脚質(←netkeibaの主観データ？)o
-        self.__country = '' # 所属(外国馬か)o
-        self.__belong = '' # 所属(地方馬か)o
-        self.__blinker = '0' # ブリンカー(有/無)o
+        self.__blank = '' # レース間隔
+        self.__running_type = '' # 脚質(←netkeibaの主観データ？)
+        self.__country = '' # 所属(外国馬か)
+        self.__belong = '' # 所属(地方馬か)
+        self.__blinker = '0' # ブリンカー(有/無)
 
     # getter
     @property
@@ -777,7 +752,7 @@ class HorseRaceInfo():
 class HorseCharInfo():
     '''各馬の不変のデータを保持するクラス'''
     def __init__(self):
-        self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)o
+        self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)
         self.__horse_name = '' # 馬名
         self.__father = '' # 父名
         self.__mother = '' # 母名
@@ -816,12 +791,12 @@ class HorseResult():
     '''各馬のレース結果のデータクラス'''
     def __init__(self):
         self.__horse_id = '' # 競走馬ID(netkeiba準拠、複合PK)
-        self.__horse_no = '' # 馬番o
-        self.__rank = '' # 着順o
-        self.__goal_time = '' # タイムo
-        self.__diff = '' # 着差o
-        self.__agari = '' # 上り3Fo
-        self.__prize = '0' # 賞金o
+        self.__horse_no = '' # 馬番
+        self.__rank = '' # 着順
+        self.__goal_time = '' # タイム
+        self.__diff = '' # 着差
+        self.__agari = '' # 上り3F
+        self.__prize = '0' # 賞金
 
     # getter
     @property
